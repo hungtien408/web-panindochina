@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/en/site-sub.master" AutoEventWireup="true"
+    CodeFile="site-service.master.cs" Inherits="site_about" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
+    <asp:ContentPlaceHolder ID="cphSite" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div id="colAside" class="aside-about desktop-992">
+        <div class="box-aside corner">
+            <h2 class="title-a">
+                Service</h2>
+            <asp:ListView ID="lstServiceCategory" runat="server" DataSourceID="odsServiceCategory"
+                EnableModelValidation="True">
+                <ItemTemplate>
+                    <li><a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'>
+                        <span>
+                            <%# Eval("ServiceCategoryNameEn")%></span></a></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <ul class="menu-list menu-iconr">
+                        <li runat="server" id="itemPlaceholder"></li>
+                    </ul>
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ServiceCategorySelectAll"
+                TypeName="TLLib.ServiceCategory"></asp:ObjectDataSource>
+        </div>
+    </div>
+    <div id="colMain" class="about-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
+    <div id="mobileRight" class="mobile-panel mobilep-right mobile-bg">
+        <div class="close-menu">
+            <a href="#mobileRight" class="glyphicon glyphicon-remove-circle"></a>
+        </div>
+        <div class="menu-in">
+            <div class="menu-mobile">
+                <h2 class="title">
+                    Panindochina</h2>
+                <asp:ListView ID="lstServiceCategory2" runat="server" DataSourceID="odsServiceCategory2"
+                    EnableModelValidation="True">
+                    <ItemTemplate>
+                        <li><a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'>
+                            <%# Eval("ServiceCategoryNameEn")%><span class="icon-chevron-sign-right iconr"></span></a></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <ul class="menu-nav menu-right">
+                            <li runat="server" id="itemPlaceholder"></li>
+                        </ul>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsServiceCategory2" runat="server" SelectMethod="ServiceCategorySelectAll"
+                    TypeName="TLLib.ServiceCategory"></asp:ObjectDataSource>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="cphMenuMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphPopup" runat="Server">
+    <asp:ContentPlaceHolder ID="cphPopup" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
