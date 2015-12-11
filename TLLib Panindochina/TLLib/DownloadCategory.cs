@@ -281,8 +281,15 @@ namespace TLLib
             }
         }
 
-        public DataTable DownloadCategorySelectAll(int parentID, int increaseLevelCount, string IsShowOnMenu,
-            string IsShowOnHomePage)
+        public DataTable DownloadCategorySelectAll(
+            int parentID, 
+            int increaseLevelCount, 
+            string IsShowOnMenu,
+            string IsShowOnHomePage, 
+            string IsAvailable, 
+            string Priority, 
+            string SortByPriority
+        )
         {
             try
             {
@@ -290,6 +297,11 @@ namespace TLLib
                 var scon = new SqlConnection(connectionString);
                 var cmd = new SqlCommand("usp_DownloadCategory_SelectAll", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IsShowOnMenu", string.IsNullOrEmpty(IsShowOnMenu) ? dbNULL : (object)IsShowOnMenu);
+                cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
+                cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
+                cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
+                cmd.Parameters.AddWithValue("@SortByPriority", string.IsNullOrEmpty(SortByPriority) ? dbNULL : (object)SortByPriority);
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
                 errorCodeParam.Direction = ParameterDirection.Output;
