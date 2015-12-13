@@ -272,16 +272,19 @@
                     </div>
                 </LayoutTemplate>
             </asp:ListView>
-            <asp:ObjectDataSource ID="odsDownloadCategory" runat="server" SelectMethod="ProductDownloadCategorySelectAll"
-                TypeName="TLLib.ProductDownloadCategory">
+            <asp:ObjectDataSource ID="odsDownloadCategory" runat="server" SelectMethod="ProductDownloadOfSameSelectAll"
+                TypeName="TLLib.ProductDownloadOfSame">
                 <SelectParameters>
-                    <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" />
-                    <asp:Parameter Name="ProductDownloadCategoryName" Type="String" />
-                    <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                    <asp:Parameter Name="StartRowIndex" Type="String" />
+                    <asp:Parameter Name="EndRowIndex" Type="String" />
+                    <asp:Parameter Name="Keyword" Type="String" />
+                    <asp:Parameter Name="ProductDownloadOfSameID" Type="String" />
+                    <asp:Parameter Name="ProductID" Type="String" />
                     <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                     <asp:Parameter Name="Priority" Type="String" />
                     <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                    <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" 
+                        Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
         </div>

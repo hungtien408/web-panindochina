@@ -175,7 +175,7 @@ namespace TLLib
             {
                 var dt = new DataTable();
                 var scon = new SqlConnection(connectionString);
-                var cmd = new SqlCommand("usp_ProducDownloadtOfSame_SelectAll", scon);
+                var cmd = new SqlCommand("usp_ProductDownloadOfSame_SelectAll", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@StartRowIndex", string.IsNullOrEmpty(StartRowIndex) ? dbNULL : (object)StartRowIndex);
                 cmd.Parameters.AddWithValue("@EndRowIndex", string.IsNullOrEmpty(EndRowIndex) ? dbNULL : (object)EndRowIndex);
@@ -194,7 +194,7 @@ namespace TLLib
                 sda.Fill(dt);
 
                 if (errorCodeParam.Value.ToString() != "0")
-                    throw new Exception("Stored Procedure 'usp_ProducDownloadtOfSame_SelectAll' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+                    throw new Exception("Stored Procedure 'usp_ProductDownloadOfSame_SelectAll' reported the ErrorCode : " + errorCodeParam.Value.ToString());
 
                 return dt;
             }

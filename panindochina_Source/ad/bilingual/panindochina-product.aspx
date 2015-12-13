@@ -504,9 +504,9 @@
                                 <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
                                     onclick="openWindow('productphotoalbum.aspx?PI=<%# Eval("ProductID") %>','Thư viện ảnh')"
                                     style="cursor: pointer" />
-                                <img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
+                                <%--<img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
                                     onclick="openWindow('productdownloadcategory.aspx?PI=<%# Eval("ProductID") %>','File Download')"
-                                    style="cursor: pointer" />
+                                    style="cursor: pointer" />--%>
                                 <img alt="Video" title="Video" src="../assets/images/movie.png"
                                     onclick="openWindow('productvideo.aspx?PI=<%# Eval("ProductID") %>','Video')"
                                     style="cursor: pointer" />
@@ -534,6 +534,8 @@
                                 width="24" title="Kích Thước" src="../assets/images/sizex64.png" style="cursor: pointer" />--%>
                             <img alt="Sản Phẩm Liên Quan" onclick="openWindow('productofsame.aspx?pi=<%# Eval("ProductID") %>','Sản Phẩm Liên Quan')"
                                 width="24" title="Sản Phẩm Liên Quan" src="../assets/images/project.png" style="cursor: pointer" />
+                            <img alt="File Download Liên Quan" onclick="openWindow('productdownloadofsame.aspx?pi=<%# Eval("ProductID") %>','File Download Liên Quan')"
+                                width="24" title="File Download Liên Quan" src="../assets/images/download.png" style="cursor: pointer" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
                 </Columns>

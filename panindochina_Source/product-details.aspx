@@ -5,21 +5,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
     <asp:ListView ID="lstBreadcrum" runat="server" DataSourceID="odsBreadcrum" EnableModelValidation="True">
-                <ItemTemplate>
-                    <%# "<a href='" + progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" + "'>" + Eval("ProductCategoryName") + "<span class='icon-caret-right'></span></a>"%>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <span runat="server" id="itemPlaceholder" />
-                </LayoutTemplate>
-            </asp:ListView>
-            <asp:ObjectDataSource ID="odsBreadcrum" runat="server" SelectMethod="ProductCategoryHierarchyToTopSelectAll"
-                TypeName="TLLib.ProductCategory">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="CurrentProductCategoryID" QueryStringField="pci"
-                        Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
-            <asp:Label ID="lblProductTitle" runat="server"></asp:Label>
+        <ItemTemplate>
+            <%# "<a href='" + progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" + "'>" + Eval("ProductCategoryName") + "<span class='icon-caret-right'></span></a>"%>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <span runat="server" id="itemPlaceholder" />
+        </LayoutTemplate>
+    </asp:ListView>
+    <asp:ObjectDataSource ID="odsBreadcrum" runat="server" SelectMethod="ProductCategoryHierarchyToTopSelectAll"
+        TypeName="TLLib.ProductCategory">
+        <SelectParameters>
+            <asp:QueryStringParameter Name="CurrentProductCategoryID" QueryStringField="pci"
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:Label ID="lblProductTitle" runat="server"></asp:Label>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:HiddenField ID="hdnlinkprodetails" runat="server" />
@@ -27,7 +27,8 @@
     <h2 class="title desktop-992">
         <asp:Label ID="lblTitle" runat="server"></asp:Label></h2>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight"><asp:Label ID="lblTitle1" runat="server"></asp:Label><span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">
+            <asp:Label ID="lblTitle1" runat="server"></asp:Label><span class="iconar icon-chevron-down"></span></a></h2>
     <div class="wrapper-details">
         <div class="details-img">
             <asp:ListView ID="lstProductImage" runat="server" DataSourceID="odsProductImage"
@@ -242,7 +243,8 @@
                 <ItemTemplate>
                     <h5>
                         <%# Eval("ProductDownloadCategoryName") %></h5>
-                    <asp:HiddenField ID="hdnProductDownloadCategoryID" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
+                    <%--<asp:HiddenField ID="hdnProductDownloadCategoryID" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />--%>
+                    <asp:HiddenField ID="hdnProductID" runat="server" Value='<%# Eval("ProductID") %>' />
                     <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
                         <ItemTemplate>
                             <li><a href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
@@ -254,7 +256,7 @@
                             </ul>
                         </LayoutTemplate>
                     </asp:ListView>
-                    <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="ProductDownloadSelectAll"
+                    <%--<asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="ProductDownloadSelectAll"
                         TypeName="TLLib.ProductDownload">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="hdnProductDownloadCategoryID" Name="ProductDownloadCategoryID"
@@ -262,6 +264,21 @@
                             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                             <asp:Parameter Name="Priority" Type="String" />
                             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>--%>
+                    <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="ProductDownloadOfSameSelectAll"
+                        TypeName="TLLib.ProductDownloadOfSame">
+                        <SelectParameters>
+                            <asp:Parameter Name="StartRowIndex" Type="String" />
+                            <asp:Parameter Name="EndRowIndex" Type="String" />
+                            <asp:Parameter Name="Keyword" Type="String" />
+                            <asp:Parameter Name="ProductDownloadOfSameID" Type="String" />
+                            <asp:ControlParameter ControlID="hdnProductID" Name="ProductID"
+                                PropertyName="Value" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                            <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </ItemTemplate>
@@ -271,16 +288,18 @@
                     </div>
                 </LayoutTemplate>
             </asp:ListView>
-            <asp:ObjectDataSource ID="odsDownloadCategory" runat="server" SelectMethod="ProductDownloadCategorySelectAll"
-                TypeName="TLLib.ProductDownloadCategory">
+            <asp:ObjectDataSource ID="odsDownloadCategory" runat="server" SelectMethod="ProductDownloadOfSameSelectAll"
+                TypeName="TLLib.ProductDownloadOfSame">
                 <SelectParameters>
-                    <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" />
-                    <asp:Parameter Name="ProductDownloadCategoryName" Type="String" />
-                    <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                    <asp:Parameter Name="StartRowIndex" Type="String" />
+                    <asp:Parameter Name="EndRowIndex" Type="String" />
+                    <asp:Parameter Name="Keyword" Type="String" />
+                    <asp:Parameter Name="ProductDownloadOfSameID" Type="String" />
+                    <asp:Parameter Name="ProductID" Type="String" />
                     <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                     <asp:Parameter Name="Priority" Type="String" />
                     <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                    <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
         </div>

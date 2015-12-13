@@ -247,6 +247,18 @@
                         <Items>
                             <asp:RadMenuItem runat="server" Text="Thư Viện PDF" NavigateUrl="~/ad/bilingual/panindochina-downloadlibrarypdf.aspx">
                             </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" IsSeparator="True">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" Text="File Download Product">
+                                <Items>
+                                    <asp:RadMenuItem runat="server" Text="Quản lý Download" NavigateUrl="~/ad/bilingual/panindochina-productdownload.aspx">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Quản lý Danh Mục Download" NavigateUrl="~/ad/bilingual/panindochina-productdownloadcategory.aspx">
+                                    </asp:RadMenuItem>
+                                </Items>
+                            </asp:RadMenuItem>
                         </Items>
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Hỗ Trợ Khách Hàng"
