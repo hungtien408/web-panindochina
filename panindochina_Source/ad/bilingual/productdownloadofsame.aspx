@@ -379,6 +379,7 @@
             <asp:Parameter Name="Keyword" Type="String" />
             <asp:Parameter Name="ProductDownloadOfSameID" Type="String" />
             <asp:Parameter Name="ProductID" Type="String" />
+            <asp:Parameter Name="ProductDownloadCategoryID" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="SortByPriority" Type="String" />

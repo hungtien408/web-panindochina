@@ -165,6 +165,7 @@ namespace TLLib
             string Keyword,
             string ProductDownloadOfSameID,
             string ProductID,
+            string ProductDownloadCategoryID,
             string IsAvailable,
             string Priority,
             string SortByPriority,
@@ -182,6 +183,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@Keyword", string.IsNullOrEmpty(Keyword) ? dbNULL : (object)Keyword);
                 cmd.Parameters.AddWithValue("@ProductDownloadOfSameID", string.IsNullOrEmpty(ProductDownloadOfSameID) ? dbNULL : (object)ProductDownloadOfSameID);
                 cmd.Parameters.AddWithValue("@ProductID", string.IsNullOrEmpty(ProductID) ? dbNULL : (object)ProductID);
+                cmd.Parameters.AddWithValue("@ProductDownloadCategoryID", string.IsNullOrEmpty(ProductDownloadCategoryID) ? dbNULL : (object)ProductDownloadCategoryID);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@SortByPriority", string.IsNullOrEmpty(SortByPriority) ? dbNULL : (object)SortByPriority);
@@ -241,5 +243,37 @@ namespace TLLib
             }
         }
 
+        public DataTable ProductDownloadOfSameSelectCategoryByProductParent(
+            string ProductParentID
+        )
+        {
+            try
+            {
+                var dt = new DataTable();
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_ProductDownloadOfSame_SelectCategoryByProductParent", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductParentID", string.IsNullOrEmpty(ProductParentID) ? dbNULL : (object)ProductParentID);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                var sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_ProductDownloadOfSame_SelectCategoryByProductParent' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Number.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
