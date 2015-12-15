@@ -2263,3 +2263,83 @@ hr {
         padding-left: 8px;
         padding-right: 8px;
     }
+    /*======================*/
+.titbg {
+    background-color: #e4e4e4;
+    color: #282828;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    padding: 5px 15px;
+}
+.register-form {
+    padding: 15px 25px 25px;
+}
+.form-input {
+    overflow: hidden;
+    padding: 7px 0;
+    width: 100%;
+}
+    .form-input .form-lb {
+        color: #282828;
+        display: block;
+        float: left;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        line-height: 31px;
+    }
+    .form-input .form-first .form-lb{
+        text-align: left;
+        text-transform: uppercase;
+        width: 160px;
+    }
+    .form-input .form-first .w200 {
+        width: 200px;
+    }
+.form-btn .form-lb {
+    width: 110px;
+}
+.form-input .input-in .form-lb {
+    text-align: right;
+    padding-right: 15px;
+    width: 110px;
+}
+.input-in {
+    overflow: hidden;
+}
+.input-text {
+    overflow: hidden;
+}
+.form-btn {
+    overflow: hidden;
+    padding-left: 160px;
+}
+.form-input .text-box, .form-input .text-area {
+    background-color: #fff;
+    border: solid 1px #c8c8c8;
+	border-radius: 3px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+	-moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari and Chrome */
+    display: block;
+    width: 100%;
+}
+.form-input .text-box {
+    height: 31px;
+    line-height: 31px;
+    padding: 0 10px;
+}
+.form-input .text-area {
+    padding: 5px 10px;
+    resize: none;
+    height: 150px;
+}
+.form-btn .btn-button {
+	border-radius: 5px 0 0 0; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+	-moz-border-radius: 5px 0 0 0; /* Firefox */
+    -webkit-border-radius: 5px 0 0 0; /* Safari and Chrome */
+    display: inline-block;
+    padding: 0;
+    margin-right: 10px;
+    width: 110px;
+}

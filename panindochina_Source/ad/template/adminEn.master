@@ -288,6 +288,14 @@
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" Text="Being Panindochina’s Retailer" NavigateUrl="~/ad/bilingual/panindochina-customerbeing.aspx">
                                     </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Company Describes" NavigateUrl="~/ad/bilingual/panindochina-companydescribes.aspx">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Company Industry" NavigateUrl="~/ad/bilingual/panindochina-companyindustry.aspx">
+                                    </asp:RadMenuItem>
                                 </Items>
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" IsSeparator="True">

@@ -502,6 +502,9 @@
             <asp:Parameter Name="increaseLevelCount" Type="Int32" DefaultValue="2" />
             <asp:Parameter Name="IsShowOnMenu" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+            <asp:Parameter Name="IsAvailable" Type="String" />
+            <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="SortByPriority" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:RadProgressManager ID="RadProgressManager1" runat="server" />

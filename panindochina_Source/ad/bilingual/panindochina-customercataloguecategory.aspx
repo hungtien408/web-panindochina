@@ -488,6 +488,9 @@
             <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
             <asp:Parameter Name="IsShowOnMenu" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+            <asp:Parameter Name="IsAvailable" Type="String" />
+            <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="SortByPriority" Type="String" />
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="DownloadCategoryID" Type="String" />

@@ -62,7 +62,7 @@
                     <asp:Parameter Name="Description" Type="String" />
                     <asp:Parameter Name="PriceFrom" Type="String" />
                     <asp:Parameter Name="PriceTo" Type="String" />
-                    <asp:QueryStringParameter Name="CategoryID" QueryStringField="pri" Type="String" />
+                    <asp:QueryStringParameter Name="CategoryID" QueryStringField="pci" Type="String" />
                     <asp:Parameter Name="ManufacturerID" Type="String" />
                     <asp:Parameter Name="OriginID" Type="String" />
                     <asp:Parameter Name="Tag" Type="String" />

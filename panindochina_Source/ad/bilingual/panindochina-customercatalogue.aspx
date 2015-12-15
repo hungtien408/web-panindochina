@@ -127,11 +127,11 @@
             </div>
         </asp:Panel>
         <asp:Label ID="lblError" ForeColor="Red" runat="server"></asp:Label>
-        <asp:RadGrid ID="RadGrid1" AllowMultiRowSelection="True" runat="server" Culture="vi-VN" AllowPaging="True" 
-            AllowSorting="True" DataSourceID="ObjectDataSource1" GridLines="Horizontal" AutoGenerateColumns="False"
-            AllowAutomaticDeletes="True" ShowStatusBar="True" OnItemCommand="RadGrid1_ItemCommand"
-            OnItemDataBound="RadGrid1_ItemDataBound" CssClass="grid" AllowAutomaticUpdates="True"
-            CellSpacing="0">
+        <asp:RadGrid ID="RadGrid1" AllowMultiRowSelection="True" runat="server" Culture="vi-VN"
+            AllowPaging="True" AllowSorting="True" DataSourceID="ObjectDataSource1" GridLines="Horizontal"
+            AutoGenerateColumns="False" AllowAutomaticDeletes="True" ShowStatusBar="True"
+            OnItemCommand="RadGrid1_ItemCommand" OnItemDataBound="RadGrid1_ItemDataBound"
+            CssClass="grid" AllowAutomaticUpdates="True" CellSpacing="0">
             <ClientSettings EnableRowHoverStyle="true">
                 <Selecting AllowRowSelect="True" UseClientSelectColumnOnly="True" />
                 <ClientEvents OnRowDblClick="RowDblClick" />
@@ -184,7 +184,8 @@
                             <asp:HiddenField ID="hdnFilePath" runat="server" Value='<%# Eval("FilePath") %>' />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridBoundColumn HeaderText="ID" DataField="DownloadID" SortExpression="DownloadID" Visible="False">
+                    <asp:GridBoundColumn HeaderText="ID" DataField="DownloadID" SortExpression="DownloadID"
+                        Visible="False">
                     </asp:GridBoundColumn>
                     <asp:GridTemplateColumn HeaderText="Tiêu đề" DataField="DownloadName" SortExpression="DownloadName">
                         <ItemTemplate>
@@ -220,7 +221,8 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="ImageName" HeaderText="Ảnh" SortExpression="ImageName" Visible="False">
+                    <asp:GridTemplateColumn DataField="ImageName" HeaderText="Ảnh" SortExpression="ImageName"
+                        Visible="False">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'
                                 Width="95">
@@ -310,11 +312,13 @@
                                         Question
                                     </td>
                                     <td>
-                                        <asp:RadEditor ID="txtQuestion" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
-                                            Width="98%" Content='<%# Bind("Question") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                        <asp:RadEditor ID="txtQuestion" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("Question") %>'>
+                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                MaxUploadFileSize="1024000" />
                                             <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                MaxUploadFileSize="1024000" />
                                             <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                             <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                 ViewPaths="~/Uploads/Template/" />
@@ -326,11 +330,13 @@
                                         Answer
                                     </td>
                                     <td>
-                                        <asp:RadEditor ID="txtAnswer" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
-                                            Width="98%" Content='<%# Bind("Answer") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                        <asp:RadEditor ID="txtAnswer" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("Answer") %>'>
+                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                MaxUploadFileSize="1024000" />
                                             <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                MaxUploadFileSize="1024000" />
                                             <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                             <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                 ViewPaths="~/Uploads/Template/" />
@@ -358,11 +364,13 @@
                                         Question(En)
                                     </td>
                                     <td>
-                                        <asp:RadEditor ID="txtQuestionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
-                                            Width="98%" Content='<%# Bind("QuestionEn") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                        <asp:RadEditor ID="txtQuestionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("QuestionEn") %>'>
+                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                MaxUploadFileSize="1024000" />
                                             <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                MaxUploadFileSize="1024000" />
                                             <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                             <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                 ViewPaths="~/Uploads/Template/" />
@@ -374,11 +382,13 @@
                                         Answer(En)
                                     </td>
                                     <td>
-                                        <asp:RadEditor ID="txtAnswerEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
-                                            Width="98%" Content='<%# Bind("AnswerEn") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                        <asp:RadEditor ID="txtAnswerEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("AnswerEn") %>'>
+                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                MaxUploadFileSize="1024000" />
                                             <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                MaxUploadFileSize="1024000" />
                                             <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                             <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                 ViewPaths="~/Uploads/Template/" />
@@ -502,6 +512,9 @@
             <asp:Parameter Name="increaseLevelCount" Type="Int32" DefaultValue="2" />
             <asp:Parameter Name="IsShowOnMenu" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+            <asp:Parameter Name="IsAvailable" Type="String" />
+            <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="SortByPriority" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:RadProgressManager ID="RadProgressManager1" runat="server" />
