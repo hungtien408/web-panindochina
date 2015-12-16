@@ -363,6 +363,9 @@
                             </asp:RadMenuItem>
                         </Items>
                     </asp:RadMenuItem>
+                    <asp:RadMenuItem runat="server" Text="Quản Lý Thành Viên" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/panindochina-usermanagement.aspx">
+                    </asp:RadMenuItem>
                     <%--<asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Đặt Hàng"
                         Font-Bold="True">
                         <Items>

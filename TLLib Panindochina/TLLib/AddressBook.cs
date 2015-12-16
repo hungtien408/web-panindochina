@@ -88,6 +88,7 @@ namespace TLLib
             string FirstName,
             string LastName,
             string Email,
+            string Email2,
             string HomePhone,
             string CellPhone,
             string Fax,
@@ -105,10 +106,19 @@ namespace TLLib
             string IsPrimaryBilling,
             string IsPrimaryShipping,
             string RoleName,
+            string Gender,
             //string FaceBookID,
             //string FaceBookLinks,
             //string Password,
             string ImageName,
+            string EndUser,
+            string Trading,
+            string Service,
+            string Trainer,
+            string SafetyOrg,
+            string Other,
+            string CompanyIndustry,
+            string TermsConditions,
             string ConvertedFirstName
         )
         {
@@ -120,6 +130,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@FirstName", string.IsNullOrEmpty(FirstName) ? dbNULL : (object)FirstName);
                 cmd.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(LastName) ? dbNULL : (object)LastName);
                 cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(Email) ? dbNULL : (object)Email);
+                cmd.Parameters.AddWithValue("@Email2", string.IsNullOrEmpty(Email2) ? dbNULL : (object)Email2);
                 cmd.Parameters.AddWithValue("@HomePhone", string.IsNullOrEmpty(HomePhone) ? dbNULL : (object)HomePhone);
                 cmd.Parameters.AddWithValue("@CellPhone", string.IsNullOrEmpty(CellPhone) ? dbNULL : (object)CellPhone);
                 cmd.Parameters.AddWithValue("@Fax", string.IsNullOrEmpty(Fax) ? dbNULL : (object)Fax);
@@ -137,10 +148,19 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsPrimaryBilling", string.IsNullOrEmpty(IsPrimaryBilling) ? dbNULL : (object)IsPrimaryBilling);
                 cmd.Parameters.AddWithValue("@IsPrimaryShipping", string.IsNullOrEmpty(IsPrimaryShipping) ? dbNULL : (object)IsPrimaryShipping);
                 cmd.Parameters.AddWithValue("@RoleName", string.IsNullOrEmpty(RoleName) ? dbNULL : (object)RoleName);
+                cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(Gender) ? dbNULL : (object)Gender);
                 //cmd.Parameters.AddWithValue("@FaceBookID", string.IsNullOrEmpty(FaceBookID) ? dbNULL : (object)FaceBookID);
                 //cmd.Parameters.AddWithValue("@FaceBookLinks", string.IsNullOrEmpty(FaceBookLinks) ? dbNULL : (object)FaceBookLinks);
                 //cmd.Parameters.AddWithValue("@Password", string.IsNullOrEmpty(Password) ? dbNULL : (object)Password);
                 cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
+                cmd.Parameters.AddWithValue("@EndUser", string.IsNullOrEmpty(EndUser) ? dbNULL : (object)EndUser);
+                cmd.Parameters.AddWithValue("@Trading", string.IsNullOrEmpty(Trading) ? dbNULL : (object)Trading);
+                cmd.Parameters.AddWithValue("@Service", string.IsNullOrEmpty(Service) ? dbNULL : (object)Service);
+                cmd.Parameters.AddWithValue("@Trainer", string.IsNullOrEmpty(Trainer) ? dbNULL : (object)Trainer);
+                cmd.Parameters.AddWithValue("@SafetyOrg", string.IsNullOrEmpty(SafetyOrg) ? dbNULL : (object)SafetyOrg);
+                cmd.Parameters.AddWithValue("@Other", string.IsNullOrEmpty(Other) ? dbNULL : (object)Other);
+                cmd.Parameters.AddWithValue("@CompanyIndustry", string.IsNullOrEmpty(CompanyIndustry) ? dbNULL : (object)CompanyIndustry);
+                cmd.Parameters.AddWithValue("@TermsConditions", string.IsNullOrEmpty(TermsConditions) ? dbNULL : (object)TermsConditions);
                 cmd.Parameters.AddWithValue("@ConvertedFirstName", string.IsNullOrEmpty(ConvertedFirstName) ? dbNULL : (object)ConvertedFirstName);
 
                 SqlParameter imageNameParam = new SqlParameter("@OutImageName", null);
@@ -248,6 +268,7 @@ namespace TLLib
             string FirstName,
             string LastName,
             string Email,
+            string Email2,
             string HomePhone,
             string CellPhone,
             string Fax,
@@ -265,10 +286,19 @@ namespace TLLib
             string IsPrimaryBilling,
             string IsPrimaryShipping,
             string RoleName,
+            string Gender,
             //string FaceBookID,
             //string FaceBookLinks,
             //string Password,
             string ImageName,
+            string EndUser,
+            string Trading,
+            string Service,
+            string Trainer,
+            string SafetyOrg,
+            string Other,
+            string CompanyIndustry,
+            string TermsConditions,
             string ConvertedFirstName
         )
         {
@@ -281,6 +311,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@FirstName", string.IsNullOrEmpty(FirstName) ? dbNULL : (object)FirstName);
                 cmd.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(LastName) ? dbNULL : (object)LastName);
                 cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(Email) ? dbNULL : (object)Email);
+                cmd.Parameters.AddWithValue("@Email2", string.IsNullOrEmpty(Email2) ? dbNULL : (object)Email2);
                 cmd.Parameters.AddWithValue("@HomePhone", string.IsNullOrEmpty(HomePhone) ? dbNULL : (object)HomePhone);
                 cmd.Parameters.AddWithValue("@CellPhone", string.IsNullOrEmpty(CellPhone) ? dbNULL : (object)CellPhone);
                 cmd.Parameters.AddWithValue("@Fax", string.IsNullOrEmpty(Fax) ? dbNULL : (object)Fax);
@@ -298,10 +329,19 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsPrimaryBilling", string.IsNullOrEmpty(IsPrimaryBilling) ? dbNULL : (object)IsPrimaryBilling);
                 cmd.Parameters.AddWithValue("@IsPrimaryShipping", string.IsNullOrEmpty(IsPrimaryShipping) ? dbNULL : (object)IsPrimaryShipping);
                 cmd.Parameters.AddWithValue("@RoleName", string.IsNullOrEmpty(RoleName) ? dbNULL : (object)RoleName);
+                cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(Gender) ? dbNULL : (object)Gender);
                 //cmd.Parameters.AddWithValue("@FaceBookID", string.IsNullOrEmpty(FaceBookID) ? dbNULL : (object)FaceBookID);
                 //cmd.Parameters.AddWithValue("@FaceBookLinks", string.IsNullOrEmpty(FaceBookLinks) ? dbNULL : (object)FaceBookLinks);
                 //cmd.Parameters.AddWithValue("@Password", string.IsNullOrEmpty(Password) ? dbNULL : (object)Password);
                 cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
+                cmd.Parameters.AddWithValue("@EndUser", string.IsNullOrEmpty(EndUser) ? dbNULL : (object)EndUser);
+                cmd.Parameters.AddWithValue("@Trading", string.IsNullOrEmpty(Trading) ? dbNULL : (object)Trading);
+                cmd.Parameters.AddWithValue("@Service", string.IsNullOrEmpty(Service) ? dbNULL : (object)Service);
+                cmd.Parameters.AddWithValue("@Trainer", string.IsNullOrEmpty(Trainer) ? dbNULL : (object)Trainer);
+                cmd.Parameters.AddWithValue("@SafetyOrg", string.IsNullOrEmpty(SafetyOrg) ? dbNULL : (object)SafetyOrg);
+                cmd.Parameters.AddWithValue("@Other", string.IsNullOrEmpty(Other) ? dbNULL : (object)Other);
+                cmd.Parameters.AddWithValue("@CompanyIndustry", string.IsNullOrEmpty(CompanyIndustry) ? dbNULL : (object)CompanyIndustry);
+                cmd.Parameters.AddWithValue("@TermsConditions", string.IsNullOrEmpty(TermsConditions) ? dbNULL : (object)TermsConditions);
                 cmd.Parameters.AddWithValue("@ConvertedFirstName", string.IsNullOrEmpty(ConvertedFirstName) ? dbNULL : (object)ConvertedFirstName);
 
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);

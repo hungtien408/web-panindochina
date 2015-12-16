@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ad/template/adminRole.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ad/template/adminEn.master" AutoEventWireup="true"
     CodeFile="panindochina-usermanagement.aspx.cs" Inherits="ad_single_usermanagement" %>
 
 <%@ Register TagPrefix="asp" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
@@ -331,8 +331,8 @@
                                         Giới tính
                                     </td>
                                     <td>
-                                        <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
-                                            <asp:ListItem Text="Nam" Value="True" Selected="True"></asp:ListItem>
+                                        <asp:RadioButtonList ID="radioGender" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Text="Nam" Value="True"></asp:ListItem>
                                             <asp:ListItem Text="Nữ" Value="False"></asp:ListItem>
                                         </asp:RadioButtonList>
                                     </td>
@@ -402,7 +402,7 @@
                                         Di động
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtCellPhone" runat="server" Text='<%# Bind("HomePhone") %>' Width="500px"></asp:TextBox>
+                                        <asp:TextBox ID="txtCellPhone" runat="server" Text='<%# Bind("CellPhone") %>' Width="500px"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
@@ -417,7 +417,71 @@
                                         End - User
                                     </td>
                                     <td>
-                                        <%--<asp:Label ID="lblEndUser" runat="server" Text='<%# Eval("#EndUser") %>'></asp:Label>--%>
+                                        <asp:Label ID="lblEndUser" runat="server" Text='<%# Eval("EndUser") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Trading
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblTrading" runat="server" Text='<%# Eval("Trading") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Service
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblService" runat="server" Text='<%# Eval("Service") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Trainer
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblTrainer" runat="server" Text='<%# Eval("Trainer") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Safety Org
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblSafetyOrg" runat="server" Text='<%# Eval("SafetyOrg") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Other
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblOther" runat="server" Text='<%# Eval("Other") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Company Industry
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblCompanyIndustry" runat="server" Text='<%# Eval("CompanyIndustry") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Email Address
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblEmail2" runat="server" Text='<%# Eval("Email2") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Terms & Conditions
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblTermsConditions" runat="server" Text='<%# Eval("TermsConditions") %>'></asp:Label>
                                     </td>
                                 </tr>
                                 <tr class="invisible">

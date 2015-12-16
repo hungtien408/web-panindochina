@@ -140,10 +140,21 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                 var strCompanyName = ((TextBox)row.FindControl("txtCompanyName")).Text;
                 var strAddress1 = ((TextBox)row.FindControl("txtAddress")).Text;
                 var strFullName = ((TextBox)row.FindControl("txtFullName")).Text;
+                var strHomePhone = ((TextBox)row.FindControl("txtHomePhone")).Text;
                 var strCellPhone = ((TextBox)row.FindControl("txtCellPhone")).Text;
                 string strOldImageName = ((HiddenField)row.FindControl("hdnOldImageName")).Value;
                 string strThanhPho = ((RadComboBox)row.FindControl("ddlProvince")).SelectedValue;
                 string strQuan = ((RadComboBox)row.FindControl("ddlDistrict")).SelectedValue;
+                var strEndUser = ((Label)row.FindControl("lblEndUser")).Text;
+                var strTrading = ((Label)row.FindControl("lblTrading")).Text;
+                var strService = ((Label)row.FindControl("lblService")).Text;
+                var strTrainer = ((Label)row.FindControl("lblTrainer")).Text;
+                var strSafetyOrg = ((Label)row.FindControl("lblSafetyOrg")).Text;
+                var strOther = ((Label)row.FindControl("lblOther")).Text;
+                var strCompanyIndustry = ((Label)row.FindControl("lblCompanyIndustry")).Text;
+                var strEmail2 = ((Label)row.FindControl("lblEmail2")).Text;
+                var strTermsConditions = ((Label)row.FindControl("lblTermsConditions")).Text;
+                var strGender = (RadioButtonList) row.FindControl("radioGender");
 
                 if (e.CommandName == "PerformInsert")
                 {
@@ -176,8 +187,9 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                         strFullName,
                         "",
                         strEmail,
+                        strEmail2,
+                        strHomePhone,
                         strCellPhone,
-                        "",
                         "",
                         strEmail,
                         strCompanyName,
@@ -192,7 +204,16 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                         "",
                         "",
                         "user",
+                        strGender.SelectedValue,
                         "",
+                        strEndUser,
+                        strTrading,
+                        strService,
+                        strTrainer,
+                        strSafetyOrg,
+                        strOther,
+                        strCompanyIndustry,
+                        strTermsConditions,
                         ""
                         );
                     //var oUserProfile = new UserProfile();
@@ -227,8 +248,9 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                         strFullName,
                         "",
                         strEmail,
+                        strEmail2,
+                        strHomePhone,
                         strCellPhone,
-                        "",
                         "",
                         strEmail,
                         strCompanyName,
@@ -243,7 +265,16 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                         "",
                         "",
                         "user",
+                        strGender.SelectedItem.Value,
                         "",
+                        strEndUser,
+                        strTrading,
+                        strService,
+                        strTrainer,
+                        strSafetyOrg,
+                        strOther,
+                        strCompanyIndustry,
+                        strTermsConditions,
                         ""
                         );
 
@@ -326,6 +357,7 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
             var AddressBookID = ((HiddenField)row.FindControl("hdnAddressBookID")).Value;
             var ddlProvince = (RadComboBox)row.FindControl("ddlProvince");
             var ddlDistrict = (RadComboBox)row.FindControl("ddlDistrict");
+            var radioGender = (RadioButtonList)row.FindControl("radioGender");
 
             var UserName = ((HiddenField)row.FindControl("hdnUserName")).Value.ToString().Trim();
             var ListViewRoles = (ListView)row.FindControl("lvListViewRoles");
@@ -359,6 +391,8 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                     ddlProvince.SelectedValue = dv[0]["ProvinceID"].ToString();
                 if (!string.IsNullOrEmpty(dv[0]["DistrictID"].ToString()))
                     ddlDistrict.SelectedValue = dv[0]["DistrictID"].ToString();
+                if (!string.IsNullOrEmpty(dv[0]["Gender"].ToString()))
+                    radioGender.SelectedValue = dv[0]["Gender"].ToString();
             }
         }
         //else if (e.Item is GridDataItem)
