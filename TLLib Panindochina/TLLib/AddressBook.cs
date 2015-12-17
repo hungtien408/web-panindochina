@@ -119,6 +119,7 @@ namespace TLLib
             string Other,
             string CompanyIndustry,
             string TermsConditions,
+            string DateActiveUser,
             string ConvertedFirstName
         )
         {
@@ -161,6 +162,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@Other", string.IsNullOrEmpty(Other) ? dbNULL : (object)Other);
                 cmd.Parameters.AddWithValue("@CompanyIndustry", string.IsNullOrEmpty(CompanyIndustry) ? dbNULL : (object)CompanyIndustry);
                 cmd.Parameters.AddWithValue("@TermsConditions", string.IsNullOrEmpty(TermsConditions) ? dbNULL : (object)TermsConditions);
+                cmd.Parameters.AddWithValue("@DateActiveUser", string.IsNullOrEmpty(DateActiveUser) ? dbNULL : (object)DateActiveUser);
                 cmd.Parameters.AddWithValue("@ConvertedFirstName", string.IsNullOrEmpty(ConvertedFirstName) ? dbNULL : (object)ConvertedFirstName);
 
                 SqlParameter imageNameParam = new SqlParameter("@OutImageName", null);
@@ -299,6 +301,7 @@ namespace TLLib
             string Other,
             string CompanyIndustry,
             string TermsConditions,
+            string DateActiveUser,
             string ConvertedFirstName
         )
         {
@@ -342,6 +345,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@Other", string.IsNullOrEmpty(Other) ? dbNULL : (object)Other);
                 cmd.Parameters.AddWithValue("@CompanyIndustry", string.IsNullOrEmpty(CompanyIndustry) ? dbNULL : (object)CompanyIndustry);
                 cmd.Parameters.AddWithValue("@TermsConditions", string.IsNullOrEmpty(TermsConditions) ? dbNULL : (object)TermsConditions);
+                cmd.Parameters.AddWithValue("@DateActiveUser", string.IsNullOrEmpty(DateActiveUser) ? dbNULL : (object)DateActiveUser);
                 cmd.Parameters.AddWithValue("@ConvertedFirstName", string.IsNullOrEmpty(ConvertedFirstName) ? dbNULL : (object)ConvertedFirstName);
 
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);

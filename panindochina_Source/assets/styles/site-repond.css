@@ -325,6 +325,9 @@
     .pro-box .pro-img {
         width: 90px;
     }
+    .form-alogin .mt31 {
+        margin-top: 0;
+    }
 }
 @media (min-width: 481px) and (max-width: 767px)
 {
@@ -431,6 +434,9 @@
         }
     .form-input .input-in .form-lb {
         text-align: left;
+        width: 100%;
+    }
+    .form-alogin .col-xs-6 {
         width: 100%;
     }
 }

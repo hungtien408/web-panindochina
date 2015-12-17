@@ -156,6 +156,10 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                 var strTermsConditions = ((Label)row.FindControl("lblTermsConditions")).Text;
                 var strGender = (RadioButtonList) row.FindControl("radioGender");
 
+                var dpDateActiveUser = (RadDatePicker)row.FindControl("dpDateActiveUser");
+                var strDateActiveUser = dpDateActiveUser.SelectedDate.HasValue ? dpDateActiveUser.SelectedDate.Value.ToShortDateString() : "";
+                //var strStartDateActiveUser = DateTime.Now.AddDays(7).ToShortDateString();
+
                 if (e.CommandName == "PerformInsert")
                 {
                     var ListViewRoles = (ListView)row.FindControl("lvListViewRoles");
@@ -214,6 +218,7 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                         strOther,
                         strCompanyIndustry,
                         strTermsConditions,
+                        strDateActiveUser,
                         ""
                         );
                     //var oUserProfile = new UserProfile();
@@ -275,6 +280,7 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                         strOther,
                         strCompanyIndustry,
                         strTermsConditions,
+                        strDateActiveUser,
                         ""
                         );
 
@@ -355,6 +361,8 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
             var FileAvatarImage = (RadUpload)row.FindControl("FileAvatarImage");
             var dv = (DataView)ObjectDataSource1.Select();
             var AddressBookID = ((HiddenField)row.FindControl("hdnAddressBookID")).Value;
+            var hdnDateActiveUser = ((HiddenField)row.FindControl("hdnDateActiveUser")).Value;
+            var dpDateActiveUser = (RadDatePicker)row.FindControl("dpDateActiveUser");
             var ddlProvince = (RadComboBox)row.FindControl("ddlProvince");
             var ddlDistrict = (RadComboBox)row.FindControl("ddlDistrict");
             var radioGender = (RadioButtonList)row.FindControl("radioGender");
@@ -393,6 +401,11 @@ public partial class ad_single_usermanagement : System.Web.UI.Page
                     ddlDistrict.SelectedValue = dv[0]["DistrictID"].ToString();
                 if (!string.IsNullOrEmpty(dv[0]["Gender"].ToString()))
                     radioGender.SelectedValue = dv[0]["Gender"].ToString();
+            }
+            if (!string.IsNullOrEmpty(dv[0]["DateActiveUser"].ToString()))
+            {
+                var date = DateTime.Parse(dv[0]["DateActiveUser"].ToString());
+                dpDateActiveUser.SelectedDate = date;
             }
         }
         //else if (e.Item is GridDataItem)

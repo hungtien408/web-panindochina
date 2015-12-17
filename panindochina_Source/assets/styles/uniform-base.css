@@ -89,7 +89,7 @@ div.selector
     background: none;
     position: absolute;
     top: 0;
-    left: 0px;
+    left: 0;
     width: 100%; 
     }
     div.selector, div.selector span, div.selector select {
@@ -104,11 +104,22 @@ div.selector
         height: 30px;
         line-height: 30px;
     }
+    .register-form div.selector, .register-form div.selector span, .register-form div.selector select {
+        height: 31px;
+        line-height: 31px;
+    }
+.register-form div.selector {
+    background-image: url(../images/select-btn2.png);
+	border-radius: 3px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+	-moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari and Chrome */
+}
     div.selector.hover, div.selector.focus 
     {
     /*background: #fff url(../images/icon-select.png) no-repeat right top;
         border-color: #2083d5;*/
-        color: #ff6c00;
+        border-color: #c8c8c8;
+        color: #222;
     }
     
   /*div.selector.active {

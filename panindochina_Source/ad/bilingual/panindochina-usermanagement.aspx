@@ -208,12 +208,18 @@
                             <%# string.Format("{0:dd/MM/yyyy hh:mm tt}", Eval("LastLoginDate"))%>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn DataField="DateActiveUser" HeaderText="Hết hạn"
+                        SortExpression="DateActiveUser">
+                        <ItemTemplate>
+                            <%# string.Format("{0:dd/MM/yyyy}", Eval("DateActiveUser"))%>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
                     <asp:GridTemplateColumn DataField="CreateDate" HeaderText="Ngày tạo" SortExpression="CreateDate">
                         <ItemTemplate>
                             <%# string.Format("{0:dd/MM/yyyy hh:mm tt}", Eval("CreateDate"))%>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Ảnh">
+                    <asp:GridTemplateColumn HeaderText="Ảnh" Visible="False">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'>
                                 <img id="Img1" alt="" src='<%# "~/res/userprofile/" + Eval("ImageName") %>' width="80"
@@ -311,6 +317,28 @@
                             <table class="search">
                                 <asp:HiddenField ID="hdnUserName" runat="server" Value='<%# Bind("UserName") %>' />
                                 <asp:HiddenField ID="hdnEmail" runat="server" Value='<%# Bind("Email") %>' />
+                                <tr>
+                                    <td class="left">
+                                        Hết hạn
+                                    </td>
+                                    <td>
+                                        <asp:RadDatePicker ShowPopupOnFocus="True" ID="dpDateActiveUser" runat="server" Culture="vi-VN"
+                                            Calendar-CultureInfo="vi-VN" Width="110px">
+                                            <Calendar ID="Calendar3" runat="server">
+                                                <SpecialDays>
+                                                    <asp:RadCalendarDay Repeatable="Today">
+                                                        <ItemStyle CssClass="rcToday" />
+                                                    </asp:RadCalendarDay>
+                                                </SpecialDays>
+                                            </Calendar>
+                                            <DateInput ID="DateInput1" DateFormat="dd/MM/yyyy" DisplayDateFormat="dd/MM/yyyy"
+                                                runat="server">
+                                            </DateInput>
+                                            <DatePopupButton HoverImageUrl="" ImageUrl="" />
+                                        </asp:RadDatePicker>
+                                        <asp:HiddenField ID="hdnDateActiveUser" runat="server" Value='<%# Eval("DateActiveUser") %>' />
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td colspan="2">
                                         <h3>
