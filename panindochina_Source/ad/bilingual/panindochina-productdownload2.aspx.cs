@@ -77,7 +77,7 @@ public partial class ad_single_productdownload : System.Web.UI.Page
             var row = command == "PerformInsert" ? (GridEditFormInsertItem)e.Item : (GridEditFormItem)e.Item;
             var FileLinkDownload = (RadUpload)row.FindControl("FileLinkDownload");
             string strLinkDownload = FileLinkDownload.UploadedFiles.Count > 0 ? FileLinkDownload.UploadedFiles[0].GetName() : "";
-            string strProductDownloadCategoryID = "2";// ((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
+            string strProductDownloadCategoryID = "1";// ((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
             string strIsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
 
             if (e.CommandName == "PerformInsert")

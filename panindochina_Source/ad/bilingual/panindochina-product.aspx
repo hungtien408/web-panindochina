@@ -504,9 +504,9 @@
                                 <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
                                     onclick="openWindow('productphotoalbum.aspx?PI=<%# Eval("ProductID") %>','Thư viện ảnh')"
                                     style="cursor: pointer" />
-                                <%--<img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
-                                    onclick="openWindow('productdownloadcategory.aspx?PI=<%# Eval("ProductID") %>','File Download')"
-                                    style="cursor: pointer" />--%>
+                                <img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
+                                    onclick="openWindow('panindochina-productdownload2.aspx?PI=<%# Eval("ProductID") %>','File Download')"
+                                    style="cursor: pointer" />
                                 <img alt="Video" title="Video" src="../assets/images/movie.png"
                                     onclick="openWindow('productvideo.aspx?PI=<%# Eval("ProductID") %>','Video')"
                                     style="cursor: pointer" />

@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ad/template/adminEn.master" AutoEventWireup="true"
-    CodeFile="panindochina-productdownload.aspx.cs" Inherits="ad_single_productdownload" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ad/template/inside.master" AutoEventWireup="true"
+    CodeFile="panindochina-productdownload2.aspx.cs" Inherits="ad_single_productdownload" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
@@ -90,10 +90,10 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
-    <h3 class="mainTitle">
+    <%--<h3 class="mainTitle">
         <img alt="" src="../assets/images/product.png" class="vam" />
         Product Download
-    </h3>
+    </h3>--%>
     <fieldset class="invisible">
         <h3 class="searchTitle">
             Thông Tin Sản Phẩm</h3>
@@ -338,11 +338,11 @@
             <asp:Parameter Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="ProductDownloadCategoryID" Type="String" />
-            <asp:Parameter Name="ProductID" Type="String" />
+            <asp:QueryStringParameter QueryStringField="PI" Name="ProductID" Type="String" />
         </InsertParameters>
         <SelectParameters>
-            <asp:Parameter DefaultValue="2" Name="ProductDownloadCategoryID" Type="String" />
-            <asp:Parameter Name="ProductID" Type="String" />
+            <asp:Parameter DefaultValue="1" Name="ProductDownloadCategoryID" Type="String" />
+            <asp:QueryStringParameter QueryStringField="PI" Name="ProductID" Type="String" />
             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
@@ -355,7 +355,7 @@
             <asp:Parameter Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="ProductDownloadCategoryID" Type="String" />
-            <asp:Parameter Name="ProductID" Type="String" />
+            <asp:QueryStringParameter QueryStringField="PI" Name="ProductID" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="ProductDownloadCategorySelectAll1"

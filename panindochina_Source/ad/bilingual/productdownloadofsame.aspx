@@ -196,7 +196,7 @@
                 <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
             </CommandItemTemplate>
             <GroupByExpressions>
-                <asp:GridGroupByExpression>
+                <%--<asp:GridGroupByExpression>
                     <SelectFields>
                         <asp:GridGroupByField HeaderText="Danh Mục " FieldName="ProductDownloadCategoryName">
                         </asp:GridGroupByField>
@@ -205,7 +205,7 @@
                         <asp:GridGroupByField FieldName="ProductDownloadCategoryName" SortOrder="Descending">
                         </asp:GridGroupByField>
                     </GroupByFields>
-                </asp:GridGroupByExpression>
+                </asp:GridGroupByExpression>--%>
                 <%--<asp:GridGroupByExpression>
                     <SelectFields>
                         <asp:GridGroupByField HeaderText="Nhóm " FieldName="ProductCategoryName"></asp:GridGroupByField>
@@ -239,8 +239,8 @@
                 <asp:GridBoundColumn SortExpression="FileName" HeaderText="File Download" HeaderButtonType="TextButton"
                     DataField="FileName">
                 </asp:GridBoundColumn>
-                <asp:GridBoundColumn SortExpression="FileNameEn" HeaderText="File Download (En)" HeaderButtonType="TextButton"
-                    DataField="FileNameEn">
+                <asp:GridBoundColumn SortExpression="FileNameEn" HeaderText="File Download (En)"
+                    HeaderButtonType="TextButton" DataField="FileNameEn" Visible="false">
                 </asp:GridBoundColumn>
                 <asp:GridTemplateColumn DataField="Priority" HeaderStyle-Width="10%" HeaderText="Thứ tự"
                     SortExpression="Priority">
@@ -293,7 +293,7 @@
                                             ShowFilterIcon="false" DataField="FileName" HeaderText="File Download" SortExpression="FileName" />
                                         <asp:GridBoundColumn FilterControlWidth="200px" AutoPostBackOnFilter="true" CurrentFilterFunction="Contains"
                                             ShowFilterIcon="false" DataField="FileNameEn" HeaderText="File Download (En)"
-                                            SortExpression="FileNameEn" />
+                                            SortExpression="FileNameEn" Visible="false" />
                                         <%--<asp:GridBoundColumn DataField="ParentCategoryName" HeaderText="Danh mục" SortExpression="ParentCategoryName">
                                             <FilterTemplate>
                                                 <asp:RadComboBox ID="RadComboBoxTitle" DataSourceID="ObjectDataSource4" DataTextField="ProductCategoryName"
@@ -318,10 +318,10 @@
                                             ShowFilterIcon="false" DataField="ParentCategoryName" HeaderText="Danh mục" SortExpression="ParentCategoryName" />--%>
                                         <asp:GridBoundColumn FilterControlWidth="100px" AutoPostBackOnFilter="true" CurrentFilterFunction="Contains"
                                             ShowFilterIcon="false" DataField="ProductDownloadCategoryName" HeaderText="Danh mục"
-                                            SortExpression="ProductDownloadCategoryName" />
+                                            SortExpression="ProductDownloadCategoryName" Visible="false" />
                                         <asp:GridBoundColumn FilterControlWidth="100px" AutoPostBackOnFilter="true" CurrentFilterFunction="Contains"
                                             ShowFilterIcon="false" DataField="ProductDownloadCategoryNameEn" HeaderText="Danh mục (En)"
-                                            SortExpression="ProductDownloadCategoryNameEn" />
+                                            SortExpression="ProductDownloadCategoryNameEn" Visible="false" />
                                     </Columns>
                                 </MasterTableView>
                                 <ClientSettings EnableRowHoverStyle="true">
@@ -379,7 +379,7 @@
             <asp:Parameter Name="Keyword" Type="String" />
             <asp:Parameter Name="ProductDownloadOfSameID" Type="String" />
             <asp:Parameter Name="ProductID" Type="String" />
-            <asp:Parameter Name="ProductDownloadCategoryID" Type="String" />
+            <asp:Parameter DefaultValue="2" Name="ProductDownloadCategoryID" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="SortByPriority" Type="String" />
@@ -393,9 +393,11 @@
             <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ProductDownloadSelectAll1"
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ProductDownloadSelectAll"
         TypeName="TLLib.ProductDownload">
         <SelectParameters>
+            <asp:Parameter DefaultValue="2" Name="ProductDownloadCategoryID" Type="String" />
+            <asp:Parameter Name="ProductID" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" DefaultValue="true" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="SortByPriority" Type="String" DefaultValue="true" />

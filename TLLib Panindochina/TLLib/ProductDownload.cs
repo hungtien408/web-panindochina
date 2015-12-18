@@ -19,7 +19,8 @@ namespace TLLib
             string LinkDownload,
             string IsAvailable,
             string Priority,
-            string ProductDownloadCategoryID
+            string ProductDownloadCategoryID,
+            string ProductID
         )
         {
             try
@@ -33,6 +34,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@ProductDownloadCategoryID", string.IsNullOrEmpty(ProductDownloadCategoryID) ? dbNULL : (object)ProductDownloadCategoryID);
+                cmd.Parameters.AddWithValue("@ProductID", string.IsNullOrEmpty(ProductID) ? dbNULL : (object)ProductID);
                 
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
@@ -60,7 +62,8 @@ namespace TLLib
             string LinkDownload,
             string IsAvailable,
             string Priority,
-            string ProductDownloadCategoryID
+            string ProductDownloadCategoryID,
+            string ProductID
         )
         {
             try
@@ -75,6 +78,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@ProductDownloadCategoryID", string.IsNullOrEmpty(ProductDownloadCategoryID) ? dbNULL : (object)ProductDownloadCategoryID);
+                cmd.Parameters.AddWithValue("@ProductID", string.IsNullOrEmpty(ProductID) ? dbNULL : (object)ProductID);
                 
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
@@ -160,6 +164,7 @@ namespace TLLib
 
         public DataTable ProductDownloadSelectAll(
             string ProductDownloadCategoryID,
+            string ProductID,
             string IsAvailable,
             string Priority,
             string SortByPriority
@@ -172,6 +177,7 @@ namespace TLLib
                 var cmd = new SqlCommand("usp_ProductDownload_SelectAll", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProductDownloadCategoryID", string.IsNullOrEmpty(ProductDownloadCategoryID) ? dbNULL : (object)ProductDownloadCategoryID);
+                cmd.Parameters.AddWithValue("@ProductID", string.IsNullOrEmpty(ProductID) ? dbNULL : (object)ProductID);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@SortByPriority", string.IsNullOrEmpty(SortByPriority) ? dbNULL : (object)SortByPriority);

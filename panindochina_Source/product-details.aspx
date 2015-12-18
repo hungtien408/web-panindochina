@@ -238,6 +238,30 @@
                     </asp:ObjectDataSource>
                 </div>
             </div>
+            <asp:ListView ID="lstDownloadByProduct" runat="server" DataSourceID="odsDownloadByProduct"
+                EnableModelValidation="True">
+                <ItemTemplate>
+                    <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
+                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <div class="wrap-download">
+                        <ul class="list-download">
+                            <li runat="server" id="itemPlaceholder"></li>
+                        </ul>
+                    </div>
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsDownloadByProduct" runat="server" SelectMethod="ProductDownloadSelectAll"
+                TypeName="TLLib.ProductDownload">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="1" Name="ProductDownloadCategoryID" Type="String" />
+                    <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" DefaultValue="" />
+                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                    <asp:Parameter Name="Priority" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
             <asp:ListView ID="lstDownloadCategoryByProductParent" runat="server" DataSourceID="odsDownloadCategoryByProductParent"
                 EnableModelValidation="True">
                 <ItemTemplate>
@@ -245,8 +269,8 @@
                     <asp:ListView ID="lstDownloadCategory" runat="server" DataSourceID="odsDownloadCategory"
                         EnableModelValidation="True">
                         <ItemTemplate>
-                            <h5>
-                                <%# Eval("ProductDownloadCategoryName") %></h5>
+                            <%--<h5>
+                                <%# Eval("ProductDownloadCategoryName") %></h5>--%>
                             <asp:HiddenField ID="hdnProductDownloadCategoryID2" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
                             <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
                                 <ItemTemplate>
@@ -284,7 +308,7 @@
                         TypeName="TLLib.ProductDownloadCategory">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="hdnProductDownloadCategoryID" PropertyName="Value"
-                                        Name="ProductDownloadCategoryID" Type="String" />
+                                Name="ProductDownloadCategoryID" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </ItemTemplate>

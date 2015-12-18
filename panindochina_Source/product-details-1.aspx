@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/en/site-product.master" AutoEventWireup="true"
-    CodeFile="product-details.aspx.cs" Inherits="product_details" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site-product.master" AutoEventWireup="true"
+    CodeFile="product-details-1.aspx.cs" Inherits="product_details" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
     <asp:ListView ID="lstBreadcrum" runat="server" DataSourceID="odsBreadcrum" EnableModelValidation="True">
         <ItemTemplate>
-            <%# "<a href='" + progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" + "'>" + Eval("ProductCategoryNameEn") + "<span class='icon-caret-right'></span></a>"%>
+            <%# "<a href='" + progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" + "'>" + Eval("ProductCategoryName") + "<span class='icon-caret-right'></span></a>"%>
         </ItemTemplate>
         <LayoutTemplate>
             <span runat="server" id="itemPlaceholder" />
@@ -42,9 +42,9 @@
                     <div id="jcarouselDetails" class="connected-carousels">
                         <div id="detailsa">
                             <div class="zoom-box">
-                                <a id="zoom1" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                <a id="zoom1" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
                                     class="cloud-zoom" rel="position: 'inside', showTitle: false, adjustY:0, adjustX:0">
-                                    <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                    <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
                                         alt="" />
                                 </a>
                             </div>
@@ -83,10 +83,10 @@
                             <ItemTemplate>
                                 <li>
                                     <div class="small-in">
-                                        <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                            data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                            class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>' ">
-                                            <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                        <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
+                                            data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
+                                            class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>' ">
+                                            <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
                                                 alt="Thumbnail 1" />
                                         </a>
                                     </div>
@@ -108,7 +108,7 @@
             EnableModelValidation="True">
             <ItemTemplate>
                 <h1 class="product-name">
-                    <%# Eval("ProductNameEn")%></h1>
+                    <%# Eval("ProductName") %></h1>
                 <ul class="list-info">
                     <li>Manufacturer: <strong>
                         <%# Eval("ManufacturerProduct")%></strong></li>
@@ -116,15 +116,15 @@
                         <%# Eval("ModelProduct")%></strong></li>
                 </ul>
                 <div class="description">
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("DescriptionEn")%>'></asp:Label></div>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Description")%>'></asp:Label></div>
                 <div class="box-share">
                     <a href="#">
-                        <img src="../assets/images/facebook2.jpg" alt="" /></a> <a href="#">
-                            <img src="../assets/images/facebook3.jpg" alt="" /></a> <a href="#" class="link-a mail">
+                        <img src="assets/images/facebook2.jpg" alt="" /></a> <a href="#">
+                            <img src="assets/images/facebook3.jpg" alt="" /></a> <a href="#" class="link-a mail">
                                 Email</a> <a href="#" class="link-a print">Print</a>
                 </div>
                 <div class="description list-des">
-                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("ContentEn")%>'></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("Content")%>'></asp:Label>
                 </div>
             </ItemTemplate>
             <LayoutTemplate>
@@ -146,12 +146,12 @@
                     <div class="col-xs-4 element-item">
                         <div class="box-video">
                             <a href="javascript:void(0);" class="video-img fullbox-img group-img" data-toggle="modal"
-                                data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
+                                data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
                                 <img class="hideo" alt='<%# Eval("ImagePath") %>' src='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/product/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'
                                     runat="server" /><span class="mask-icon"></span></a>
                             <h4 class="video-name group-name">
-                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
-                                    <%# Eval("TitleEn")%></a></h4>
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
+                                    <%# Eval("Title") %></a></h4>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -172,6 +172,7 @@
             </asp:ObjectDataSource>
         </div>
     </div>
+    </div>
     <div class="tabs-details">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
@@ -187,7 +188,7 @@
                     <asp:ListView ID="lstSpecifications" runat="server" DataSourceID="odsProductDetails"
                         EnableModelValidation="True">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("SpecificationsEn") %>'></asp:Label>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Specifications") %>'></asp:Label>
                         </ItemTemplate>
                         <LayoutTemplate>
                             <span runat="server" id="itemPlaceholder" />
@@ -204,12 +205,12 @@
                                             runat="server" /></a>
                                     <div class="pro-content">
                                         <h5 class="pro-name">
-                                            <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
-                                                <%# Eval("ProductNameEn")%>
+                                            <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                <%# Eval("ProductName") %>
                                             </a>
                                         </h5>
                                         <div class="description">
-                                            <%# TLLib.Common.SplitSummary(Eval("DescriptionEn").ToString(), 80)%>
+                                            <%# TLLib.Common.SplitSummary(Eval("Description").ToString(), 80) %>
                                         </div>
                                     </div>
                                 </div>
@@ -237,30 +238,6 @@
                     </asp:ObjectDataSource>
                 </div>
             </div>
-            <asp:ListView ID="lstDownloadByProduct" runat="server" DataSourceID="odsDownloadByProduct"
-                EnableModelValidation="True">
-                <ItemTemplate>
-                    <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
-                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <div class="wrap-download">
-                        <ul class="list-download">
-                            <li runat="server" id="itemPlaceholder"></li>
-                        </ul>
-                    </div>
-                </LayoutTemplate>
-            </asp:ListView>
-            <asp:ObjectDataSource ID="odsDownloadByProduct" runat="server" SelectMethod="ProductDownloadSelectAll"
-                TypeName="TLLib.ProductDownload">
-                <SelectParameters>
-                    <asp:Parameter DefaultValue="1" Name="ProductDownloadCategoryID" Type="String" />
-                    <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" DefaultValue="" />
-                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
             <asp:ListView ID="lstDownloadCategoryByProductParent" runat="server" DataSourceID="odsDownloadCategoryByProductParent"
                 EnableModelValidation="True">
                 <ItemTemplate>
@@ -269,12 +246,12 @@
                         EnableModelValidation="True">
                         <ItemTemplate>
                             <h5>
-                                <%# Eval("ProductDownloadCategoryNameEn") %></h5>
+                                <%# Eval("ProductDownloadCategoryName") %></h5>
                             <asp:HiddenField ID="hdnProductDownloadCategoryID2" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
                             <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
                                 <ItemTemplate>
                                     <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
-                                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileNameEn") %></span></a></li>
+                                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
                                 </ItemTemplate>
                                 <LayoutTemplate>
                                     <ul class="list-download">
@@ -307,7 +284,7 @@
                         TypeName="TLLib.ProductDownloadCategory">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="hdnProductDownloadCategoryID" PropertyName="Value"
-                                Name="ProductDownloadCategoryID" Type="String" />
+                                        Name="ProductDownloadCategoryID" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </ItemTemplate>
@@ -334,14 +311,14 @@
                 <ItemTemplate>
                     <div class="col-xs-4 element-item">
                         <div class="product-box">
-                            <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                            <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                 class="product-img fullbox-img">
                                 <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-imga-1.jpg" %>'
                                     runat="server" /></a>
                             <h4 class="product-name">
-                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                     class="text-uppercase">
-                                    <%# Eval("ProductNameEn")%></a></h4>
+                                    <%# Eval("ProductName") %></a></h4>
                             <div class="description">
                                 Manufacturer:
                                 <%# Eval("ManufacturerProduct")%></div>
