@@ -36,7 +36,7 @@
         <ItemTemplate>
             <div class="wrapper-text">
                 <div class="date">
-                    <%# string.Format("{0:dd/mm/yyyy}", Eval("CreateDate")) %></div>
+                    <%# string.Format("{0:dd/MM/yyyy}", Eval("CreateDate")) %></div>
                 <h3 class="title-2">
                     <%# Eval("ArticleTitle") %></h3>
                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>

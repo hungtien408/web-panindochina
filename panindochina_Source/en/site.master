@@ -77,9 +77,11 @@
             var value4 = $('a.a-link-ms').attr('href');
             $('.menu-list li a[href$="' + value4 + '"]').closest("li").addClass("active");
             var value5 = $('a.a-link-pro').attr('href');
-            $('.menu-list li a[href$="' + value5 + '"]').closest("li").addClass("active");
+            $('.menu-list li a[href$="' + value5 + '"]').parents("li").addClass("active");
+            $('.menu-list li li a[href$="' + value5 + '"]').parents("li").addClass("active");
             var value6 = $('a.a-link-pro-details').attr('href');
-            $('.menu-list li a[href$="' + value6 + '"]').closest("li").addClass("active");
+            $('.menu-list li a[href$="' + value6 + '"]').parents("li").addClass("active");
+            $('.menu-list li li a[href$="' + value6 + '"]').parents("li").addClass("active");
         }
     </script>
 </head>
@@ -174,7 +176,14 @@
                             </LayoutTemplate>
                         </asp:ListView>
                         <asp:ObjectDataSource ID="odsProductCategory" runat="server" SelectMethod="ProductCategorySelectAll"
-                            TypeName="TLLib.ProductCategory"></asp:ObjectDataSource>
+                            TypeName="TLLib.ProductCategory">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
+                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            </SelectParameters>
+                        </asp:ObjectDataSource>
                     </div>
                     <div class="col-lg-3 col-md-4 col-xs-6 element-item">
                         <h4 class="text-uppercase title-f">

@@ -94,7 +94,7 @@
         <img alt="" src="../assets/images/product.png" class="vam" />
         Product Download
     </h3>--%>
-    <fieldset class="invisible">
+    <fieldset>
         <h3 class="searchTitle">
             Thông Tin Sản Phẩm</h3>
         <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource2" EnableModelValidation="True"
@@ -123,7 +123,7 @@
         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ProductSelectOne"
             TypeName="TLLib.Product">
             <SelectParameters>
-                <asp:QueryStringParameter Name="ProductID" QueryStringField="PCI" Type="String" />
+                <asp:QueryStringParameter Name="ProductID" QueryStringField="PI" Type="String" />
             </SelectParameters>
         </asp:ObjectDataSource>
     </fieldset>

@@ -42,7 +42,7 @@
                                 runat="server" /></a>
                         <div class="events-content">
                             <div class="date">
-                                <%# string.Format("{0:dd/mm/yyyy}", Eval("CreateDate")) %></div>
+                                <%# string.Format("{0:dd/MM/yyyy}", Eval("CreateDate")) %></div>
                             <h4 class="events-name">
                                 <a href='<%# progressTitle(Eval("ArticleTitle")) + "-tci-" + Eval("ArticleCategoryID") + "-ti-" + Eval("ArticleID") + ".aspx" %>'>
                                     <%# Eval("ArticleTitle") %></a></h4>

@@ -788,7 +788,7 @@
                                                             Specifications
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtSpecifications" StripFormattingOptions="MSWordRemoveAll,ConvertWordLists,MSWordNoFonts,Font,Css,Span" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN" Skin="Office2007"
+                                                            <asp:RadEditor ID="txtSpecifications" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
                                                                 Width="503px" Content='<%# Bind("Specifications") %>'>
                                                                 <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
@@ -796,18 +796,6 @@
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
-                                                                <Tools>
-                                                                    <asp:EditorToolGroup>
-                                                                        <asp:EditorTool Name="Copy" />
-                                                                        <asp:EditorTool Name="Cut" />
-                                                                        <asp:EditorTool Name="Paste" />
-                                                                        <asp:EditorTool Name="Bold" />
-                                                                        <asp:EditorTool Name="Italic" />
-                                                                        <asp:EditorTool Name="Underline" />
-                                                                        <asp:EditorTool Name="InsertLink" />
-                                                                        <asp:EditorTool Name="ForeColor" />
-                                                                    </asp:EditorToolGroup>
-                                                                </Tools>
                                                             </asp:RadEditor>
                                                         </td>
                                                     </tr>
