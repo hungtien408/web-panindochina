@@ -22,7 +22,7 @@ public partial class customer_being : System.Web.UI.Page
             "", "", "").DefaultView;
 
         if (dv != null && dv.Count <= 0) return;
-                var row = dv[0];
+        var row = dv[0];
         //Session["PWD"] = Login1.Password;
         if (UserName != null && DateTime.Parse(row["DateActiveUser"].ToString()) > DateTime.Now)
         {

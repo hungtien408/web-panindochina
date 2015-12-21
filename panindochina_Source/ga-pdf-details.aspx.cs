@@ -23,10 +23,10 @@ public partial class ga_pdf_details : System.Web.UI.Page
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
 
-                strTitle = Server.HtmlDecode(row["DownloadName"].ToString());
-                strDescription = Server.HtmlDecode(row["DownloadName"].ToString());
-                strMetaTitle = Server.HtmlDecode(row["DownloadName"].ToString());
-                strMetaDescription = Server.HtmlDecode(row["DownloadName"].ToString());
+                strTitle = Server.HtmlDecode(row["DownloadNameEn"].ToString());
+                strDescription = Server.HtmlDecode(row["DownloadNameEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row["DownloadNameEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row["DownloadNameEn"].ToString());
             }
             else
             {

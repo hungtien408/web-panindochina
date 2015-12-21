@@ -17,9 +17,9 @@
             <asp:ListView ID="lstServiceCategory" runat="server" DataSourceID="odsServiceCategory"
                 EnableModelValidation="True">
                 <ItemTemplate>
-                    <li><a href='<%# progressTitle(Eval("ServiceCategoryName")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'>
+                    <li><a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'>
                         <span>
-                            <%# Eval("ServiceCategoryName")%></span></a></li>
+                            <%# Eval("ServiceCategoryNameEn")%></span></a></li>
                 </ItemTemplate>
                 <LayoutTemplate>
                     <ul class="menu-list menu-iconr">
@@ -48,8 +48,8 @@
                 <asp:ListView ID="lstServiceCategory2" runat="server" DataSourceID="odsServiceCategory2"
                     EnableModelValidation="True">
                     <ItemTemplate>
-                        <li><a href='<%# progressTitle(Eval("ServiceCategoryName")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'>
-                            <%# Eval("ServiceCategoryName")%><span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li><a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'>
+                            <%# Eval("ServiceCategoryNameEn")%><span class="icon-chevron-sign-right iconr"></span></a></li>
                     </ItemTemplate>
                     <LayoutTemplate>
                         <ul class="menu-nav menu-right">

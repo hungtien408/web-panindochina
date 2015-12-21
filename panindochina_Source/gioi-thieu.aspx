@@ -48,7 +48,7 @@
     <div class="wrapper-text">
         <asp:ListView ID="lstIntro" runat="server" DataSourceID="odsIntro" EnableModelValidation="True">
             <ItemTemplate>
-                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("ContentEn") %>'></asp:Label>
             </ItemTemplate>
             <LayoutTemplate>
                 <span runat="server" id="itemPlaceholder" />

@@ -2,8 +2,8 @@
     CodeFile="services.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Panindochina</title>
-    <meta name="description" content="Panindochina" />
+    <title>Service</title>
+    <meta name="description" content="Service" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div id="site">
@@ -20,7 +20,7 @@
                 <asp:ListView ID="lstTitleService" runat="server" DataSourceID="odsTitleService"
                     EnableModelValidation="True">
                     <ItemTemplate>
-                        <asp:Label ID="lblTitleProduct" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                        <asp:Label ID="lblTitleProduct" runat="server" Text='<%# Eval("ContentEn") %>'></asp:Label>
                     </ItemTemplate>
                     <LayoutTemplate>
                         <span runat="server" id="itemPlaceholder" />
@@ -86,12 +86,12 @@
                 <ItemTemplate>
                     <div class="colno-3 element-item">
                         <div class="servece-box wrap-effecth">
-                            <a href='<%# progressTitle(Eval("ServiceCategoryName")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
+                            <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
                                 <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/servicecategory/" + Eval("ImageName") : "~/assets/images/service-img-1a.jpg" %>' runat="server" /></span> <span class="hover-img fullbox-img">
                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/servicecategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/service-img-1.jpg" %>' runat="server" /></span>
                             </a>
                             <h5 class="product-name">
-                                <a href='<%# progressTitle(Eval("ServiceCategoryName")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="text-uppercase"><%# Eval("ServiceCategoryName")%><span class="icon-angle-right iconar"></span></a></h5>
+                                <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="text-uppercase"><%# Eval("ServiceCategoryNameEn")%><span class="icon-angle-right iconar"></span></a></h5>
                         </div>
                     </div>
                 </ItemTemplate>

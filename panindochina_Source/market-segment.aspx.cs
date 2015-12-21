@@ -24,12 +24,12 @@ public partial class market_segment : System.Web.UI.Page
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
 
-                strTitle = Server.HtmlDecode(row["ArticleTitle"].ToString());
-                strDescription = Server.HtmlDecode(row["Description"].ToString());
-                strMetaTitle = Server.HtmlDecode(row["MetaTittle"].ToString());
-                strMetaDescription = Server.HtmlDecode(row["MetaDescription"].ToString());
+                strTitle = Server.HtmlDecode(row["ArticleTitleEn"].ToString());
+                strDescription = Server.HtmlDecode(row["DescriptionEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row["MetaTittleEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
 
-                hdnlinkms.Value = progressTitle(row["ArticleTitle"].ToString()) + "-tci-" + row["ArticleCategoryID"] + "-mi-" + row["ArticleID"].ToString() + ".aspx";
+                hdnlinkms.Value = progressTitle(row["ArticleTitleEn"].ToString()) + "-tci-" + row["ArticleCategoryID"] + "-mi-" + row["ArticleID"].ToString() + ".aspx";
             }
             else
             {

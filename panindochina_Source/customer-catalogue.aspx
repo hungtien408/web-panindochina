@@ -21,7 +21,7 @@
                     Select Brand</label>
                 <div class="select-box">
                     <asp:DropDownList ID="dropListBrand" CssClass="selectb" runat="server" DataSourceID="odsListBrand"
-                        DataTextField="DownloadCategoryName" DataValueField="DownloadCategoryID" AutoPostBack="True"
+                        DataTextField="DownloadCategoryNameEn" DataValueField="DownloadCategoryID" AutoPostBack="True"
                         AppendDataBoundItems="true" OnSelectedIndexChanged="dropListBrand_SelectedIndexChanged">
                         <asp:ListItem Value="">-- Select Brand</asp:ListItem>
                     </asp:DropDownList>
@@ -42,11 +42,13 @@
             <asp:ListView ID="lstDownloadCategory" runat="server" EnableModelValidation="True">
                 <ItemTemplate>
                     <h4 class="title-2">
-                        <%# Eval("DownloadCategoryName") %></h4>
+                        <%# Eval("DownloadCategoryNameEn")%></h4>
                     <asp:HiddenField ID="hdnDownloadCategoryID" runat="server" Value='<%# Eval("DownloadCategoryID") %>' />
                     <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
                         <ItemTemplate>
-                            <li><%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-link corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Download</span></a>" : ""%> <%# Eval("DownloadName")%></li>
+                            <li>
+                                <%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-link corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Download</span></a>" : ""%>
+                                <%# Eval("DownloadNameEn")%></li>
                         </ItemTemplate>
                         <LayoutTemplate>
                             <ul class="download-list">

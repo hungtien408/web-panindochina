@@ -28,12 +28,12 @@ public partial class tim_kiem : System.Web.UI.Page
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
 
-                strTitle = Server.HtmlDecode(row["ProductCategoryName"].ToString());
-                strDescription = Server.HtmlDecode(row["Description"].ToString());
-                strMetaTitle = Server.HtmlDecode(row["MetaTitle"].ToString());
-                strMetaDescription = Server.HtmlDecode(row["MetaDescription"].ToString());
+                strTitle = Server.HtmlDecode(row["ProductCategoryNameEn"].ToString());
+                strDescription = Server.HtmlDecode(row["DescriptionEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row["MetaTitleEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
 
-                hdnlinkpro.Value = progressTitle(row["ProductCategoryName"].ToString()) + "-pci-" + row["ProductCategoryID"].ToString() + ".aspx";
+                hdnlinkpro.Value = progressTitle(row["ProductCategoryNameEn"].ToString()) + "-pci-" + row["ProductCategoryID"].ToString() + ".aspx";
             }
             else
             {

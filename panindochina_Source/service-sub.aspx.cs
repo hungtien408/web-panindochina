@@ -28,12 +28,12 @@ public partial class service_sub : System.Web.UI.Page
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
 
-                strTitle = Server.HtmlDecode(row["ServiceCategoryName"].ToString());
-                strDescription = Server.HtmlDecode(row["Description"].ToString());
-                strMetaTitle = Server.HtmlDecode(row["MetaTitle"].ToString());
-                strMetaDescription = Server.HtmlDecode(row["MetaDescription"].ToString());
+                strTitle = Server.HtmlDecode(row["ServiceCategoryNameEn"].ToString());
+                strDescription = Server.HtmlDecode(row["DescriptionEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row["MetaTitleEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
 
-                hdnlinkser.Value = progressTitle(row["ServiceCategoryName"].ToString()) + "-sci-" + row["ServiceCategoryID"].ToString() + ".aspx";
+                hdnlinkser.Value = progressTitle(row["ServiceCategoryNameEn"].ToString()) + "-sci-" + row["ServiceCategoryID"].ToString() + ".aspx";
             }
             else
             {

@@ -10,7 +10,7 @@
         hoạt động với lĩnh vực kinh doanh</span>--%>
         <asp:ListView ID="lstBreadcrum" runat="server" DataSourceID="odsBreadcrum" EnableModelValidation="True">
         <ItemTemplate>
-            <%# "<a href='" + progressTitle(Eval("ServiceCategoryName")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" + "'>" + Eval("ServiceCategoryName") + "<span class='icon-caret-right'></span></a>" %>
+            <%# "<a href='" + progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" + "'>" + Eval("ServiceCategoryNameEn") + "<span class='icon-caret-right'></span></a>"%>
         </ItemTemplate>
         <LayoutTemplate>
             <a href="services.aspx">Service<span class="icon-caret-right"></span></a><span
@@ -38,8 +38,8 @@
     <asp:ListView ID="lstServiceDetail" runat="server" DataSourceID="odsServiceDetail"
         EnableModelValidation="True">
         <ItemTemplate>
-            <h3 class="title-2"><%# Eval("ServiceTitle")%></h3>
-            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+            <h3 class="title-2"><%# Eval("ServiceTitleEn")%></h3>
+            <asp:Label ID="Label1" runat="server" Text='<%# Eval("ContentEn") %>'></asp:Label>
         </ItemTemplate>
         <LayoutTemplate>
             <div class="wrapper-text">

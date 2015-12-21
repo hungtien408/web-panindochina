@@ -15,7 +15,7 @@
     <asp:ListView ID="lstPDFDetails" runat="server" DataSourceID="odsPDFDetails" EnableModelValidation="True">
         <ItemTemplate>
             <h3 class="title-2">
-                <%# Eval("DownloadName")%></h3>
+                <%# Eval("DownloadNameEn")%></h3>
             <div id="pdfwrap">
                 <%--<img src="assets/images/pdf-a.jpg" alt="" />--%>
                 <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/download/thumbs/" + Eval("ImageName") : "~/assets/images/pdf-a.jpg" %>'

@@ -27,13 +27,13 @@ public partial class events_details : System.Web.UI.Page
                 if (dv1 != null && dv1.Count <= 0) return;
                 var row1 = dv1[0];
 
-                strTitle = Server.HtmlDecode(row1["ServiceTitle"].ToString());
-                strDescription = Server.HtmlDecode(row1["Description"].ToString());
-                strMetaTitle = Server.HtmlDecode(row1["MetaTittle"].ToString());
-                strMetaDescription = Server.HtmlDecode(row1["MetaDescription"].ToString());
+                strTitle = Server.HtmlDecode(row1["ServiceTitleEn"].ToString());
+                strDescription = Server.HtmlDecode(row1["DescriptionEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row1["MetaTittleEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row1["MetaDescriptionEn"].ToString());
 
-                strTitle1 = Server.HtmlDecode(row["ServiceCategoryName"].ToString());
-                hdnlinkserdetails.Value = progressTitle(dv[0]["ServiceCategoryName"].ToString()) + "-sci-" + dv[0]["ServiceCategoryID"].ToString() + ".aspx";
+                strTitle1 = Server.HtmlDecode(row["ServiceCategoryNameEn"].ToString());
+                hdnlinkserdetails.Value = progressTitle(dv[0]["ServiceCategoryNameEn"].ToString()) + "-sci-" + dv[0]["ServiceCategoryID"].ToString() + ".aspx";
             }
             else
             {

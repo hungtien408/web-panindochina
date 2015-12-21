@@ -17,9 +17,9 @@
             <asp:ListView ID="lstArticleCategory" runat="server" DataSourceID="odsArticleCategory"
                 EnableModelValidation="True">
                 <ItemTemplate>
-                    <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : progressTitle(Eval("ArticleCategoryName")) + "-tci-" + Eval("ParentID") + "-tri-" + Eval("ArticleCategoryID") + ".aspx" %>'>
+                    <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : progressTitle(Eval("ArticleCategoryNameEn")) + "-tci-" + Eval("ParentID") + "-tri-" + Eval("ArticleCategoryID") + ".aspx" %>'>
                         <span>
-                            <%# Eval("ArticleCategoryName")%></span></a></li>
+                            <%# Eval("ArticleCategoryNameEn")%></span></a></li>
                 </ItemTemplate>
                 <LayoutTemplate>
                     <ul class="menu-list menu-iconr">
@@ -55,8 +55,8 @@
                 <asp:ListView ID="lstArticleCategory2" runat="server" DataSourceID="odsArticleCategory2"
                     EnableModelValidation="True">
                     <ItemTemplate>
-                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : progressTitle(Eval("ArticleCategoryName")) + "-tci-" + Eval("ParentID") + "-tri-" + Eval("ArticleCategoryID") + ".aspx" %>'>
-                                <%# Eval("ArticleCategoryName")%><span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : progressTitle(Eval("ArticleCategoryNameEn")) + "-tci-" + Eval("ParentID") + "-tri-" + Eval("ArticleCategoryID") + ".aspx" %>'>
+                                <%# Eval("ArticleCategoryNameEn")%><span class="icon-chevron-sign-right iconr"></span></a></li>
                     </ItemTemplate>
                     <LayoutTemplate>
                         <ul class="menu-nav menu-right">

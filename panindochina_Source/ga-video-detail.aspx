@@ -17,11 +17,11 @@
         EnableModelValidation="True">
         <ItemTemplate>
             <div id="videoDetails">
-                <div id="jwplayer" data-video='<%# string.IsNullOrEmpty(Eval("VideoPath").ToString()) ? Eval("GLobalEmbedScript") : "res/video/" + Eval("VideoPath") %>' data-img='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'>
+                <div id="jwplayer" data-video='<%# string.IsNullOrEmpty(Eval("VideoPath").ToString()) ? Eval("GLobalEmbedScript") : "../res/video/" + Eval("VideoPath") %>' data-img='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'>
                 </div>
                 <div class="video-content">
                     <h4>
-                        <%# Eval("Title") %></h4>
+                        <%# Eval("TitleEn")%></h4>
                 </div>
             </div>
         </ItemTemplate>

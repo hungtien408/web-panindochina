@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="#">Customer Support<span class="icon-caret-right"></span></a><span>Being Panindochina’s
+    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Being Panindochina’s
         Retailer</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

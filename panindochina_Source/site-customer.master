@@ -22,8 +22,8 @@
                 <li><a href="customer-faq.aspx">FAQs</a>
                     <asp:ListView ID="lstFaq" runat="server" DataSourceID="odsFaq" EnableModelValidation="True">
                         <ItemTemplate>
-                            <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
-                                <%# Eval("DownloadCategoryName") %></a></li>
+                            <li><a href='<%# progressTitle(Eval("DownloadCategoryNameEn")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
+                                <%# Eval("DownloadCategoryNameEn") %></a></li>
                         </ItemTemplate>
                         <LayoutTemplate>
                             <ul>
@@ -72,8 +72,8 @@
                     <li><a href="#">FAQs</a>
                         <asp:ListView ID="lstFaq2" runat="server" DataSourceID="odsFaq2" EnableModelValidation="True">
                         <ItemTemplate>
-                            <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
-                                <%# Eval("DownloadCategoryName") %></a></li>
+                            <li><a href='<%# progressTitle(Eval("DownloadCategoryNameEn")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
+                                <%# Eval("DownloadCategoryNameEn") %></a></li>
                         </ItemTemplate>
                         <LayoutTemplate>
                             <ul>

@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/vn/site-sub.master" AutoEventWireup="true"
+    CodeFile="site-customer.master.cs" Inherits="site_customer" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
+    <asp:ContentPlaceHolder ID="cphSite" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div id="colAside" class="aside-customer desktop-992">
+        <div class="box-aside corner">
+            <h2 class="title-a">
+                Customer Support</h2>
+            <ul id="customerm" class="menu-list">
+                <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
+                <li><a href="customer-warranty.aspx">Warranty/Technical &amp; Service Request</a></li>
+                <li><a href="customer-quatation.aspx">Quotation Request</a></li>
+                <li><a href="customer-instruction.aspx">Instruction Manual</a></li>
+                <li><a href="customer-faq.aspx">FAQs</a>
+                    <asp:ListView ID="lstFaq" runat="server" DataSourceID="odsFaq" EnableModelValidation="True">
+                        <ItemTemplate>
+                            <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
+                                <%# Eval("DownloadCategoryName") %></a></li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul>
+                                <li runat="server" id="itemPlaceholder"></li>
+                            </ul>
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsFaq" runat="server" SelectMethod="DownloadCategorySelectAll"
+                        TypeName="TLLib.DownloadCategory">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="14" Name="parentID" Type="Int32" />
+                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
+                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </li>
+                <li><a href="customer-sheet.aspx">Technical Sheet</a></li>
+                <li><a href="#">Technical Education</a> </li>
+                <li><a href="customer-being.aspx">Being Panindochina’s Retailer</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="colMain" class="customer-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
+    <div id="mobileRight" class="mobile-panel mobilep-right mobile-bg">
+        <div class="close-menu">
+            <a href="#mobileRight" class="glyphicon glyphicon-remove-circle"></a>
+        </div>
+        <div class="menu-in">
+            <div class="menu-mobile">
+                <h2 class="title">
+                    Library</h2>
+                <ul class="menu-nav menu-cato">
+                    <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
+                    <li><a href="customer-warranty.aspx">Warranty/Technical &amp; Service Request</a></li>
+                    <li><a href="customer-quatation.aspx">Quotation Request</a></li>
+                    <li><a href="customer-instruction.aspx">Instruction Manual</a></li>
+                    <li><a href="#">FAQs</a>
+                        <asp:ListView ID="lstFaq2" runat="server" DataSourceID="odsFaq2" EnableModelValidation="True">
+                        <ItemTemplate>
+                            <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
+                                <%# Eval("DownloadCategoryName") %></a></li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul>
+                                <li runat="server" id="itemPlaceholder"></li>
+                            </ul>
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsFaq2" runat="server" SelectMethod="DownloadCategorySelectAll"
+                        TypeName="TLLib.DownloadCategory">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="14" Name="parentID" Type="Int32" />
+                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
+                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    </li>
+                    <li><a href="customer-sheet.aspx">Technical Sheet</a></li>
+                    <li><a href="#">Technical Education</a></li>
+                    <li><a href="customer-being.aspx">Being Panindochina’s Retailer</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="cphMenuMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphPopup" runat="Server">
+    <asp:ContentPlaceHolder ID="cphPopup" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

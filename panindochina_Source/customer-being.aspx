@@ -5,7 +5,7 @@
     <meta name="description" content="Being Panindochina’s Retailer" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" Runat="Server">
-    <a href="#">Customer Support<span class="icon-caret-right"></span></a><span>Being Panindochina’s Retailer</span>
+    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Being Panindochina’s Retailer</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1 class="title desktop-992">Being Panindochina’s Retailer</h1>
@@ -15,7 +15,7 @@
     </div>--%>
     <asp:ListView ID="lstBegin" runat="server" DataSourceID="odsBegin" EnableModelValidation="True">
         <ItemTemplate>
-            <a class="download-link corner" runat="server" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "~/res/download/" + Eval("FilePath") : "javascript:void(0);" %>' download><span><%# Eval("DownloadName") %></span></a> / 
+            <a class="download-link corner" runat="server" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "~/res/download/" + Eval("FilePath") : "javascript:void(0);" %>' download><span><%# Eval("DownloadNameEn")%></span></a> / 
         </ItemTemplate>
         <LayoutTemplate>
             <div class="customer-text">

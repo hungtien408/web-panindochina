@@ -17,16 +17,19 @@
             <asp:ListView ID="lstMenuProduct" runat="server" DataSourceID="odsMenuProduct" EnableModelValidation="True">
                 <ItemTemplate>
                     <asp:HiddenField ID="hdnSubMenuProduct" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                    <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
+                    <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                        <%# Eval("ProductCategoryNameEn") %></a>
                         <asp:ListView ID="lstSubMenuProduct" runat="server" DataSourceID="odsSubMenuProduct"
                             EnableModelValidation="True">
                             <ItemTemplate>
                                 <asp:HiddenField ID="hdnSubMenuProduct2" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                                <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
+                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                    <%# Eval("ProductCategoryNameEn") %></a>
                                     <asp:ListView ID="lstSubMenuProduct2" runat="server" DataSourceID="odsSubMenuProduct2"
                                         EnableModelValidation="True">
                                         <ItemTemplate>
-                                            <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a></li>
+                                            <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                                <%# Eval("ProductCategoryNameEn") %></a></li>
                                         </ItemTemplate>
                                         <LayoutTemplate>
                                             <ul data-level="level-2">
@@ -95,98 +98,75 @@
             <div class="menu-mobile">
                 <h2 class="title">
                     Product</h2>
-                <%--<ul class="menu-nav menu-right">
-                    <li><a href="#">Personnel Protective Equipment</a></li>
-                    <li><a href="#">Fall Protection Equipment</a></li>
-                    <li><a href="#">Fall Protection Equipment</a>
-                        <ul>
-                            <li><a href="#">Head Protection</a></li>
-                            <li><a href="#">Hearing Protection</a></li>
-                            <li><a href="#">Eye Protection</a>
-                                <ul>
-                                    <li><a href="product.aspx">Face Protection</a></li>
-                                    <li><a href="#">Respiratory Protection</a></li>
-                                    <li><a href="#">Emergency Escape Hood</a></li>
-                                    <li><a href="#">Hand Protection</a></li>
-                                    <li><a href="#">Clothing Protection</a></li>
-                                    <li><a href="#">Foot Protection</a></li>
-                                </ul>
-                            </li>
+                <asp:ListView ID="lstMenuProduct2" runat="server" DataSourceID="odsMenuProduct2"
+                    EnableModelValidation="True">
+                    <ItemTemplate>
+                        <asp:HiddenField ID="hdnSubMenuProductSub" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
+                        <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                            <%# Eval("ProductCategoryNameEn") %></a>
+                            <asp:ListView ID="lstSubMenuProductSub" runat="server" DataSourceID="odsSubMenuProductSub"
+                                EnableModelValidation="True">
+                                <ItemTemplate>
+                                    <asp:HiddenField ID="hdnSubMenuProductSub2" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
+                                    <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                        <%# Eval("ProductCategoryNameEn") %></a>
+                                        <asp:ListView ID="lstSubMenuProduct2" runat="server" DataSourceID="odsSubMenuProductSub2"
+                                            EnableModelValidation="True">
+                                            <ItemTemplate>
+                                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                                    <%# Eval("ProductCategoryNameEn") %></a></li>
+                                            </ItemTemplate>
+                                            <LayoutTemplate>
+                                                <ul>
+                                                    <li runat="server" id="itemPlaceholder"></li>
+                                                </ul>
+                                            </LayoutTemplate>
+                                        </asp:ListView>
+                                        <asp:ObjectDataSource ID="odsSubMenuProductSub2" runat="server" SelectMethod="ProductCategorySelectAll"
+                                            TypeName="TLLib.ProductCategory">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="hdnSubMenuProductSub2" Name="parentID" PropertyName="Value"
+                                                    Type="Int32" />
+                                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
+                                    </li>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <ul>
+                                        <li runat="server" id="itemPlaceholder"></li>
+                                    </ul>
+                                </LayoutTemplate>
+                            </asp:ListView>
+                            <asp:ObjectDataSource ID="odsSubMenuProductSub" runat="server" SelectMethod="ProductCategorySelectAll"
+                                TypeName="TLLib.ProductCategory">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="hdnSubMenuProductSub" Name="parentID" PropertyName="Value"
+                                        Type="Int32" />
+                                    <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                    <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                    <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                </SelectParameters>
+                            </asp:ObjectDataSource>
+                        </li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <ul class="menu-nav menu-right">
+                            <li runat="server" id="itemPlaceholder"></li>
                         </ul>
-                    </li>
-                    <li><a href="#">Marine - Life Rescue</a></li>
-                    <li><a href="#">Environment Instrument</a></li>
-                    <li><a href="#">Flame &amp; Gas Detection</a></li>
-                    <li><a href="#">Air Supply - Accountability Device - B.A Compressor</a></li>
-                    <li><a href="#">Personal Fire Protection</a></li>
-                    <li><a href="#">Fire - Fighting Equipment</a></li>
-                    <li><a href="#">rescue equipment</a></li>
-                </ul>--%>
-                <asp:ListView ID="lstMenuProduct2" runat="server" DataSourceID="odsMenuProduct2" EnableModelValidation="True">
-                <ItemTemplate>
-                    <asp:HiddenField ID="hdnSubMenuProductSub" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                    <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
-                        <asp:ListView ID="lstSubMenuProductSub" runat="server" DataSourceID="odsSubMenuProductSub"
-                            EnableModelValidation="True">
-                            <ItemTemplate>
-                                <asp:HiddenField ID="hdnSubMenuProductSub2" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                                <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
-                                    <asp:ListView ID="lstSubMenuProduct2" runat="server" DataSourceID="odsSubMenuProductSub2"
-                                        EnableModelValidation="True">
-                                        <ItemTemplate>
-                                            <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a></li>
-                                        </ItemTemplate>
-                                        <LayoutTemplate>
-                                            <ul>
-                                                <li runat="server" id="itemPlaceholder"></li>
-                                            </ul>
-                                        </LayoutTemplate>
-                                    </asp:ListView>
-                                    <asp:ObjectDataSource ID="odsSubMenuProductSub2" runat="server" SelectMethod="ProductCategorySelectAll"
-                                        TypeName="TLLib.ProductCategory">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="hdnSubMenuProductSub2" Name="parentID" PropertyName="Value"
-                                                Type="Int32" />
-                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                                            <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
-                                        </SelectParameters>
-                                    </asp:ObjectDataSource>
-                                </li>
-                            </ItemTemplate>
-                            <LayoutTemplate>
-                                <ul>
-                                    <li runat="server" id="itemPlaceholder"></li>
-                                </ul>
-                            </LayoutTemplate>
-                        </asp:ListView>
-                        <asp:ObjectDataSource ID="odsSubMenuProductSub" runat="server" SelectMethod="ProductCategorySelectAll"
-                            TypeName="TLLib.ProductCategory">
-                            <SelectParameters>
-                                <asp:ControlParameter ControlID="hdnSubMenuProductSub" Name="parentID" PropertyName="Value"
-                                    Type="Int32" />
-                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
-                            </SelectParameters>
-                        </asp:ObjectDataSource>
-                    </li>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <ul class="menu-nav menu-right">
-                        <li runat="server" id="itemPlaceholder"></li>
-                    </ul>
-                </LayoutTemplate>
-            </asp:ListView>
+                    </LayoutTemplate>
+                </asp:ListView>
                 <asp:ObjectDataSource ID="odsMenuProduct2" runat="server" SelectMethod="ProductCategorySelectAll"
-                TypeName="TLLib.ProductCategory">
-                <SelectParameters>
-                    <asp:Parameter Name="parentID" Type="Int32" />
-                    <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                    <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
+                    TypeName="TLLib.ProductCategory">
+                    <SelectParameters>
+                        <asp:Parameter Name="parentID" Type="Int32" />
+                        <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                        <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                        <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
             </div>
         </div>
     </div>

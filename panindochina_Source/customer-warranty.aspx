@@ -20,7 +20,7 @@
     </div>--%>
     <asp:ListView ID="lstWarranty" runat="server" DataSourceID="odsWarranty" EnableModelValidation="True">
         <ItemTemplate>
-            <a class="download-link corner" runat="server" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "~/res/download/" + Eval("FilePath") : "javascript:void(0);" %>' download><span><%# Eval("DownloadName") %></span></a> / 
+            <a class="download-link corner" runat="server" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "~/res/download/" + Eval("FilePath") : "javascript:void(0);" %>' download><span><%# Eval("DownloadNameEn")%></span></a> / 
         </ItemTemplate>
         <LayoutTemplate>
             <div class="customer-text">

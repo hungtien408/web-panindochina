@@ -29,12 +29,12 @@ public partial class product_details : System.Web.UI.Page
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
 
-                strTitle = Server.HtmlDecode(row["ProductName"].ToString());
-                strDescription = Server.HtmlDecode(row["Description"].ToString());
-                strMetaTitle = Server.HtmlDecode(row["MetaTittle"].ToString());
-                strMetaDescription = Server.HtmlDecode(row["MetaDescription"].ToString());
+                strTitle = Server.HtmlDecode(row["ProductNameEn"].ToString());
+                strDescription = Server.HtmlDecode(row["DescriptionEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row["MetaTittleEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
 
-                hdnlinkprodetails.Value = progressTitle(dv1[0]["ProductCategoryName"].ToString()) + "-pci-" + dv1[0]["ProductCategoryID"].ToString() + ".aspx";
+                hdnlinkprodetails.Value = progressTitle(dv1[0]["ProductCategoryNameEn"].ToString()) + "-pci-" + dv1[0]["ProductCategoryID"].ToString() + ".aspx";
             }
             else
             {

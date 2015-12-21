@@ -21,12 +21,12 @@
                         <div class="col-xs-4 element-item">
                             <div class="box-video">
                                 <a href="javascript:void(0);" class="video-img fullbox-img group-img" data-toggle="modal"
-                                    data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-vi-" + Eval("VideoID") + ".aspx" %>'>
+                                    data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-vi-" + Eval("VideoID") + ".aspx" %>'>
                                     <img class="hideo" alt='<%# Eval("ImagePath") %>' src='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'
                                         runat="server" /><span class="mask-icon"></span></a>
                                 <h4 class="video-name group-name">
-                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-vi-" + Eval("VideoID") + ".aspx" %>'>
-                                        <%# Eval("Title")%></a></h4>
+                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-vi-" + Eval("VideoID") + ".aspx" %>'>
+                                        <%# Eval("TitleEn")%></a></h4>
                             </div>
                         </div>
                     </ItemTemplate>

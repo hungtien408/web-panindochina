@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
-    <%--<link href="assets/styles/jcarousel.connected-carousels.css" rel="stylesheet" />
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery.touchSwipe.min.js"></script>
-    <script src="assets/js/jquery.jcarousel.min.js" type="text/javascript"></script>
+    <%--<link href="../assets/styles/jcarousel.connected-carousels.css" rel="stylesheet" />
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/jquery.touchSwipe.min.js"></script>
+    <script src="../assets/js/jquery.jcarousel.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#jcarouselGallery").jcarouselre({

@@ -292,10 +292,10 @@
             <div class="menu-in">
                 <div class="menu-mobile">
                     <div class="search-form">
-                        <asp:Button ID="Button2" CssClass="search-btn" runat="server" Text="" />
+                        <asp:Button ID="btnTimKiem2" CssClass="search-btn" runat="server" Text="" OnClick="btnTimKiem2_Click" />
                         <div class="search-input">
-                            <asp:TextBox ID="TextBox2" CssClass="search-text" runat="server" Text="Tìm kiếm..."></asp:TextBox>
-                        </div>
+                            <asp:TextBox ID="searchTextBox2" CssClass="search-text" runat="server" Text="Tìm kiếm..."
+                                onfocus="if(this.value=='Tìm kiếm...')this.value=''" onblur="if(this.value=='')this.value='Tìm kiếm...'"></asp:TextBox></div>
                     </div>
                     <ul class="menu-nav">
                         <li class="active"><a id="A1" href="~/en/" runat="server">Home<span class="icon-chevron-sign-right iconr"></span></a></li>

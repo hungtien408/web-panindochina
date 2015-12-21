@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/vn/site-sub.master" AutoEventWireup="true"
+    CodeFile="site-about.master.cs" Inherits="site_about" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
+    <asp:ContentPlaceHolder ID="cphSite" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div id="colAside" class="aside-about desktop-992">
+        <div class="box-aside corner">
+            <h2 class="title-a">
+                Panindochina</h2>
+            <asp:ListView ID="lstArticleCategory" runat="server" DataSourceID="odsArticleCategory"
+                EnableModelValidation="True">
+                <ItemTemplate>
+                    <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : progressTitle(Eval("ArticleCategoryName")) + "-tci-" + Eval("ParentID") + "-tri-" + Eval("ArticleCategoryID") + ".aspx" %>'>
+                        <span>
+                            <%# Eval("ArticleCategoryName")%></span></a></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <ul class="menu-list menu-iconr">
+                        <span runat="server" id="itemPlaceholder" />
+                    </ul>
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsArticleCategory" runat="server" SelectMethod="ArticleCategorySelectAll"
+                TypeName="TLLib.ArticleCategory">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="1" Name="parentID" Type="Int32" />
+                    <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
+                    <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+        </div>
+    </div>
+    <div id="colMain" class="about-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
+    <div id="mobileRight" class="mobile-panel mobilep-right mobile-bg">
+        <div class="close-menu">
+            <a href="#mobileRight" class="glyphicon glyphicon-remove-circle"></a>
+        </div>
+        <div class="menu-in">
+            <div class="menu-mobile">
+                <h2 class="title">
+                    Panindochina</h2>
+                <asp:ListView ID="lstArticleCategory2" runat="server" DataSourceID="odsArticleCategory2"
+                    EnableModelValidation="True">
+                    <ItemTemplate>
+                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : progressTitle(Eval("ArticleCategoryName")) + "-tci-" + Eval("ParentID") + "-tri-" + Eval("ArticleCategoryID") + ".aspx" %>'>
+                                <%# Eval("ArticleCategoryName")%><span class="icon-chevron-sign-right iconr"></span></a></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <ul class="menu-nav menu-right">
+                            <span runat="server" id="itemPlaceholder" />
+                        </ul>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsArticleCategory2" runat="server" SelectMethod="ArticleCategorySelectAll"
+                TypeName="TLLib.ArticleCategory">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="1" Name="parentID" Type="Int32" />
+                    <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
+                    <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="cphMenuMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphPopup" runat="Server">
+    <asp:ContentPlaceHolder ID="cphPopup" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

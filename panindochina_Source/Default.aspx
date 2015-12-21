@@ -45,12 +45,12 @@
     <div class="container">
         <div class="text-center wrapper-880">
             <h4 class="text-uppercase title-1">
-                sản phẩm</h4>
+                products</h4>
             <div class="desription">
                 <asp:ListView ID="lstTitleProduct" runat="server" DataSourceID="odsTitleProduct"
                     EnableModelValidation="True">
                     <ItemTemplate>
-                        <asp:Label ID="lblTitleProduct" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                        <asp:Label ID="lblTitleProduct" runat="server" Text='<%# Eval("ContentEn") %>'></asp:Label>
                     </ItemTemplate>
                     <LayoutTemplate>
                         <span runat="server" id="itemPlaceholder" />
@@ -83,14 +83,14 @@
             <ItemTemplate>
                 <div class="colno-5 element-item">
                     <div class="producta wrap-effecth">
-                        <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
+                        <a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
                             <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/productcategory/" + Eval("ImageName") : "~/assets/images/product-a-1.jpg" %>'
                                 runat="server" /></span> <span class="hover-img fullbox-img">
                                     <img class="hideo" alt='<%# Eval("ImageNameHover") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/productcategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/product-a-2.jpg" %>'
                                         runat="server" /></span> </a>
                         <h5 class="product-name">
-                            <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
-                                <%# Eval("ProductCategoryName") %></a></h5>
+                            <a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                <%# Eval("ProductCategoryNameEn") %></a></h5>
                     </div>
                 </div>
             </ItemTemplate>
@@ -112,15 +112,15 @@
         <div class="wrapper-tabs">
             <div class="head desktop-showhide">
                 <ul id="controlTab" class="control-tabs">
-                    <li><a href="#tabs-1" class="text-uppercase">Sản phẩm <strong>mới</strong></a></li>
-                    <li><a href="#tabs-2" class="text-uppercase">Sản phẩm <strong>nổi bật</strong></a></li>
-                    <li><a href="#tabs-3" class="text-uppercase">Sản phẩm <strong>khuyến mãi</strong></a></li>
+                    <li><a href="#tabs-1" class="text-uppercase">Products <strong>new</strong></a></li>
+                    <li><a href="#tabs-2" class="text-uppercase">Products <strong>hot</strong></a></li>
+                    <li><a href="#tabs-3" class="text-uppercase">Products <strong>safe off</strong></a></li>
                 </ul>
-                <a href="product.aspx" class="more-all">Xem tất cả <span class="icon-caret-right"></span></a>
+                <a href="product.aspx" class="more-all">See all <span class="icon-caret-right"></span></a>
             </div>
             <div class="wrap-tabs-content">
                 <h4 class="mobile-showhide tabs-title">
-                    <a href="#tabs-1" class="text-uppercase">Sản phẩm <strong>mới</strong><span class="icon-plus-sign iconar"></span><span
+                    <a href="#tabs-1" class="text-uppercase">Products <strong>new</strong><span class="icon-plus-sign iconar"></span><span
                         class="icon-minus-sign iconar"></span></a></h4>
                 <div id="tabs-1" class="tabs-content">
                     <div class="row">
@@ -131,15 +131,15 @@
                                         <li>
                                             <div class="product-box product-boxbg">
                                                 <div class="icon-new">
-                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
+                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
-                                                        <%# Eval("ProductName") %></a></h4>
+                                                    <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                        <%# Eval("ProductNameEn") %></a></h4>
                                             </div>
                                         </li>
                                     </ItemTemplate>
@@ -186,7 +186,7 @@
                     </div>
                 </div>
                 <h4 class="mobile-showhide tabs-title">
-                    <a href="#tabs-2" class="text-uppercase">Sản phẩm <strong>nổi bật</strong><span class="icon-plus-sign iconar"></span><span
+                    <a href="#tabs-2" class="text-uppercase">Products <strong>hot</strong><span class="icon-plus-sign iconar"></span><span
                         class="icon-minus-sign iconar"></span></a></h4>
                 <div id="tabs-2" class="tabs-content">
                     <div class="row">
@@ -200,12 +200,12 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
-                                                        <%# Eval("ProductName") %></a></h4>
+                                                    <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                        <%# Eval("ProductNameEn") %></a></h4>
                                             </div>
                                         </li>
                                     </ItemTemplate>
@@ -252,7 +252,7 @@
                     </div>
                 </div>
                 <h4 class="mobile-showhide tabs-title">
-                    <a href="#tabs-3" class="text-uppercase">Sản phẩm <strong>khuyến mãi</strong><span
+                    <a href="#tabs-3" class="text-uppercase">Products <strong>safe off</strong><span
                         class="icon-plus-sign iconar"></span><span class="icon-minus-sign iconar"></span></a></h4>
                 <div id="tabs-3" class="tabs-content">
                     <div class="row">
@@ -266,12 +266,12 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img id="Img1" class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
-                                                        <%# Eval("ProductName") %></a></h4>
+                                                    <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                        <%# Eval("ProductNameEn") %></a></h4>
                                             </div>
                                         </li>
                                     </ItemTemplate>
@@ -326,7 +326,7 @@
                 <asp:ListView ID="lstTitleService" runat="server" DataSourceID="odsTitleService"
                     EnableModelValidation="True">
                     <ItemTemplate>
-                        <asp:Label ID="lblTitleProduct" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                        <asp:Label ID="lblTitleProduct" runat="server" Text='<%# Eval("ContentEn") %>'></asp:Label>
                     </ItemTemplate>
                     <LayoutTemplate>
                         <span runat="server" id="itemPlaceholder" />
@@ -360,12 +360,12 @@
                 <ItemTemplate>
                     <div class="colno-3 element-item">
                         <div class="servece-box wrap-effecth">
-                            <a href='<%# progressTitle(Eval("ServiceCategoryName")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
+                            <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
                                 <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/servicecategory/" + Eval("ImageName") : "~/assets/images/service-img-1.jpg" %>' runat="server" /></span> <span class="hover-img fullbox-img">
                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/servicecategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/service-img-2.jpg" %>' runat="server" /></span>
                             </a>
                             <h5 class="product-name">
-                                <a href='<%# progressTitle(Eval("ServiceCategoryName")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="text-uppercase"><%# Eval("ServiceCategoryName")%><span class="icon-angle-right iconar"></span></a></h5>
+                                <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="text-uppercase"><%# Eval("ServiceCategoryNameEn")%><span class="icon-angle-right iconar"></span></a></h5>
                         </div>
                     </div>
                 </ItemTemplate>

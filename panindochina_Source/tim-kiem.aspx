@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site-product.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/en/site-product.master" AutoEventWireup="true"
     CodeFile="tim-kiem.aspx.cs" Inherits="tim_kiem" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -33,14 +33,14 @@
                 <ItemTemplate>
                     <div class="col-xs-4 element-item">
                         <div class="product-box">
-                            <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                            <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                 class="product-img fullbox-img">
                                 <img id="Img1" class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-imga-1.jpg" %>'
                                     runat="server" /></a>
                             <h4 class="product-name">
-                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                     class="text-uppercase">
-                                    <%# Eval("ProductName") %></a></h4>
+                                    <%# Eval("ProductNameEn") %></a></h4>
                             <div class="description">
                                 Manufacturer: <%# Eval("ManufacturerProduct")%></div>
                         </div>

@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/vn/site-sub.master" AutoEventWireup="true"
+    CodeFile="site-market.master.cs" Inherits="site_market" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
+    <asp:ContentPlaceHolder ID="cphSite" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div id="colAside" class="aside-about desktop-992">
+        <div class="box-aside corner">
+            <h2 class="title-a">
+                Panindochina</h2>
+            <asp:ListView ID="lstArticle" runat="server" DataSourceID="odsArticle"
+                EnableModelValidation="True">
+                <ItemTemplate>
+                    <li><a href='<%# progressTitle(Eval("ArticleTitle")) + "-tci-" + Eval("ArticleCategoryID") + "-mi-" + Eval("ArticleID") + ".aspx" %>'>
+                        <span>
+                            <%# Eval("ArticleTitle")%></span></a></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <ul class="menu-list menu-iconr">
+                        <span runat="server" id="itemPlaceholder" />
+                    </ul>
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsArticle" runat="server" SelectMethod="ArticleSelectAll"
+                TypeName="TLLib.Article">
+                <SelectParameters>
+                    <asp:Parameter Name="StartRowIndex" Type="String" />
+                    <asp:Parameter Name="EndRowIndex" Type="String" />
+                    <asp:Parameter Name="Keyword" Type="String" />
+                    <asp:Parameter Name="ArticleTitle" Type="String" />
+                    <asp:Parameter Name="Description" Type="String" />
+                    <asp:Parameter DefaultValue="2" Name="ArticleCategoryID" Type="String" />
+                    <asp:Parameter Name="Tag" Type="String" />
+                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                    <asp:Parameter Name="IsHot" Type="String" />
+                    <asp:Parameter Name="IsNew" Type="String" />
+                    <asp:Parameter Name="FromDate" Type="String" />
+                    <asp:Parameter Name="ToDate" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                    <asp:Parameter Name="Priority" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+        </div>
+    </div>
+    <div id="colMain" class="about-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
+    <div id="mobileRight" class="mobile-panel mobilep-right mobile-bg">
+        <div class="close-menu">
+            <a href="#mobileRight" class="glyphicon glyphicon-remove-circle"></a>
+        </div>
+        <div class="menu-in">
+            <div class="menu-mobile">
+                <h2 class="title">
+                    Panindochina</h2>
+                <asp:ListView ID="lstArticle2" runat="server" DataSourceID="odsArticle2"
+                    EnableModelValidation="True">
+                    <ItemTemplate>
+                        <li><a href='<%# progressTitle(Eval("ArticleTitle")) + "-tci-" + Eval("ArticleCategoryID") + "-mi-" + Eval("ArticleID") + ".aspx" %>'>
+                                <%# Eval("ArticleTitle")%><span class="icon-chevron-sign-right iconr"></span></a></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <ul class="menu-nav menu-right">
+                            <span runat="server" id="itemPlaceholder" />
+                        </ul>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsArticle2" runat="server" SelectMethod="ArticleSelectAll"
+                TypeName="TLLib.Article">
+                <SelectParameters>
+                    <asp:Parameter Name="StartRowIndex" Type="String" />
+                    <asp:Parameter Name="EndRowIndex" Type="String" />
+                    <asp:Parameter Name="Keyword" Type="String" />
+                    <asp:Parameter Name="ArticleTitle" Type="String" />
+                    <asp:Parameter Name="Description" Type="String" />
+                    <asp:Parameter DefaultValue="2" Name="ArticleCategoryID" Type="String" />
+                    <asp:Parameter Name="Tag" Type="String" />
+                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                    <asp:Parameter Name="IsHot" Type="String" />
+                    <asp:Parameter Name="IsNew" Type="String" />
+                    <asp:Parameter Name="FromDate" Type="String" />
+                    <asp:Parameter Name="ToDate" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                    <asp:Parameter Name="Priority" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="cphMenuMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphPopup" runat="Server">
+    <asp:ContentPlaceHolder ID="cphPopup" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

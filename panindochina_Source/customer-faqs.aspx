@@ -23,7 +23,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                             href='<%# "#question-" + Eval("DownloadID") %>' aria-expanded="false" aria-controls='<%# "question-" + Eval("DownloadID") %>'>
-                            <%# Eval("DownloadName") %><span class="iconr icona-down icon-chevron-sign-down"></span>
+                            <%# Eval("DownloadNameEn")%><span class="iconr icona-down icon-chevron-sign-down"></span>
                             <span class="iconr icona-up icon-chevron-sign-up"></span></a>
                     </h4>
                 </div>
@@ -31,7 +31,7 @@
                     role="tabpanel" aria-labelledby="heading-1">
                     <div class="panel-body">
                         <strong>Answer:</strong> 
-                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Answer") %>'></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("AnswerEn") %>'></asp:Label>
                     </div>
                 </div>
             </div>

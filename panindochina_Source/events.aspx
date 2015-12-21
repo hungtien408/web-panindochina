@@ -10,7 +10,7 @@
         class="icon-caret-right"></span></a><span>Bắt đầu hoạt động với lĩnh vực kinh doanh</span>--%>
     <asp:ListView ID="lstBreadcrum" runat="server" DataSourceID="odsBreadcrum" EnableModelValidation="True">
         <ItemTemplate>
-            <%# string.IsNullOrEmpty(Request.QueryString["tri"]) ? "<span>Events</span>" : Container.DataItemIndex == ((System.Data.DataView)odsBreadcrum.Select()).Count - 1 ? "<span>" + Eval("ArticleCategoryName") + "</span>" : !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : ""%>
+            <%# string.IsNullOrEmpty(Request.QueryString["tri"]) ? "<span>Events</span>" : Container.DataItemIndex == ((System.Data.DataView)odsBreadcrum.Select()).Count - 1 ? "<span>" + Eval("ArticleCategoryNameEn") + "</span>" : !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : ""%>
         </ItemTemplate>
         <LayoutTemplate>
             <a href="gioi-thieu.aspx">Panindochina<span class="icon-caret-right"></span></a><span
@@ -36,7 +36,7 @@
             <asp:ListView ID="lstEvents" runat="server" DataSourceID="odsEvents" EnableModelValidation="True">
                 <ItemTemplate>
                     <div class="events-box">
-                        <a href='<%# progressTitle(Eval("ArticleTitle")) + "-tci-" + Eval("ArticleCategoryID") + "-ti-" + Eval("ArticleID") + ".aspx" %>'
+                        <a href='<%# progressTitle(Eval("ArticleTitleEn")) + "-tci-" + Eval("ArticleCategoryID") + "-ti-" + Eval("ArticleID") + ".aspx" %>'
                             class="events-img">
                             <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/article/" + Eval("ImageName") : "~/assets/images/events-img-1.jpg" %>'
                                 runat="server" /></a>
@@ -44,10 +44,10 @@
                             <div class="date">
                                 <%# string.Format("{0:dd/MM/yyyy}", Eval("CreateDate")) %></div>
                             <h4 class="events-name">
-                                <a href='<%# progressTitle(Eval("ArticleTitle")) + "-tci-" + Eval("ArticleCategoryID") + "-ti-" + Eval("ArticleID") + ".aspx" %>'>
-                                    <%# Eval("ArticleTitle") %></a></h4>
+                                <a href='<%# progressTitle(Eval("ArticleTitleEn")) + "-tci-" + Eval("ArticleCategoryID") + "-ti-" + Eval("ArticleID") + ".aspx" %>'>
+                                    <%# Eval("ArticleTitleEn")%></a></h4>
                             <div class="description">
-                                <%# Eval("Description") %></div>
+                                <%# Eval("DescriptionEn")%></div>
                         </div>
                     </div>
                 </ItemTemplate>

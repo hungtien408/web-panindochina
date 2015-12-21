@@ -2,8 +2,8 @@
     CodeFile="services.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Panindochina</title>
-    <meta name="description" content="Panindochina" />
+    <title>Service</title>
+    <meta name="description" content="Service" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div id="site">

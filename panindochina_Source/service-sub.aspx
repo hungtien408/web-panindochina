@@ -22,16 +22,16 @@
             <asp:ListView ID="lstService" runat="server" DataSourceID="odsService" EnableModelValidation="True">
                 <ItemTemplate>
                     <div class="events-box">
-                        <a href='<%# progressTitle(Eval("ServiceTitle")) + "-sci-" + Eval("ServiceCategoryID") + "-si-" + Eval("ServiceID") + ".aspx" %>'
+                        <a href='<%# progressTitle(Eval("ServiceTitleEn")) + "-sci-" + Eval("ServiceCategoryID") + "-si-" + Eval("ServiceID") + ".aspx" %>'
                             class="events-img">
                             <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/service/" + Eval("ImageName") : "~/assets/images/service-imga-1.jpg" %>'
                                 runat="server" /></a>
                         <div class="events-content">
                             <h4 class="events-name">
-                                <a class="text-uppercase" href='<%# progressTitle(Eval("ServiceTitle")) + "-sci-" + Eval("ServiceCategoryID") + "-si-" + Eval("ServiceID") + ".aspx" %>'>
-                                    <%# Eval("ServiceTitle") %></a></h4>
+                                <a class="text-uppercase" href='<%# progressTitle(Eval("ServiceTitleEn")) + "-sci-" + Eval("ServiceCategoryID") + "-si-" + Eval("ServiceID") + ".aspx" %>'>
+                                    <%# Eval("ServiceTitleEn") %></a></h4>
                             <div class="description">
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("DescriptionEn") %>'></asp:Label>
                             </div>
                         </div>
                     </div>

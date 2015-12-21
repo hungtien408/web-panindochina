@@ -2,11 +2,11 @@
     CodeFile="customer-sheet.aspx.cs" Inherits="customer_being" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Panindochina</title>
-    <meta name="description" content="Panindochina" />
+    <title>Technical Sheet</title>
+    <meta name="description" content="Technical Sheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="#">Customer Support<span class="icon-caret-right"></span></a><span>Technical
+    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Technical
         Sheet</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

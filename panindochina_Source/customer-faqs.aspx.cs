@@ -22,10 +22,10 @@ public partial class customer_being : System.Web.UI.Page
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
 
-                strTitle = Server.HtmlDecode(row["DownloadCategoryName"].ToString());
-                strDescription = Server.HtmlDecode(row["Description"].ToString());
-                strMetaTitle = Server.HtmlDecode(row["MetaTitle"].ToString());
-                strMetaDescription = Server.HtmlDecode(row["MetaDescription"].ToString());
+                strTitle = Server.HtmlDecode(row["DownloadCategoryNameEn"].ToString());
+                strDescription = Server.HtmlDecode(row["DescriptionEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row["MetaTitleEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
             }
             else
             {

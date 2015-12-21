@@ -2,17 +2,17 @@
     CodeFile="gallery.aspx.cs" Inherits="gallery" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Hình ảnh</title>
-    <meta name="description" content="Hình ảnh" />
+    <title>Gallery</title>
+    <meta name="description" content="Gallery" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="gallery.aspx">Library<span class="icon-caret-right"></span></a><span>Hình ảnh</span>
+    <a href="gallery.aspx">Library<span class="icon-caret-right"></span></a><span>Gallery</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
         Hình ảnh</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">Hình ảnh<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Gallery<span class="iconar icon-chevron-down"></span></a></h2>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ListView ID="lstGalleryCategory" runat="server" DataSourceID="odsGalleryCategory" EnableModelValidation="True">
@@ -21,12 +21,12 @@
                         <div class="box-gallery">
                             <div class="gallery-img">
                                 <a href="javascript:void(0);" class="fullbox-img group-img" data-toggle="modal" data-target="#myModal"
-                                    data-page='<%# progressTitle(Eval("PhotoAlbumCategoryName")) + "-gi-" + Eval("PhotoAlbumCategoryID") + ".aspx" %>'>
+                                    data-page='<%# progressTitle(Eval("PhotoAlbumCategoryNameEn")) + "-gi-" + Eval("PhotoAlbumCategoryID") + ".aspx" %>'>
                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/photoalbumcategory/" + Eval("ImageName") : "~/assets/images/gallery-i-1.jpg" %>'
                                         runat="server" /></a></div>
                             <h4 class="gallery-name group-name">
-                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("PhotoAlbumCategoryName")) + "-gi-" + Eval("PhotoAlbumCategoryID") + ".aspx" %>'>
-                                    <%# Eval("PhotoAlbumCategoryName")%></a></h4>
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("PhotoAlbumCategoryNameEn")) + "-gi-" + Eval("PhotoAlbumCategoryID") + ".aspx" %>'>
+                                    <%# Eval("PhotoAlbumCategoryNameEn")%></a></h4>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -67,8 +67,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <h2 class="title-link mobile-992">
-        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Hình
-            ảnh</a></h2>
+        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Gallery</a></h2>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
 </asp:Content>

@@ -28,7 +28,7 @@ public partial class events : System.Web.UI.Page
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
 
-                strTitle = Server.HtmlDecode(row["ArticleCategoryName"].ToString());
+                strTitle = Server.HtmlDecode(row["ArticleCategoryNameEn"].ToString());
                 strDescription = Server.HtmlDecode(row["Description"].ToString());
                 strMetaTitle = Server.HtmlDecode(row["MetaTitle"].ToString());
                 strMetaDescription = Server.HtmlDecode(row["MetaDescription"].ToString());

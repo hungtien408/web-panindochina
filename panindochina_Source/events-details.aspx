@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
     <asp:ListView ID="lstBreadcrum" runat="server" DataSourceID="odsBreadcrum" EnableModelValidation="True">
         <ItemTemplate>
-            <%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? "<a href='" + Eval("ArticleCategoryLink") + "'>" + Eval("ArticleCategoryName") + "<span class='icon-caret-right'></span></a>" : ""%>
+            <%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? "<a href='" + Eval("ArticleCategoryLink") + "'>" + Eval("ArticleCategoryNameEn") + "<span class='icon-caret-right'></span></a>" : ""%>
         </ItemTemplate>
         <LayoutTemplate>
             <a href="gioi-thieu.aspx">Panindochina<span class="icon-caret-right"></span></a><span
@@ -38,8 +38,8 @@
                 <div class="date">
                     <%# string.Format("{0:dd/MM/yyyy}", Eval("CreateDate")) %></div>
                 <h3 class="title-2">
-                    <%# Eval("ArticleTitle") %></h3>
-                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                    <%# Eval("ArticleTitleEn")%></h3>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("ContentEn") %>'></asp:Label>
             </div>
         </ItemTemplate>
         <LayoutTemplate>

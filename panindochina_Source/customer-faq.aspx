@@ -15,7 +15,7 @@
         <a class="panel-right" href="#mobileRight">FAQs<span class="iconar icon-chevron-down"></span></a></h2>
     <asp:ListView ID="lstFaq" runat="server" DataSourceID="odsFaq" EnableModelValidation="True">
         <ItemTemplate>
-            <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'><%# Eval("DownloadCategoryName") %></a></li>
+            <li><a href='<%# progressTitle(Eval("DownloadCategoryNameEn")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'><%# Eval("DownloadCategoryNameEn")%></a></li>
         </ItemTemplate>
         <LayoutTemplate>
             <ul class="list-faq">
@@ -29,7 +29,7 @@
             <asp:Parameter DefaultValue="14" Name="parentID" Type="Int32" />
             <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
             <asp:Parameter Name="IsShowOnMenu" Type="String" />
-            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+            <asp:Parameter Name="IsShowOnHomePage" Type="String" DefaultValue="" />
             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
