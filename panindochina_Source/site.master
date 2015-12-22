@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <ul id="menu">
-                    <li class="active"><a href="~/en/" runat="server">Home</a></li>
+                    <li class="active"><a href="~/" runat="server">Home</a></li>
                     <li><a href="gioi-thieu.aspx">Panindochina</a></li>
                     <li><a href="product.aspx">Product</a></li>
                     <li><a href="services.aspx">Service</a></li>
