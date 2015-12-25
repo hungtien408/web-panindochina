@@ -274,7 +274,7 @@
                             <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
                                 <ItemTemplate>
                                     <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
-                                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileNameEn") %></span></a></li>
+                                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
                                 </ItemTemplate>
                                 <LayoutTemplate>
                                     <ul class="list-download">
