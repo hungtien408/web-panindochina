@@ -49,6 +49,17 @@ public partial class ad_single_product : System.Web.UI.Page
         }
     }
 
+    void DeleteFile(string strFileName)
+    {
+        if (!string.IsNullOrEmpty(strFileName))
+        {
+            var strFilePath = Server.MapPath("~/res/product/download/" + strFileName);
+
+            if (File.Exists(strFilePath))
+                File.Delete(strFilePath);
+        }
+    }
+
     #endregion
 
     #region Event
@@ -506,7 +517,7 @@ public partial class ad_single_product : System.Web.UI.Page
         string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
         e.File.SaveAs(Server.MapPath(targetFolder + newName));
 
-        ResizeCropImage.ResizeByCondition(targetFolder + newName, 800, 800);
+        ResizeCropImage.ResizeByCondition(targetFolder + newName, 1500, 1331);
         ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
 
         if (string.IsNullOrEmpty(ProductID))
@@ -534,11 +545,74 @@ public partial class ad_single_product : System.Web.UI.Page
         string targetFolder = "~/res/product/";
         string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
         e.File.SaveAs(Server.MapPath(targetFolder + newName));
-        
+
         //ResizeCropImage.ResizeByCondition(targetFolder + newName, 800, 800);
         //ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", newName, 120, 120);
 
         hdnNewImageName.Value = newName;
+    }
+
+    protected void FileUpload_FileUploaded(object sender, FileUploadedEventArgs e)
+    {
+        var FileUpload = (RadAsyncUpload)sender;
+        var Parent = FileUpload.NamingContainer;
+        var ProductID = ((HiddenField)Parent.FindControl("hdnProductID")).Value;
+        var RadListView3 = (RadListView)Parent.FindControl("RadListView3");
+        var RadListView2 = (RadListView)Parent.FindControl("RadListView2");
+
+        string targetFolder = "~/res/product/download/";
+        string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
+        //e.File.SaveAs(Server.MapPath(targetFolder + newName));
+        e.File.SaveAs(Server.MapPath(targetFolder + e.File.FileName));
+
+        //if (string.IsNullOrEmpty(ProductID))
+        //{
+        //    TempImage.Rows.Add(new object[] { newName });
+
+        //    RadListView2.DataSource = TempImage;
+        //    RadListView2.DataBind();
+        //}
+        if (!string.IsNullOrEmpty(ProductID))
+        {
+            var oProductDownload = new ProductDownload();
+
+            oProductDownload.ProductDownloadInsert(e.File.GetName(), "", e.File.FileName, "True", "", "1", ProductID);
+            RadListView3.Rebind();
+        }
+    }
+
+    protected void RadListView3_ItemCommand(object sender, RadListViewCommandEventArgs e)
+    {
+        try
+        {
+            var RadListView3 = (RadListView)sender;
+            var Parent = RadListView3.NamingContainer;
+            var OdsProductDownload = (ObjectDataSource)Parent.FindControl("OdsProductDownload");
+
+            if (e.CommandName == "Update")
+            {
+                var item = e.ListViewItem;
+                var dsUpdateParam = OdsProductDownload.UpdateParameters;
+
+                var strFileName = ((TextBox)e.ListViewItem.FindControl("txtFileName")).Text;
+                var strIsAvailable = ((CheckBox)item.FindControl("chkAddIsAvailable")).Checked.ToString();
+                var strProductDownloadCategoryID =
+                    ((HiddenField)item.FindControl("hdnProductDownloadCategoryID")).Value;
+
+                dsUpdateParam["ProductDownloadCategoryID"].DefaultValue = strProductDownloadCategoryID;
+                dsUpdateParam["FileName"].DefaultValue = strFileName;
+                dsUpdateParam["IsAvailable"].DefaultValue = strIsAvailable;
+            }
+            else if (e.CommandName == "Delete")
+            {
+                string OldLinkDownload = ((HiddenField)e.ListViewItem.FindControl("hdnLinkDownload")).Value;
+                DeleteFile(OldLinkDownload);
+            }
+        }
+        catch (Exception ex)
+        {
+            lblError.Text = ex.Message;
+        }
     }
     #endregion
 

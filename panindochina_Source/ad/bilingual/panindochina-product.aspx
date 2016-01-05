@@ -419,10 +419,12 @@
                             <asp:HiddenField ID="hdnImageName" runat="server" Value='<%# Eval("ImageName") %>' />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridBoundColumn HeaderText="ID" DataField="ProductID" SortExpression="ProductID" Visible="False">
+                    <asp:GridBoundColumn HeaderText="ID" DataField="ProductID" SortExpression="ProductID"
+                        Visible="False">
                     </asp:GridBoundColumn>
                     <asp:GridBoundColumn DataField="ProductName" HeaderText="Tên sản phẩm" SortExpression="ProductName" />
-                    <asp:GridTemplateColumn DataField="SavePrice" HeaderText="Giá cũ" SortExpression="SavePrice" Visible="False">
+                    <asp:GridTemplateColumn DataField="SavePrice" HeaderText="Giá cũ" SortExpression="SavePrice"
+                        Visible="False">
                         <ItemTemplate>
                             <%# string.Format("{0:##,###.##}", Eval("SavePrice")) %>
                         </ItemTemplate>
@@ -433,7 +435,8 @@
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
                     <asp:GridBoundColumn DataField="ProductCategoryName" HeaderText="Danh mục" SortExpression="ProductCategoryName" />
-                    <asp:GridBoundColumn DataField="ManufacturerName" HeaderText="Nhà sản xuất" SortExpression="ManufacturerName" Visible="False" />
+                    <asp:GridBoundColumn DataField="ManufacturerName" HeaderText="Nhà sản xuất" SortExpression="ManufacturerName"
+                        Visible="False" />
                     <asp:GridTemplateColumn DataField="Priority" HeaderStyle-Width="1%" HeaderText="Thứ tự"
                         SortExpression="Priority">
                         <ItemTemplate>
@@ -456,7 +459,8 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="IsBestSeller" HeaderText="Bán chạy" SortExpression="IsBestSeller" Visible="False">
+                    <asp:GridTemplateColumn DataField="IsBestSeller" HeaderText="Bán chạy" SortExpression="IsBestSeller"
+                        Visible="False">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsBestSeller" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsBestSeller").ToString()) ? false : Eval("IsBestSeller") %>'
                                 CssClass="checkbox" />
@@ -468,7 +472,8 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="InStock" HeaderText="Còn hàng" SortExpression="InStock" Visible="False">
+                    <asp:GridTemplateColumn DataField="InStock" HeaderText="Còn hàng" SortExpression="InStock"
+                        Visible="False">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkInStock" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("InStock").ToString()) ? false : Eval("InStock") %>'
                                 CssClass="checkbox" />
@@ -492,7 +497,8 @@
                             <%# string.Format("{0:dd/MM/yyyy hh:mm tt}", Eval("CreateDate"))%>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Đánh giá" SortExpression="Rating" HeaderStyle-Width="1%" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Đánh giá" SortExpression="Rating" HeaderStyle-Width="1%"
+                        Visible="False">
                         <ItemTemplate>
                             <isp:ContentRating ID="ContentRating1" runat="server" Enabled="false" CssClass="rating"
                                 LegendText="{0} rates"></isp:ContentRating>
@@ -504,11 +510,10 @@
                                 <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
                                     onclick="openWindow('productphotoalbum.aspx?PI=<%# Eval("ProductID") %>','Thư viện ảnh')"
                                     style="cursor: pointer" />
-                                <img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
+                                <%--<img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
                                     onclick="openWindow('panindochina-productdownload2.aspx?PI=<%# Eval("ProductID") %>','File Download')"
-                                    style="cursor: pointer" />
-                                <img alt="Video" title="Video" src="../assets/images/movie.png"
-                                    onclick="openWindow('productvideo.aspx?PI=<%# Eval("ProductID") %>','Video')"
+                                    style="cursor: pointer" />--%>
+                                <img alt="Video" title="Video" src="../assets/images/movie.png" onclick="openWindow('productvideo.aspx?PI=<%# Eval("ProductID") %>','Video')"
                                     style="cursor: pointer" />
                             </div>
                         </ItemTemplate>
@@ -535,7 +540,8 @@
                             <img alt="Sản Phẩm Liên Quan" onclick="openWindow('productofsame.aspx?pi=<%# Eval("ProductID") %>','Sản Phẩm Liên Quan')"
                                 width="24" title="Sản Phẩm Liên Quan" src="../assets/images/project.png" style="cursor: pointer" />
                             <img alt="File Download Liên Quan" onclick="openWindow('productdownloadofsame.aspx?pi=<%# Eval("ProductID") %>','File Download Liên Quan')"
-                                width="24" title="File Download Liên Quan" src="../assets/images/download.png" style="cursor: pointer" />
+                                width="24" title="File Download Liên Quan" src="../assets/images/download.png"
+                                style="cursor: pointer" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
                 </Columns>
@@ -589,13 +595,15 @@
                                                             <asp:CheckBox ID="chkIsHot" runat="server" CssClass="checkbox" Text=" Hot" Checked='<%# (Container is GridEditFormInsertItem) ? false : (string.IsNullOrEmpty(Eval("IsHot").ToString()) ? false : Eval("IsHot"))%>' />
                                                             &nbsp;&nbsp;
                                                             <asp:CheckBox ID="chkIsBestSeller" runat="server" CssClass="checkbox" Text=" Bán chạy"
-                                                                Checked='<%# (Container is GridEditFormInsertItem) ? false : Eval("IsBestSeller") %>' Visible="False"/>
+                                                                Checked='<%# (Container is GridEditFormInsertItem) ? false : Eval("IsBestSeller") %>'
+                                                                Visible="False" />
                                                             &nbsp;&nbsp;
                                                             <asp:CheckBox ID="chkIsSaleOff" runat="server" CssClass="checkbox" Text=" Giảm giá"
                                                                 Checked='<%# (Container is GridEditFormInsertItem) ? false : Eval("IsSaleOff") %>' />
                                                             &nbsp;&nbsp;
                                                             <asp:CheckBox ID="chkInStock" runat="server" CssClass="checkbox" Text=" Còn hàng"
-                                                                Checked='<%# (Container is GridEditFormInsertItem) ? true : Eval("InStock") %>' Visible="False"/>
+                                                                Checked='<%# (Container is GridEditFormInsertItem) ? true : Eval("InStock") %>'
+                                                                Visible="False" />
                                                             &nbsp;&nbsp;
                                                             <asp:CheckBox ID="chkIsShowOnHomePage" runat="server" CssClass="checkbox" Text=" Xem trên trang chủ"
                                                                 Checked='<%# (Container is GridEditFormInsertItem) ? true : (string.IsNullOrEmpty(Eval("IsShowOnHomePage").ToString()) ? false : Eval("IsShowOnHomePage"))%>' />
@@ -760,11 +768,15 @@
                                                             Mô tả
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtDescription" StripFormattingOptions="MSWordRemoveAll,ConvertWordLists,MSWordNoFonts,Font,Css,Span" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN" Skin="Office2007"
-                                                                Width="503px" Content='<%# Bind("Description") %>'>
-                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                            <asp:RadEditor ID="txtDescription" StripFormattingOptions="MSWordRemoveAll,ConvertWordLists,MSWordNoFonts,Font,Css,Span"
+                                                                ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                                runat="server" Height="200" Language="vi-VN" Skin="Office2007" Width="503px"
+                                                                Content='<%# Bind("Description") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
@@ -788,11 +800,13 @@
                                                             Specifications
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtSpecifications" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
-                                                                Width="503px" Content='<%# Bind("Specifications") %>'>
-                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                            <asp:RadEditor ID="txtSpecifications" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                                runat="server" Language="vi-VN" Skin="Office2007" Width="503px" Content='<%# Bind("Specifications") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
@@ -804,11 +818,13 @@
                                                             Nội dung
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtContent" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
-                                                                Width="503px" Content='<%# Bind("Content") %>'>
-                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                            <asp:RadEditor ID="txtContent" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                                runat="server" Language="vi-VN" Skin="Office2007" Width="503px" Content='<%# Bind("Content") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
@@ -871,11 +887,14 @@
                                                             Mô tả
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtDescriptionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN"
-                                                                Skin="Office2007" Width="503px" Content='<%# Bind("DescriptionEn") %>'>
-                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                            <asp:RadEditor ID="txtDescriptionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                                runat="server" Height="200" Language="vi-VN" Skin="Office2007" Width="503px"
+                                                                Content='<%# Bind("DescriptionEn") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
@@ -899,11 +918,14 @@
                                                             Specifications
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtSpecificationsEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN"
-                                                                Skin="Office2007" Width="503px" Content='<%# Bind("SpecificationsEn") %>'>
-                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                            <asp:RadEditor ID="txtSpecificationsEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                                runat="server" Height="200" Language="vi-VN" Skin="Office2007" Width="503px"
+                                                                Content='<%# Bind("SpecificationsEn") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
@@ -927,11 +949,13 @@
                                                             Nội dung
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtContentEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
-                                                                Width="503px" Content='<%# Bind("ContentEn") %>'>
-                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                            <asp:RadEditor ID="txtContentEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                                runat="server" Language="vi-VN" Skin="Office2007" Width="503px" Content='<%# Bind("ContentEn") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                    MaxUploadFileSize="1024000" />
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
@@ -952,9 +976,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        </div>
                                     </td>
-                                    <td valign="top">
+                                    <td valign="top" style="width: 300px;">
                                         <div class="sub_box">
                                             <div class="head">
                                                 Ảnh sản phẩm</div>
@@ -1113,6 +1136,142 @@
                                                                 </fieldset>
                                                             </ItemTemplate>
                                                         </asp:RadListView>
+                                                    </asp:RadAjaxPanel>
+                                                </asp:RadAjaxPanel>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td valign="top">
+                                        <div class="sub_box">
+                                            <div class="head">
+                                                File upload</div>
+                                            <div class="cont">
+                                                <asp:RadAjaxPanel ID="RadAjaxPanel4" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
+                                                    <asp:RadAsyncUpload ID="FileUpload" runat="server" MultipleFileSelection="Automatic"
+                                                        TargetFolder="~/res/product/download/" Width="100%" Localization-Select="Chọn"
+                                                        Localization-Cancel="Hủy" Localization-Remove="Xóa" OnFileUploaded="FileUpload_FileUploaded">
+                                                    </asp:RadAsyncUpload>
+                                                    <asp:RadButton ID="btnUploadFile" runat="server" Text="Tải lên" ShowPostBackMask="False">
+                                                        <Icon PrimaryIconUrl="~/ad/assets/images/up.png" />
+                                                    </asp:RadButton>
+                                                    <asp:RadAjaxPanel ID="RadAjaxPanel5" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
+                                                        <asp:RadListView runat="server" ID="RadListView3" DataSourceID="OdsProductDownload"
+                                                            DataKeyNames="ProductDownloadID" OverrideDataSourceControlSorting="True" OnItemCommand="RadListView3_ItemCommand"
+                                                            PageSize="100" Width="100%" Visible='<%# (Container is GridEditFormInsertItem) ? false : true %>'
+                                                            ShowPostBackMask="false">
+                                                            <LayoutTemplate>
+                                                                <div runat="server" id="itemPlaceholder" />
+                                                                <div class="clear">
+                                                                </div>
+                                                            </LayoutTemplate>
+                                                            <ItemTemplate>
+                                                                <asp:HiddenField ID="hdnProductDownloadID" runat="server" Value='<%# Eval("ProductDownloadID") %>' />
+                                                                <asp:HiddenField ID="hdnLinkDownload" runat="server" Value='<%# Eval("LinkDownload") %>' />
+                                                                <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
+                                                                    background: #eeeeee;" class="myClass">
+                                                                    <%--<a id="A1" href='<%# "~/res/product/download/" + Eval("ImageName") %>' runat="server"
+                                                                        class="lightbox">
+                                                                        <img id="Img2" alt="" src='<%# "~/res/product/album/thumbs/" + Eval("ImageName") %>'
+                                                                            runat="server" width="100" height="100" />
+                                                                    </a>--%>
+                                                                    <span><%# Eval("FileName")%></span>
+                                                                    <div align="right">
+                                                                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
+                                                                        <asp:LinkButton ID="LinkButton1" OnClientClick="return confirm('Xóa ảnh?')" runat="server"
+                                                                            CommandName="Delete" CssClass="item"><img width="14px" class="vam" alt="" title="Xóa ảnh" src="../assets/images/trash.png" /></asp:LinkButton>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </ItemTemplate>
+                                                            <EditItemTemplate>
+                                                                <asp:HiddenField ID="hdnProductDownloadID" runat="server" Value='<%# Eval("ProductDownloadID") %>' />
+                                                                <asp:HiddenField ID="hdnProductDownloadCategoryID" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
+                                                                <asp:Panel ID="Panel2" runat="server" DefaultButton="lnkUpdate">
+                                                                    <h3 class="searchTitle clear">
+                                                                        Cập Nhật Ảnh</h3>
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td valign="top" style="padding-right: 10px">
+                                                                                <table class="search" width="100%">
+                                                                                    <tr>
+                                                                                        <td class="left" style="width: 70px">
+                                                                                            Tiêu đề
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <asp:TextBox ID="txtFileName" runat="server" Width="500px" Text='<%# Bind("FileName") %>'></asp:TextBox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="left">
+                                                                                            Thứ tự
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="100%" Text='<%# Bind("Priority") %>'
+                                                                                                EmptyMessage="Thứ tự..." Type="Number">
+                                                                                                <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
+                                                                                            </asp:RadNumericTextBox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="left" colspan="2">
+                                                                                            <asp:CheckBox ID="chkAddIsAvailable" runat="server" Checked='<%# (Container is RadListViewInsertItem) ? true : Eval("IsAvailable")%>'
+                                                                                                Text="Hiển thị" CssClass="checkbox" />
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <div class="edit">
+                                                                        <hr />
+                                                                        <asp:RadButton ID="lnkUpdate" runat="server" CommandName='Update' Text='Cập nhật'>
+                                                                            <Icon PrimaryIconUrl="~/ad/assets/images/ok.png" />
+                                                                        </asp:RadButton>
+                                                                        &nbsp;&nbsp;
+                                                                        <asp:RadButton ID="btnCancel" runat="server" CommandName='Cancel' Text='Hủy'>
+                                                                            <Icon PrimaryIconUrl="~/ad/assets/images/cancel.png" />
+                                                                        </asp:RadButton>
+                                                                    </div>
+                                                                    <div class="clear">
+                                                                    </div>
+                                                                </asp:Panel>
+                                                            </EditItemTemplate>
+                                                        </asp:RadListView>
+                                                        <asp:ObjectDataSource ID="OdsProductDownload" runat="server" SelectMethod="ProductDownloadSelectAll"
+                                                            TypeName="TLLib.ProductDownload" DeleteMethod="ProductDownloadDelete" InsertMethod="ProductDownloadInsert"
+                                                            UpdateMethod="ProductDownloadUpdate">
+                                                            <DeleteParameters>
+                                                                <asp:Parameter Name="ProductDownloadID" Type="String" />
+                                                            </DeleteParameters>
+                                                            <InsertParameters>
+                                                                <asp:Parameter Name="FileName" Type="String" />
+                                                                <asp:Parameter Name="FileNameEn" Type="String" />
+                                                                <asp:Parameter Name="LinkDownload" Type="String" />
+                                                                <asp:Parameter Name="IsAvailable" Type="String" />
+                                                                <asp:Parameter Name="Priority" Type="String" />
+                                                                <asp:Parameter Name="ProductDownloadCategoryID" Type="String" />
+                                                                <asp:ControlParameter Name="ProductID" ControlID="hdnProductID" PropertyName="Value"
+                                                                    Type="String" />
+                                                            </InsertParameters>
+                                                            <SelectParameters>
+                                                                <asp:Parameter DefaultValue="1" Name="ProductDownloadCategoryID" Type="String" />
+                                                                <asp:ControlParameter Name="ProductID" ControlID="hdnProductID" PropertyName="Value"
+                                                                    Type="String" />
+                                                                <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                                                                <asp:Parameter Name="Priority" Type="String" />
+                                                                <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                                                            </SelectParameters>
+                                                            <UpdateParameters>
+                                                                <asp:Parameter Name="ProductDownloadID" Type="String" />
+                                                                <asp:Parameter Name="FileName" Type="String" />
+                                                                <asp:Parameter Name="FileNameEn" Type="String" />
+                                                                <asp:Parameter Name="LinkDownload" Type="String" />
+                                                                <asp:Parameter Name="IsAvailable" Type="String" />
+                                                                <asp:Parameter Name="Priority" Type="String" />
+                                                                <asp:Parameter Name="ProductDownloadCategoryID" Type="String" />
+                                                                <asp:ControlParameter Name="ProductID" ControlID="hdnProductID" PropertyName="Value"
+                                                                    Type="String" />
+                                                            </UpdateParameters>
+                                                        </asp:ObjectDataSource>
                                                     </asp:RadAjaxPanel>
                                                 </asp:RadAjaxPanel>
                                             </div>

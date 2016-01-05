@@ -107,8 +107,8 @@
         <asp:ListView ID="lstProductDetails" runat="server" DataSourceID="odsProductDetails"
             EnableModelValidation="True">
             <ItemTemplate>
-                <h1 class="product-name">
-                    <%# Eval("ProductNameEn")%></h1>
+                <%--<h1 class="product-name">
+                    <%# Eval("ProductNameEn")%></h1>--%>
                 <ul class="list-info">
                     <li>Manufacturer: <strong>
                         <%# Eval("ManufacturerProduct")%></strong></li>

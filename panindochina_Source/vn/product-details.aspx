@@ -42,9 +42,9 @@
                     <div id="jcarouselDetails" class="connected-carousels">
                         <div id="detailsa">
                             <div class="zoom-box">
-                                <a id="zoom1" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
+                                <a id="zoom1" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
                                     class="cloud-zoom" rel="position: 'inside', showTitle: false, adjustY:0, adjustX:0">
-                                    <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
+                                    <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
                                         alt="" />
                                 </a>
                             </div>
@@ -83,10 +83,10 @@
                             <ItemTemplate>
                                 <li>
                                     <div class="small-in">
-                                        <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
-                                            data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
-                                            class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>' ">
-                                            <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "res/product/album/" + Eval("ImageName") : "assets/images/detail-img-1.jpg" %>'
+                                        <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                            data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                            class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>' ">
+                                            <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
                                                 alt="Thumbnail 1" />
                                         </a>
                                     </div>
@@ -107,8 +107,8 @@
         <asp:ListView ID="lstProductDetails" runat="server" DataSourceID="odsProductDetails"
             EnableModelValidation="True">
             <ItemTemplate>
-                <h1 class="product-name">
-                    <%# Eval("ProductName") %></h1>
+                <%--<h1 class="product-name">
+                    <%# Eval("ProductName") %></h1>--%>
                 <ul class="list-info">
                     <li>Manufacturer: <strong>
                         <%# Eval("ManufacturerProduct")%></strong></li>
