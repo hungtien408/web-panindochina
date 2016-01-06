@@ -2140,15 +2140,15 @@ hr {
         display: block;
     }
 .tabs-details .content-tab {
-    border-right: solid 1px #c2c2c2;
+    /*border-right: solid 1px #c2c2c2;*/
     float: left;
-    width: 585px;
+    /*width: 585px;*/
 }
 .tabs-details .content-tab {
-    padding-right: 15px;
+    /*padding-right: 15px;*/
 }
 .tabs-details .wrap-download {
-    border-left: solid 1px #c2c2c2;
+    /*border-left: solid 1px #c2c2c2;*/
     overflow: hidden;
     padding-left: 15px;
     left: -1px;

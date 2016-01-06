@@ -70,6 +70,9 @@ public partial class ad_single_product : System.Web.UI.Page
         {
             TempImage = new DataTable();
             TempImage.Columns.Add("ImageName");
+
+            TempFileUpload = new DataTable();
+            TempFileUpload.Columns.Add("LinkDownload");
         }
     }
     public void RadGrid1_ItemCreated(object sender, Telerik.Web.UI.GridItemEventArgs e)
@@ -298,6 +301,16 @@ public partial class ad_single_product : System.Web.UI.Page
                     }
                 }
 
+                if (TempFileUpload.Rows.Count > 0)
+                {
+                    var oProductDownload = new ProductDownload();
+
+                    foreach (DataRow dr in TempFileUpload.Rows)
+                    {
+                        oProductDownload.ProductDownloadInsert(dr["LinkDownload"].ToString().Substring(0, dr["LinkDownload"].ToString().IndexOf(".")), "", dr["LinkDownload"].ToString(), "True", "", "1", ProductID);
+                    }
+                }
+
                 RadGrid1.Rebind();
             }
             else
@@ -517,8 +530,8 @@ public partial class ad_single_product : System.Web.UI.Page
         string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
         e.File.SaveAs(Server.MapPath(targetFolder + newName));
 
-        ResizeCropImage.ResizeByCondition(targetFolder + newName, 1500, 1331);
-        ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
+        //ResizeCropImage.ResizeByCondition(targetFolder + newName, 1500, 1331);
+        //ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
 
         if (string.IsNullOrEmpty(ProductID))
         {
@@ -558,25 +571,25 @@ public partial class ad_single_product : System.Web.UI.Page
         var Parent = FileUpload.NamingContainer;
         var ProductID = ((HiddenField)Parent.FindControl("hdnProductID")).Value;
         var RadListView3 = (RadListView)Parent.FindControl("RadListView3");
-        var RadListView2 = (RadListView)Parent.FindControl("RadListView2");
+        var RadListView4 = (RadListView)Parent.FindControl("RadListView4");
 
         string targetFolder = "~/res/product/download/";
-        string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
-        //e.File.SaveAs(Server.MapPath(targetFolder + newName));
-        e.File.SaveAs(Server.MapPath(targetFolder + e.File.FileName));
+        //string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
+        string newName = e.File.FileName;
+        e.File.SaveAs(Server.MapPath(targetFolder + newName));
 
-        //if (string.IsNullOrEmpty(ProductID))
-        //{
-        //    TempImage.Rows.Add(new object[] { newName });
+        if (string.IsNullOrEmpty(ProductID))
+        {
+            TempFileUpload.Rows.Add(new object[] { newName });
 
-        //    RadListView2.DataSource = TempImage;
-        //    RadListView2.DataBind();
-        //}
-        if (!string.IsNullOrEmpty(ProductID))
+            RadListView4.DataSource = TempFileUpload;
+            RadListView4.DataBind();
+        }
+        else
         {
             var oProductDownload = new ProductDownload();
 
-            oProductDownload.ProductDownloadInsert(e.File.GetName(), "", e.File.FileName, "True", "", "1", ProductID);
+            oProductDownload.ProductDownloadInsert(e.File.FileName.Substring(0, e.File.FileName.IndexOf(".")), "", e.File.FileName, "True", "", "1", ProductID);
             RadListView3.Rebind();
         }
     }
@@ -614,6 +627,28 @@ public partial class ad_single_product : System.Web.UI.Page
             lblError.Text = ex.Message;
         }
     }
+
+    protected void RadListView4_ItemCommand(object sender, RadListViewCommandEventArgs e)
+    {
+        try
+        {
+            var RadListView4 = (RadListView)sender;
+            if (e.CommandName == "Delete")
+            {
+                var Parent = RadListView4.NamingContainer;
+                var strOldLinkDownload = ((HiddenField)e.ListViewItem.FindControl("hdnLinkDownload")).Value;
+                DeleteFile(strOldLinkDownload);
+
+                TempImage.Rows.Cast<DataRow>().Where(c => c["LinkDownload"].ToString() == strOldLinkDownload).Single().Delete();
+                RadListView4.DataSource = TempImage;
+                RadListView4.DataBind();
+            }
+        }
+        catch (Exception ex)
+        {
+            lblError.Text = ex.Message;
+        }
+    }
     #endregion
 
     #region Properties
@@ -622,6 +657,12 @@ public partial class ad_single_product : System.Web.UI.Page
     {
         get { return (DataTable)ViewState["TempImage"]; }
         set { ViewState["TempImage"] = value; }
+    }
+
+    private DataTable TempFileUpload
+    {
+        get { return (DataTable)ViewState["TempFileUpload"]; }
+        set { ViewState["TempFileUpload"] = value; }
     }
 
     #endregion

@@ -429,7 +429,7 @@
                             <%# string.Format("{0:##,###.##}", Eval("SavePrice")) %>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="Price" HeaderText="Giá" SortExpression="Price">
+                    <asp:GridTemplateColumn DataField="Price" HeaderText="Giá" SortExpression="Price" Visible="False">
                         <ItemTemplate>
                             <%# string.IsNullOrEmpty(Eval("Price").ToString()) ? Eval("OtherPrice") : string.Format("{0:##,###.##}", Eval("Price")) %>
                         </ItemTemplate>
@@ -550,7 +550,7 @@
                         <asp:Panel ID="Panel1" runat="server" DefaultButton="lnkUpdate">
                             <table width="100%">
                                 <tr>
-                                    <td valign="top" style="width: 500px">
+                                    <td valign="top" style="width: 500px" rowspan="2">
                                         <div class="sub_box">
                                             <div class="head">
                                                 Thông Tin Sản Phẩm
@@ -687,7 +687,7 @@
                                                             </asp:RadNumericTextBox>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr class="invisible">
                                                         <td class="left">
                                                             Giá
                                                         </td>
@@ -709,7 +709,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr class="invisible">
                                                         <td class="left">
                                                             Giảm
                                                         </td>
@@ -919,8 +919,7 @@
                                                         </td>
                                                         <td>
                                                             <asp:RadEditor ID="txtSpecificationsEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
-                                                                runat="server" Height="200" Language="vi-VN" Skin="Office2007" Width="503px"
-                                                                Content='<%# Bind("SpecificationsEn") %>'>
+                                                                runat="server" Language="vi-VN" Skin="Office2007" Width="503px" Content='<%# Bind("SpecificationsEn") %>'>
                                                                 <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
                                                                     MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
@@ -929,18 +928,6 @@
                                                                 <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
                                                                 <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
                                                                     ViewPaths="~/Uploads/Template/" />
-                                                                <Tools>
-                                                                    <asp:EditorToolGroup>
-                                                                        <asp:EditorTool Name="Copy" />
-                                                                        <asp:EditorTool Name="Cut" />
-                                                                        <asp:EditorTool Name="Paste" />
-                                                                        <asp:EditorTool Name="Bold" />
-                                                                        <asp:EditorTool Name="Italic" />
-                                                                        <asp:EditorTool Name="Underline" />
-                                                                        <asp:EditorTool Name="InsertLink" />
-                                                                        <asp:EditorTool Name="ForeColor" />
-                                                                    </asp:EditorToolGroup>
-                                                                </Tools>
                                                             </asp:RadEditor>
                                                         </td>
                                                     </tr>
@@ -977,7 +964,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td valign="top" style="width: 300px;">
+                                    <td valign="top" style="width: 400px; height: 200px;">
                                         <div class="sub_box">
                                             <div class="head">
                                                 Ảnh sản phẩm</div>
@@ -1007,7 +994,7 @@
                                                                 <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
                                                                     background: #eeeeee;" class="myClass">
                                                                     <a href='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server" class="lightbox">
-                                                                        <img alt="" src='<%# "~/res/product/album/thumbs/" + Eval("ImageName") %>' runat="server"
+                                                                        <img alt="" src='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server"
                                                                             width="100" height="100" />
                                                                     </a>
                                                                     <div align="right">
@@ -1125,7 +1112,7 @@
                                                                 <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
                                                                     background: #eeeeee;" class="myClass">
                                                                     <a href='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server" class="lightbox">
-                                                                        <img id="Img1" alt="" src='<%# "~/res/product/album/thumbs/" + Eval("ImageName") %>'
+                                                                        <img id="Img1" alt="" src='<%# "~/res/product/album/" + Eval("ImageName") %>'
                                                                             runat="server" width="100" height="100" />
                                                                     </a>
                                                                     <div align="right">
@@ -1141,6 +1128,8 @@
                                             </div>
                                         </div>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td valign="top">
                                         <div class="sub_box">
                                             <div class="head">
@@ -1187,7 +1176,7 @@
                                                                 <asp:HiddenField ID="hdnProductDownloadCategoryID" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
                                                                 <asp:Panel ID="Panel2" runat="server" DefaultButton="lnkUpdate">
                                                                     <h3 class="searchTitle clear">
-                                                                        Cập Nhật Ảnh</h3>
+                                                                        Cập Nhật File Upload</h3>
                                                                     <table width="100%">
                                                                         <tr>
                                                                             <td valign="top" style="padding-right: 10px">
@@ -1197,7 +1186,7 @@
                                                                                             Tiêu đề
                                                                                         </td>
                                                                                         <td>
-                                                                                            <asp:TextBox ID="txtFileName" runat="server" Width="500px" Text='<%# Bind("FileName") %>'></asp:TextBox>
+                                                                                            <asp:TextBox ID="txtFileName" runat="server" Width="294px" Text='<%# Bind("FileName") %>'></asp:TextBox>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
@@ -1205,7 +1194,7 @@
                                                                                             Thứ tự
                                                                                         </td>
                                                                                         <td>
-                                                                                            <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="100%" Text='<%# Bind("Priority") %>'
+                                                                                            <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="300px" Text='<%# Bind("Priority") %>'
                                                                                                 EmptyMessage="Thứ tự..." Type="Number">
                                                                                                 <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
                                                                                             </asp:RadNumericTextBox>
@@ -1272,6 +1261,30 @@
                                                                     Type="String" />
                                                             </UpdateParameters>
                                                         </asp:ObjectDataSource>
+                                                        <asp:RadListView runat="server" ID="RadListView4" PageSize="100" Width="100%" Visible='<%# (Container is GridEditFormInsertItem) ? true : false %>'
+                                                            OnItemCommand="RadListView4_ItemCommand">
+                                                            <LayoutTemplate>
+                                                                <div runat="server" id="itemPlaceholder" />
+                                                                <div class="clear">
+                                                                </div>
+                                                            </LayoutTemplate>
+                                                            <ItemTemplate>
+                                                                <asp:HiddenField ID="hdnLinkDownload" runat="server" Value='<%# Eval("LinkDownload") %>' />
+                                                                <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
+                                                                    background: #eeeeee;" class="myClass">
+                                                                    <%--<a id="A1" href='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server" class="lightbox">
+                                                                        <img id="Img1" alt="" src='<%# "~/res/product/album/thumbs/" + Eval("ImageName") %>'
+                                                                            runat="server" width="100" height="100" />
+                                                                    </a>--%>
+                                                                    <span><%# Eval("LinkDownload")%></span>
+                                                                    <div align="right">
+                                                                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
+                                                                        <asp:LinkButton ID="LinkButton1" OnClientClick="return confirm('Xóa ảnh?')" runat="server"
+                                                                            CommandName="Delete" CssClass="item"><img width="14px" class="vam" alt="" title="Xóa ảnh" src="../assets/images/trash.png" /></asp:LinkButton>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </ItemTemplate>
+                                                        </asp:RadListView>
                                                     </asp:RadAjaxPanel>
                                                 </asp:RadAjaxPanel>
                                             </div>

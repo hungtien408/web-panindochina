@@ -31,15 +31,15 @@
             <asp:Label ID="lblTitle1" runat="server"></asp:Label><span class="iconar icon-chevron-down"></span></a></h2>
     <div class="wrapper-details">
         <div class="details-img">
-            <asp:ListView ID="lstProductImage" runat="server" DataSourceID="odsProductImage"
-                EnableModelValidation="True">
-                <ItemTemplate>
-                    <li>
-                        <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/album/" + Eval("ImageName") : "~/assets/images/detail-img-1.jpg" %>'
-                            runat="server" /></li>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <div id="jcarouselDetails" class="connected-carousels">
+            <div id="jcarouselDetails" class="connected-carousels">
+                <asp:ListView ID="lstProductImage" runat="server" DataSourceID="odsProductImage"
+                    EnableModelValidation="True">
+                    <ItemTemplate>
+                        <li>
+                            <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/album/" + Eval("ImageName") : "~/assets/images/detail-img-1.jpg" %>'
+                                runat="server" /></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
                         <div id="detailsa">
                             <div class="zoom-box">
                                 <a id="zoom1" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
@@ -61,43 +61,44 @@
                                 </a>
                             </div>
                         </div>
-                </LayoutTemplate>
-            </asp:ListView>
-            <asp:ObjectDataSource ID="odsProductImage" runat="server" SelectMethod="ProductImageSelectAll"
-                TypeName="TLLib.ProductImage">
-                <SelectParameters>
-                    <asp:QueryStringParameter QueryStringField="pi" Name="ProductID" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
-            <div class="wrap-small">
-                <div class="navigation">
-                    <a href="#" class="prev prev-navigation navigation-btn"><span class="icon-chevron-left corner">
-                    </span></a><a href="#" class="next next-navigation navigation-btn"><span class="icon-chevron-right corner">
-                    </span></a>
-                    <div class="carousel carousel-navigation">
-                        <asp:ListView ID="lstProductImageBig" runat="server" DataSourceID="odsProductImage"
-                            EnableModelValidation="True">
-                            <ItemTemplate>
-                                <li>
-                                    <div class="small-in">
-                                        <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                            data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                            class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>' ">
-                                            <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                                alt="Thumbnail 1" />
-                                        </a>
-                                    </div>
-                                </li>
-                            </ItemTemplate>
-                            <LayoutTemplate>
-                                <ul>
-                                    <li runat="server" id="itemPlaceholder"></li>
-                                </ul>
-                            </LayoutTemplate>
-                        </asp:ListView>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsProductImage" runat="server" SelectMethod="ProductImageSelectAll"
+                    TypeName="TLLib.ProductImage">
+                    <SelectParameters>
+                        <asp:QueryStringParameter QueryStringField="pi" Name="ProductID" Type="String" />
+                        <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                        <asp:Parameter Name="Priority" Type="String" />
+                        <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+                <div class="wrap-small">
+                    <div class="navigation">
+                        <a href="#" class="prev prev-navigation navigation-btn"><span class="icon-chevron-left corner">
+                        </span></a><a href="#" class="next next-navigation navigation-btn"><span class="icon-chevron-right corner">
+                        </span></a>
+                        <div class="carousel carousel-navigation">
+                            <asp:ListView ID="lstProductImageBig" runat="server" DataSourceID="odsProductImage"
+                                EnableModelValidation="True">
+                                <ItemTemplate>
+                                    <li>
+                                        <div class="small-in">
+                                            <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                                data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                                class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>' ">
+                                                <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                                    alt="Thumbnail 1" />
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <ul>
+                                        <li runat="server" id="itemPlaceholder"></li>
+                                    </ul>
+                                </LayoutTemplate>
+                            </asp:ListView>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,11 +147,11 @@
                     <div class="col-xs-4 element-item">
                         <div class="box-video">
                             <a href="javascript:void(0);" class="video-img fullbox-img group-img" data-toggle="modal"
-                                data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
+                                data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-pvi-" + Eval("ProductVideoID") + ".aspx" %>'>
                                 <img class="hideo" alt='<%# Eval("ImagePath") %>' src='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/product/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'
                                     runat="server" /><span class="mask-icon"></span></a>
                             <h4 class="video-name group-name">
-                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-pvi-" + Eval("ProductVideoID") + ".aspx" %>'>
                                     <%# Eval("Title") %></a></h4>
                         </div>
                     </div>

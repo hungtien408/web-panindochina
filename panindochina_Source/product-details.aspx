@@ -31,15 +31,15 @@
             <asp:Label ID="lblTitle1" runat="server"></asp:Label><span class="iconar icon-chevron-down"></span></a></h2>
     <div class="wrapper-details">
         <div class="details-img">
-            <asp:ListView ID="lstProductImage" runat="server" DataSourceID="odsProductImage"
-                EnableModelValidation="True">
-                <ItemTemplate>
-                    <li>
-                        <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/album/" + Eval("ImageName") : "~/assets/images/detail-img-1.jpg" %>'
-                            runat="server" /></li>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <div id="jcarouselDetails" class="connected-carousels">
+            <div id="jcarouselDetails" class="connected-carousels">
+                <asp:ListView ID="lstProductImage" runat="server" DataSourceID="odsProductImage"
+                    EnableModelValidation="True">
+                    <ItemTemplate>
+                        <li>
+                            <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/album/" + Eval("ImageName") : "~/assets/images/detail-img-1.jpg" %>'
+                                runat="server" /></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
                         <div id="detailsa">
                             <div class="zoom-box">
                                 <a id="zoom1" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
@@ -61,115 +61,116 @@
                                 </a>
                             </div>
                         </div>
-                </LayoutTemplate>
-            </asp:ListView>
-            <asp:ObjectDataSource ID="odsProductImage" runat="server" SelectMethod="ProductImageSelectAll"
-                TypeName="TLLib.ProductImage">
-                <SelectParameters>
-                    <asp:QueryStringParameter QueryStringField="pi" Name="ProductID" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
-            <div class="wrap-small">
-                <div class="navigation">
-                    <a href="#" class="prev prev-navigation navigation-btn"><span class="icon-chevron-left corner">
-                    </span></a><a href="#" class="next next-navigation navigation-btn"><span class="icon-chevron-right corner">
-                    </span></a>
-                    <div class="carousel carousel-navigation">
-                        <asp:ListView ID="lstProductImageBig" runat="server" DataSourceID="odsProductImage"
-                            EnableModelValidation="True">
-                            <ItemTemplate>
-                                <li>
-                                    <div class="small-in">
-                                        <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                            data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                            class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>' ">
-                                            <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
-                                                alt="Thumbnail 1" />
-                                        </a>
-                                    </div>
-                                </li>
-                            </ItemTemplate>
-                            <LayoutTemplate>
-                                <ul>
-                                    <li runat="server" id="itemPlaceholder"></li>
-                                </ul>
-                            </LayoutTemplate>
-                        </asp:ListView>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsProductImage" runat="server" SelectMethod="ProductImageSelectAll"
+                    TypeName="TLLib.ProductImage">
+                    <SelectParameters>
+                        <asp:QueryStringParameter QueryStringField="pi" Name="ProductID" Type="String" />
+                        <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                        <asp:Parameter Name="Priority" Type="String" />
+                        <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+                <div class="wrap-small">
+                    <div class="navigation">
+                        <a href="#" class="prev prev-navigation navigation-btn"><span class="icon-chevron-left corner">
+                        </span></a><a href="#" class="next next-navigation navigation-btn"><span class="icon-chevron-right corner">
+                        </span></a>
+                        <div class="carousel carousel-navigation">
+                            <asp:ListView ID="lstProductImageBig" runat="server" DataSourceID="odsProductImage"
+                                EnableModelValidation="True">
+                                <ItemTemplate>
+                                    <li>
+                                        <div class="small-in">
+                                            <a href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                                data-img='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                                class='cloud-zoom-gallery small-img' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: '<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>' ">
+                                                <img class="img-responsive" src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "../res/product/album/" + Eval("ImageName") : "../assets/images/detail-img-1.jpg" %>'
+                                                    alt="Thumbnail 1" />
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <ul>
+                                        <li runat="server" id="itemPlaceholder"></li>
+                                    </ul>
+                                </LayoutTemplate>
+                            </asp:ListView>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="detail-content">
-        <asp:ListView ID="lstProductDetails" runat="server" DataSourceID="odsProductDetails"
-            EnableModelValidation="True">
-            <ItemTemplate>
-                <%--<h1 class="product-name">
-                    <%# Eval("ProductNameEn")%></h1>--%>
-                <ul class="list-info">
-                    <li>Manufacturer: <strong>
-                        <%# Eval("ManufacturerProduct")%></strong></li>
-                    <li>Model: <strong>
-                        <%# Eval("ModelProduct")%></strong></li>
-                </ul>
-                <div class="description">
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("DescriptionEn")%>'></asp:Label></div>
-                <div class="box-share">
-                    <a href="#">
-                        <img src="assets/images/facebook2.jpg" alt="" /></a> <a href="#">
-                            <img src="assets/images/facebook3.jpg" alt="" /></a> <a href="#" class="link-a mail">
-                                Email</a> <a href="#" class="link-a print">Print</a>
-                </div>
-                <div class="description list-des">
-                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("ContentEn")%>'></asp:Label>
-                </div>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <span runat="server" id="itemPlaceholder" />
-            </LayoutTemplate>
-        </asp:ListView>
-        <asp:ObjectDataSource ID="odsProductDetails" runat="server" SelectMethod="ProductSelectOne"
-            TypeName="TLLib.Product">
-            <SelectParameters>
-                <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" />
-            </SelectParameters>
-        </asp:ObjectDataSource>
-        <div class="wrapper-video">
-            <h5>
-                VIDEOS</h5>
-            <asp:ListView ID="lstVideoProduct" runat="server" DataSourceID="odsVideoProduct"
+        <div class="detail-content">
+            <asp:ListView ID="lstProductDetails" runat="server" DataSourceID="odsProductDetails"
                 EnableModelValidation="True">
                 <ItemTemplate>
-                    <div class="col-xs-4 element-item">
-                        <div class="box-video">
-                            <a href="javascript:void(0);" class="video-img fullbox-img group-img" data-toggle="modal"
-                                data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
-                                <img class="hideo" alt='<%# Eval("ImagePath") %>' src='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/product/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'
-                                    runat="server" /><span class="mask-icon"></span></a>
-                            <h4 class="video-name group-name">
-                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-vi-" + Eval("ProductVideoID") + ".aspx" %>'>
-                                    <%# Eval("TitleEn")%></a></h4>
-                        </div>
+                    <%--<h1 class="product-name">
+                    <%# Eval("ProductNameEn")%></h1>--%>
+                    <ul class="list-info">
+                        <li>Manufacturer: <strong>
+                            <%# Eval("ManufacturerProduct")%></strong></li>
+                        <li>Model: <strong>
+                            <%# Eval("ModelProduct")%></strong></li>
+                    </ul>
+                    <div class="description">
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("DescriptionEn")%>'></asp:Label></div>
+                    <div class="box-share">
+                        <a href="#">
+                            <img src="assets/images/facebook2.jpg" alt="" /></a> <a href="#">
+                                <img src="assets/images/facebook3.jpg" alt="" /></a> <a href="#" class="link-a mail">
+                                    Email</a> <a href="#" class="link-a print">Print</a>
+                    </div>
+                    <div class="description list-des">
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("ContentEn")%>'></asp:Label>
                     </div>
                 </ItemTemplate>
                 <LayoutTemplate>
-                    <div class="row group-tb">
-                        <span runat="server" id="itemPlaceholder" />
-                    </div>
+                    <span runat="server" id="itemPlaceholder" />
                 </LayoutTemplate>
             </asp:ListView>
-            <asp:ObjectDataSource ID="odsVideoProduct" runat="server" SelectMethod="ProductVideoSelectAll"
-                TypeName="TLLib.ProductVideo">
+            <asp:ObjectDataSource ID="odsProductDetails" runat="server" SelectMethod="ProductSelectOne"
+                TypeName="TLLib.Product">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" />
-                    <asp:Parameter Name="IsAvailable" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter Name="SortByPriority" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
+            <div class="wrapper-video">
+                <h5>
+                    VIDEOS</h5>
+                <asp:ListView ID="lstVideoProduct" runat="server" DataSourceID="odsVideoProduct"
+                    EnableModelValidation="True">
+                    <ItemTemplate>
+                        <div class="col-xs-4 element-item">
+                            <div class="box-video">
+                                <a href="javascript:void(0);" class="video-img fullbox-img group-img" data-toggle="modal"
+                                    data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-pvi-" + Eval("ProductVideoID") + ".aspx" %>'>
+                                    <img class="hideo" alt='<%# Eval("ImagePath") %>' src='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/product/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'
+                                        runat="server" /><span class="mask-icon"></span></a>
+                                <h4 class="video-name group-name">
+                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("TitleEn")) + "-pvi-" + Eval("ProductVideoID") + ".aspx" %>'>
+                                        <%# Eval("TitleEn")%></a></h4>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <div class="row group-tb">
+                            <span runat="server" id="itemPlaceholder" />
+                        </div>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsVideoProduct" runat="server" SelectMethod="ProductVideoSelectAll"
+                    TypeName="TLLib.ProductVideo">
+                    <SelectParameters>
+                        <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" />
+                        <asp:Parameter Name="IsAvailable" Type="String" />
+                        <asp:Parameter Name="Priority" Type="String" />
+                        <asp:Parameter Name="SortByPriority" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            </div>
         </div>
     </div>
     <div class="tabs-details">
@@ -179,6 +180,8 @@
                 data-toggle="tab">Specifications</a></li>
             <li role="presentation"><a class="corner" href="#tabs-2" aria-controls="tabs-2" role="tab"
                 data-toggle="tab">Accessories</a></li>
+            <li role="presentation"><a class="corner" href="#tabs-3" aria-controls="tabs-3" role="tab"
+                data-toggle="tab">Document</a></li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
@@ -236,93 +239,95 @@
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </div>
-            </div>
-            <asp:ListView ID="lstDownloadByProduct" runat="server" DataSourceID="odsDownloadByProduct"
-                EnableModelValidation="True">
-                <ItemTemplate>
-                    <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
-                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <div class="wrap-download">
-                        <ul class="list-download">
-                            <li runat="server" id="itemPlaceholder"></li>
-                        </ul>
-                    </div>
-                </LayoutTemplate>
-            </asp:ListView>
-            <asp:ObjectDataSource ID="odsDownloadByProduct" runat="server" SelectMethod="ProductDownloadSelectAll"
-                TypeName="TLLib.ProductDownload">
-                <SelectParameters>
-                    <asp:Parameter DefaultValue="1" Name="ProductDownloadCategoryID" Type="String" />
-                    <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" DefaultValue="" />
-                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
-            <asp:ListView ID="lstDownloadCategoryByProductParent" runat="server" DataSourceID="odsDownloadCategoryByProductParent"
-                EnableModelValidation="True">
-                <ItemTemplate>
-                    <asp:HiddenField ID="hdnProductDownloadCategoryID" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
-                    <asp:ListView ID="lstDownloadCategory" runat="server" DataSourceID="odsDownloadCategory"
+                <div role="tabpanel" class="tab-pane" id="tabs-3">
+                    <asp:ListView ID="lstDownloadByProduct" runat="server" DataSourceID="odsDownloadByProduct"
                         EnableModelValidation="True">
                         <ItemTemplate>
-                            <h5>
-                                <%# Eval("ProductDownloadCategoryNameEn") %></h5>
-                            <asp:HiddenField ID="hdnProductDownloadCategoryID2" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
-                            <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
+                            <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
+                                download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <div class="wrap-download">
+                                <ul class="list-download">
+                                    <li runat="server" id="itemPlaceholder"></li>
+                                </ul>
+                            </div>
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsDownloadByProduct" runat="server" SelectMethod="ProductDownloadSelectAll"
+                        TypeName="TLLib.ProductDownload">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="1" Name="ProductDownloadCategoryID" Type="String" />
+                            <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" DefaultValue="" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ListView ID="lstDownloadCategoryByProductParent" runat="server" DataSourceID="odsDownloadCategoryByProductParent"
+                        EnableModelValidation="True">
+                        <ItemTemplate>
+                            <asp:HiddenField ID="hdnProductDownloadCategoryID" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
+                            <asp:ListView ID="lstDownloadCategory" runat="server" DataSourceID="odsDownloadCategory"
+                                EnableModelValidation="True">
                                 <ItemTemplate>
-                                    <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
-                                        download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
+                                    <h5>
+                                        <%# Eval("ProductDownloadCategoryNameEn") %></h5>
+                                    <asp:HiddenField ID="hdnProductDownloadCategoryID2" runat="server" Value='<%# Eval("ProductDownloadCategoryID") %>' />
+                                    <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
+                                        <ItemTemplate>
+                                            <li><a id="A1" href='<%# !string.IsNullOrEmpty(Eval("LinkDownload").ToString()) ? "~/res/product/download/" + Eval("LinkDownload") : "javascript:void(0);" %>'
+                                                download runat="server"><span class="icona-download">download</span><span class="name"><%# Eval("FileName") %></span></a></li>
+                                        </ItemTemplate>
+                                        <LayoutTemplate>
+                                            <ul class="list-download">
+                                                <li runat="server" id="itemPlaceholder"></li>
+                                            </ul>
+                                        </LayoutTemplate>
+                                    </asp:ListView>
+                                    <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="ProductDownloadOfSameSelectAll"
+                                        TypeName="TLLib.ProductDownloadOfSame">
+                                        <SelectParameters>
+                                            <asp:Parameter Name="StartRowIndex" Type="String" />
+                                            <asp:Parameter Name="EndRowIndex" Type="String" />
+                                            <asp:Parameter Name="Keyword" Type="String" />
+                                            <asp:Parameter Name="ProductDownloadOfSameID" Type="String" />
+                                            <asp:Parameter Name="ProductID" Type="String" />
+                                            <asp:ControlParameter ControlID="hdnProductDownloadCategoryID2" PropertyName="Value"
+                                                Name="ProductDownloadCategoryID" Type="String" />
+                                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                                            <asp:Parameter Name="Priority" Type="String" />
+                                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                                            <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" Type="String" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
                                 </ItemTemplate>
                                 <LayoutTemplate>
-                                    <ul class="list-download">
-                                        <li runat="server" id="itemPlaceholder"></li>
-                                    </ul>
+                                    <span runat="server" id="itemPlaceholder" />
                                 </LayoutTemplate>
                             </asp:ListView>
-                            <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="ProductDownloadOfSameSelectAll"
-                                TypeName="TLLib.ProductDownloadOfSame">
+                            <asp:ObjectDataSource ID="odsDownloadCategory" runat="server" SelectMethod="ProductDownloadCategorySelectOne"
+                                TypeName="TLLib.ProductDownloadCategory">
                                 <SelectParameters>
-                                    <asp:Parameter Name="StartRowIndex" Type="String" />
-                                    <asp:Parameter Name="EndRowIndex" Type="String" />
-                                    <asp:Parameter Name="Keyword" Type="String" />
-                                    <asp:Parameter Name="ProductDownloadOfSameID" Type="String" />
-                                    <asp:Parameter Name="ProductID" Type="String" />
-                                    <asp:ControlParameter ControlID="hdnProductDownloadCategoryID2" PropertyName="Value"
+                                    <asp:ControlParameter ControlID="hdnProductDownloadCategoryID" PropertyName="Value"
                                         Name="ProductDownloadCategoryID" Type="String" />
-                                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                                    <asp:Parameter Name="Priority" Type="String" />
-                                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                                    <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" Type="String" />
                                 </SelectParameters>
                             </asp:ObjectDataSource>
                         </ItemTemplate>
                         <LayoutTemplate>
-                            <span runat="server" id="itemPlaceholder" />
+                            <div class="wrap-download">
+                                <span runat="server" id="itemPlaceholder" />
+                            </div>
                         </LayoutTemplate>
                     </asp:ListView>
-                    <asp:ObjectDataSource ID="odsDownloadCategory" runat="server" SelectMethod="ProductDownloadCategorySelectOne"
-                        TypeName="TLLib.ProductDownloadCategory">
+                    <asp:ObjectDataSource ID="odsDownloadCategoryByProductParent" runat="server" SelectMethod="ProductDownloadOfSameSelectCategoryByProductParent"
+                        TypeName="TLLib.ProductDownloadOfSame">
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="hdnProductDownloadCategoryID" PropertyName="Value"
-                                Name="ProductDownloadCategoryID" Type="String" />
+                            <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <div class="wrap-download">
-                        <span runat="server" id="itemPlaceholder" />
-                    </div>
-                </LayoutTemplate>
-            </asp:ListView>
-            <asp:ObjectDataSource ID="odsDownloadCategoryByProductParent" runat="server" SelectMethod="ProductDownloadOfSameSelectCategoryByProductParent"
-                TypeName="TLLib.ProductDownloadOfSame">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="ProductParentID" QueryStringField="pi" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
+                </div>
+            </div>
         </div>
     </div>
     <h5 class="title-order">
