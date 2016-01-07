@@ -435,8 +435,7 @@
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
                     <asp:GridBoundColumn DataField="ProductCategoryName" HeaderText="Danh mục" SortExpression="ProductCategoryName" />
-                    <asp:GridBoundColumn DataField="ManufacturerName" HeaderText="Nhà sản xuất" SortExpression="ManufacturerName"
-                        Visible="False" />
+                    <asp:GridBoundColumn DataField="ManufacturerName" HeaderText="Thương hiệu" SortExpression="ManufacturerName" />
                     <asp:GridTemplateColumn DataField="Priority" HeaderStyle-Width="1%" HeaderText="Thứ tự"
                         SortExpression="Priority">
                         <ItemTemplate>
@@ -643,9 +642,9 @@
                                                             </asp:RadTextBox>
                                                         </td>
                                                     </tr>
-                                                    <tr class="invisible">
+                                                    <tr>
                                                         <td class="left">
-                                                            Nhà sản xuất
+                                                            Thương hiệu
                                                         </td>
                                                         <td>
                                                             <asp:RadComboBox Filter="Contains" ID="ddlManufacturer" runat="server" DataSourceID="ObjectDataSource3"
@@ -975,7 +974,8 @@
                                                         AllowedFileExtensions="jpg,jpeg,gif,png" Localization-Select="Chọn" Localization-Cancel="Hủy"
                                                         Localization-Remove="Xóa" OnFileUploaded="FileImageAlbum_FileUploaded">
                                                     </asp:RadAsyncUpload>
-                                                    <span class="required">(Kích thước 1500px x 1331px)</span>
+                                                    <%--<span class="required">(Kích thước 1500px x 1331px)</span>--%>
+                                                    <span class="required">(Kích thước 850px x 800px)</span>
                                                     <asp:RadButton ID="btnUpload" runat="server" Text="Tải lên" ShowPostBackMask="False">
                                                         <Icon PrimaryIconUrl="~/ad/assets/images/up.png" />
                                                     </asp:RadButton>
@@ -1137,7 +1137,7 @@
                                             <div class="cont">
                                                 <asp:RadAjaxPanel ID="RadAjaxPanel4" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
                                                     <asp:RadAsyncUpload ID="FileUpload" runat="server" MultipleFileSelection="Automatic"
-                                                        TargetFolder="~/res/product/download/" Width="100%" Localization-Select="Chọn"
+                                                        TargetFolder="~/res/product/download/" TemporaryFolder="~/res/TempAsync" Width="100%" Localization-Select="Chọn"
                                                         Localization-Cancel="Hủy" Localization-Remove="Xóa" OnFileUploaded="FileUpload_FileUploaded">
                                                     </asp:RadAsyncUpload>
                                                     <asp:RadButton ID="btnUploadFile" runat="server" Text="Tải lên" ShowPostBackMask="False">

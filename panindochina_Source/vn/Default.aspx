@@ -404,7 +404,7 @@
                     </ul>--%>
                     <asp:ListView ID="lstPartent" runat="server" DataSourceID="odsPartent" EnableModelValidation="True">
                         <ItemTemplate>
-                            <li><a class="parrent-img corner hi-icon" href="javascript:void(0);">
+                            <li><a class="parrent-img corner hi-icon" href='<%# string.IsNullOrEmpty(Eval("ManufacturerID").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ManufacturerName")) + "-pmi-" + Eval("ManufacturerID") + ".aspx" %>'>
                                 <img class="corner" alt='<%# Eval("PartnerImage") %>' src='<%# !string.IsNullOrEmpty(Eval("PartnerImage").ToString()) ? "~/res/partner/" + Eval("PartnerImage") : "~/assets/images/pare-img-1.jpg" %>'
                                     runat="server" />
                             </a></li>
@@ -415,7 +415,7 @@
                             </ul>
                         </LayoutTemplate>
                     </asp:ListView>
-                    <asp:ObjectDataSource ID="odsPartent" runat="server" SelectMethod="PartnerSelectAll"
+                    <asp:ObjectDataSource ID="odsPartent" runat="server" SelectMethod="PartnerSelectAll1"
                         TypeName="TLLib.Partner">
                         <SelectParameters>
                             <asp:Parameter Name="Keyword" Type="String" />
@@ -424,6 +424,7 @@
                             <asp:Parameter Name="LinkWebsite" Type="String" />
                             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                             <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter Name="ManufacturerID" Type="String" />
                             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>

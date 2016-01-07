@@ -21,7 +21,8 @@ namespace TLLib
             string Address,
             string LinkWebsite,
             string IsAvailable,
-            string Priority
+            string Priority,
+            string ManufacturerID
         )
         {
             try
@@ -37,6 +38,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@LinkWebsite", string.IsNullOrEmpty(LinkWebsite) ? dbNULL : (object)(LinkWebsite.ToLower().StartsWith("http://") ? LinkWebsite.ToLower() : "http://" + LinkWebsite.ToLower()));
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
+                cmd.Parameters.AddWithValue("@ManufacturerID", string.IsNullOrEmpty(ManufacturerID) ? dbNULL : (object)ManufacturerID);
 
                 SqlParameter imageNameParam = new SqlParameter("@OutImageName", null);
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
@@ -69,7 +71,8 @@ namespace TLLib
             string Address,
             string LinkWebsite,
             string IsAvailable,
-            string Priority
+            string Priority,
+            string ManufacturerID
         )
         {
             try
@@ -86,6 +89,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@LinkWebsite", string.IsNullOrEmpty(LinkWebsite) ? dbNULL : (object)(LinkWebsite.ToLower().StartsWith("http://") ? LinkWebsite.ToLower() : "http://" + LinkWebsite.ToLower()));
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
+                cmd.Parameters.AddWithValue("@ManufacturerID", string.IsNullOrEmpty(ManufacturerID) ? dbNULL : (object)ManufacturerID);
 
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
@@ -202,6 +206,50 @@ namespace TLLib
 
                 if (errorCodeParam.Value.ToString() != "0")
                     throw new Exception("Stored Procedure 'usp_Partner_SelectAll' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable PartnerSelectAll1(
+            string Keyword,
+            string PartnerName,
+            string Address,
+            string LinkWebsite,
+            string IsAvailable,
+            string Priority,
+            string ManufacturerID,
+            string SortByPriority
+        )
+        {
+            try
+            {
+                var dt = new DataTable();
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_Partner_SelectAll1", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Keyword", string.IsNullOrEmpty(Keyword) ? dbNULL : (object)Keyword);
+                cmd.Parameters.AddWithValue("@PartnerName", string.IsNullOrEmpty(PartnerName) ? dbNULL : (object)PartnerName);
+                cmd.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(Address) ? dbNULL : (object)Address);
+                cmd.Parameters.AddWithValue("@LinkWebsite", string.IsNullOrEmpty(LinkWebsite) ? dbNULL : (object)LinkWebsite);
+                cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
+                cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
+                cmd.Parameters.AddWithValue("@ManufacturerID", string.IsNullOrEmpty(ManufacturerID) ? dbNULL : (object)ManufacturerID);
+                cmd.Parameters.AddWithValue("@SortByPriority", string.IsNullOrEmpty(SortByPriority) ? dbNULL : (object)SortByPriority);
+
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                var sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_Partner_SelectAll1' reported the ErrorCode : " + errorCodeParam.Value.ToString());
 
                 return dt;
             }

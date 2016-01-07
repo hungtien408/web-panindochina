@@ -132,7 +132,7 @@
             </div>
         </asp:Panel>
         <asp:Label ID="lblError" ForeColor="Red" runat="server"></asp:Label>
-        <asp:RadGrid ID="RadGrid1" AllowMultiRowSelection="True" runat="server" Culture="vi-VN" 
+        <asp:RadGrid ID="RadGrid1" AllowMultiRowSelection="True" runat="server" Culture="vi-VN"
             DataSourceID="ObjectDataSource1" GridLines="Horizontal" AutoGenerateColumns="False"
             AllowAutomaticDeletes="True" ShowStatusBar="True" OnItemCommand="RadGrid1_ItemCommand"
             OnItemDataBound="RadGrid1_ItemDataBound" CssClass="grid" AllowAutomaticUpdates="True"
@@ -189,9 +189,11 @@
                             <asp:HiddenField ID="hdnPartnerImage" runat="server" Value='<%# Eval("PartnerImage") %>' />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridBoundColumn HeaderText="ID" DataField="PartnerID" SortExpression="PartnerID"  Visible="False">
+                    <asp:GridBoundColumn HeaderText="ID" DataField="PartnerID" SortExpression="PartnerID"
+                        Visible="False">
                     </asp:GridBoundColumn>
-                    <asp:GridTemplateColumn HeaderText="Tên đối tác" DataField="PartnerName" SortExpression="PartnerName" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Tên đối tác" DataField="PartnerName" SortExpression="PartnerName"
+                        Visible="False">
                         <ItemTemplate>
                             <asp:Label ID="lblPartnerName" runat="server" Text='<%# Eval("PartnerName")%>'></asp:Label>
                         </ItemTemplate>
@@ -202,12 +204,25 @@
                             <asp:Label ID="lblPartnerNameEn" runat="server" Text='<%# Eval("PartnerNameEn")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Địa chỉ" DataField="Address" SortExpression="Address" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Thương hiệu" DataField="ManufacturerName" SortExpression="ManufacturerName">
+                        <ItemTemplate>
+                            <asp:Label ID="lblManufacturerName" runat="server" Text='<%# Eval("ManufacturerName")%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn HeaderText="Thương hiệu(Tiếng Anh)" DataField="ManufacturerNameEn"
+                        SortExpression="ManufacturerNameEn" Visible="False">
+                        <ItemTemplate>
+                            <asp:Label ID="lblManufacturerNameEn" runat="server" Text='<%# Eval("ManufacturerNameEn")%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn HeaderText="Địa chỉ" DataField="Address" SortExpression="Address"
+                        Visible="False">
                         <ItemTemplate>
                             <asp:Label ID="lblAddress" runat="server" Text='<%# Eval("Address")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Website" DataField="LinkWebsite" SortExpression="LinkWebsite" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Website" DataField="LinkWebsite" SortExpression="LinkWebsite"
+                        Visible="False">
                         <ItemTemplate>
                             <a href='<%# Eval("LinkWebsite")%>' target="_blank">
                                 <%# Eval("LinkWebsite")%></a>
@@ -277,6 +292,17 @@
                                     <td>
                                         <asp:TextBox ID="txtPartnerNameEn" runat="server" Text='<%# Bind("PartnerNameEn") %>'
                                             Width="500px"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Thương hiệu
+                                    </td>
+                                    <td>
+                                        <asp:RadComboBox Filter="Contains" ID="ddlManufacturer" runat="server" DataSourceID="ObjectDataSource2"
+                                            DataTextField="ManufacturerName" DataValueField="ManufacturerID" Width="504px"
+                                            OnDataBound="DropDownList_DataBound" EmptyMessage="- Chọn -">
+                                        </asp:RadComboBox>
                                     </td>
                                 </tr>
                                 <tr class="invisible">
@@ -371,7 +397,7 @@
         </asp:RadInputManager>
     </asp:RadAjaxPanel>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="PartnerDelete"
-        InsertMethod="PartnerInsert" SelectMethod="PartnerSelectAll" TypeName="TLLib.Partner"
+        InsertMethod="PartnerInsert" SelectMethod="PartnerSelectAll1" TypeName="TLLib.Partner"
         UpdateMethod="PartnerUpdate">
         <DeleteParameters>
             <asp:Parameter Name="PartnerID" Type="String" />
@@ -385,6 +411,7 @@
             <asp:Parameter Name="LinkWebsite" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="ManufacturerID" Type="String" />
         </InsertParameters>
         <SelectParameters>
             <asp:Parameter Name="Keyword" Type="String" />
@@ -396,6 +423,7 @@
                 Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="ManufacturerID" Type="String" />
             <asp:Parameter Name="SortByPriority" Type="String" />
         </SelectParameters>
         <UpdateParameters>
@@ -408,7 +436,17 @@
             <asp:Parameter Name="LinkWebsite" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="ManufacturerID" Type="String" />
         </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ManufacturerSelectAll"
+        TypeName="TLLib.Manufacturer">
+        <SelectParameters>
+            <asp:Parameter Name="ManufacturerName" Type="String" />
+            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+            <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+        </SelectParameters>
     </asp:ObjectDataSource>
     <asp:RadProgressManager ID="RadProgressManager1" runat="server" />
     <asp:RadProgressArea ID="ProgressArea1" runat="server" Culture="vi-VN" DisplayCancelButton="True"

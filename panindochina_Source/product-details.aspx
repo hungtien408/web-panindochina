@@ -110,6 +110,8 @@
                     <%--<h1 class="product-name">
                     <%# Eval("ProductNameEn")%></h1>--%>
                     <ul class="list-info">
+                        <li>Brand: <strong>
+                            <a href='<%# string.IsNullOrEmpty(Eval("ManufacturerID").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ManufacturerName")) + "-pmi-" + Eval("ManufacturerID") + ".aspx" %>'><%# Eval("ManufacturerName")%></a></strong></li>
                         <li>Manufacturer: <strong>
                             <%# Eval("ManufacturerProduct")%></strong></li>
                         <li>Model: <strong>

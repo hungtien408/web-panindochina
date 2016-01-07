@@ -144,6 +144,7 @@ public partial class ad_single_partner : System.Web.UI.Page
             string strPartnerImage = FilePartnerImage.UploadedFiles.Count > 0 ? FilePartnerImage.UploadedFiles[0].GetName() : "";
             string strIsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
             string strPriority = ((RadNumericTextBox)row.FindControl("txtPriority")).Text.Trim();
+            string ManufacturerID = ((RadComboBox)row.FindControl("ddlManufacturer")).SelectedValue;
 
             var oPartner = new Partner();
 
@@ -157,7 +158,8 @@ public partial class ad_single_partner : System.Web.UI.Page
                     strAddress,
                     strLinkWebsite,
                     strIsAvailable,
-                    strPriority
+                    strPriority,
+                    ManufacturerID
                     );
                 string strFullPath = "~/res/partner/" + strPartnerImage;
 
@@ -180,6 +182,7 @@ public partial class ad_single_partner : System.Web.UI.Page
                 dsUpdateParam["ConvertedPartnerName"].DefaultValue = strConvertedPartnerName;
                 dsUpdateParam["PartnerImage"].DefaultValue = strPartnerImage;
                 dsUpdateParam["IsAvailable"].DefaultValue = strIsAvailable;
+                dsUpdateParam["ManufacturerID"].DefaultValue = ManufacturerID;
 
                 if (!string.IsNullOrEmpty(strPartnerImage))
                 {
@@ -213,7 +216,17 @@ public partial class ad_single_partner : System.Web.UI.Page
             var itemtype = e.Item.ItemType;
             var row = itemtype == GridItemType.EditFormItem ? (GridEditFormItem)e.Item : (GridEditFormInsertItem)e.Item;
             var FilePartnerImage = (RadUpload)row.FindControl("FilePartnerImage");
+            var dv = (DataView)ObjectDataSource1.Select();
+            var PartnerID = ((HiddenField)row.FindControl("hdnPartnerID")).Value;
+            var ddlManufacturer = (RadComboBox)row.FindControl("ddlManufacturer");
 
+            if (!string.IsNullOrEmpty(PartnerID))
+            {
+                dv.RowFilter = "PartnerID = " + PartnerID;
+
+                if (!string.IsNullOrEmpty(dv[0]["ManufacturerID"].ToString()))
+                    ddlManufacturer.SelectedValue = dv[0]["ManufacturerID"].ToString();
+            }
             RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FilePartnerImage.ClientID));
         }
     }
