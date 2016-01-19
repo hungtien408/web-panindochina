@@ -166,6 +166,8 @@ public partial class ad_single_product : System.Web.UI.Page
         {
             string OldImageName;
             var oProduct = new Product();
+            var oProductImage = new ProductImage();
+            var oProductDownload = new ProductDownload();
 
             string errorList = "", ProductName = "";
 
@@ -174,7 +176,10 @@ public partial class ad_single_product : System.Web.UI.Page
                 try
                 {
                     var ProductID = item.GetDataKeyValue("ProductID").ToString();
-                    ProductName = item["ProductName"].Text;
+
+                    oProductImage.ProductImageDeleteByProduct(ProductID);
+                    oProductDownload.ProductDownloadDeleteByProduct(ProductID);
+
                     oProduct.ProductDelete(ProductID);
 
                     OldImageName = ((HiddenField)item.FindControl("hdnImageName")).Value;
@@ -287,8 +292,12 @@ public partial class ad_single_product : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(ImageName))
                 {
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    //ResizeCropImage.ResizeByCondition(strFullPath, 800, 800);
+                    //ResizeCropImage.ResizeByCondition(strFullPath, 240, 265);
                     //ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120);
+
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.CreateThumbNailWithBackGroundColor("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120, bgColor);
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 240, 265, bgColor);
                 }
 
                 if (TempImage.Rows.Count > 0)
@@ -345,8 +354,12 @@ public partial class ad_single_product : System.Web.UI.Page
                     string strFullPath = "~/res/product/" + ImageName;
 
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    //ResizeCropImage.ResizeByCondition(strFullPath, 800, 800);
+                    //ResizeCropImage.ResizeByCondition(strFullPath, 240, 265);
                     //ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120);
+
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.CreateThumbNailWithBackGroundColor("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120, bgColor);
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 240, 265, bgColor);
                 }
             }
         }
@@ -530,8 +543,12 @@ public partial class ad_single_product : System.Web.UI.Page
         string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
         e.File.SaveAs(Server.MapPath(targetFolder + newName));
 
-        //ResizeCropImage.ResizeByCondition(targetFolder + newName, 1500, 1331);
+        //ResizeCropImage.ResizeByCondition(targetFolder + newName, 850, 800);
         //ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
+
+        string bgColor = "#ffffff";
+        ResizeCropImage.CreateThumbNailWithBackGroundColor("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120, bgColor);
+        ResizeCropImage.ResizeWithBackGroundColor(targetFolder + newName, 850, 800, bgColor);
 
         if (string.IsNullOrEmpty(ProductID))
         {
@@ -559,8 +576,12 @@ public partial class ad_single_product : System.Web.UI.Page
         string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
         e.File.SaveAs(Server.MapPath(targetFolder + newName));
 
-        //ResizeCropImage.ResizeByCondition(targetFolder + newName, 800, 800);
+        //ResizeCropImage.ResizeByCondition(targetFolder + newName, 850, 800);
         //ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", newName, 120, 120);
+
+        string bgColor = "#ffffff";
+        ResizeCropImage.CreateThumbNailWithBackGroundColor("~/res/product/", "~/res/product/thumbs/", newName, 120, 120, bgColor);
+        ResizeCropImage.ResizeWithBackGroundColor(targetFolder + newName, 850, 800, bgColor);
 
         hdnNewImageName.Value = newName;
     }

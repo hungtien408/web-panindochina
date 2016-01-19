@@ -162,6 +162,35 @@ namespace TLLib
             }
         }
 
+        public int ProductDownloadDeleteByProduct(
+            string ProductID
+        )
+        {
+            try
+            {
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_ProductDownload_DeleteByProduct", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductID", string.IsNullOrEmpty(ProductID) ? dbNULL : (object)ProductID);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                scon.Open();
+                int success = cmd.ExecuteNonQuery();
+                scon.Close();
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_ProductDownload_DeleteByProduct' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return success;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public DataTable ProductDownloadSelectAll(
             string ProductDownloadCategoryID,
             string ProductID,
