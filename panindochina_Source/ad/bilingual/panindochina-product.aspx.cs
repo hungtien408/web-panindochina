@@ -203,6 +203,7 @@ public partial class ad_single_product : System.Web.UI.Page
         else if (e.CommandName == "InitInsert" || e.CommandName == "EditSelected" || e.CommandName == "Edit")
         {
             TempImage.Rows.Clear();
+            TempFileUpload.Rows.Clear();
         }
         else if (e.CommandName == "PerformInsert" || e.CommandName == "Update")
         {
@@ -372,6 +373,15 @@ public partial class ad_single_product : System.Web.UI.Page
                     DeletePhotoAlbum(row["ImageName"].ToString());
                 }
                 TempImage.Rows.Clear();
+            }
+
+            if (TempFileUpload.Rows.Count > 0)
+            {
+                foreach (DataRow row in TempFileUpload.Rows)
+                {
+                    DeleteFile(row["LinkDownload"].ToString());
+                }
+                TempFileUpload.Rows.Clear();
             }
         }
         else if (e.CommandName == "DeleteImage")
@@ -641,6 +651,10 @@ public partial class ad_single_product : System.Web.UI.Page
             {
                 string OldLinkDownload = ((HiddenField)e.ListViewItem.FindControl("hdnLinkDownload")).Value;
                 DeleteFile(OldLinkDownload);
+
+                TempFileUpload.Rows.Cast<DataRow>().Where(c => c["LinkDownload"].ToString() == OldLinkDownload).Single().Delete();
+                RadListView3.DataSource = TempFileUpload;
+                RadListView3.DataBind();
             }
         }
         catch (Exception ex)
@@ -660,8 +674,8 @@ public partial class ad_single_product : System.Web.UI.Page
                 var strOldLinkDownload = ((HiddenField)e.ListViewItem.FindControl("hdnLinkDownload")).Value;
                 DeleteFile(strOldLinkDownload);
 
-                TempImage.Rows.Cast<DataRow>().Where(c => c["LinkDownload"].ToString() == strOldLinkDownload).Single().Delete();
-                RadListView4.DataSource = TempImage;
+                TempFileUpload.Rows.Cast<DataRow>().Where(c => c["LinkDownload"].ToString() == strOldLinkDownload).Single().Delete();
+                RadListView4.DataSource = TempFileUpload;
                 RadListView4.DataBind();
             }
         }
