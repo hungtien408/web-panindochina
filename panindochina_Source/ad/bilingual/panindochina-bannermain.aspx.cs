@@ -169,7 +169,7 @@ public partial class ad_single_advertisement : System.Web.UI.Page
             string strPriority = ((RadNumericTextBox)row.FindControl("txtPriority")).Text.Trim();
             string strFromDate = dpFromDate.SelectedDate.HasValue ? dpFromDate.SelectedDate.Value.ToString("MM/dd/yyyy") : "";
             string strToDate = dpToDate.SelectedDate.HasValue ? dpToDate.SelectedDate.Value.ToString("MM/dd/yyyy") : "";
-            string strAdsCategoryID = "6";//((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
+            string strAdsCategoryID = "5";//((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
             string strWebsite = ((TextBox)row.FindControl("txtWebsite")).Text.Trim();
             double ratio = 0;
 
@@ -219,6 +219,8 @@ public partial class ad_single_advertisement : System.Web.UI.Page
                     if (IsImageFormat(strFileName))
                     {
                         //ResizeCropImage.ResizeByCondition(strFullPath, 800, 800);
+                        string bgColor = "#ffffff";
+                        ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 1260, 505, bgColor);
                     }
                 }
                 RadGrid1.Rebind();
@@ -249,6 +251,8 @@ public partial class ad_single_advertisement : System.Web.UI.Page
                     if (IsImageFormat(strFileName))
                     {
                         //ResizeCropImage.ResizeByCondition(strFullPath, 654, 654);
+                        string bgColor = "#ffffff";
+                        ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 1260, 505, bgColor);
                     }
                 }
             }

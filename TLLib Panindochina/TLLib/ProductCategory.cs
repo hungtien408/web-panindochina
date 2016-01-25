@@ -234,6 +234,35 @@ namespace TLLib
             }
         }
 
+        public int ProductCategoryImageHoverDelete(
+            string ProductCategoryID
+        )
+        {
+            try
+            {
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_ProductCategoryImageHover_Delete", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductCategoryID", string.IsNullOrEmpty(ProductCategoryID) ? dbNULL : (object)ProductCategoryID);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                scon.Open();
+                int success = cmd.ExecuteNonQuery();
+                scon.Close();
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_ProductCategoryImageHover_Delete' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return success;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public DataTable ProductCategorySelectAll()
         {
             try

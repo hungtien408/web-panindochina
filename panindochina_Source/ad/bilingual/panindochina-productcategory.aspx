@@ -222,9 +222,11 @@
                     <asp:GridTemplateColumn HeaderText="Ảnh">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'>
-                                <a class="screenshot" rel='../../res/productcategory/<%# Eval("ImageName") %>'>
+                                <%--<a class="screenshot" rel='../../res/productcategory/<%# Eval("ImageName") %>'>
                                     <img alt="" src="../assets/images/photo.png" />
-                                </a>
+                                </a>--%>
+                                <img alt="" src='<%# "~/res/productcategory/" + Eval("ImageName") %>' width="80" height="80" runat="server"
+                                    visible='<%# string.IsNullOrEmpty(Eval("ImageName").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImage" runat="server" CommandName="DeleteImage" OnClientClick="return confirm('Xóa ảnh này ?')"
                                     rel='<%#  Eval("ProductCategoryID") + "#" + Eval("ImageName") %>'>
                             <img alt="Xóa ảnh" title="Xóa ảnh" src="../assets/images/delete-icon.png" />
@@ -236,9 +238,11 @@
                     <asp:GridTemplateColumn HeaderText="Ảnh Hover">
                         <ItemTemplate>
                             <asp:Panel ID="Panel2" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageNameHover").ToString()) ? false : true %>'>
-                                <a class="screenshot" rel='../../res/productcategory/imagehover/<%# Eval("ImageNameHover") %>'>
+                                <%--<a class="screenshot" rel='../../res/productcategory/imagehover/<%# Eval("ImageNameHover") %>'>
                                     <img alt="" src="../assets/images/photo.png" />
-                                </a>
+                                </a>--%>
+                                <img alt="" src='<%# "~/res/productcategory/imagehover/" + Eval("ImageNameHover") %>' width="80" height="80" runat="server"
+                                    visible='<%# string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImageHover" runat="server" CommandName="DeleteImageHover" OnClientClick="return confirm('Xóa ảnh này ?')"
                                     rel='<%#  Eval("ProductCategoryID") + "#" + Eval("ImageNameHover") %>'>
                             <img alt="Xóa ảnh" title="Xóa ảnh" src="../assets/images/delete-icon.png" />

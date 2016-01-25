@@ -207,19 +207,27 @@ public partial class ad_single_productcategory : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(strImageName))
                 {
                     var strFullPath = "~/res/productcategory/" + strConvertedProductCategoryName + "-" + strProductCategoryID + strImageName.Substring(strImageName.LastIndexOf('.'));
-                    var strFullPathHover = "~/res/productcategory/imagehover/" + strConvertedProductCategoryName + "-" + strProductCategoryID + strImageNameHover.Substring(strImageNameHover.LastIndexOf('.'));
 
                     if (File.Exists(strOldImagePath))
                         File.Delete(strOldImagePath);
 
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
                     //ResizeCropImage.ResizeByCondition(strFullPath, 40, 40);
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 239, 167, bgColor);
+                }
+
+                if (!string.IsNullOrEmpty(strImageNameHover))
+                {
+                    var strFullPathHover = "~/res/productcategory/imagehover/" + strConvertedProductCategoryName + "-" + strProductCategoryID + strImageNameHover.Substring(strImageNameHover.LastIndexOf('.'));
 
                     if (File.Exists(strOldImagePathHover))
                         File.Delete(strOldImagePathHover);
 
                     FileImageNameHover.UploadedFiles[0].SaveAs(Server.MapPath(strFullPathHover));
                     //ResizeCropImage.ResizeByCondition(strFullPathHover, 40, 40);
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullPathHover, 239, 167, bgColor);
                 }
             }
         }
@@ -243,7 +251,7 @@ public partial class ad_single_productcategory : System.Web.UI.Page
             var strProductCategoryID = s[0];
             var strImageNameHover = s[1];
 
-            oProductCategory.ProductCategoryImageDelete(strProductCategoryID);
+            oProductCategory.ProductCategoryImageHoverDelete(strProductCategoryID);
             DeleteImageHover(strImageNameHover);
             RadGrid1.Rebind();
         }
