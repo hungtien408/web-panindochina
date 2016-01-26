@@ -64,9 +64,10 @@
             var theRegexp = new RegExp("\.lnkUpdate$|\.lnkUpdateTop$|\.PerformInsertButton$", "ig");
             if (eventArgs.get_eventTarget().match(theRegexp)) {
                 var upload = $find(window['UploadId']);
+                var upload1 = $find(window['UploadId1']);
 
                 //AJAX is disabled only if file is selected for upload
-                if (upload.getFileInputs()[0].value != "") {
+                if (upload.getFileInputs()[0].value != "" || upload1.getFileInputs()[0].value != "") {
                     eventArgs.set_enableAjax(false);
                 }
             }

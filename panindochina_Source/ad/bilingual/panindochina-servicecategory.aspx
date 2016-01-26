@@ -64,9 +64,10 @@
             var theRegexp = new RegExp("\.lnkUpdate$|\.lnkUpdateTop$|\.PerformInsertButton$", "ig");
             if (eventArgs.get_eventTarget().match(theRegexp)) {
                 var upload = $find(window['UploadId']);
+                var upload1 = $find(window['UploadId1']);
 
                 //AJAX is disabled only if file is selected for upload
-                if (upload.getFileInputs()[0].value != "") {
+                if (upload.getFileInputs()[0].value != "" || upload1.getFileInputs()[0].value != "") {
                     eventArgs.set_enableAjax(false);
                 }
             }
@@ -222,9 +223,11 @@
                     <asp:GridTemplateColumn HeaderText="Ảnh">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'>
-                                <a class="screenshot" rel='../../res/servicecategory/<%# Eval("ImageName") %>'>
+                                <%--<a class="screenshot" rel='../../res/servicecategory/<%# Eval("ImageName") %>'>
                                     <img alt="" src="../assets/images/photo.png" />
-                                </a>
+                                </a>--%>
+                                <img alt="" src='<%# "~/res/servicecategory/" + Eval("ImageName") %>' width="80" height="80" runat="server"
+                                    visible='<%# string.IsNullOrEmpty(Eval("ImageName").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImage" runat="server" CommandName="DeleteImage" OnClientClick="return confirm('Xóa ảnh này ?')"
                                     rel='<%#  Eval("ServiceCategoryID") + "#" + Eval("ImageName") %>'>
                             <img alt="Xóa ảnh" title="Xóa ảnh" src="../assets/images/delete-icon.png" />
@@ -236,9 +239,11 @@
                     <asp:GridTemplateColumn HeaderText="Ảnh Hover">
                         <ItemTemplate>
                             <asp:Panel ID="Panel2" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageNameHover").ToString()) ? false : true %>'>
-                                <a class="screenshot" rel='../../res/servicecategory/imagehover/<%# Eval("ImageNameHover") %>'>
+                                <%--<a class="screenshot" rel='../../res/servicecategory/imagehover/<%# Eval("ImageNameHover") %>'>
                                     <img alt="" src="../assets/images/photo.png" />
-                                </a>
+                                </a>--%>
+                                 <img alt="" src='<%# "~/res/servicecategory/imagehover/" + Eval("ImageNameHover") %>' width="80" height="80" runat="server"
+                                    visible='<%# string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImageHover" runat="server" CommandName="DeleteImageHover" OnClientClick="return confirm('Xóa ảnh này ?')"
                                     rel='<%#  Eval("ServiceCategoryID") + "#" + Eval("ImageNameHover") %>'>
                             <img alt="Xóa ảnh" title="Xóa ảnh" src="../assets/images/delete-icon.png" />

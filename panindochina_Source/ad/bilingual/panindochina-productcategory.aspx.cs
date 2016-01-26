@@ -277,7 +277,7 @@ public partial class ad_single_productcategory : System.Web.UI.Page
             }
 
             RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileImageName.ClientID));
-            RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileImageNameHover.ClientID));
+            RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId1'] = '{0}';", FileImageNameHover.ClientID));
         }
     }
 

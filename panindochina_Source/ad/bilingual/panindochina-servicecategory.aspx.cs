@@ -247,7 +247,7 @@ public partial class ad_single_servicecategory : System.Web.UI.Page
             var strServiceCategoryID = s[0];
             var strImageNameHover = s[1];
 
-            oServiceCategory.ServiceCategoryImageDelete(strServiceCategoryID);
+            oServiceCategory.ServiceCategoryImageHoverDelete(strServiceCategoryID);
             DeleteImageHover(strImageNameHover);
             RadGrid1.Rebind();
         }
@@ -273,7 +273,7 @@ public partial class ad_single_servicecategory : System.Web.UI.Page
             }
 
             RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileImageName.ClientID));
-            RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileImageNameHover.ClientID));
+            RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId1'] = '{0}';", FileImageNameHover.ClientID));
         }
     }
 

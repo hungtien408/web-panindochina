@@ -234,6 +234,35 @@ namespace TLLib
             }
         }
 
+        public int ServiceCategoryImageHoverDelete(
+            string ServiceCategoryID
+        )
+        {
+            try
+            {
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_ServiceCategoryImageHover_Delete", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ServiceCategoryID", string.IsNullOrEmpty(ServiceCategoryID) ? dbNULL : (object)ServiceCategoryID);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                scon.Open();
+                int success = cmd.ExecuteNonQuery();
+                scon.Close();
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_ServiceCategoryImageHover_Delete' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return success;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public DataTable ServiceCategorySelectAll()
         {
             try
