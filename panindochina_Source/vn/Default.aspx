@@ -131,14 +131,14 @@
                                         <li>
                                             <div class="product-box product-boxbg">
                                                 <div class="icon-new">
-                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
+                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                    <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
                                                         <%# Eval("ProductName") %></a></h4>
                                             </div>
                                         </li>
@@ -197,14 +197,14 @@
                                         <li>
                                             <div class="product-box product-boxbg">
                                                 <div class="icon-new">
-                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
+                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                    <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
                                                         <%# Eval("ProductName") %></a></h4>
                                             </div>
                                         </li>
@@ -263,14 +263,14 @@
                                         <li>
                                             <div class="product-box product-boxbg">
                                                 <div class="icon-new">
-                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
+                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img id="Img1" class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                    <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
                                                         <%# Eval("ProductName") %></a></h4>
                                             </div>
                                         </li>

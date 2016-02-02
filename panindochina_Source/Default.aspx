@@ -134,11 +134,11 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                    <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
                                                         <%# Eval("ProductNameEn") %></a></h4>
                                             </div>
                                         </li>
@@ -200,11 +200,11 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                    <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
                                                         <%# Eval("ProductNameEn") %></a></h4>
                                             </div>
                                         </li>
@@ -266,11 +266,11 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
                                                     <img id="Img1" class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
-                                                    <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                                    <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
                                                         <%# Eval("ProductNameEn") %></a></h4>
                                             </div>
                                         </li>

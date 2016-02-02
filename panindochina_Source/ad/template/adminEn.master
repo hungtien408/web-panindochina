@@ -163,10 +163,10 @@
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" Text="Liên Hệ" NavigateUrl="~/ad/bilingual/panindochina-titlecontact.aspx">
                                     </asp:RadMenuItem>
-                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    <%--<asp:RadMenuItem runat="server" IsSeparator="True">
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" Text="Lĩnh Vực Thị Trường" NavigateUrl="~/ad/bilingual/panindochina-marketsegment.aspx">
-                                    </asp:RadMenuItem>
+                                    </asp:RadMenuItem>--%>
                                 </Items>
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" IsSeparator="True">
@@ -279,6 +279,14 @@
                                     <asp:RadMenuItem runat="server" IsSeparator="True">
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" Text="Being Panindochina’s Retailer" NavigateUrl="~/ad/bilingual/panindochina-customerbeing.aspx">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Technical Sheet" NavigateUrl="~/ad/bilingual/panindochina-customertechnicalsheet.aspx">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Technical Education" NavigateUrl="~/ad/bilingual/panindochina-customertechnicaleducation.aspx">
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" IsSeparator="True">
                                     </asp:RadMenuItem>
