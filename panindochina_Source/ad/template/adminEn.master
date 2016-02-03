@@ -312,6 +312,14 @@
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" Text="FAQs" NavigateUrl="~/ad/bilingual/panindochina-customerfaqcategory.aspx">
                                     </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Technical Sheet" NavigateUrl="~/ad/bilingual/panindochina-customertechnicalsheetcategory.aspx">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Technical Education" NavigateUrl="~/ad/bilingual/panindochina-customertechnicaleducationcategory.aspx">
+                                    </asp:RadMenuItem>
                                 </Items>
                             </asp:RadMenuItem>
                         </Items>

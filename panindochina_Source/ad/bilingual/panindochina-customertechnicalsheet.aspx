@@ -110,10 +110,10 @@
                         <asp:RadTextBox ID="txtSearchDownloadName" runat="server" Width="300px">
                         </asp:RadTextBox>
                     </td>
-                    <td class="left invisible">
+                    <td class="left">
                         Danh mục
                     </td>
-                    <td class="left invisible">
+                    <td class="left">
                         <asp:RadComboBox Filter="Contains" ID="ddlSearchCategory" runat="server" DataTextField="DownloadCategoryName"
                             DataValueField="DownloadCategoryID" DataSourceID="ObjectDataSource2" OnDataBound="DropDownList_DataBound">
                         </asp:RadComboBox>
@@ -275,7 +275,7 @@
                                             Language="vi-VN" InputSize="69" />
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left">
                                         Danh mục
                                     </td>
@@ -498,7 +498,7 @@
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="DownloadCategorySelectAll"
         TypeName="TLLib.DownloadCategory">
         <SelectParameters>
-            <asp:Parameter Name="parentID" Type="Int32" DefaultValue="3" />
+            <asp:Parameter Name="parentID" Type="Int32" DefaultValue="15" />
             <asp:Parameter Name="increaseLevelCount" Type="Int32" DefaultValue="2" />
             <asp:Parameter Name="IsShowOnMenu" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />

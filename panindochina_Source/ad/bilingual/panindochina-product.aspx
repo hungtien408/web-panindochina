@@ -429,7 +429,8 @@
                             <%# string.Format("{0:##,###.##}", Eval("SavePrice")) %>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="Price" HeaderText="Giá" SortExpression="Price" Visible="False">
+                    <asp:GridTemplateColumn DataField="Price" HeaderText="Giá" SortExpression="Price"
+                        Visible="False">
                         <ItemTemplate>
                             <%# string.IsNullOrEmpty(Eval("Price").ToString()) ? Eval("OtherPrice") : string.Format("{0:##,###.##}", Eval("Price")) %>
                         </ItemTemplate>
@@ -469,6 +470,62 @@
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsSaleOff" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsSaleOff").ToString()) ? false : Eval("IsSaleOff") %>'
                                 CssClass="checkbox" />
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn HeaderText="Market Segment">
+                        <ItemTemplate>
+                            <table cellspacing="0" cellpadding="0" width="250px" border="0">
+                                <tr>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsAutomotive" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsAutomotive").ToString()) ? false : Eval("IsAutomotive") %>'
+                                            CssClass="checkbox" Text="Automotive" />
+                                    </td>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsSteelMills" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsSteelMills").ToString()) ? false : Eval("IsSteelMills") %>'
+                                            CssClass="checkbox" Text="Steel Mills" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsMining" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsMining").ToString()) ? false : Eval("IsMining") %>'
+                                            CssClass="checkbox" Text="Mining" />
+                                    </td>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsConstruction" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsConstruction").ToString()) ? false : Eval("IsConstruction") %>'
+                                            CssClass="checkbox" Text="Construction" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsPetroleum" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsPetroleum").ToString()) ? false : Eval("IsPetroleum") %>'
+                                            CssClass="checkbox" Text="Petroleum" />
+                                    </td>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsShipBuilding" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsShipBuilding").ToString()) ? false : Eval("IsShipBuilding") %>'
+                                            CssClass="checkbox" Text="Ship Building" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsPharmaceutical" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsPharmaceutical").ToString()) ? false : Eval("IsPharmaceutical") %>'
+                                            CssClass="checkbox" Text="Pharmaceutical" />
+                                    </td>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsPaints" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsPaints").ToString()) ? false : Eval("IsPaints") %>'
+                                            CssClass="checkbox" Text="Paints" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsCement" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsCement").ToString()) ? false : Eval("IsCement") %>'
+                                            CssClass="checkbox" Text="Cement" />
+                                    </td>
+                                    <td>
+                                        <asp:CheckBox ID="chkIsMarineService" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsMarineService").ToString()) ? false : Eval("IsMarineService") %>'
+                                            CssClass="checkbox" Text="Marine Service" />
+                                    </td>
+                                </tr>
+                            </table>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
                     <asp:GridTemplateColumn DataField="InStock" HeaderText="Còn hàng" SortExpression="InStock"
@@ -521,8 +578,8 @@
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'
                                 Width="95">
-                                <img alt="" src='<%# "~/res/product/" + Eval("ImageName") %>' width="80" height="80" runat="server"
-                                    visible='<%# string.IsNullOrEmpty(Eval("ImageName").ToString()) ? false : true %>' />
+                                <img alt="" src='<%# "~/res/product/" + Eval("ImageName") %>' width="80" height="80"
+                                    runat="server" visible='<%# string.IsNullOrEmpty(Eval("ImageName").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImage" runat="server" rel='<%#  Eval("ProductID") + "#" + Eval("ImageName") %>'
                                     CommandName="DeleteImage" OnClientClick="return confirm('Xóa ảnh này ?')">
                                 <img alt="Xóa ảnh" title="Xóa ảnh" src="../assets/images/delete-icon.png" />
@@ -609,6 +666,61 @@
                                                             &nbsp;&nbsp;
                                                             <asp:CheckBox ID="chkIsAvailable" runat="server" CssClass="checkbox" Text=" Hiển thị"
                                                                 Checked='<%# (Container is GridEditFormInsertItem) ? true : (string.IsNullOrEmpty(Eval("IsAvailable").ToString()) ? false : Eval("IsAvailable")) %>' />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="left">
+                                                            Market segment
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <table cellpadding="0" cellspacing="0">
+                                                                    <tr>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsAutomotive" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsAutomotive").ToString()) ? false : Eval("IsAutomotive") %>'
+                                                                                CssClass="checkbox" Text="Automotive" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsSteelMills" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsSteelMills").ToString()) ? false : Eval("IsSteelMills") %>'
+                                                                                CssClass="checkbox" Text="Steel Mills" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsMining" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsMining").ToString()) ? false : Eval("IsMining") %>'
+                                                                                CssClass="checkbox" Text="Mining" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsConstruction" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsConstruction").ToString()) ? false : Eval("IsConstruction") %>'
+                                                                                CssClass="checkbox" Text="Construction" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsPetroleum" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsPetroleum").ToString()) ? false : Eval("IsPetroleum") %>'
+                                                                                CssClass="checkbox" Text="Petroleum" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsShipBuilding" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsShipBuilding").ToString()) ? false : Eval("IsShipBuilding") %>'
+                                                                                CssClass="checkbox" Text="Ship Building" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsPharmaceutical" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsPharmaceutical").ToString()) ? false : Eval("IsPharmaceutical") %>'
+                                                                                CssClass="checkbox" Text="Pharmaceutical" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsPaints" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsPaints").ToString()) ? false : Eval("IsPaints") %>'
+                                                                                CssClass="checkbox" Text="Paints" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsCement" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsCement").ToString()) ? false : Eval("IsCement") %>'
+                                                                                CssClass="checkbox" Text="Cement" />
+                                                                        </td>
+                                                                        <td style="width: 100px;">
+                                                                            <asp:CheckBox ID="chkIsMarineService" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsMarineService").ToString()) ? false : Eval("IsMarineService") %>'
+                                                                                CssClass="checkbox" Text="Marine Service" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1112,8 +1224,8 @@
                                                                 <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
                                                                     background: #eeeeee;" class="myClass">
                                                                     <a href='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server" class="lightbox">
-                                                                        <img id="Img1" alt="" src='<%# "~/res/product/album/" + Eval("ImageName") %>'
-                                                                            runat="server" width="100" height="100" />
+                                                                        <img id="Img1" alt="" src='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server"
+                                                                            width="100" height="100" />
                                                                     </a>
                                                                     <div align="right">
                                                                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
@@ -1137,8 +1249,9 @@
                                             <div class="cont">
                                                 <asp:RadAjaxPanel ID="RadAjaxPanel4" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
                                                     <asp:RadAsyncUpload ID="FileUpload" runat="server" MultipleFileSelection="Automatic"
-                                                        TargetFolder="~/res/product/download/" TemporaryFolder="~/res/TempAsync" Width="100%" Localization-Select="Chọn"
-                                                        Localization-Cancel="Hủy" Localization-Remove="Xóa" OnFileUploaded="FileUpload_FileUploaded">
+                                                        TargetFolder="~/res/product/download/" TemporaryFolder="~/res/TempAsync" Width="100%"
+                                                        Localization-Select="Chọn" Localization-Cancel="Hủy" Localization-Remove="Xóa"
+                                                        OnFileUploaded="FileUpload_FileUploaded">
                                                     </asp:RadAsyncUpload>
                                                     <asp:RadButton ID="btnUploadFile" runat="server" Text="Tải lên" ShowPostBackMask="False">
                                                         <Icon PrimaryIconUrl="~/ad/assets/images/up.png" />
@@ -1163,7 +1276,8 @@
                                                                         <img id="Img2" alt="" src='<%# "~/res/product/album/thumbs/" + Eval("ImageName") %>'
                                                                             runat="server" width="100" height="100" />
                                                                     </a>--%>
-                                                                    <span><%# Eval("FileName")%></span>
+                                                                    <span>
+                                                                        <%# Eval("FileName")%></span>
                                                                     <div align="right">
                                                                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
                                                                         <asp:LinkButton ID="LinkButton1" OnClientClick="return confirm('Xóa ảnh?')" runat="server"
@@ -1276,7 +1390,8 @@
                                                                         <img id="Img1" alt="" src='<%# "~/res/product/album/thumbs/" + Eval("ImageName") %>'
                                                                             runat="server" width="100" height="100" />
                                                                     </a>--%>
-                                                                    <span><%# Eval("LinkDownload")%></span>
+                                                                    <span>
+                                                                        <%# Eval("LinkDownload")%></span>
                                                                     <div align="right">
                                                                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
                                                                         <asp:LinkButton ID="LinkButton1" OnClientClick="return confirm('Xóa ảnh?')" runat="server"
@@ -1351,6 +1466,16 @@
             <asp:Parameter Name="IsNew" Type="String" />
             <asp:Parameter Name="IsBestSeller" Type="String" />
             <asp:Parameter Name="IsSaleOff" Type="String" />
+            <asp:Parameter Name="IsAutomotive" Type="String" />
+            <asp:Parameter Name="IsSteelMills" Type="String" />
+            <asp:Parameter Name="IsMining" Type="String" />
+            <asp:Parameter Name="IsConstruction" Type="String" />
+            <asp:Parameter Name="IsPetroleum" Type="String" />
+            <asp:Parameter Name="IsShipBuilding" Type="String" />
+            <asp:Parameter Name="IsPharmaceutical" Type="String" />
+            <asp:Parameter Name="IsPaints" Type="String" />
+            <asp:Parameter Name="IsCement" Type="String" />
+            <asp:Parameter Name="IsMarineService" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
@@ -1384,6 +1509,16 @@
                 Type="String" />
             <asp:ControlParameter ControlID="ddlSearchIsSaleOff" Name="IsSaleOff" PropertyName="SelectedValue"
                 Type="String" />
+            <asp:Parameter Name="IsAutomotive" Type="String" />
+            <asp:Parameter Name="IsSteelMills" Type="String" />
+            <asp:Parameter Name="IsMining" Type="String" />
+            <asp:Parameter Name="IsConstruction" Type="String" />
+            <asp:Parameter Name="IsPetroleum" Type="String" />
+            <asp:Parameter Name="IsShipBuilding" Type="String" />
+            <asp:Parameter Name="IsPharmaceutical" Type="String" />
+            <asp:Parameter Name="IsPaints" Type="String" />
+            <asp:Parameter Name="IsCement" Type="String" />
+            <asp:Parameter Name="IsMarineService" Type="String" />
             <asp:ControlParameter ControlID="ddlSearchIsShowOnHomePage" Name="IsShowOnHomePage"
                 PropertyName="SelectedValue" Type="String" />
             <asp:ControlParameter ControlID="dpFromDate" Name="FromDate" PropertyName="SelectedDate"
@@ -1428,6 +1563,16 @@
             <asp:Parameter Name="IsNew" Type="String" />
             <asp:Parameter Name="IsBestSeller" Type="String" />
             <asp:Parameter Name="IsSaleOff" Type="String" />
+            <asp:Parameter Name="IsAutomotive" Type="String" />
+            <asp:Parameter Name="IsSteelMills" Type="String" />
+            <asp:Parameter Name="IsMining" Type="String" />
+            <asp:Parameter Name="IsConstruction" Type="String" />
+            <asp:Parameter Name="IsPetroleum" Type="String" />
+            <asp:Parameter Name="IsShipBuilding" Type="String" />
+            <asp:Parameter Name="IsPharmaceutical" Type="String" />
+            <asp:Parameter Name="IsPaints" Type="String" />
+            <asp:Parameter Name="IsCement" Type="String" />
+            <asp:Parameter Name="IsMarineService" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />

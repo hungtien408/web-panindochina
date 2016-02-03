@@ -11,7 +11,21 @@ public partial class customer_being : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["UserName"] != null)
+        {
+            string[] roleUser = Roles.GetRolesForUser(Session["UserName"].ToString());
+            for (int i = 0; i < roleUser.Length; i++)
+            {
+                if (roleUser[i] == "admin")
+                {
+                    Response.Redirect("ad/bilingual/");
+                }
+                else
+                {
+                    Response.Redirect("~/vn/technicalsheet.aspx");
+                }
+            }
+        }
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {
@@ -43,7 +57,7 @@ public partial class customer_being : System.Web.UI.Page
                     }
                     else
                     {
-                        Response.Redirect("~/");
+                        Response.Redirect("~/vn/technicalsheet.aspx");
                     }
                 }
             }

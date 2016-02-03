@@ -103,7 +103,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <div class="detail-content">
         <asp:ListView ID="lstProductDetails" runat="server" DataSourceID="odsProductDetails"
             EnableModelValidation="True">
@@ -150,7 +149,7 @@
                         <div class="box-video">
                             <a href="javascript:void(0);" class="video-img fullbox-img group-img" data-toggle="modal"
                                 data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-pvi-" + Eval("ProductVideoID") + ".aspx" %>'>
-                                <img class="hideo" alt='<%# Eval("ImagePath") %>' src='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/product/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'
+                                <img id="Img1" class="hideo" alt='<%# Eval("ImagePath") %>' src='<%# !string.IsNullOrEmpty(Eval("ImagePath").ToString()) ? "~/res/product/video/thumbs/" + Eval("ImagePath") : "~/assets/images/video-img-1.jpg" %>'
                                     runat="server" /><span class="mask-icon"></span></a>
                             <h4 class="video-name group-name">
                                 <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-page='<%# progressTitle(Eval("Title")) + "-pvi-" + Eval("ProductVideoID") + ".aspx" %>'>
@@ -174,6 +173,7 @@
                 </SelectParameters>
             </asp:ObjectDataSource>
         </div>
+    </div>
     </div>
     <div class="tabs-details">
         <!-- Nav tabs -->
@@ -345,9 +345,11 @@
                                 <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                     class="text-uppercase">
                                     <%# Eval("ProductName") %></a></h4>
-                            <div class="description">
+                            <%--<div class="description">
                                 Manufacturer:
-                                <%# Eval("ManufacturerProduct")%></div>
+                                <%# Eval("ManufacturerProduct")%></div>--%>
+                            <div class="description">
+                                Brand: <%# Eval("ManufacturerName")%></div>
                         </div>
                     </div>
                 </ItemTemplate>

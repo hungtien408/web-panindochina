@@ -48,6 +48,16 @@ namespace TLLib
             string IsNew,
             string IsBestSeller,
             string IsSaleOff,
+            string IsAutomotive,
+	        string IsSteelMills,
+	        string IsMining,
+	        string IsConstruction,
+	        string IsPetroleum,
+	        string IsShipBuilding,
+	        string IsPharmaceutical,
+	        string IsPaints,
+	        string IsCement,
+	        string IsMarineService,
             string IsShowOnHomePage,
             string Priority,
             string IsAvailable
@@ -88,6 +98,16 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsNew", string.IsNullOrEmpty(IsNew) ? dbNULL : (object)IsNew);
                 cmd.Parameters.AddWithValue("@IsBestSeller", string.IsNullOrEmpty(IsBestSeller) ? dbNULL : (object)IsBestSeller);
                 cmd.Parameters.AddWithValue("@IsSaleOff", string.IsNullOrEmpty(IsSaleOff) ? dbNULL : (object)IsSaleOff);
+                cmd.Parameters.AddWithValue("@IsAutomotive", string.IsNullOrEmpty(IsAutomotive) ? dbNULL : (object)IsAutomotive);
+                cmd.Parameters.AddWithValue("@IsSteelMills", string.IsNullOrEmpty(IsSteelMills) ? dbNULL : (object)IsSteelMills);
+                cmd.Parameters.AddWithValue("@IsMining", string.IsNullOrEmpty(IsMining) ? dbNULL : (object)IsMining);
+                cmd.Parameters.AddWithValue("@IsConstruction", string.IsNullOrEmpty(IsConstruction) ? dbNULL : (object)IsConstruction);
+                cmd.Parameters.AddWithValue("@IsPetroleum", string.IsNullOrEmpty(IsPetroleum) ? dbNULL : (object)IsPetroleum);
+                cmd.Parameters.AddWithValue("@IsShipBuilding", string.IsNullOrEmpty(IsShipBuilding) ? dbNULL : (object)IsShipBuilding);
+                cmd.Parameters.AddWithValue("@IsPharmaceutical", string.IsNullOrEmpty(IsPharmaceutical) ? dbNULL : (object)IsPharmaceutical);
+                cmd.Parameters.AddWithValue("@IsPaints", string.IsNullOrEmpty(IsPaints) ? dbNULL : (object)IsPaints);
+                cmd.Parameters.AddWithValue("@IsCement", string.IsNullOrEmpty(IsCement) ? dbNULL : (object)IsCement);
+                cmd.Parameters.AddWithValue("@IsMarineService", string.IsNullOrEmpty(IsMarineService) ? dbNULL : (object)IsMarineService);
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
@@ -150,6 +170,16 @@ namespace TLLib
             string IsNew,
             string IsBestSeller,
             string IsSaleOff,
+            string IsAutomotive,
+            string IsSteelMills,
+            string IsMining,
+            string IsConstruction,
+            string IsPetroleum,
+            string IsShipBuilding,
+            string IsPharmaceutical,
+            string IsPaints,
+            string IsCement,
+            string IsMarineService,
             string IsShowOnHomePage,
             string Priority,
             string IsAvailable
@@ -191,6 +221,16 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsNew", string.IsNullOrEmpty(IsNew) ? dbNULL : (object)IsNew);
                 cmd.Parameters.AddWithValue("@IsBestSeller", string.IsNullOrEmpty(IsBestSeller) ? dbNULL : (object)IsBestSeller);
                 cmd.Parameters.AddWithValue("@IsSaleOff", string.IsNullOrEmpty(IsSaleOff) ? dbNULL : (object)IsSaleOff);
+                cmd.Parameters.AddWithValue("@IsAutomotive", string.IsNullOrEmpty(IsAutomotive) ? dbNULL : (object)IsAutomotive);
+                cmd.Parameters.AddWithValue("@IsSteelMills", string.IsNullOrEmpty(IsSteelMills) ? dbNULL : (object)IsSteelMills);
+                cmd.Parameters.AddWithValue("@IsMining", string.IsNullOrEmpty(IsMining) ? dbNULL : (object)IsMining);
+                cmd.Parameters.AddWithValue("@IsConstruction", string.IsNullOrEmpty(IsConstruction) ? dbNULL : (object)IsConstruction);
+                cmd.Parameters.AddWithValue("@IsPetroleum", string.IsNullOrEmpty(IsPetroleum) ? dbNULL : (object)IsPetroleum);
+                cmd.Parameters.AddWithValue("@IsShipBuilding", string.IsNullOrEmpty(IsShipBuilding) ? dbNULL : (object)IsShipBuilding);
+                cmd.Parameters.AddWithValue("@IsPharmaceutical", string.IsNullOrEmpty(IsPharmaceutical) ? dbNULL : (object)IsPharmaceutical);
+                cmd.Parameters.AddWithValue("@IsPaints", string.IsNullOrEmpty(IsPaints) ? dbNULL : (object)IsPaints);
+                cmd.Parameters.AddWithValue("@IsCement", string.IsNullOrEmpty(IsCement) ? dbNULL : (object)IsCement);
+                cmd.Parameters.AddWithValue("@IsMarineService", string.IsNullOrEmpty(IsMarineService) ? dbNULL : (object)IsMarineService);
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
@@ -220,6 +260,16 @@ namespace TLLib
             string IsNew,
             string IsBestSeller,
             string IsSaleOff,
+            string IsAutomotive,
+            string IsSteelMills,
+            string IsMining,
+            string IsConstruction,
+            string IsPetroleum,
+            string IsShipBuilding,
+            string IsPharmaceutical,
+            string IsPaints,
+            string IsCement,
+            string IsMarineService,
             string IsShowOnHomePage,
             string Priority,
             string IsAvailable
@@ -236,6 +286,16 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsNew", string.IsNullOrEmpty(IsNew) ? dbNULL : (object)IsNew);
                 cmd.Parameters.AddWithValue("@IsBestSeller", string.IsNullOrEmpty(IsBestSeller) ? dbNULL : (object)IsBestSeller);
                 cmd.Parameters.AddWithValue("@IsSaleOff", string.IsNullOrEmpty(IsSaleOff) ? dbNULL : (object)IsSaleOff);
+                cmd.Parameters.AddWithValue("@IsAutomotive", string.IsNullOrEmpty(IsAutomotive) ? dbNULL : (object)IsAutomotive);
+                cmd.Parameters.AddWithValue("@IsSteelMills", string.IsNullOrEmpty(IsSteelMills) ? dbNULL : (object)IsSteelMills);
+                cmd.Parameters.AddWithValue("@IsMining", string.IsNullOrEmpty(IsMining) ? dbNULL : (object)IsMining);
+                cmd.Parameters.AddWithValue("@IsConstruction", string.IsNullOrEmpty(IsConstruction) ? dbNULL : (object)IsConstruction);
+                cmd.Parameters.AddWithValue("@IsPetroleum", string.IsNullOrEmpty(IsPetroleum) ? dbNULL : (object)IsPetroleum);
+                cmd.Parameters.AddWithValue("@IsShipBuilding", string.IsNullOrEmpty(IsShipBuilding) ? dbNULL : (object)IsShipBuilding);
+                cmd.Parameters.AddWithValue("@IsPharmaceutical", string.IsNullOrEmpty(IsPharmaceutical) ? dbNULL : (object)IsPharmaceutical);
+                cmd.Parameters.AddWithValue("@IsPaints", string.IsNullOrEmpty(IsPaints) ? dbNULL : (object)IsPaints);
+                cmd.Parameters.AddWithValue("@IsCement", string.IsNullOrEmpty(IsCement) ? dbNULL : (object)IsCement);
+                cmd.Parameters.AddWithValue("@IsMarineService", string.IsNullOrEmpty(IsMarineService) ? dbNULL : (object)IsMarineService);
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
@@ -308,6 +368,16 @@ namespace TLLib
             string IsNew,
             string IsBestSeller,
             string IsSaleOff,
+            string IsAutomotive,
+            string IsSteelMills,
+            string IsMining,
+            string IsConstruction,
+            string IsPetroleum,
+            string IsShipBuilding,
+            string IsPharmaceutical,
+            string IsPaints,
+            string IsCement,
+            string IsMarineService,
             string IsShowOnHomePage,
             string FromDate,
             string ToDate,
@@ -339,6 +409,16 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsNew", string.IsNullOrEmpty(IsNew) ? dbNULL : (object)IsNew);
                 cmd.Parameters.AddWithValue("@IsBestSeller", string.IsNullOrEmpty(IsBestSeller) ? dbNULL : (object)IsBestSeller);
                 cmd.Parameters.AddWithValue("@IsSaleOff", string.IsNullOrEmpty(IsSaleOff) ? dbNULL : (object)IsSaleOff);
+                cmd.Parameters.AddWithValue("@IsAutomotive", string.IsNullOrEmpty(IsAutomotive) ? dbNULL : (object)IsAutomotive);
+                cmd.Parameters.AddWithValue("@IsSteelMills", string.IsNullOrEmpty(IsSteelMills) ? dbNULL : (object)IsSteelMills);
+                cmd.Parameters.AddWithValue("@IsMining", string.IsNullOrEmpty(IsMining) ? dbNULL : (object)IsMining);
+                cmd.Parameters.AddWithValue("@IsConstruction", string.IsNullOrEmpty(IsConstruction) ? dbNULL : (object)IsConstruction);
+                cmd.Parameters.AddWithValue("@IsPetroleum", string.IsNullOrEmpty(IsPetroleum) ? dbNULL : (object)IsPetroleum);
+                cmd.Parameters.AddWithValue("@IsShipBuilding", string.IsNullOrEmpty(IsShipBuilding) ? dbNULL : (object)IsShipBuilding);
+                cmd.Parameters.AddWithValue("@IsPharmaceutical", string.IsNullOrEmpty(IsPharmaceutical) ? dbNULL : (object)IsPharmaceutical);
+                cmd.Parameters.AddWithValue("@IsPaints", string.IsNullOrEmpty(IsPaints) ? dbNULL : (object)IsPaints);
+                cmd.Parameters.AddWithValue("@IsCement", string.IsNullOrEmpty(IsCement) ? dbNULL : (object)IsCement);
+                cmd.Parameters.AddWithValue("@IsMarineService", string.IsNullOrEmpty(IsMarineService) ? dbNULL : (object)IsMarineService);
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@FromDate", string.IsNullOrEmpty(FromDate) ? dbNULL : (object)FromDate);
                 cmd.Parameters.AddWithValue("@ToDate", string.IsNullOrEmpty(ToDate) ? dbNULL : (object)ToDate);

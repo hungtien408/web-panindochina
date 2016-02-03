@@ -1,19 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/vn/site-customer.master" AutoEventWireup="true"
-    CodeFile="customer-sheet.aspx.cs" Inherits="customer_being" EnableEventValidation="true" %>
+    CodeFile="customer-education.aspx.cs" Inherits="customer_being" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Technical Sheet</title>
-    <meta name="description" content="Technical Sheet" />
+    <title>Technical Education</title>
+    <meta name="description" content="Technical Education" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
     <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Technical
-        Sheet</span>
+        Education</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
-        Technical Sheet</h1>
+        Technical Education</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">Technical Sheet<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Technical Education<span class="iconar icon-chevron-down"></span></a></h2>
     <div class="customer-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -60,7 +60,7 @@
     </div>
     <h2 class="title-link mobile-992">
         <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Technical
-            Sheet</a></h2>
+            Education</a></h2>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
 </asp:Content>

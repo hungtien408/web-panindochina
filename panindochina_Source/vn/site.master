@@ -109,10 +109,12 @@
                             OnClick="btnEN_Click" />
                     </div>
                     <div class="desktop-showhide search-form">
-                        <asp:Button ID="btnTimKiem" CssClass="search-btn" runat="server" Text="" OnClick="btnTimKiem_Click" />
-                        <div class="search-input">
-                            <asp:TextBox ID="searchTextBox" CssClass="search-text" runat="server" Text="Tìm kiếm..."
-                                onfocus="if(this.value=='Tìm kiếm...')this.value=''" onblur="if(this.value=='')this.value='Tìm kiếm...'"></asp:TextBox></div>
+                        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnTimKiem">
+                            <asp:Button ID="btnTimKiem" CssClass="search-btn" runat="server" Text="" OnClick="btnTimKiem_Click" />
+                            <div class="search-input">
+                                <asp:TextBox ID="searchTextBox" CssClass="search-text" runat="server" Text="Tìm kiếm..."
+                                    onfocus="if(this.value=='Tìm kiếm...')this.value=''" onblur="if(this.value=='')this.value='Tìm kiếm...'"></asp:TextBox></div>
+                        </asp:Panel>
                     </div>
                 </div>
                 <ul id="menu">
@@ -239,8 +241,9 @@
                                 Instruction Manual</a></li>
                             <li><a href="customer-faq.aspx"><span class="icon-angle-right iconal"></span>FAQs </a>
                             </li>
-                            <li><a href="customer-sheet.aspx"><span class="icon-angle-right iconal"></span>Technical sheet</a></li>
-                            <li><a href="#"><span class="icon-angle-right iconal"></span>Technical Education </a>
+                            <li><a href="customer-sheet.aspx"><span class="icon-angle-right iconal"></span>Technical
+                                sheet</a></li>
+                            <li><a href="customer-education.aspx"><span class="icon-angle-right iconal"></span>Technical Education </a>
                             </li>
                             <li><a href="customer-being.aspx"><span class="icon-angle-right iconal"></span>Being
                                 Panindochina’s Retailer</a></li>

@@ -134,7 +134,8 @@ public partial class ad_single_product : System.Web.UI.Page
         }
         else if (e.CommandName == "QuickUpdate")
         {
-            string ProductID, Priority, InStock, IsHot, IsNew, IsBestSeller, IsSaleOff, IsShowOnHomePage, IsAvailable;
+            string ProductID, Priority, InStock, IsHot, IsNew, IsBestSeller, IsSaleOff, IsAutomotive, IsSteelMills, IsMining, IsConstruction,
+                    IsPetroleum, IsShipBuilding, IsPharmaceutical, IsPaints, IsCement, IsMarineService, IsShowOnHomePage, IsAvailable;
             var oProduct = new Product();
 
             foreach (GridDataItem item in RadGrid1.Items)
@@ -146,8 +147,19 @@ public partial class ad_single_product : System.Web.UI.Page
                 IsNew = ((CheckBox)item.FindControl("chkIsNew")).Checked.ToString();
                 IsBestSeller = ((CheckBox)item.FindControl("chkIsBestSeller")).Checked.ToString();
                 IsSaleOff = ((CheckBox)item.FindControl("chkIsSaleOff")).Checked.ToString();
+                IsAutomotive = ((CheckBox)item.FindControl("chkIsAutomotive")).Checked.ToString();
+                IsSteelMills = ((CheckBox)item.FindControl("chkIsSteelMills")).Checked.ToString();
+                IsMining = ((CheckBox)item.FindControl("chkIsMining")).Checked.ToString();
+                IsConstruction = ((CheckBox)item.FindControl("chkIsConstruction")).Checked.ToString();
+                IsPetroleum = ((CheckBox)item.FindControl("chkIsPetroleum")).Checked.ToString();
+                IsShipBuilding = ((CheckBox)item.FindControl("chkIsShipBuilding")).Checked.ToString();
+                IsPharmaceutical = ((CheckBox)item.FindControl("chkIsPharmaceutical")).Checked.ToString();
+                IsPaints = ((CheckBox)item.FindControl("chkIsPaints")).Checked.ToString();
+                IsCement = ((CheckBox)item.FindControl("chkIsCement")).Checked.ToString();
+                IsMarineService = ((CheckBox)item.FindControl("chkIsMarineService")).Checked.ToString();
                 IsShowOnHomePage = ((CheckBox)item.FindControl("chkIsShowOnHomePage")).Checked.ToString();
                 IsAvailable = ((CheckBox)item.FindControl("chkIsAvailable")).Checked.ToString();
+
 
                 oProduct.ProductQuickUpdate(
                     ProductID,
@@ -156,6 +168,16 @@ public partial class ad_single_product : System.Web.UI.Page
                     IsNew,
                     IsBestSeller,
                     IsSaleOff,
+                    IsAutomotive,
+                    IsSteelMills,
+                    IsMining,
+                    IsConstruction,
+                    IsPetroleum,
+                    IsShipBuilding,
+                    IsPharmaceutical,
+                    IsPaints,
+                    IsCement,
+                    IsMarineService,
                     IsShowOnHomePage,
                     Priority,
                     IsAvailable
@@ -238,6 +260,16 @@ public partial class ad_single_product : System.Web.UI.Page
             string IsNew = ((CheckBox)row.FindControl("chkIsNew")).Checked.ToString();
             string IsBestSeller = ((CheckBox)row.FindControl("chkIsBestSeller")).Checked.ToString();
             string IsSaleOff = ((CheckBox)row.FindControl("chkIsSaleOff")).Checked.ToString();
+            string IsAutomotive = ((CheckBox)row.FindControl("chkIsAutomotive")).Checked.ToString();
+            string IsSteelMills = ((CheckBox)row.FindControl("chkIsSteelMills")).Checked.ToString();
+            string IsMining = ((CheckBox)row.FindControl("chkIsMining")).Checked.ToString();
+            string IsConstruction = ((CheckBox)row.FindControl("chkIsConstruction")).Checked.ToString();
+            string IsPetroleum = ((CheckBox)row.FindControl("chkIsPetroleum")).Checked.ToString();
+            string IsShipBuilding = ((CheckBox)row.FindControl("chkIsShipBuilding")).Checked.ToString();
+            string IsPharmaceutical = ((CheckBox)row.FindControl("chkIsPharmaceutical")).Checked.ToString();
+            string IsPaints = ((CheckBox)row.FindControl("chkIsPaints")).Checked.ToString();
+            string IsCement = ((CheckBox)row.FindControl("chkIsCement")).Checked.ToString();
+            string IsMarineService = ((CheckBox)row.FindControl("chkIsMarineService")).Checked.ToString();
             string IsShowOnHomePage = ((CheckBox)row.FindControl("chkIsShowOnHomePage")).Checked.ToString();
             string IsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
             string MetaTittleEn = ((RadTextBox)row.FindControl("txtMetaTittleEn")).Text.Trim();
@@ -282,6 +314,16 @@ public partial class ad_single_product : System.Web.UI.Page
                     IsNew,
                     IsBestSeller,
                     IsSaleOff,
+                    IsAutomotive,
+                    IsSteelMills,
+                    IsMining,
+                    IsConstruction,
+                    IsPetroleum,
+                    IsShipBuilding,
+                    IsPharmaceutical,
+                    IsPaints,
+                    IsCement,
+                    IsMarineService,
                     IsShowOnHomePage,
                     Priority,
                     IsAvailable
@@ -339,6 +381,16 @@ public partial class ad_single_product : System.Web.UI.Page
                 dsUpdateParam["IsNew"].DefaultValue = IsNew;
                 dsUpdateParam["IsBestSeller"].DefaultValue = IsBestSeller;
                 dsUpdateParam["IsSaleOff"].DefaultValue = IsSaleOff;
+                dsUpdateParam["IsAutomotive"].DefaultValue = IsAutomotive;
+                dsUpdateParam["IsSteelMills"].DefaultValue = IsSteelMills;
+                dsUpdateParam["IsMining"].DefaultValue = IsMining;
+                dsUpdateParam["IsConstruction"].DefaultValue = IsConstruction;
+                dsUpdateParam["IsPetroleum"].DefaultValue = IsPetroleum;
+                dsUpdateParam["IsShipBuilding"].DefaultValue = IsShipBuilding;
+                dsUpdateParam["IsPharmaceutical"].DefaultValue = IsPharmaceutical;
+                dsUpdateParam["IsPaints"].DefaultValue = IsPaints;
+                dsUpdateParam["IsCement"].DefaultValue = IsCement;
+                dsUpdateParam["IsMarineService"].DefaultValue = IsMarineService;
 
                 dsUpdateParam["IsShowOnHomePage"].DefaultValue = IsShowOnHomePage;
                 dsUpdateParam["IsAvailable"].DefaultValue = IsAvailable;

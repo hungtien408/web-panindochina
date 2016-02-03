@@ -83,11 +83,12 @@
             <ItemTemplate>
                 <div class="colno-5 element-item">
                     <div class="producta wrap-effecth">
-                        <a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
-                            <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/productcategory/" + Eval("ImageName") : "~/assets/images/product-a-1.jpg" %>'
-                                runat="server" /></span> <span class="hover-img fullbox-img">
-                                    <img class="hideo" alt='<%# Eval("ImageNameHover") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/productcategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/product-a-2.jpg" %>'
-                                        runat="server" /></span> </a>
+                        <a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'
+                            class="product-img effect-hover"><span class="hover-img fullbox-img">
+                                <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/productcategory/" + Eval("ImageName") : "~/assets/images/product-a-1.jpg" %>'
+                                    runat="server" /></span> <span class="hover-img fullbox-img">
+                                        <img class="hideo" alt='<%# Eval("ImageNameHover") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/productcategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/product-a-2.jpg" %>'
+                                            runat="server" /></span> </a>
                         <h5 class="product-name">
                             <a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                                 <%# Eval("ProductCategoryNameEn") %></a></h5>
@@ -116,7 +117,8 @@
                     <li><a href="#tabs-2" class="text-uppercase">Products <strong>hot</strong></a></li>
                     <li><a href="#tabs-3" class="text-uppercase">Products <strong>safe off</strong></a></li>
                 </ul>
-                <a href="product.aspx" class="more-all">See all <span class="icon-caret-right"></span></a>
+                <a href="product.aspx" class="more-all">See all <span class="icon-caret-right"></span>
+                </a>
             </div>
             <div class="wrap-tabs-content">
                 <h4 class="mobile-showhide tabs-title">
@@ -134,7 +136,8 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                                                    class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
@@ -168,6 +171,16 @@
                                         <asp:Parameter DefaultValue="True" Name="IsNew" Type="String" />
                                         <asp:Parameter Name="IsBestSeller" Type="String" />
                                         <asp:Parameter Name="IsSaleOff" Type="String" />
+                                        <asp:Parameter Name="IsAutomotive" Type="String" />
+                                        <asp:Parameter Name="IsSteelMills" Type="String" />
+                                        <asp:Parameter Name="IsMining" Type="String" />
+                                        <asp:Parameter Name="IsConstruction" Type="String" />
+                                        <asp:Parameter Name="IsPetroleum" Type="String" />
+                                        <asp:Parameter Name="IsShipBuilding" Type="String" />
+                                        <asp:Parameter Name="IsPharmaceutical" Type="String" />
+                                        <asp:Parameter Name="IsPaints" Type="String" />
+                                        <asp:Parameter Name="IsCement" Type="String" />
+                                        <asp:Parameter Name="IsMarineService" Type="String" />
                                         <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                         <asp:Parameter Name="FromDate" Type="String" />
                                         <asp:Parameter Name="ToDate" Type="String" />
@@ -200,7 +213,8 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                                                    class="product-img fullbox-img">
                                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
@@ -234,6 +248,16 @@
                                         <asp:Parameter Name="IsNew" Type="String" />
                                         <asp:Parameter Name="IsBestSeller" Type="String" />
                                         <asp:Parameter Name="IsSaleOff" Type="String" />
+                                        <asp:Parameter Name="IsAutomotive" Type="String" />
+                                        <asp:Parameter Name="IsSteelMills" Type="String" />
+                                        <asp:Parameter Name="IsMining" Type="String" />
+                                        <asp:Parameter Name="IsConstruction" Type="String" />
+                                        <asp:Parameter Name="IsPetroleum" Type="String" />
+                                        <asp:Parameter Name="IsShipBuilding" Type="String" />
+                                        <asp:Parameter Name="IsPharmaceutical" Type="String" />
+                                        <asp:Parameter Name="IsPaints" Type="String" />
+                                        <asp:Parameter Name="IsCement" Type="String" />
+                                        <asp:Parameter Name="IsMarineService" Type="String" />
                                         <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                         <asp:Parameter Name="FromDate" Type="String" />
                                         <asp:Parameter Name="ToDate" Type="String" />
@@ -266,7 +290,8 @@
                                                     <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "assets/images/icon-new.png" : "" %>'
                                                         alt="" />
                                                 </div>
-                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>' class="product-img fullbox-img">
+                                                <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                                                    class="product-img fullbox-img">
                                                     <img id="Img1" class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-img-1.jpg" %>'
                                                         runat="server" /></a>
                                                 <h4 class="product-name">
@@ -300,6 +325,16 @@
                                         <asp:Parameter Name="IsNew" Type="String" />
                                         <asp:Parameter Name="IsBestSeller" Type="String" />
                                         <asp:Parameter DefaultValue="True" Name="IsSaleOff" Type="String" />
+                                        <asp:Parameter Name="IsAutomotive" Type="String" />
+                                        <asp:Parameter Name="IsSteelMills" Type="String" />
+                                        <asp:Parameter Name="IsMining" Type="String" />
+                                        <asp:Parameter Name="IsConstruction" Type="String" />
+                                        <asp:Parameter Name="IsPetroleum" Type="String" />
+                                        <asp:Parameter Name="IsShipBuilding" Type="String" />
+                                        <asp:Parameter Name="IsPharmaceutical" Type="String" />
+                                        <asp:Parameter Name="IsPaints" Type="String" />
+                                        <asp:Parameter Name="IsCement" Type="String" />
+                                        <asp:Parameter Name="IsMarineService" Type="String" />
                                         <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                         <asp:Parameter Name="FromDate" Type="String" />
                                         <asp:Parameter Name="ToDate" Type="String" />
@@ -360,12 +395,16 @@
                 <ItemTemplate>
                     <div class="colno-3 element-item">
                         <div class="servece-box wrap-effecth">
-                            <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="product-img effect-hover"><span class="hover-img fullbox-img">
-                                <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/servicecategory/" + Eval("ImageName") : "~/assets/images/service-img-1.jpg" %>' runat="server" /></span> <span class="hover-img fullbox-img">
-                                    <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/servicecategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/service-img-2.jpg" %>' runat="server" /></span>
-                            </a>
+                            <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'
+                                class="product-img effect-hover"><span class="hover-img fullbox-img">
+                                    <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/servicecategory/" + Eval("ImageName") : "~/assets/images/service-img-1.jpg" %>'
+                                        runat="server" /></span> <span class="hover-img fullbox-img">
+                                            <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/servicecategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/service-img-2.jpg" %>'
+                                                runat="server" /></span> </a>
                             <h5 class="product-name">
-                                <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>' class="text-uppercase"><%# Eval("ServiceCategoryNameEn")%><span class="icon-angle-right iconar"></span></a></h5>
+                                <a href='<%# progressTitle(Eval("ServiceCategoryNameEn")) + "-sci-" + Eval("ServiceCategoryID") + ".aspx" %>'
+                                    class="text-uppercase">
+                                    <%# Eval("ServiceCategoryNameEn")%><span class="icon-angle-right iconar"></span></a></h5>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -373,8 +412,8 @@
                     <span runat="server" id="itemPlaceholder" />
                 </LayoutTemplate>
             </asp:ListView>
-            <asp:ObjectDataSource ID="odsServiceCategory" runat="server" 
-                SelectMethod="ServiceCategorySelectAll" TypeName="TLLib.ServiceCategory"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ServiceCategorySelectAll"
+                TypeName="TLLib.ServiceCategory"></asp:ObjectDataSource>
         </div>
         <div class="parent-wrap">
             <div class="jcarousel-wrapper jcarousel-parent hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">

@@ -349,9 +349,12 @@
                                 <a target="_blank" href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                     class="text-uppercase">
                                     <%# Eval("ProductNameEn")%></a></h4>
-                            <div class="description">
+                            <%--<div class="description">
                                 Manufacturer:
-                                <%# Eval("ManufacturerProduct")%></div>
+                                <%# Eval("ManufacturerProduct")%></div>--%>
+                            <div class="description">
+                                Brand:
+                                <%# Eval("ManufacturerName")%></div>
                         </div>
                     </div>
                 </ItemTemplate>

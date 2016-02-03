@@ -22,7 +22,7 @@ public partial class customer_being : System.Web.UI.Page
                 }
                 else
                 {
-                    Response.Redirect("~/technicalsheet.aspx");
+                    Response.Redirect("~/vn/technicaleducation.aspx");
                 }
             }
         }
@@ -57,7 +57,7 @@ public partial class customer_being : System.Web.UI.Page
                     }
                     else
                     {
-                        Response.Redirect("~/technicalsheet.aspx");
+                        Response.Redirect("~/vn/technicaleducation.aspx");
                     }
                 }
             }

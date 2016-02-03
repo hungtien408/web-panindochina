@@ -167,7 +167,9 @@ public partial class ad_single_download : System.Web.UI.Page
             string strQuestionEn = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtQuestionEn")).Content.Trim()));
             string strAnswerEn = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtAnswerEn")).Content.Trim()));
             string ConvertedDownloadName = Common.ConvertTitle(DownloadName);
-            string DownloadCategoryID = "15"; //((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
+            string DownloadCategoryID = ((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
+            if ("".Equals(DownloadCategoryID))
+                DownloadCategoryID = "15";
             string IsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
 
             if (e.CommandName == "PerformInsert")

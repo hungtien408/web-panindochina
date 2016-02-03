@@ -45,7 +45,7 @@
                     </asp:ObjectDataSource>
                 </li>
                 <li><a href="customer-sheet.aspx">Technical Sheet</a></li>
-                <li><a href="#">Technical Education</a> </li>
+                <li><a href="customer-education.aspx">Technical Education</a> </li>
                 <li><a href="customer-being.aspx">Being Panindochina’s Retailer</a></li>
             </ul>
         </div>
