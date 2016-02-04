@@ -191,7 +191,7 @@
                     <div class="col-lg-3 col-md-4 col-xs-6 element-item">
                         <h4 class="text-uppercase title-f">
                             market segment</h4>
-                        <asp:ListView ID="lstMarketSegment" runat="server" DataSourceID="odsMarketSegment"
+                        <%--<asp:ListView ID="lstMarketSegment" runat="server" DataSourceID="odsMarketSegment"
                             EnableModelValidation="True">
                             <ItemTemplate>
                                 <li><a href='<%# progressTitle(Eval("ArticleTitle")) + "-tci-" + Eval("ArticleCategoryID") + "-mi-" + Eval("ArticleID") + ".aspx" %>'>
@@ -223,7 +223,26 @@
                                 <asp:Parameter Name="Priority" Type="String" />
                                 <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                             </SelectParameters>
-                        </asp:ObjectDataSource>
+                        </asp:ObjectDataSource>--%>
+                        <ul class="footer-nav">
+                            <li><a href="automotive.aspx"><span class="icon-angle-right iconal"></span>Công Nghiệp
+                                Tự Động Hóa</a></li>
+                            <li><a href="steelmills.aspx"><span class="icon-angle-right iconal"></span>Công Nghiệp
+                                Luyện Thép</a></li>
+                            <li><a href="mining.aspx"><span class="icon-angle-right iconal"></span>Khai Thác Khoáng
+                                Sản</a></li>
+                            <li><a href="construction.aspx"><span class="icon-angle-right iconal"></span>Xây Dựng</a></li>
+                            <li><a href="petroleum.aspx"><span class="icon-angle-right iconal"></span>Công Nghiệp
+                                Dầu Khí</a></li>
+                            <li><a href="shipbuilding.aspx"><span class="icon-angle-right iconal"></span>Công Nghiệp
+                                Đóng Tàu</a></li>
+                            <li><a href="pharmaceutical.aspx"><span class="icon-angle-right iconal"></span>Dược
+                                Phẩm</a></li>
+                            <li><a href="paints.aspx"><span class="icon-angle-right iconal"></span>Công Nghiệp Sơn</a></li>
+                            <li><a href="cement.aspx"><span class="icon-angle-right iconal"></span>Xi Măng</a></li>
+                            <li><a href="marineservice.aspx"><span class="icon-angle-right iconal"></span>Dịch Vụ
+                                Hàng Hải</a></li>
+                        </ul>
                         <%--<ul class="footer-nav">
                                 <li><a href="#"><span class="icon-angle-right iconal"></span>Automotive</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Steel Mills</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Mining</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Construction</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Petroleum</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Ship Building</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Pharmaceutical</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Paints</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Cement</a></li>                                <li><a href="#"><span class="icon-angle-right iconal"></span>Marine Service</a></li>
                             </ul>--%>
@@ -243,8 +262,8 @@
                             </li>
                             <li><a href="customer-sheet.aspx"><span class="icon-angle-right iconal"></span>Technical
                                 sheet</a></li>
-                            <li><a href="customer-education.aspx"><span class="icon-angle-right iconal"></span>Technical Education </a>
-                            </li>
+                            <li><a href="customer-education.aspx"><span class="icon-angle-right iconal"></span>Technical
+                                Education </a></li>
                             <li><a href="customer-being.aspx"><span class="icon-angle-right iconal"></span>Being
                                 Panindochina’s Retailer</a></li>
                         </ul>
@@ -297,10 +316,12 @@
             <div class="menu-in">
                 <div class="menu-mobile">
                     <div class="search-form">
-                        <asp:Button ID="btnTimKiem2" CssClass="search-btn" runat="server" Text="" OnClick="btnTimKiem2_Click" />
-                        <div class="search-input">
-                            <asp:TextBox ID="searchTextBox2" CssClass="search-text" runat="server" Text="Tìm kiếm..."
-                                onfocus="if(this.value=='Tìm kiếm...')this.value=''" onblur="if(this.value=='')this.value='Tìm kiếm...'"></asp:TextBox></div>
+                        <asp:Panel ID="Panel2" runat="server" DefaultButton="btnTimKiem2">
+                            <asp:Button ID="btnTimKiem2" CssClass="search-btn" runat="server" Text="" OnClick="btnTimKiem2_Click" />
+                            <div class="search-input">
+                                <asp:TextBox ID="searchTextBox2" CssClass="search-text" runat="server" Text="Tìm kiếm..."
+                                    onfocus="if(this.value=='Tìm kiếm...')this.value=''" onblur="if(this.value=='')this.value='Tìm kiếm...'"></asp:TextBox></div>
+                        </asp:Panel>
                     </div>
                     <ul class="menu-nav">
                         <li class="active"><a id="A1" href="~/vn/" runat="server">Home<span class="icon-chevron-sign-right iconr"></span></a></li>

@@ -102,18 +102,18 @@
                     EnableModelValidation="True">
                     <ItemTemplate>
                         <asp:HiddenField ID="hdnSubMenuProductSub" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                        <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                        <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                             <%# Eval("ProductCategoryNameEn") %></a>
                             <asp:ListView ID="lstSubMenuProductSub" runat="server" DataSourceID="odsSubMenuProductSub"
                                 EnableModelValidation="True">
                                 <ItemTemplate>
                                     <asp:HiddenField ID="hdnSubMenuProductSub2" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                                    <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                    <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                                         <%# Eval("ProductCategoryNameEn") %></a>
                                         <asp:ListView ID="lstSubMenuProduct2" runat="server" DataSourceID="odsSubMenuProductSub2"
                                             EnableModelValidation="True">
                                             <ItemTemplate>
-                                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                                                     <%# Eval("ProductCategoryNameEn") %></a></li>
                                             </ItemTemplate>
                                             <LayoutTemplate>

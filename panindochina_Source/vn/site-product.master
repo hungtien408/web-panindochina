@@ -125,16 +125,16 @@
                 <asp:ListView ID="lstMenuProduct2" runat="server" DataSourceID="odsMenuProduct2" EnableModelValidation="True">
                 <ItemTemplate>
                     <asp:HiddenField ID="hdnSubMenuProductSub" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                    <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
+                    <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
                         <asp:ListView ID="lstSubMenuProductSub" runat="server" DataSourceID="odsSubMenuProductSub"
                             EnableModelValidation="True">
                             <ItemTemplate>
                                 <asp:HiddenField ID="hdnSubMenuProductSub2" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                                <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
+                                <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a>
                                     <asp:ListView ID="lstSubMenuProduct2" runat="server" DataSourceID="odsSubMenuProductSub2"
                                         EnableModelValidation="True">
                                         <ItemTemplate>
-                                            <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a></li>
+                                            <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a></li>
                                         </ItemTemplate>
                                         <LayoutTemplate>
                                             <ul>

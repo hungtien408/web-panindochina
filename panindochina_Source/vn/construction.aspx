@@ -1,19 +1,51 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/vn/site-product.master" AutoEventWireup="true"
-    CodeFile="tim-kiem.aspx.cs" Inherits="tim_kiem" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/vn/site-market.master" AutoEventWireup="true"
+    CodeFile="construction.aspx.cs" Inherits="market_segment" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <%--<title>Panindochina</title>
+    <meta name="description" content="Panindochina" />--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <asp:Label ID="lblTitle3" runat="server"></asp:Label>
+    <a href="gioi-thieu.aspx">Panindochina<span class="icon-caret-right"></span></a><span><asp:Label ID="lblTitle3" runat="server"></asp:Label></span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <asp:HiddenField ID="hdnlinkpro" runat="server" />
-    <a class="a-link-pro" href="<%= hdnlinkpro.Value %>"></a>
+    <h1 class="title desktop-992">
+        <asp:Label ID="lblTitle" runat="server"></asp:Label></h1>
+    <h2 class="title-menu mobile-992">
+        <a class="panel-right" href="#mobileRight">
+            <asp:Label ID="lblTitle1" runat="server"></asp:Label><span class="iconar icon-chevron-down"></span></a></h2>
+    <div class="slider-sub">
+        <asp:ListView ID="lstBannerMarketSegment" runat="server" DataSourceID="odsBannerMarketSegment" EnableModelValidation="True">
+            <ItemTemplate>
+                <div class="slide">
+                    <img alt='<%# Eval("FileName") %>' src='<%# !string.IsNullOrEmpty(Eval("FileName").ToString()) ? "~/res/advertisement/" + Eval("FileName") : "~/assets/images/slider-img-1.jpg" %>'
+                        runat="server" /></div>
+            </ItemTemplate>
+            <LayoutTemplate>
+                <div id="sliderBanner">
+                    <span runat="server" id="itemPlaceholder" />
+                </div>
+            </LayoutTemplate>
+        </asp:ListView>
+        <asp:ObjectDataSource ID="odsBannerMarketSegment" runat="server" SelectMethod="AdsBannerSelectAll"
+            TypeName="TLLib.AdsBanner">
+            <SelectParameters>
+                <asp:Parameter Name="StartRowIndex" Type="String" />
+                <asp:Parameter Name="EndRowIndex" Type="String" />
+                <asp:Parameter DefaultValue="8" Name="AdsCategoryID" Type="String" />
+                <asp:Parameter Name="CompanyName" Type="String" />
+                <asp:Parameter Name="Website" Type="String" />
+                <asp:Parameter Name="FromDate" Type="String" />
+                <asp:Parameter Name="ToDate" Type="String" />
+                <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                <asp:Parameter Name="Priority" Type="String" />
+                <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
+    </div>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="head desktop-992">
-                <h1 class="title">
-                    <asp:Label ID="lblTitle" runat="server"></asp:Label></h1>
                 <label class="pager-lb">
                     sản phẩm/trang</label>
                 <div class="select-box">
@@ -26,23 +58,23 @@
                 <label class="pager-lb">
                     Hiển thị</label>
             </div>
-            <h2 class="title-menu mobile-992">
-                <a class="panel-right" href="#mobileRight">
-                    <asp:Label ID="lblTitle1" runat="server"></asp:Label><span class="iconar icon-chevron-down"></span></a></h2>
             <asp:ListView ID="lstProducts" runat="server" DataSourceID="odsProducts" EnableModelValidation="True">
                 <ItemTemplate>
                     <div class="col-xs-4 element-item">
                         <div class="product-box">
-                            <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                            <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                 class="product-img fullbox-img">
                                 <img id="Img1" class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/product-imga-1.jpg" %>'
                                     runat="server" /></a>
                             <h4 class="product-name">
-                                <a href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
+                                <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
                                     class="text-uppercase">
                                     <%# Eval("ProductName") %></a></h4>
+                            <%--<div class="description">
+                                Manufacturer: <%# Eval("ManufacturerProduct")%></div>--%>
                             <div class="description">
-                                Manufacturer: <%# Eval("ManufacturerProduct")%></div>
+                                Brand:
+                                <%# Eval("ManufacturerName")%></div>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -57,12 +89,12 @@
                 <SelectParameters>
                     <asp:Parameter Name="StartRowIndex" Type="String" />
                     <asp:Parameter Name="EndRowIndex" Type="String" />
-                    <asp:QueryStringParameter Name="Keyword" QueryStringField="kw" Type="String" />
+                    <asp:Parameter Name="Keyword" Type="String" />
                     <asp:Parameter Name="ProductName" Type="String" />
                     <asp:Parameter Name="Description" Type="String" />
                     <asp:Parameter Name="PriceFrom" Type="String" />
                     <asp:Parameter Name="PriceTo" Type="String" />
-                    <asp:QueryStringParameter Name="CategoryID" QueryStringField="pri" Type="String" />
+                    <asp:Parameter Name="CategoryID" Type="String" />
                     <asp:Parameter Name="ManufacturerID" Type="String" />
                     <asp:Parameter Name="OriginID" Type="String" />
                     <asp:Parameter Name="Tag" Type="String" />
@@ -74,7 +106,7 @@
                     <asp:Parameter Name="IsAutomotive" Type="String" />
                     <asp:Parameter Name="IsSteelMills" Type="String" />
                     <asp:Parameter Name="IsMining" Type="String" />
-                    <asp:Parameter Name="IsConstruction" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="IsConstruction" Type="String" />
                     <asp:Parameter Name="IsPetroleum" Type="String" />
                     <asp:Parameter Name="IsShipBuilding" Type="String" />
                     <asp:Parameter Name="IsPharmaceutical" Type="String" />
@@ -104,11 +136,10 @@
                     </Fields>
                 </asp:DataPager>
             </div>
-            <h2 class="title-link mobile-992">
-                <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>
-                    <asp:Label ID="lblTitle2" runat="server"></asp:Label></a></h2>
         </ContentTemplate>
     </asp:UpdatePanel>
+    <h2 class="title-link mobile-992">
+        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span><asp:Label ID="lblTitle2" runat="server"></asp:Label></a></h2>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
 </asp:Content>

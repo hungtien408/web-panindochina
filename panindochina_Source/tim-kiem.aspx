@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/en/site-product.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site-product.master" AutoEventWireup="true"
     CodeFile="tim-kiem.aspx.cs" Inherits="tim_kiem" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -71,6 +71,16 @@
                     <asp:Parameter Name="IsNew" Type="String" />
                     <asp:Parameter Name="IsBestSeller" Type="String" />
                     <asp:Parameter Name="IsSaleOff" Type="String" />
+                    <asp:Parameter Name="IsAutomotive" Type="String" />
+                    <asp:Parameter Name="IsSteelMills" Type="String" />
+                    <asp:Parameter Name="IsMining" Type="String" />
+                    <asp:Parameter Name="IsConstruction" Type="String" />
+                    <asp:Parameter Name="IsPetroleum" Type="String" />
+                    <asp:Parameter Name="IsShipBuilding" Type="String" />
+                    <asp:Parameter Name="IsPharmaceutical" Type="String" />
+                    <asp:Parameter Name="IsPaints" Type="String" />
+                    <asp:Parameter Name="IsCement" Type="String" />
+                    <asp:Parameter Name="IsMarineService" Type="String" />
                     <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                     <asp:Parameter Name="FromDate" Type="String" />
                     <asp:Parameter Name="ToDate" Type="String" />

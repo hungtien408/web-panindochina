@@ -14,39 +14,18 @@
         <div class="box-aside corner">
             <h2 class="title-a">
                 Panindochina</h2>
-            <asp:ListView ID="lstArticle" runat="server" DataSourceID="odsArticle"
-                EnableModelValidation="True">
-                <ItemTemplate>
-                    <li><a href='<%# progressTitle(Eval("ArticleTitleEn")) + "-tci-" + Eval("ArticleCategoryID") + "-mi-" + Eval("ArticleID") + ".aspx" %>'>
-                        <span>
-                            <%# Eval("ArticleTitleEn")%></span></a></li>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <ul class="menu-list menu-iconr">
-                        <span runat="server" id="itemPlaceholder" />
-                    </ul>
-                </LayoutTemplate>
-            </asp:ListView>
-            <asp:ObjectDataSource ID="odsArticle" runat="server" SelectMethod="ArticleSelectAll"
-                TypeName="TLLib.Article">
-                <SelectParameters>
-                    <asp:Parameter Name="StartRowIndex" Type="String" />
-                    <asp:Parameter Name="EndRowIndex" Type="String" />
-                    <asp:Parameter Name="Keyword" Type="String" />
-                    <asp:Parameter Name="ArticleTitle" Type="String" />
-                    <asp:Parameter Name="Description" Type="String" />
-                    <asp:Parameter DefaultValue="2" Name="ArticleCategoryID" Type="String" />
-                    <asp:Parameter Name="Tag" Type="String" />
-                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                    <asp:Parameter Name="IsHot" Type="String" />
-                    <asp:Parameter Name="IsNew" Type="String" />
-                    <asp:Parameter Name="FromDate" Type="String" />
-                    <asp:Parameter Name="ToDate" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
+            <ul class="menu-list menu-iconr">
+                <li><a href="automotive.aspx"><span>Automotive</span></a></li>
+                <li><a href="steelmills.aspx"><span>Steel Mills</span></a></li>
+                <li><a href="mining.aspx"><span>Panindochina - Mining</span></a></li>
+                <li><a href="construction.aspx"><span>Construction</span></a></li>
+                <li><a href="petroleum.aspx"><span>Petroleum</span></a></li>
+                <li><a href="shipbuilding.aspx"><span>Ship Building</span></a></li>
+                <li><a href="pharmaceutical.aspx"><span>Pharmaceutical</span></a></li>
+                <li><a href="paints.aspx"><span>Paints</span></a></li>
+                <li><a href="cement.aspx"><span>Cement</span></a></li>
+                <li><a href="marineservice.aspx"><span>Marine Service</span></a></li>
+            </ul>
         </div>
     </div>
     <div id="colMain" class="about-content">
@@ -63,38 +42,18 @@
             <div class="menu-mobile">
                 <h2 class="title">
                     Panindochina</h2>
-                <asp:ListView ID="lstArticle2" runat="server" DataSourceID="odsArticle2"
-                    EnableModelValidation="True">
-                    <ItemTemplate>
-                        <li><a href='<%# progressTitle(Eval("ArticleTitleEn")) + "-tci-" + Eval("ArticleCategoryID") + "-mi-" + Eval("ArticleID") + ".aspx" %>'>
-                                <%# Eval("ArticleTitleEn")%><span class="icon-chevron-sign-right iconr"></span></a></li>
-                    </ItemTemplate>
-                    <LayoutTemplate>
-                        <ul class="menu-nav menu-right">
-                            <span runat="server" id="itemPlaceholder" />
-                        </ul>
-                    </LayoutTemplate>
-                </asp:ListView>
-                <asp:ObjectDataSource ID="odsArticle2" runat="server" SelectMethod="ArticleSelectAll"
-                TypeName="TLLib.Article">
-                <SelectParameters>
-                    <asp:Parameter Name="StartRowIndex" Type="String" />
-                    <asp:Parameter Name="EndRowIndex" Type="String" />
-                    <asp:Parameter Name="Keyword" Type="String" />
-                    <asp:Parameter Name="ArticleTitle" Type="String" />
-                    <asp:Parameter Name="Description" Type="String" />
-                    <asp:Parameter DefaultValue="2" Name="ArticleCategoryID" Type="String" />
-                    <asp:Parameter Name="Tag" Type="String" />
-                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                    <asp:Parameter Name="IsHot" Type="String" />
-                    <asp:Parameter Name="IsNew" Type="String" />
-                    <asp:Parameter Name="FromDate" Type="String" />
-                    <asp:Parameter Name="ToDate" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
+                <ul class="menu-nav menu-right">
+                    <li><a href="automotive.aspx">Automotive<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="steelmills.aspx">Steel Mills<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="mining.aspx">Panindochina - Mining<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="construction.aspx">Construction<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="petroleum.aspx">Petroleum<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="shipbuilding.aspx">Ship Building<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="pharmaceutical.aspx">Pharmaceutical<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="paints.aspx">Paints<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="cement.aspx">Cement<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="marineservice.aspx">Marine Service<span class="icon-chevron-sign-right iconr"></span></a></li>
+                </ul>
             </div>
         </div>
     </div>
