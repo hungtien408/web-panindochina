@@ -186,7 +186,8 @@ public partial class ad_single_partner : System.Web.UI.Page
 
                 if (!string.IsNullOrEmpty(strPartnerImage))
                 {
-                    var strFullPath = "~/res/partner/" + strConvertedPartnerName + "-" + strPartnerID + strPartnerImage.Substring(strPartnerImage.LastIndexOf('.'));
+                    strPartnerImage = (string.IsNullOrEmpty(strConvertedPartnerName) ? "" : strConvertedPartnerName + "-") + strPartnerID + strPartnerImage.Substring(strPartnerImage.LastIndexOf('.'));
+                    var strFullPath = "~/res/partner/" + strPartnerImage;
 
                     if (File.Exists(strOldImagePath))
                         File.Delete(strOldImagePath);
