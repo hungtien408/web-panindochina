@@ -50,8 +50,8 @@ public partial class site : System.Web.UI.MasterPage
         {
             path = "";
         }
-        //Response.Redirect("~/vn/" + path);
-        Response.Redirect("~/" + path);
+        Response.Redirect("~/vn/" + path);
+        //Response.Redirect("~/" + path);
     }
     protected void btnEN_Click(object sender, ImageClickEventArgs e)
     {

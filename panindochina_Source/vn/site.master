@@ -118,13 +118,13 @@
                     </div>
                 </div>
                 <ul id="menu">
-                    <li class="active"><a href="~/vn/" runat="server">Home</a></li>
+                    <li class="active"><a href="~/vn/" runat="server">Trang Chủ</a></li>
                     <li><a href="gioi-thieu.aspx">Panindochina</a></li>
-                    <li><a href="product.aspx">Product</a></li>
-                    <li><a href="services.aspx">Service</a></li>
-                    <li><a href="customer-catalogue.aspx">Customer Support</a></li>
-                    <li><a href="gallery.aspx">Library</a></li>
-                    <li><a href="contact.aspx">Contact</a></li>
+                    <li><a href="product.aspx">Sản Phẩm</a></li>
+                    <li><a href="services.aspx">Dịch Vụ</a></li>
+                    <li><a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng</a></li>
+                    <li><a href="gallery.aspx">Thư Viện</a></li>
+                    <li><a href="contact.aspx">Liên Hệ</a></li>
                 </ul>
                 <div class="clr">
                 </div>
@@ -153,7 +153,7 @@
                 <div class="row footer-group">
                     <div class="col-lg-3 col-md-4 col-xs-6 element-item">
                         <h4 class="text-uppercase title-f">
-                            Products</h4>
+                            Sản Phẩm</h4>
                         <%--<ul class="footer-menu">
                             <li><a href="#"><span class="iconal">+</span>Personnel Protective Equipment</a></li>
                             <li><a href="#"><span class="iconal">+</span>Fall Protection Equipment</a></li>
@@ -190,7 +190,7 @@
                     </div>
                     <div class="col-lg-3 col-md-4 col-xs-6 element-item">
                         <h4 class="text-uppercase title-f">
-                            market segment</h4>
+                            Ngành Nghề</h4>
                         <%--<asp:ListView ID="lstMarketSegment" runat="server" DataSourceID="odsMarketSegment"
                             EnableModelValidation="True">
                             <ItemTemplate>
@@ -249,30 +249,25 @@
                     </div>
                     <div class="col-lg-3 col-md-4 col-xs-6 element-item">
                         <h4 class="text-uppercase title-f">
-                            Customer Support</h4>
+                            Hỗ Trợ Khách Hàng</h4>
                         <ul class="footer-nav">
                             <li><a href="customer-catalogue.aspx"><span class="icon-angle-right iconal"></span>Catalogue/Brochure</a></li>
-                            <li><a href="customer-warranty.aspx"><span class="icon-angle-right iconal"></span>Warranty/Technical
-                                & Service Request</a></li>
-                            <li><a href="customer-quatation.aspx"><span class="icon-angle-right iconal"></span>Quotation
-                                Request</a></li>
+                            <li><a href="customer-warranty.aspx"><span class="icon-angle-right iconal"></span>Yêu Cầu Dịch Vụ, Kĩ Thuật/ Bảo Hành</a></li>
+                            <li><a href="customer-quatation.aspx"><span class="icon-angle-right iconal"></span>Yêu Cầu Chào Giá</a></li>
                             <li><a href="customer-instruction.aspx"><span class="icon-angle-right iconal"></span>
-                                Instruction Manual</a></li>
-                            <li><a href="customer-faq.aspx"><span class="icon-angle-right iconal"></span>FAQs </a>
+                                Hướng Dẫn Sử Dụng</a></li>
+                            <li><a href="customer-faq.aspx"><span class="icon-angle-right iconal"></span>Câu Hỏi Thường Gặp </a>
                             </li>
-                            <li><a href="customer-sheet.aspx"><span class="icon-angle-right iconal"></span>Technical
-                                sheet</a></li>
-                            <li><a href="customer-education.aspx"><span class="icon-angle-right iconal"></span>Technical
-                                Education </a></li>
-                            <li><a href="customer-being.aspx"><span class="icon-angle-right iconal"></span>Being
-                                Panindochina’s Retailer</a></li>
+                            <li><a href="customer-sheet.aspx"><span class="icon-angle-right iconal"></span>Thông Số Kĩ Thuật</a></li>
+                            <li><a href="customer-education.aspx"><span class="icon-angle-right iconal"></span>Tài Liệu Kĩ Thuật</a></li>
+                            <li><a href="customer-being.aspx"><span class="icon-angle-right iconal"></span>Trở Thành Đối Tác Bán Lẻ Của Xuyên Đông Dương</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-12 col-xs-6 element-item">
                         <h4 class="text-uppercase title-f">
-                            Contact us</h4>
+                            Liên Hệ</h4>
                         <ul class="footer-address">
-                            <li class="add-1">71 D5 Street, Ward 25, <span>Binh Thanh District, Ho Chi Minh City</span></li>
+                            <li class="add-1">71 Đường D5, Phường 25, <span>Quận Bình Thạnh, Tp.Hồ Chí Minh</span></li>
                             <li class="add-2">08.35127509</li>
                             <li class="add-3">08.35127510</li>
                             <li class="add-4"><a href="mailto:info@panindochina.com.vn">info@panindochina.com.vn</a></li>
