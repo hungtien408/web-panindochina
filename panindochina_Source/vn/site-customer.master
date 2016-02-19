@@ -13,7 +13,7 @@
     <div id="colAside" class="aside-customer desktop-992">
         <div class="box-aside corner">
             <h2 class="title-a">
-                Customer Support</h2>
+                Hỗ Trợ Khách Hàng</h2>
             <ul id="customerm" class="menu-list">
                 <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
                 <li><a href="customer-warranty.aspx">Yêu Cầu Dịch Vụ, Kĩ Thuật/ Bảo Hành</a></li>
@@ -63,7 +63,7 @@
         <div class="menu-in">
             <div class="menu-mobile">
                 <h2 class="title">
-                    Library</h2>
+                    Hỗ Trợ Khách Hàng</h2>
                 <ul class="menu-nav menu-cato">
                     <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
                     <li><a href="customer-warranty.aspx">Yêu Cầu Dịch Vụ, Kĩ Thuật/ Bảo Hành</a></li>
