@@ -16,10 +16,10 @@
                 Customer Support</h2>
             <ul id="customerm" class="menu-list">
                 <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
-                <li><a href="customer-warranty.aspx">Warranty/Technical &amp; Service Request</a></li>
-                <li><a href="customer-quatation.aspx">Quotation Request</a></li>
-                <li><a href="customer-instruction.aspx">Instruction Manual</a></li>
-                <li><a href="customer-faq.aspx">FAQs</a>
+                <li><a href="customer-warranty.aspx">Yêu Cầu Dịch Vụ, Kĩ Thuật/ Bảo Hành</a></li>
+                <li><a href="customer-quatation.aspx">Yêu Cầu Chào Giá</a></li>
+                <li><a href="customer-instruction.aspx">Hướng Dẫn Sử Dụng</a></li>
+                <li><a href="customer-faq.aspx">Câu Hỏi Thường Gặp</a>
                     <asp:ListView ID="lstFaq" runat="server" DataSourceID="odsFaq" EnableModelValidation="True">
                         <ItemTemplate>
                             <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
@@ -44,9 +44,9 @@
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </li>
-                <li><a href="customer-sheet.aspx">Technical Sheet</a></li>
-                <li><a href="customer-education.aspx">Technical Education</a> </li>
-                <li><a href="customer-being.aspx">Being Panindochina’s Retailer</a></li>
+                <li><a href="customer-sheet.aspx">Thông Số Kĩ Thuật</a></li>
+                <li><a href="customer-education.aspx">Tài Liệu Kĩ Thuật</a> </li>
+                <li><a href="customer-being.aspx">Trở Thành Đối Tác Bán Lẻ Của Xuyên Đông Dương</a></li>
             </ul>
         </div>
     </div>
@@ -66,10 +66,10 @@
                     Library</h2>
                 <ul class="menu-nav menu-cato">
                     <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
-                    <li><a href="customer-warranty.aspx">Warranty/Technical &amp; Service Request</a></li>
-                    <li><a href="customer-quatation.aspx">Quotation Request</a></li>
-                    <li><a href="customer-instruction.aspx">Instruction Manual</a></li>
-                    <li><a href="#">FAQs</a>
+                    <li><a href="customer-warranty.aspx">Yêu Cầu Dịch Vụ, Kĩ Thuật/ Bảo Hành</a></li>
+                    <li><a href="customer-quatation.aspx">Yêu Cầu Chào Giá</a></li>
+                    <li><a href="customer-instruction.aspx">Hướng Dẫn Sử Dụng</a></li>
+                    <li><a href="#">Câu Hỏi Thường Gặp</a>
                         <asp:ListView ID="lstFaq2" runat="server" DataSourceID="odsFaq2" EnableModelValidation="True">
                         <ItemTemplate>
                             <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'>
@@ -94,9 +94,9 @@
                         </SelectParameters>
                     </asp:ObjectDataSource>
                     </li>
-                    <li><a href="customer-sheet.aspx">Technical Sheet</a></li>
-                    <li><a href="#">Technical Education</a></li>
-                    <li><a href="customer-being.aspx">Being Panindochina’s Retailer</a></li>
+                    <li><a href="customer-sheet.aspx">Thông Số Kĩ Thuật</a></li>
+                    <li><a href="customer-education.aspx">Tài Liệu Kĩ Thuật</a></li>
+                    <li><a href="customer-being.aspx">Trở Thành Đối Tác Bán Lẻ Của Xuyên Đông Dương</a></li>
                 </ul>
             </div>
         </div>

@@ -8,14 +8,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div id="site">
         <div class="container">
-            <a id="A1" href="~/vn/" runat="server">Home<span class="icon-caret-right"></span></a>
-            <span>Service</span>
+            <a id="A1" href="~/vn/" runat="server">Trang Chủ<span class="icon-caret-right"></span></a>
+            <span>Dịch Vụ</span>
         </div>
     </div>
     <div class="container wrap-service">
         <div class="text-center wrapper-880">
             <h4 class="text-uppercase title-1">
-                Our Services</h4>
+                Dịch Vụ Của Chúng Tôi</h4>
             <div class="desription">
                 <asp:ListView ID="lstTitleService" runat="server" DataSourceID="odsTitleService"
                     EnableModelValidation="True">

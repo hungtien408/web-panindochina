@@ -2,18 +2,17 @@
     CodeFile="customer-instruction.aspx.cs" Inherits="customer_catalogue" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Instruction Manual</title>
+    <title>Hướng Dẫn Sử Dụng</title>
     <meta name="description" content="Instruction Manual" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Instruction
-        Manual</span>
+    <a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng<span class="icon-caret-right"></span></a><span>Hướng Dẫn Sử Dụng</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
         Instruction Manual</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">Instruction Manual<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Hướng Dẫn Sử Dụng<span class="iconar icon-chevron-down"></span></a></h2>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="form-select">
@@ -95,8 +94,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <h2 class="title-link mobile-992">
-        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Instruction
-            Manual</a></h2>
+        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Hướng Dẫn Sử Dụng</a></h2>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
 </asp:Content>

@@ -2,18 +2,18 @@
     CodeFile="customer-education.aspx.cs" Inherits="customer_being" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Technical Education</title>
+    <title>Tài Liệu Kĩ Thuật</title>
     <meta name="description" content="Technical Education" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Technical
+    <a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng<span class="icon-caret-right"></span></a><span>Technical
         Education</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
         Technical Education</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">Technical Education<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Tài Liệu Kĩ Thuật<span class="iconar icon-chevron-down"></span></a></h2>
     <div class="customer-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -59,8 +59,7 @@
         </asp:Panel>
     </div>
     <h2 class="title-link mobile-992">
-        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Technical
-            Education</a></h2>
+        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Tài Liệu Kĩ Thuật</a></h2>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
 </asp:Content>

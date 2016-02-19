@@ -17,10 +17,10 @@
             <div class="col-sm-3">
                 <div class="address-contact">
                     <h1 class="title">
-                        Company contact</h1>
+                        Liên Hệ Công Ty</h1>
                     <p>
-                        <span class="glyphicon glyphicon-map-marker"></span>71 D5 Street, Ward 25, Binh
-                        Thanh District, Ho Chi Minh City</p>
+                        <span class="glyphicon glyphicon-map-marker"></span>71 Đường D5, Phường 25, Quận Bình
+                        Thạnh, Tp.Hồ Chí Minh</p>
                     <p>
                         <span class="glyphicon glyphicon-earphone"></span>08.35127509</p>
                     <p>
@@ -178,16 +178,15 @@
         </div>
         <div class="wrap-send">
             <h4 class="title">
-                Send an inquiry</h4>
+                Gửi yêu cầu</h4>
             <p>
-                For any further request, please fill out the inquiry form, we will get back to you
-                as soon as possible. Thank you!</p>
+                Nếu có yêu cầu gì thêm, vui lòng điền vào form bên dưới, chúng tôi sẽ liên hệ với bạn sớm nhất có thể. Xin cảm ơn !</p>
             <h4 class="title-3">
-                Contact Us</h4>
+                Liên Hệ</h4>
             <div class="row">
                 <div class="col-lg-5 col-md-5">
                     <p>
-                        For we can provide you a better service, please fill all (*) fields below
+                        Để chúng tôi có thể cung cấp cho bạn một dịch vụ tốt hơn, xin vui lòng điền vào tất cả dấu (*) dưới đây
                     </p>
                     <div class="send-contact">
                         <div class="info-input">
@@ -297,7 +296,7 @@
             <div class="info-input">
                 <div class="info-btn">
                     <asp:Button ID="btnRegister" runat="server" CssClass="text-uppercase btn-button"
-                        ValidationGroup="Register" Text="submit" />
+                        ValidationGroup="Register" Text="Gửi" />
                 </div>
             </div>
         </div>

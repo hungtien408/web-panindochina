@@ -319,13 +319,13 @@
                         </asp:Panel>
                     </div>
                     <ul class="menu-nav">
-                        <li class="active"><a id="A1" href="~/vn/" runat="server">Home<span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li class="active"><a id="A1" href="~/vn/" runat="server">Trang Chủ<span class="icon-chevron-sign-right iconr"></span></a></li>
                         <li><a href="gioi-thieu.aspx">Panindochina<span class="icon-chevron-sign-right iconr"></span></a></li>
-                        <li><a href="product.aspx">Product<span class="icon-chevron-sign-right iconr"></span></a></li>
-                        <li><a href="services.aspx">Service<span class="icon-chevron-sign-right iconr"></span></a></li>
-                        <li><a href="customer-catalogue.aspx">Customer Support<span class="icon-chevron-sign-right iconr"></span></a></li>
-                        <li><a href="gallery.aspx">Library<span class="icon-chevron-sign-right iconr"></span></a></li>
-                        <li><a href="contact.aspx">Contact<span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li><a href="product.aspx">Sản Phẩm<span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li><a href="services.aspx">Dịch Vụ<span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li><a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng<span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li><a href="gallery.aspx">Thư Viện<span class="icon-chevron-sign-right iconr"></span></a></li>
+                        <li><a href="contact.aspx">Liên Hệ<span class="icon-chevron-sign-right iconr"></span></a></li>
                     </ul>
                 </div>
             </div>

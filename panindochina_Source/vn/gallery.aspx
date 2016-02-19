@@ -6,7 +6,7 @@
     <meta name="description" content="Hình ảnh" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="gallery.aspx">Library<span class="icon-caret-right"></span></a><span>Hình ảnh</span>
+    <a href="gallery.aspx">Thư Viện<span class="icon-caret-right"></span></a><span>Hình ảnh</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">

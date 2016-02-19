@@ -6,8 +6,8 @@
     <meta name="description" content="Panindochina" />--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><a
-        href="customer-faq.aspx">FAQs<span class="icon-caret-right"></span></a><span><asp:Label
+    <a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng<span class="icon-caret-right"></span></a><a
+        href="customer-faq.aspx">Câu Hỏi Thường Gặp<span class="icon-caret-right"></span></a><span><asp:Label
             ID="lblTitle" runat="server"></asp:Label></span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

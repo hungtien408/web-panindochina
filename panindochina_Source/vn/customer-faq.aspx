@@ -2,17 +2,17 @@
     CodeFile="customer-faq.aspx.cs" Inherits="customer_being" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>FAQs</title>
+    <title>Câu Hỏi Thường Gặp</title>
     <meta name="description" content="FAQs" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>FAQs</span>
+    <a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng<span class="icon-caret-right"></span></a><span>FAQs</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
         FAQs</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">FAQs<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Câu Hỏi Thường Gặp<span class="iconar icon-chevron-down"></span></a></h2>
     <asp:ListView ID="lstFaq" runat="server" DataSourceID="odsFaq" EnableModelValidation="True">
         <ItemTemplate>
             <li><a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-dci-" + Eval("ParentID") + "-dri-" + Eval("DownloadCategoryID") + ".aspx" %>'><%# Eval("DownloadCategoryName") %></a></li>
@@ -36,7 +36,7 @@
         </SelectParameters>
     </asp:ObjectDataSource>
     <h2 class="title-link mobile-992">
-        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>FAQs</a></h2>
+        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Câu Hỏi Thường Gặp</a></h2>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
 </asp:Content>

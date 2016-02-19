@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="site">
         <div class="container">
-            <a href="~/vn/" runat="server">Home<span class="icon-caret-right"></span></a>
+            <a href="~/vn/" runat="server">Trang Chủ<span class="icon-caret-right"></span></a>
             <asp:ContentPlaceHolder id="cphSite" runat="server">
             </asp:ContentPlaceHolder>
         </div>
