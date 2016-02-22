@@ -45,7 +45,11 @@
                     <asp:HiddenField ID="hdnDownloadCategoryID" runat="server" Value='<%# Eval("DownloadCategoryID") %>' />
                     <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
                         <ItemTemplate>
+                            <%--<li>
+                                <%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-link corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Download</span></a>" : ""%>
+                                <%# Eval("DownloadNameEn")%></li>--%>
                             <li>
+                                <a class='download-link corner' target="_blank" href='<%# progressTitle(Eval("FilePath")) + "-vd-" + Eval("DownloadID") + ".aspx" %>'><span>View</span></a>
                                 <%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-link corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Download</span></a>" : ""%>
                                 <%# Eval("DownloadNameEn")%></li>
                         </ItemTemplate>

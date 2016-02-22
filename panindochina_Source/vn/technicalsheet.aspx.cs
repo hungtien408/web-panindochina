@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TLLib;
 
 public partial class customer_catalogue : System.Web.UI.Page
 {
@@ -19,5 +20,9 @@ public partial class customer_catalogue : System.Web.UI.Page
     {
         lstDownloadCategory.DataSource = odsDowloadCategory;
         lstDownloadCategory.DataBind();
+    }
+    protected string progressTitle(object input)
+    {
+        return Common.ConvertTitle(input.ToString());
     }
 }
