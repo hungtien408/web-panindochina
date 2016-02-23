@@ -227,8 +227,7 @@
                         <ul class="footer-nav">
                             <li><a href="automotive.aspx"><span class="icon-angle-right iconal"></span>Automotive</a></li>
                             <li><a href="steelmills.aspx"><span class="icon-angle-right iconal"></span>Steel Mills</a></li>
-                            <li><a href="mining.aspx"><span class="icon-angle-right iconal"></span>Panindochina
-                                - Mining</a></li>
+                            <li><a href="mining.aspx"><span class="icon-angle-right iconal"></span>Mining</a></li>
                             <li><a href="construction.aspx"><span class="icon-angle-right iconal"></span>Construction</a></li>
                             <li><a href="petroleum.aspx"><span class="icon-angle-right iconal"></span>Petroleum</a></li>
                             <li><a href="shipbuilding.aspx"><span class="icon-angle-right iconal"></span>Ship Building</a></li>
