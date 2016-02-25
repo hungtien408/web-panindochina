@@ -2438,3 +2438,54 @@ hr {
         padding-left: 5px;
         vertical-align: top;
     }
+.tb-magazine {
+    margin: 0 -23px;
+    overflow: hidden;
+}
+
+    .tb-magazine .col-in {
+        float: left;
+        /*width: 25%;*/
+        width: 20%;
+    }
+
+.maga-box {
+    padding: 10px 23px;
+    text-align: center;
+}
+
+    .maga-box .maga-img, .maga-box .maga-img img {
+        display: block;
+        width: 100%;
+    }
+
+        .maga-box .maga-img img {
+            border-radius: 10px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+            -moz-border-radius: 10px; /* Firefox */
+            -webkit-border-radius: 10px; /* Safari and Chrome */
+        }
+
+.maga-name a {
+    color: #005fae;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 10px 0;
+}
+
+    .maga-name a:hover, .maga-box:hover .maga-name a {
+        color: #ff8a14;
+        text-decoration: none;
+    }
+
+/*--- POPUP ---*/
+#closeUp {
+    background: url(../images/closeX.png) no-repeat right center;
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+}

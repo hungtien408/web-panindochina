@@ -202,7 +202,7 @@ public partial class ad_single_download : System.Web.UI.Page
                 if (FileImageName.UploadedFiles.Count > 0)
                 {
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullImagePath));
-                    ResizeCropImage.ResizeByCondition(strFullImagePath, 120, 120);
+                    ResizeCropImage.ResizeByCondition(strFullImagePath, 498, 646);
                 }
                 RadGrid1.Rebind();
             }
@@ -238,7 +238,7 @@ public partial class ad_single_download : System.Web.UI.Page
                     string strFullPath = "~/res/download/thumbs/" + ImageName;
 
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 120, 120);
+                    ResizeCropImage.ResizeByCondition(strFullPath, 498, 646);
                 }
 
                 

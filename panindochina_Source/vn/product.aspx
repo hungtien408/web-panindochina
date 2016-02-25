@@ -44,7 +44,7 @@
                             <%--<div class="description">
                                 Manufacturer: <%# Eval("ManufacturerProduct")%></div>--%>
                             <div class="description">
-                                Brand: <%# Eval("ManufacturerName")%></div>
+                                Thương Hiệu: <%# Eval("ManufacturerName")%></div>
                         </div>
                     </div>
                 </ItemTemplate>

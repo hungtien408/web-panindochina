@@ -132,7 +132,8 @@
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" IsSeparator="True">
                             </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/panindochina-manufacturer.aspx" Text="Quản Lý Thương Hiệu">
+                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/panindochina-manufacturer.aspx"
+                                Text="Quản Lý Thương Hiệu">
                             </asp:RadMenuItem>
                             <%--<asp:RadMenuItem runat="server" IsSeparator="True">
                             </asp:RadMenuItem>
@@ -161,7 +162,15 @@
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" IsSeparator="True">
                                     </asp:RadMenuItem>
-                                    <asp:RadMenuItem runat="server" Text="Liên Hệ" NavigateUrl="~/ad/bilingual/panindochina-titlecontact.aspx">
+                                    <asp:RadMenuItem runat="server" Text="Liên Hệ">
+                                        <Items>
+                                            <asp:RadMenuItem runat="server" Text="Services" NavigateUrl="~/ad/bilingual/panindochina-contactservices.aspx">
+                                            </asp:RadMenuItem>
+                                            <asp:RadMenuItem runat="server" IsSeparator="True">
+                                            </asp:RadMenuItem>
+                                            <asp:RadMenuItem runat="server" Text="Technical Services" NavigateUrl="~/ad/bilingual/panindochina-contacttechnicalservices.aspx">
+                                            </asp:RadMenuItem>
+                                        </Items>
                                     </asp:RadMenuItem>
                                     <%--<asp:RadMenuItem runat="server" IsSeparator="True">
                                     </asp:RadMenuItem>

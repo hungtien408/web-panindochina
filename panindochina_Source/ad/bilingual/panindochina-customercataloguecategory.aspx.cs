@@ -148,7 +148,9 @@ public partial class ad_single_downloadcategory : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(strImageName))
                 {
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 40, 40);
+                    //ResizeCropImage.ResizeByCondition(strFullPath, 180, 240);
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 180, 240, bgColor);
                 }
                 RadGrid1.Rebind();
             }
@@ -180,7 +182,9 @@ public partial class ad_single_downloadcategory : System.Web.UI.Page
                         File.Delete(strOldImagePath);
 
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 40, 40);
+                    //ResizeCropImage.ResizeByCondition(strFullPath, 180, 240);
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 180, 240, bgColor);
                 }
             }
         }

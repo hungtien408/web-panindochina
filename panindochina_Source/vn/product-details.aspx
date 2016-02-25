@@ -110,11 +110,11 @@
                     <%--<h1 class="product-name">
                     <%# Eval("ProductName") %></h1>--%>
                     <ul class="list-info">
-                        <li>Brand: <strong><a href='<%# string.IsNullOrEmpty(Eval("ManufacturerID").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ManufacturerName")) + "-pmi-" + Eval("ManufacturerID") + ".aspx" %>'>
+                        <li>Thương Hiệu: <strong><a href='<%# string.IsNullOrEmpty(Eval("ManufacturerID").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ManufacturerName")) + "-pmi-" + Eval("ManufacturerID") + ".aspx" %>'>
                             <%# Eval("ManufacturerName")%></a></strong></li>
-                        <li>Manufacturer: <strong>
+                        <li>Nhà Sản Xuất: <strong>
                             <%# Eval("ManufacturerProduct")%></strong></li>
-                        <li>Model: <strong>
+                        <li>Kiểu mẫu: <strong>
                             <%# Eval("ModelProduct")%></strong></li>
                     </ul>
                     <div class="description">
@@ -353,7 +353,7 @@
                                 Manufacturer:
                                 <%# Eval("ManufacturerProduct")%></div>--%>
                             <div class="description">
-                                Brand:
+                                Thương Hiệu:
                                 <%# Eval("ManufacturerName")%></div>
                         </div>
                     </div>

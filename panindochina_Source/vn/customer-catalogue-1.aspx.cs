@@ -12,14 +12,14 @@ public partial class customer_catalogue : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-            //lstDownloadCategory.DataSource = odsDowloadCategoryAll;
-            //lstDownloadCategory.DataBind();
+            lstDownloadCategory.DataSource = odsDowloadCategoryAll;
+            lstDownloadCategory.DataBind();
         }
     }
     protected void dropListBrand_SelectedIndexChanged(object sender, EventArgs e)
     {
-        //lstDownloadCategory.DataSource = odsDowloadCategory;
-        //lstDownloadCategory.DataBind();
+        lstDownloadCategory.DataSource = odsDowloadCategory;
+        lstDownloadCategory.DataBind();
     }
     protected string progressTitle(object input)
     {

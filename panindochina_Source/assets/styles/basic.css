@@ -1,0 +1,14 @@
+
+.back-page
+{
+    background: url(../images/fancybox/fancybox_sprite.png) no-repeat -3px 0;
+    display: block;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    height: 32px;
+    overflow: hidden;
+    text-indent: -9999em;
+    width: 32px;
+    z-index: 99;
+}

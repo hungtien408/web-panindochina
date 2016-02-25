@@ -19,8 +19,8 @@
                     <h1 class="title">
                         Liên Hệ Công Ty</h1>
                     <p>
-                        <span class="glyphicon glyphicon-map-marker"></span>71 Đường D5, Phường 25, Quận Bình
-                        Thạnh, Tp.Hồ Chí Minh</p>
+                        <span class="glyphicon glyphicon-map-marker"></span>71 Đường D5, Phường 25, Quận
+                        Bình Thạnh, Tp.Hồ Chí Minh</p>
                     <p>
                         <span class="glyphicon glyphicon-earphone"></span>08.35127509</p>
                     <p>
@@ -146,7 +146,183 @@
                         <p><span class="glyphicon glyphicon-earphone"></span>08.35127509</p>
                     </li>
                 </ul>--%>
-        <div  class="wrap-link">
+        <h4 class="title">
+            Services</h4>
+        <div class="wrap-link">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h4 class="title-bg">
+                        Central &amp; Northern Vietnam</h4>
+                    <asp:ListView ID="lstContact1" runat="server" DataSourceID="odsContact1" EnableModelValidation="True">
+                        <ItemTemplate>
+                            <li>
+                                <h6>
+                                    <%# Eval("ArticleTitle") %></h6>
+                                <p>
+                                    <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
+                                        <%# Eval("MetaTittle") %></a></p>
+                                <p>
+                                    <span class="glyphicon glyphicon-earphone"></span>
+                                    <%# Eval("MetaDescription") %></p>
+                            </li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul class="list-box">
+                                <li runat="server" id="itemPlaceholder"></li>
+                            </ul>
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsContact1" runat="server" SelectMethod="ArticleSelectAll"
+                        TypeName="TLLib.Article">
+                        <SelectParameters>
+                            <asp:Parameter Name="StartRowIndex" Type="String" />
+                            <asp:Parameter Name="EndRowIndex" Type="String" />
+                            <asp:Parameter Name="Keyword" Type="String" />
+                            <asp:Parameter Name="ArticleTitle" Type="String" />
+                            <asp:Parameter Name="Description" Type="String" />
+                            <asp:Parameter DefaultValue="27" Name="ArticleCategoryID" Type="String" />
+                            <asp:Parameter Name="Tag" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter Name="IsHot" Type="String" />
+                            <asp:Parameter Name="IsNew" Type="String" />
+                            <asp:Parameter Name="FromDate" Type="String" />
+                            <asp:Parameter Name="ToDate" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="title-bg">
+                        Southern Vietnam</h4>
+                    <asp:ListView ID="lstContact2" runat="server" DataSourceID="odsContact2" EnableModelValidation="True">
+                        <ItemTemplate>
+                            <li>
+                                <h6>
+                                    <%# Eval("ArticleTitle") %></h6>
+                                <p>
+                                    <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
+                                        <%# Eval("MetaTittle") %></a></p>
+                                <p>
+                                    <span class="glyphicon glyphicon-earphone"></span>
+                                    <%# Eval("MetaDescription") %></p>
+                            </li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul class="list-box list-2">
+                                <li runat="server" id="itemPlaceholder"></li>
+                            </ul>
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsContact2" runat="server" SelectMethod="ArticleSelectAll"
+                        TypeName="TLLib.Article">
+                        <SelectParameters>
+                            <asp:Parameter Name="StartRowIndex" Type="String" />
+                            <asp:Parameter Name="EndRowIndex" Type="String" />
+                            <asp:Parameter Name="Keyword" Type="String" />
+                            <asp:Parameter Name="ArticleTitle" Type="String" />
+                            <asp:Parameter Name="Description" Type="String" />
+                            <asp:Parameter DefaultValue="28" Name="ArticleCategoryID" Type="String" />
+                            <asp:Parameter Name="Tag" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter Name="IsHot" Type="String" />
+                            <asp:Parameter Name="IsNew" Type="String" />
+                            <asp:Parameter Name="FromDate" Type="String" />
+                            <asp:Parameter Name="ToDate" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="title-bg">
+                        Export Business</h4>
+                    <asp:ListView ID="lstContact3" runat="server" DataSourceID="odsContact3" EnableModelValidation="True">
+                        <ItemTemplate>
+                            <li>
+                                <h6>
+                                    <%# Eval("ArticleTitle") %></h6>
+                                <p>
+                                    <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
+                                        <%# Eval("MetaTittle") %></a></p>
+                                <p>
+                                    <span class="glyphicon glyphicon-earphone"></span>
+                                    <%# Eval("MetaDescription") %></p>
+                            </li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul class="list-box">
+                                <li runat="server" id="itemPlaceholder"></li>
+                            </ul>
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsContact3" runat="server" SelectMethod="ArticleSelectAll"
+                        TypeName="TLLib.Article">
+                        <SelectParameters>
+                            <asp:Parameter Name="StartRowIndex" Type="String" />
+                            <asp:Parameter Name="EndRowIndex" Type="String" />
+                            <asp:Parameter Name="Keyword" Type="String" />
+                            <asp:Parameter Name="ArticleTitle" Type="String" />
+                            <asp:Parameter Name="Description" Type="String" />
+                            <asp:Parameter DefaultValue="29" Name="ArticleCategoryID" Type="String" />
+                            <asp:Parameter Name="Tag" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter Name="IsHot" Type="String" />
+                            <asp:Parameter Name="IsNew" Type="String" />
+                            <asp:Parameter Name="FromDate" Type="String" />
+                            <asp:Parameter Name="ToDate" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </div>
+            </div>
+        </div>
+        <h4 class="title">
+            Technical Service</h4>
+        <asp:ListView ID="lstContact4" runat="server" DataSourceID="odsContact4" EnableModelValidation="True">
+            <ItemTemplate>
+                <li>
+                    <h6>
+                        <%# Eval("ArticleTitle") %></h6>
+                    <p>
+                        <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
+                            <%# Eval("MetaTittle") %></a></p>
+                    <p>
+                        <span class="glyphicon glyphicon-earphone"></span>
+                        <%# Eval("MetaDescription") %></p>
+                </li>
+            </ItemTemplate>
+            <LayoutTemplate>
+                <ul class="list-box list-4">
+                    <li runat="server" id="itemPlaceholder"></li>
+                </ul>
+            </LayoutTemplate>
+        </asp:ListView>
+        <asp:ObjectDataSource ID="odsContact4" runat="server" SelectMethod="ArticleSelectAll"
+            TypeName="TLLib.Article">
+            <SelectParameters>
+                <asp:Parameter Name="StartRowIndex" Type="String" />
+                <asp:Parameter Name="EndRowIndex" Type="String" />
+                <asp:Parameter Name="Keyword" Type="String" />
+                <asp:Parameter Name="ArticleTitle" Type="String" />
+                <asp:Parameter Name="Description" Type="String" />
+                <asp:Parameter DefaultValue="30" Name="ArticleCategoryID" Type="String" />
+                <asp:Parameter Name="Tag" Type="String" />
+                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                <asp:Parameter Name="IsHot" Type="String" />
+                <asp:Parameter Name="IsNew" Type="String" />
+                <asp:Parameter Name="FromDate" Type="String" />
+                <asp:Parameter Name="ToDate" Type="String" />
+                <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                <asp:Parameter Name="Priority" Type="String" />
+                <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
+        <%--<div  class="wrap-link">
             <asp:ListView ID="lstContact" runat="server" DataSourceID="odsContact" EnableModelValidation="True">
                 <ItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
@@ -175,18 +351,20 @@
                     <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-        </div>
+        </div>--%>
         <div class="wrap-send">
             <h4 class="title">
                 Gửi yêu cầu</h4>
             <p>
-                Nếu có yêu cầu gì thêm, vui lòng điền vào form bên dưới, chúng tôi sẽ liên hệ với bạn sớm nhất có thể. Xin cảm ơn !</p>
+                Nếu có yêu cầu gì thêm, vui lòng điền vào form bên dưới, chúng tôi sẽ liên hệ với
+                bạn sớm nhất có thể. Xin cảm ơn !</p>
             <h4 class="title-3">
                 Liên Hệ</h4>
             <div class="row">
                 <div class="col-lg-5 col-md-5">
                     <p>
-                        Để chúng tôi có thể cung cấp cho bạn một dịch vụ tốt hơn, xin vui lòng điền vào tất cả dấu (*) dưới đây
+                        Để chúng tôi có thể cung cấp cho bạn một dịch vụ tốt hơn, xin vui lòng điền vào
+                        tất cả dấu (*) dưới đây
                     </p>
                     <div class="send-contact">
                         <div class="info-input">

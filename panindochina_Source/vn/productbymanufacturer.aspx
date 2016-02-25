@@ -42,7 +42,7 @@
                                     class="text-uppercase">
                                     <%# Eval("ProductName") %></a></h4>
                             <div class="description">
-                                Manufacturer: <%# Eval("ManufacturerProduct")%></div>
+                                Nhà Sản Xuất: <%# Eval("ManufacturerProduct")%></div>
                         </div>
                     </div>
                 </ItemTemplate>

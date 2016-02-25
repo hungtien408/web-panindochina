@@ -504,6 +504,9 @@
     .pro-box .pro-img {
         width: 70px;
     }
+    .tb-magazine .col-sm-4 {
+        width: 100%;
+    }
 }
 @media (max-width: 359px)
 {

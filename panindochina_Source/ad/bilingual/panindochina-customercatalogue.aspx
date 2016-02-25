@@ -192,7 +192,7 @@
                             <asp:Label ID="lblDownloadName" runat="server" Text='<%# Eval("DownloadName")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Tên tập tin" DataField="FilePath" SortExpression="FilePath">
+                    <asp:GridTemplateColumn HeaderText="Tên tập tin" DataField="FilePath" SortExpression="FilePath" Visible="False">
                         <ItemTemplate>
                             <%# Eval("FilePath")%>
                         </ItemTemplate>
@@ -221,8 +221,7 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="ImageName" HeaderText="Ảnh" SortExpression="ImageName"
-                        Visible="False">
+                    <asp:GridTemplateColumn DataField="ImageName" HeaderText="Ảnh" SortExpression="ImageName">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'
                                 Width="95">
@@ -256,19 +255,19 @@
                                 </asp:RadButton>
                             </div>
                             <table class="search">
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
-                                        Ảnh đại diện
+                                        File Ảnh
                                     </td>
                                     <td>
                                         <asp:RadUpload ID="FileImageName" runat="server" ControlObjectsVisibility="None"
                                             Culture="vi-VN" Language="vi-VN" InputSize="69" AllowedFileExtensions=".jpg,.jpeg,.gif,.png" />
                                         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"
                                             ClientValidationFunction="validateRadUpload" Display="Dynamic"></asp:CustomValidator>
-                                        <span class="required">(Kích thước _px x _px)</span>
+                                        <span class="required">(Kích thước 498px x 646px)</span>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         File download
                                     </td>
