@@ -16,7 +16,7 @@
     <script src="../assets/js/jquery-ui.min.js" type="text/javascript"></script>
     <script src="../assets/js/modernizr.2.5.3.min.js" type="text/javascript"></script>
     <script src="../assets/js/hash.js" type="text/javascript"></script>
-    <title>Tạp chí & Bản tin IEI</title>
+    <title>Catalogue / Brochure</title>
 </head>
 <body>
     <form id="form1" runat="server">
