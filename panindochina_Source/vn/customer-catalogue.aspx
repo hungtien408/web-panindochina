@@ -14,18 +14,18 @@
         Catalogue / Brochure</h1>
     <h2 class="title-menu mobile-992">
         <a class="panel-right" href="#mobileRight">Catalogue / Brochure<span class="iconar icon-chevron-down"></span></a></h2>
-    <asp:ListView ID="lstDownloadCategory" runat="server" DataSourceID="odsDowloadCategoryAll"
+    <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload"
         EnableModelValidation="True">
         <ItemTemplate>
             <div class="col-sm-4 col-xs-6 element-item">
                 <div class="maga-box ">
-                    <a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-mg-" + Eval("DownloadCategoryID") + ".aspx" %>'
+                    <a href='<%# progressTitle(Eval("DownloadName")) + "-mg-" + Eval("DownloadID") + ".aspx" %>'
                         class="maga-img">
-                        <img class="corner" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/downloadcategory/" + Eval("ImageName") : "~/assets/images/magazeni-img-1.jpg" %>'
+                        <img class="corner" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/download/thumbs/" + Eval("ImageName") : "~/assets/images/magazeni-img-1.jpg" %>'
                             runat="server" /></a>
                     <h3 class="maga-name">
-                        <a href='<%# progressTitle(Eval("DownloadCategoryName")) + "-mg-" + Eval("DownloadCategoryID") + ".aspx" %>'>
-                            <%# Eval("DownloadCategoryName")%></a></h3>
+                        <a href='<%# progressTitle(Eval("DownloadName")) + "-mg-" + Eval("DownloadID") + ".aspx" %>'>
+                            <%# Eval("DownloadName")%></a></h3>
                 </div>
             </div>
         </ItemTemplate>
@@ -37,13 +37,12 @@
             </div>
         </LayoutTemplate>
     </asp:ListView>
-    <asp:ObjectDataSource ID="odsDowloadCategoryAll" runat="server" SelectMethod="DownloadCategorySelectAll"
-        TypeName="TLLib.DownloadCategory">
+    <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="DownloadSelectAll"
+        TypeName="TLLib.Download">
         <SelectParameters>
-            <asp:Parameter DefaultValue="3" Name="parentID" Type="Int32" />
-            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
-            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+            <asp:Parameter Name="Keyword" Type="String" />
+            <asp:Parameter Name="DownloadName" Type="String" />
+            <asp:Parameter DefaultValue="3" Name="DownloadCategoryID" Type="String" />
             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />

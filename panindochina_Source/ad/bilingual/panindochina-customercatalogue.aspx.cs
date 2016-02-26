@@ -40,6 +40,16 @@ public partial class ad_single_download : System.Web.UI.Page
                 File.Delete(strImagePath);
         }
     }
+    void DeletePhotoCatalogue(string strImageName)
+    {
+        if (!string.IsNullOrEmpty(strImageName))
+        {
+            var strImagePath = Server.MapPath("~/res/download/album/" + strImageName);
+
+            if (File.Exists(strImagePath))
+                File.Delete(strImagePath);
+        }
+    }
     void DeleteDownload(string strDownloadName)
     {
         if (!string.IsNullOrEmpty(strDownloadName))
@@ -56,7 +66,11 @@ public partial class ad_single_download : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!IsPostBack)
+        {
+            TempImage = new DataTable();
+            TempImage.Columns.Add("ImageName");
+        }
     }
     public void RadGrid1_ItemCreated(object sender, Telerik.Web.UI.GridItemEventArgs e)
     {
@@ -146,6 +160,10 @@ public partial class ad_single_download : System.Web.UI.Page
                 DeleteDownload(OldFilePath);
             }
         }
+        else if (e.CommandName == "InitInsert" || e.CommandName == "EditSelected" || e.CommandName == "Edit")
+        {
+            TempImage.Rows.Clear();
+        }
         else if (e.CommandName == "PerformInsert" || e.CommandName == "Update")
         {
             var command = e.CommandName;
@@ -167,9 +185,9 @@ public partial class ad_single_download : System.Web.UI.Page
             string strQuestionEn = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtQuestionEn")).Content.Trim()));
             string strAnswerEn = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtAnswerEn")).Content.Trim()));
             string ConvertedDownloadName = Common.ConvertTitle(DownloadName);
-            string DownloadCategoryID = ((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
-            if ("".Equals(DownloadCategoryID))
-                DownloadCategoryID = "3";
+            string DownloadCategoryID = "3";//((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
+            //if ("".Equals(DownloadCategoryID))
+            //    DownloadCategoryID = "3";
             string IsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
 
             if (e.CommandName == "PerformInsert")
@@ -202,7 +220,20 @@ public partial class ad_single_download : System.Web.UI.Page
                 if (FileImageName.UploadedFiles.Count > 0)
                 {
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullImagePath));
-                    ResizeCropImage.ResizeByCondition(strFullImagePath, 498, 646);
+                    //ResizeCropImage.ResizeByCondition(strFullImagePath, 270, 360);
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullImagePath, 270, 360, bgColor);
+
+                }
+
+                if (TempImage.Rows.Count > 0)
+                {
+                    var oDownloadImage = new DownloadImage();
+
+                    foreach (DataRow dr in TempImage.Rows)
+                    {
+                        oDownloadImage.DownloadImageInsert(dr["ImageName"].ToString(), "", "", "", "", "", DownloadID, "True", "");
+                    }
                 }
                 RadGrid1.Rebind();
             }
@@ -238,10 +269,23 @@ public partial class ad_single_download : System.Web.UI.Page
                     string strFullPath = "~/res/download/thumbs/" + ImageName;
 
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 498, 646);
+                    //ResizeCropImage.ResizeByCondition(strFullPath, 270, 360);
+                    string bgColor = "#ffffff";
+                    ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 270, 360, bgColor);
                 }
 
                 
+            }
+        }
+        else if (e.CommandName == "Cancel")
+        {
+            if (TempImage.Rows.Count > 0)
+            {
+                foreach (DataRow row in TempImage.Rows)
+                {
+                    DeletePhotoCatalogue(row["ImageName"].ToString());
+                }
+                TempImage.Rows.Clear();
             }
         }
         if (e.CommandName == "DeleteImage")
@@ -279,6 +323,104 @@ public partial class ad_single_download : System.Web.UI.Page
             RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId1'] = '{0}';", FileImageName.ClientID));
             RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId2'] = '{0}';", FileFilePath.ClientID));
         }
+    }
+
+    protected void RadListView1_ItemCommand(object sender, RadListViewCommandEventArgs e)
+    {
+        try
+        {
+            var RadListView1 = (RadListView)sender;
+            var Parent = RadListView1.NamingContainer;
+            var OdsDownloadImage = (ObjectDataSource)Parent.FindControl("OdsDownloadImage");
+
+            if (e.CommandName == "Update")
+            {
+                var item = e.ListViewItem;
+                var dsUpdateParam = OdsDownloadImage.UpdateParameters;
+
+                var strOldImageName = ((HiddenField)e.ListViewItem.FindControl("hdnImageName")).Value;
+                var strIsAvailable = ((CheckBox)item.FindControl("chkAddIsAvailable")).Checked.ToString();
+
+                dsUpdateParam["ImageName"].DefaultValue = strOldImageName;
+                dsUpdateParam["IsAvailable"].DefaultValue = strIsAvailable;
+            }
+            else if (e.CommandName == "Delete")
+            {
+                var strOldImageName = ((HiddenField)e.ListViewItem.FindControl("hdnImageName")).Value;
+                DeletePhotoCatalogue(strOldImageName);
+            }
+        }
+        catch (Exception ex)
+        {
+            lblError.Text = ex.Message;
+        }
+    }
+
+    protected void RadListView2_ItemCommand(object sender, RadListViewCommandEventArgs e)
+    {
+        try
+        {
+            var RadListView2 = (RadListView)sender;
+            if (e.CommandName == "Delete")
+            {
+                var Parent = RadListView2.NamingContainer;
+                var strOldImageName = ((HiddenField)e.ListViewItem.FindControl("hdnImageName")).Value;
+                DeletePhotoCatalogue(strOldImageName);
+
+                TempImage.Rows.Cast<DataRow>().Where(c => c["ImageName"].ToString() == strOldImageName).Single().Delete();
+                RadListView2.DataSource = TempImage;
+                RadListView2.DataBind();
+            }
+        }
+        catch (Exception ex)
+        {
+            lblError.Text = ex.Message;
+        }
+    }
+
+    protected void FileDownloadImage_FileUploaded(object sender, FileUploadedEventArgs e)
+    {
+        var FileDownloadImage = (RadAsyncUpload)sender;
+        var Parent = FileDownloadImage.NamingContainer;
+        var DownloadID = ((HiddenField)Parent.FindControl("hdnDownloadID")).Value;
+        var RadListView1 = (RadListView)Parent.FindControl("RadListView1");
+        var RadListView2 = (RadListView)Parent.FindControl("RadListView2");
+
+        string targetFolder = "~/res/download/album/";
+        string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
+        e.File.SaveAs(Server.MapPath(targetFolder + newName));
+
+        //ResizeCropImage.ResizeByCondition(targetFolder + newName, 850, 800);
+        //ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
+
+        string bgColor = "#ffffff";
+        ResizeCropImage.CreateThumbNailWithBackGroundColor("~/res/download/album/", "~/res/product/album/thumbs/", newName, 120, 120, bgColor);
+        ResizeCropImage.ResizeWithBackGroundColor(targetFolder + newName, 498, 646, bgColor);
+
+        if (string.IsNullOrEmpty(DownloadID))
+        {
+            TempImage.Rows.Add(new object[] { newName });
+
+            RadListView2.DataSource = TempImage;
+            RadListView2.DataBind();
+        }
+        else
+        {
+            var oDownloadImage = new DownloadImage();
+
+            oDownloadImage.DownloadImageInsert(newName, "", "", "", "", "", DownloadID, "True", "");
+            RadListView1.Rebind();
+        }
+    }
+
+    #endregion
+
+    #region Properties
+
+    private DataTable TempImage
+    {
+        get { return (DataTable)ViewState["TempImage"]; }
+        set { ViewState["TempImage"] = value; }
     }
 
     #endregion

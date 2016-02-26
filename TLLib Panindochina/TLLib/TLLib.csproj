@@ -76,6 +76,7 @@
     <Compile Include="Common\Common.cs" />
     <Compile Include="CareerCategory.cs" />
     <Compile Include="Career.cs" />
+    <Compile Include="DownloadImage.cs" />
     <Compile Include="ProductDownloadCategory.cs" />
     <Compile Include="ProductDownloadOfSame.cs" />
     <Compile Include="ProductVideo.cs" />

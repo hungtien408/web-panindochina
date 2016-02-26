@@ -40,10 +40,10 @@
 			<div style="background-image:url(pages/10.jpg)"></div>
 			<div style="background-image:url(pages/11.jpg)"></div>
 			<div style="background-image:url(pages/12.jpg)"></div>--%>
-                        <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload"
+                        <asp:ListView ID="lstDownloadImage" runat="server" DataSourceID="odsDownloadImage"
                             EnableModelValidation="True">
                             <ItemTemplate>
-                                <%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "<div style='background-image:url(../res/download/thumbs/" + Eval("ImageName") + ")'></div>" : ""%>
+                                <%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "<div style='background-image:url(../res/download/album/" + Eval("ImageName") + ")'></div>" : ""%>
                             </ItemTemplate>
                             <EmptyDataTemplate>
                             </EmptyDataTemplate>
@@ -51,13 +51,12 @@
                                 <span runat="server" id="itemPlaceholder" />
                             </LayoutTemplate>
                         </asp:ListView>
-                        <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="DownloadSelectAll"
-                            TypeName="TLLib.Download">
+                        <asp:ObjectDataSource ID="odsDownloadImage" runat="server" SelectMethod="DownloadImageSelectAll"
+                            TypeName="TLLib.DownloadImage">
                             <SelectParameters>
-                                <asp:Parameter Name="Keyword" Type="String" />
-                                <asp:Parameter Name="DownloadName" Type="String" />
-                                <asp:QueryStringParameter QueryStringField="mg" Name="DownloadCategoryID" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                                <asp:QueryStringParameter QueryStringField="mg" Name="DownloadID" 
+                                    Type="String" />
+                                <asp:Parameter Name="IsAvailable" Type="String" DefaultValue="True" />
                                 <asp:Parameter Name="Priority" Type="String" />
                                 <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                             </SelectParameters>

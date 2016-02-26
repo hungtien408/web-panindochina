@@ -311,10 +311,10 @@
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục">
                                 <Items>
-                                    <asp:RadMenuItem runat="server" Text="Catalogue / Brochure" NavigateUrl="~/ad/bilingual/panindochina-customercataloguecategory.aspx">
+                                    <%--<asp:RadMenuItem runat="server" Text="Catalogue / Brochure" NavigateUrl="~/ad/bilingual/panindochina-customercataloguecategory.aspx">
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" IsSeparator="True">
-                                    </asp:RadMenuItem>
+                                    </asp:RadMenuItem>--%>
                                     <asp:RadMenuItem runat="server" Text="Instruction Manual" NavigateUrl="~/ad/bilingual/panindochina-customerinstructioncategory.aspx">
                                     </asp:RadMenuItem>
                                     <asp:RadMenuItem runat="server" IsSeparator="True">

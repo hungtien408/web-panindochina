@@ -21,75 +21,75 @@
                     if (selectedID != eventArgs.get_id())
                         elem.className += (" rgSelectedRow");
                 }
-            else
-                elem.className += (" rgSelectedRow");
-        }
+        else
+            elem.className += (" rgSelectedRow");
+    }
 
-        function RowMouseOut(sender, eventArgs) {
-            var className = "rgSelectedRow";
-            var elem = $get(eventArgs.get_id());
+    function RowMouseOut(sender, eventArgs) {
+        var className = "rgSelectedRow";
+        var elem = $get(eventArgs.get_id());
 
-            var selectedRows = sender.get_masterTableView().get_selectedItems();
+        var selectedRows = sender.get_masterTableView().get_selectedItems();
 
-            if (selectedRows.length > 0)
-                for (var i = 0; i < selectedRows.length; i++) {
-                    var selectedID = selectedRows[i].get_id();
-                    if (selectedID != eventArgs.get_id())
-                        removeCssClass(className, elem);
-                }
-            else
-                removeCssClass(className, elem);
-        }
-
-        function removeCssClass(className, element) {
-            element.className = element.className.replace(className, "").replace(/^\s+/, '').replace(/\s+$/, '');
-        }
-
-        function pageLoad(sender, args) {
-            tableView = $find("<%= RadGrid1.ClientID %>").get_masterTableView();
-        }
-
-        function RadComboBox1_SelectedIndexChanged(sender, args) {
-            tableView.set_pageSize(sender.get_value());
-        }
-
-        function changePage(argument) {
-            tableView.page(argument);
-        }
-
-        function RadNumericTextBox1_ValueChanged(sender, args) {
-            tableView.page(sender.get_value());
-        }
-
-        //On insert and update buttons click temporarily disables ajax to perform upload actions
-        function conditionalPostback(sender, eventArgs) {
-            var theRegexp = new RegExp("\.lnkUpdate$|\.lnkUpdateTop$|\.PerformInsertButton$", "ig");
-            if (eventArgs.get_eventTarget().match(theRegexp)) {
-                var upload1 = $find(window['UploadId1']);
-                var upload2 = $find(window['UploadId2']);
-
-                //AJAX is disabled only if file is selected for upload
-                if (upload1.getFileInputs()[0].value != "" || upload2.getFileInputs()[0].value != "") {
-                    eventArgs.set_enableAjax(false);
-                }
+        if (selectedRows.length > 0)
+            for (var i = 0; i < selectedRows.length; i++) {
+                var selectedID = selectedRows[i].get_id();
+                if (selectedID != eventArgs.get_id())
+                    removeCssClass(className, elem);
             }
-            else if (eventArgs.get_eventTarget().indexOf("ExportToExcelButton") >= 0 || eventArgs.get_eventTarget().indexOf("ExportToWordButton") >= 0 || eventArgs.get_eventTarget().indexOf("ExportToPdfButton") >= 0)
-                eventArgs.set_enableAjax(false);
-        }
+    else
+        removeCssClass(className, elem);
+}
 
-        function validateRadUpload(source, e) {
-            e.IsValid = false;
+function removeCssClass(className, element) {
+    element.className = element.className.replace(className, "").replace(/^\s+/, '').replace(/\s+$/, '');
+}
 
-            var upload = $find(source.parentNode.getElementsByTagName('div')[0].id);
-            var inputs = upload.getFileInputs();
-            for (var i = 0; i < inputs.length; i++) {
-                //check for empty string or invalid extension
-                if (upload.isExtensionValid(inputs[i].value)) {
-                    e.IsValid = true;
-                    break;
-                }
-            }
+function pageLoad(sender, args) {
+    tableView = $find("<%= RadGrid1.ClientID %>").get_masterTableView();
+}
+
+function RadComboBox1_SelectedIndexChanged(sender, args) {
+    tableView.set_pageSize(sender.get_value());
+}
+
+function changePage(argument) {
+    tableView.page(argument);
+}
+
+function RadNumericTextBox1_ValueChanged(sender, args) {
+    tableView.page(sender.get_value());
+}
+
+//On insert and update buttons click temporarily disables ajax to perform upload actions
+function conditionalPostback(sender, eventArgs) {
+    var theRegexp = new RegExp("\.lnkUpdate$|\.lnkUpdateTop$|\.PerformInsertButton$", "ig");
+    if (eventArgs.get_eventTarget().match(theRegexp)) {
+        var upload1 = $find(window['UploadId1']);
+        var upload2 = $find(window['UploadId2']);
+
+        //AJAX is disabled only if file is selected for upload
+        if (upload1.getFileInputs()[0].value != "" || upload2.getFileInputs()[0].value != "") {
+            eventArgs.set_enableAjax(false);
         }
+    }
+    else if (eventArgs.get_eventTarget().indexOf("ExportToExcelButton") >= 0 || eventArgs.get_eventTarget().indexOf("ExportToWordButton") >= 0 || eventArgs.get_eventTarget().indexOf("ExportToPdfButton") >= 0)
+        eventArgs.set_enableAjax(false);
+}
+
+function validateRadUpload(source, e) {
+    e.IsValid = false;
+
+    var upload = $find(source.parentNode.getElementsByTagName('div')[0].id);
+    var inputs = upload.getFileInputs();
+    for (var i = 0; i < inputs.length; i++) {
+        //check for empty string or invalid extension
+        if (upload.isExtensionValid(inputs[i].value)) {
+            e.IsValid = true;
+            break;
+        }
+    }
+}
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
@@ -110,10 +110,10 @@
                         <asp:RadTextBox ID="txtSearchDownloadName" runat="server" Width="300px">
                         </asp:RadTextBox>
                     </td>
-                    <td class="left">
+                    <td class="left invisible">
                         Danh mục
                     </td>
-                    <td class="left">
+                    <td class="left invisible">
                         <asp:RadComboBox Filter="Contains" ID="ddlSearchCategory" runat="server" DataTextField="DownloadCategoryName"
                             DataValueField="DownloadCategoryID" DataSourceID="ObjectDataSource2" OnDataBound="DropDownList_DataBound">
                         </asp:RadComboBox>
@@ -192,7 +192,8 @@
                             <asp:Label ID="lblDownloadName" runat="server" Text='<%# Eval("DownloadName")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Tên tập tin" DataField="FilePath" SortExpression="FilePath" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Tên tập tin" DataField="FilePath" SortExpression="FilePath"
+                        Visible="False">
                         <ItemTemplate>
                             <%# Eval("FilePath")%>
                         </ItemTemplate>
@@ -238,191 +239,365 @@
                 <EditFormSettings EditFormType="Template">
                     <FormTemplate>
                         <asp:Panel ID="Panel1" runat="server" DefaultButton="lnkUpdate">
-                            <h3 class="searchTitle">
-                                Thông Tin Download</h3>
-                            <asp:HiddenField ID="hdnDownloadID" runat="server" Value='<%# Eval("DownloadID") %>' />
-                            <asp:HiddenField ID="hdnOldImageName" runat="server" Value='<%# Eval("ImageName") %>' />
-                            <asp:HiddenField ID="hdnOldFilePath" runat="server" Value='<%# Eval("FilePath") %>' />
-                            <div class="edit">
-                                <hr />
-                                <asp:RadButton ID="lnkUpdateTop" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'
-                                    Text='<%# (Container is GridEditFormInsertItem) ? "Thêm" : "Cập nhật" %>'>
-                                    <Icon PrimaryIconUrl="~/ad/assets/images/ok.png" />
-                                </asp:RadButton>
-                                &nbsp;&nbsp;
-                                <asp:RadButton ID="btnCancel" runat="server" CommandName='Cancel' Text='Hủy'>
-                                    <Icon PrimaryIconUrl="~/ad/assets/images/cancel.png" />
-                                </asp:RadButton>
-                            </div>
-                            <table class="search">
+                            <table width="100%">
                                 <tr>
-                                    <td class="left" valign="top">
-                                        File Ảnh
-                                    </td>
-                                    <td>
-                                        <asp:RadUpload ID="FileImageName" runat="server" ControlObjectsVisibility="None"
-                                            Culture="vi-VN" Language="vi-VN" InputSize="69" AllowedFileExtensions=".jpg,.jpeg,.gif,.png" />
-                                        <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"
-                                            ClientValidationFunction="validateRadUpload" Display="Dynamic"></asp:CustomValidator>
-                                        <span class="required">(Kích thước 498px x 646px)</span>
-                                    </td>
-                                </tr>
-                                <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        File download
-                                    </td>
-                                    <td>
-                                        <asp:RadUpload ID="FileFilePath" runat="server" ControlObjectsVisibility="None" Culture="vi-VN"
-                                            Language="vi-VN" InputSize="69" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        Danh mục
-                                    </td>
-                                    <td>
-                                        <asp:RadComboBox Filter="Contains" ID="ddlCategory" runat="server" DataSourceID="ObjectDataSource2"
-                                            DataTextField="DownloadCategoryName" DataValueField="DownloadCategoryID" Width="504px"
-                                            OnDataBound="DropDownList_DataBound" OnSelectedIndexChanged="DropDownList_SelectedIndexChanged">
-                                        </asp:RadComboBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <h3>
-                                            (Ngôn Ngữ Tiếng Việt)</h3>
-                                        <hr />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        Tiêu đề
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtDownloadName" runat="server" Text='<%# Bind("DownloadName") %>'
-                                            Width="500px"></asp:TextBox>
-                                        <%--<asp:RadTextBox runat="server" Width="500px" ID="RadTextBox1" Text='<%# Bind("DownloadName") %>' />
+                                    <td valign="top" style="width: 500px" rowspan="2">
+                                        <div class="sub_box">
+                                            <h3 class="searchTitle">
+                                                Thông Tin Catalogue / Brochure</h3>
+                                            <asp:HiddenField ID="hdnDownloadID" runat="server" Value='<%# Eval("DownloadID") %>' />
+                                            <asp:HiddenField ID="hdnOldImageName" runat="server" Value='<%# Eval("ImageName") %>' />
+                                            <asp:HiddenField ID="hdnOldFilePath" runat="server" Value='<%# Eval("FilePath") %>' />
+                                            <div class="edit">
+                                                <hr />
+                                                <asp:RadButton ID="lnkUpdateTop" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'
+                                                    Text='<%# (Container is GridEditFormInsertItem) ? "Thêm" : "Cập nhật" %>'>
+                                                    <Icon PrimaryIconUrl="~/ad/assets/images/ok.png" />
+                                                </asp:RadButton>
+                                                &nbsp;&nbsp;
+                                                <asp:RadButton ID="btnCancel" runat="server" CommandName='Cancel' Text='Hủy'>
+                                                    <Icon PrimaryIconUrl="~/ad/assets/images/cancel.png" />
+                                                </asp:RadButton>
+                                            </div>
+                                            <table class="search">
+                                                <tr>
+                                                    <td class="left" valign="top">
+                                                        Ảnh đại diện
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadUpload ID="FileImageName" runat="server" ControlObjectsVisibility="None"
+                                                            Culture="vi-VN" Language="vi-VN" InputSize="69" AllowedFileExtensions=".jpg,.jpeg,.gif,.png" />
+                                                        <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"
+                                                            ClientValidationFunction="validateRadUpload" Display="Dynamic"></asp:CustomValidator>
+                                                        <span class="required">(Kích thước 270px x 360px)</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="invisible">
+                                                    <td class="left" valign="top">
+                                                        File download
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadUpload ID="FileFilePath" runat="server" ControlObjectsVisibility="None" Culture="vi-VN"
+                                                            Language="vi-VN" InputSize="69" />
+                                                    </td>
+                                                </tr>
+                                                <tr class="invisible">
+                                                    <td class="left">
+                                                        Danh mục
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadComboBox Filter="Contains" ID="ddlCategory" runat="server" DataSourceID="ObjectDataSource2"
+                                                            DataTextField="DownloadCategoryName" DataValueField="DownloadCategoryID" Width="504px"
+                                                            OnDataBound="DropDownList_DataBound" OnSelectedIndexChanged="DropDownList_SelectedIndexChanged">
+                                                        </asp:RadComboBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <h3>
+                                                            (Ngôn Ngữ Tiếng Việt)</h3>
+                                                        <hr />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        Tiêu đề
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtDownloadName" runat="server" Text='<%# Bind("DownloadName") %>'
+                                                            Width="500px"></asp:TextBox>
+                                                        <%--<asp:RadTextBox runat="server" Width="500px" ID="RadTextBox1" Text='<%# Bind("DownloadName") %>' />
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDownloadName"
                                             Display="Dynamic" ErrorMessage="Nhập tên sản phẩm" SetFocusOnError="true">*</asp:RequiredFieldValidator>--%>
+                                                    </td>
+                                                </tr>
+                                                <tr id="question" class="invisible">
+                                                    <td class="left" valign="top">
+                                                        Question
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadEditor ID="txtQuestion" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("Question") %>'>
+                                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                                ViewPaths="~/Uploads/Template/" />
+                                                        </asp:RadEditor>
+                                                    </td>
+                                                </tr>
+                                                <tr id="answer" class="invisible">
+                                                    <td class="left" valign="top">
+                                                        Answer
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadEditor ID="txtAnswer" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("Answer") %>'>
+                                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                                ViewPaths="~/Uploads/Template/" />
+                                                        </asp:RadEditor>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <h3>
+                                                            (Ngôn Ngữ Tiếng Anh)</h3>
+                                                        <hr />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        Tiêu đề(En)
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtDownloadNameEn" runat="server" Text='<%# Bind("DownloadNameEn") %>'
+                                                            Width="500px"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr id="questionEn" class="invisible">
+                                                    <td class="left" valign="top">
+                                                        Question(En)
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadEditor ID="txtQuestionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("QuestionEn") %>'>
+                                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                                ViewPaths="~/Uploads/Template/" />
+                                                        </asp:RadEditor>
+                                                    </td>
+                                                </tr>
+                                                <tr id="answerEn" class="invisible">
+                                                    <td class="left" valign="top">
+                                                        Answer(En)
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadEditor ID="txtAnswerEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
+                                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("AnswerEn") %>'>
+                                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
+                                                                MaxUploadFileSize="1024000" />
+                                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                                ViewPaths="~/Uploads/Template/" />
+                                                        </asp:RadEditor>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        Thứ tự
+                                                    </td>
+                                                    <td>
+                                                        <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="500px" Text='<%# Bind("Priority") %>'
+                                                            EmptyMessage="Thứ tự..." Type="Number">
+                                                            <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
+                                                        </asp:RadNumericTextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left" colspan="2">
+                                                        <asp:CheckBox ID="chkIsAvailable" runat="server" CssClass="checkbox" Text=" Hiển thị"
+                                                            Checked='<%# (Container is GridEditFormInsertItem) ? true : (string.IsNullOrEmpty(Eval("IsAvailable").ToString()) ? false : Eval("IsAvailable")) %>' />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="edit">
+                                                <hr />
+                                                <asp:RadButton ID="lnkUpdate" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'
+                                                    Text='<%# (Container is GridEditFormInsertItem) ? "Thêm" : "Cập nhật" %>'>
+                                                    <Icon PrimaryIconUrl="~/ad/assets/images/ok.png" />
+                                                </asp:RadButton>
+                                                &nbsp;&nbsp;
+                                                <asp:RadButton ID="RadButton1" runat="server" CommandName='Cancel' Text='Hủy'>
+                                                    <Icon PrimaryIconUrl="~/ad/assets/images/cancel.png" />
+                                                </asp:RadButton>
+                                            </div>
+                                        </div>
                                     </td>
-                                </tr>
-                                <tr id="question" class="invisible">
-                                    <td class="left" valign="top">
-                                        Question
-                                    </td>
-                                    <td>
-                                        <asp:RadEditor ID="txtQuestion" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
-                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("Question") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
-                                                MaxUploadFileSize="1024000" />
-                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
-                                                MaxUploadFileSize="1024000" />
-                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
-                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
-                                                ViewPaths="~/Uploads/Template/" />
-                                        </asp:RadEditor>
-                                    </td>
-                                </tr>
-                                <tr id="answer" class="invisible">
-                                    <td class="left" valign="top">
-                                        Answer
-                                    </td>
-                                    <td>
-                                        <asp:RadEditor ID="txtAnswer" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
-                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("Answer") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
-                                                MaxUploadFileSize="1024000" />
-                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
-                                                MaxUploadFileSize="1024000" />
-                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
-                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
-                                                ViewPaths="~/Uploads/Template/" />
-                                        </asp:RadEditor>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <h3>
-                                            (Ngôn Ngữ Tiếng Anh)</h3>
-                                        <hr />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        Tiêu đề(En)
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtDownloadNameEn" runat="server" Text='<%# Bind("DownloadNameEn") %>'
-                                            Width="500px"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr id="questionEn" class="invisible">
-                                    <td class="left" valign="top">
-                                        Question(En)
-                                    </td>
-                                    <td>
-                                        <asp:RadEditor ID="txtQuestionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
-                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("QuestionEn") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
-                                                MaxUploadFileSize="1024000" />
-                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
-                                                MaxUploadFileSize="1024000" />
-                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
-                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
-                                                ViewPaths="~/Uploads/Template/" />
-                                        </asp:RadEditor>
-                                    </td>
-                                </tr>
-                                <tr id="answerEn" class="invisible">
-                                    <td class="left" valign="top">
-                                        Answer(En)
-                                    </td>
-                                    <td>
-                                        <asp:RadEditor ID="txtAnswerEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP"
-                                            runat="server" Language="vi-VN" Skin="Office2007" Width="98%" Content='<%# Bind("AnswerEn") %>'>
-                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/"
-                                                MaxUploadFileSize="1024000" />
-                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/"
-                                                MaxUploadFileSize="1024000" />
-                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
-                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
-                                                ViewPaths="~/Uploads/Template/" />
-                                        </asp:RadEditor>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        Thứ tự
-                                    </td>
-                                    <td>
-                                        <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="500px" Text='<%# Bind("Priority") %>'
-                                            EmptyMessage="Thứ tự..." Type="Number">
-                                            <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
-                                        </asp:RadNumericTextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left" colspan="2">
-                                        <asp:CheckBox ID="chkIsAvailable" runat="server" CssClass="checkbox" Text=" Hiển thị"
-                                            Checked='<%# (Container is GridEditFormInsertItem) ? true : (string.IsNullOrEmpty(Eval("IsAvailable").ToString()) ? false : Eval("IsAvailable")) %>' />
+                                    <td valign="top" style="width: 400px; height: 200px;">
+                                        <div class="sub_box">
+                                            <div class="head">
+                                                Ảnh catalogue</div>
+                                            <div class="cont">
+                                                <asp:RadAjaxPanel ID="RadAjaxPanel2" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
+                                                    <asp:RadAsyncUpload ID="FileDownloadImage" runat="server" MultipleFileSelection="Automatic"
+                                                        TargetFolder="~/res/download/album/" TemporaryFolder="~/res/TempAsync" Width="100%"
+                                                        AllowedFileExtensions="jpg,jpeg,gif,png" Localization-Select="Chọn" Localization-Cancel="Hủy"
+                                                        Localization-Remove="Xóa" OnFileUploaded="FileDownloadImage_FileUploaded">
+                                                    </asp:RadAsyncUpload>
+                                                    <span class="required">(Kích thước 498px x 646px)</span>
+                                                    <asp:RadButton ID="btnUpload" runat="server" Text="Tải lên" ShowPostBackMask="False">
+                                                        <Icon PrimaryIconUrl="~/ad/assets/images/up.png" />
+                                                    </asp:RadButton>
+                                                    <asp:RadAjaxPanel ID="RadAjaxPanel3" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
+                                                        <asp:RadListView runat="server" ID="RadListView1" DataSourceID="OdsDownloadImage"
+                                                            DataKeyNames="DownloadImageID" OverrideDataSourceControlSorting="True" OnItemCommand="RadListView1_ItemCommand"
+                                                            PageSize="100" Width="100%" Visible='<%# (Container is GridEditFormInsertItem) ? false : true %>'
+                                                            ShowPostBackMask="false">
+                                                            <LayoutTemplate>
+                                                                <div runat="server" id="itemPlaceholder" />
+                                                                <div class="clear">
+                                                                </div>
+                                                            </LayoutTemplate>
+                                                            <ItemTemplate>
+                                                                <asp:HiddenField ID="hdnImageName" runat="server" Value='<%# Eval("ImageName") %>' />
+                                                                <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
+                                                                    background: #eeeeee;" class="myClass">
+                                                                    <a id="A1" href='<%# "~/res/download/album/" + Eval("ImageName") %>' runat="server"
+                                                                        class="lightbox">
+                                                                        <img id="Img1" alt="" src='<%# "~/res/Download/album/" + Eval("ImageName") %>' runat="server"
+                                                                            width="100" height="100" />
+                                                                    </a>
+                                                                    <div align="right">
+                                                                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
+                                                                        <asp:LinkButton ID="LinkButton1" OnClientClick="return confirm('Xóa ảnh?')" runat="server"
+                                                                            CommandName="Delete" CssClass="item"><img width="14px" class="vam" alt="" title="Xóa ảnh" src="../assets/images/trash.png" /></asp:LinkButton>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </ItemTemplate>
+                                                            <EditItemTemplate>
+                                                                <asp:HiddenField ID="hdnDownloadImageID" runat="server" Value='<%# Eval("DownloadImageID") %>' />
+                                                                <asp:HiddenField ID="hdnImageName" runat="server" Value='<%# Eval("ImageName") %>' />
+                                                                <asp:Panel ID="Panel2" runat="server" DefaultButton="lnkUpdate">
+                                                                    <h3 class="searchTitle clear">
+                                                                        Cập Nhật Ảnh</h3>
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td valign="top" style="padding-right: 10px">
+                                                                                <table class="search" width="100%">
+                                                                                    <tr class="invisible">
+                                                                                        <td class="left" style="width: 70px">
+                                                                                            Tiêu đề ảnh
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <asp:RadTextBox ID="txtTitle" Width="100%" runat="server" Text='<%# Bind("Title") %>'
+                                                                                                EmptyMessage="Tiêu đề ảnh...">
+                                                                                            </asp:RadTextBox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr class="invisible">
+                                                                                        <td class="left" valign="top">
+                                                                                            Mô tả
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <asp:RadTextBox ID="txtDescription" runat="server" Width="100%" Text='<%# Bind("Descripttion")%>'
+                                                                                                EmptyMessage="Mô tả...">
+                                                                                            </asp:RadTextBox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="left">
+                                                                                            Thứ tự
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="100%" Text='<%# Bind("Priority") %>'
+                                                                                                EmptyMessage="Thứ tự..." Type="Number">
+                                                                                                <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
+                                                                                            </asp:RadNumericTextBox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="left" colspan="2">
+                                                                                            <asp:CheckBox ID="chkAddIsAvailable" runat="server" Checked='<%# (Container is RadListViewInsertItem) ? true : Eval("IsAvailable")%>'
+                                                                                                Text="Hiển thị" CssClass="checkbox" />
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                            <td valign="top">
+                                                                                <img id="Img2" alt="" src='<%# "~/res/download/album/thumbs/" + Eval("ImageName") %>'
+                                                                                    runat="server" width="100" />
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <div class="edit">
+                                                                        <hr />
+                                                                        <asp:RadButton ID="lnkUpdate" runat="server" CommandName='Update' Text='Cập nhật'>
+                                                                            <Icon PrimaryIconUrl="~/ad/assets/images/ok.png" />
+                                                                        </asp:RadButton>
+                                                                        &nbsp;&nbsp;
+                                                                        <asp:RadButton ID="btnCancel" runat="server" CommandName='Cancel' Text='Hủy'>
+                                                                            <Icon PrimaryIconUrl="~/ad/assets/images/cancel.png" />
+                                                                        </asp:RadButton>
+                                                                    </div>
+                                                                    <div class="clear">
+                                                                    </div>
+                                                                </asp:Panel>
+                                                            </EditItemTemplate>
+                                                        </asp:RadListView>
+                                                        <asp:ObjectDataSource ID="OdsDownloadImage" runat="server" DeleteMethod="DownloadImageDelete"
+                                                            SelectMethod="DownloadImageSelectAll" TypeName="TLLib.DownloadImage" UpdateMethod="DownloadImageUpdate">
+                                                            <DeleteParameters>
+                                                                <asp:Parameter Name="DownloadImageID" Type="String" />
+                                                            </DeleteParameters>
+                                                            <SelectParameters>
+                                                                <asp:ControlParameter Name="DownloadID" ControlID="hdnDownloadID" PropertyName="Value"
+                                                                    Type="String" />
+                                                                <asp:Parameter Name="IsAvailable" Type="String" />
+                                                                <asp:Parameter Name="Priority" Type="String" />
+                                                                <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                                                            </SelectParameters>
+                                                            <UpdateParameters>
+                                                                <asp:Parameter Name="DownloadImageID" Type="String" />
+                                                                <asp:Parameter Name="ImageName" Type="String" />
+                                                                <asp:Parameter Name="ConvertedDownloadName" Type="String" />
+                                                                <asp:Parameter Name="Title" Type="String" />
+                                                                <asp:Parameter Name="Descripttion" Type="String" />
+                                                                <asp:Parameter Name="TitleEn" Type="String" />
+                                                                <asp:Parameter Name="DescripttionEn" Type="String" />
+                                                                <asp:ControlParameter Name="DownloadID" ControlID="hdnDownloadID" PropertyName="Value"
+                                                                    Type="String" />
+                                                                <asp:Parameter Name="IsAvailable" Type="String" />
+                                                                <asp:Parameter Name="Priority" Type="String" />
+                                                            </UpdateParameters>
+                                                        </asp:ObjectDataSource>
+                                                        <asp:RadListView runat="server" ID="RadListView2" PageSize="100" Width="100%" Visible='<%# (Container is GridEditFormInsertItem) ? true : false %>'
+                                                            OnItemCommand="RadListView2_ItemCommand">
+                                                            <LayoutTemplate>
+                                                                <div runat="server" id="itemPlaceholder" />
+                                                                <div class="clear">
+                                                                </div>
+                                                            </LayoutTemplate>
+                                                            <ItemTemplate>
+                                                                <asp:HiddenField ID="hdnImageName" runat="server" Value='<%# Eval("ImageName") %>' />
+                                                                <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
+                                                                    background: #eeeeee;" class="myClass">
+                                                                    <a id="A2" href='<%# "~/res/download/album/" + Eval("ImageName") %>' runat="server"
+                                                                        class="lightbox">
+                                                                        <img id="Img1" alt="" src='<%# "~/res/download/album/" + Eval("ImageName") %>' runat="server"
+                                                                            width="100" height="100" />
+                                                                    </a>
+                                                                    <div align="right">
+                                                                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
+                                                                        <asp:LinkButton ID="LinkButton1" OnClientClick="return confirm('Xóa ảnh?')" runat="server"
+                                                                            CommandName="Delete" CssClass="item"><img width="14px" class="vam" alt="" title="Xóa ảnh" src="../assets/images/trash.png" /></asp:LinkButton>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </ItemTemplate>
+                                                        </asp:RadListView>
+                                                    </asp:RadAjaxPanel>
+                                                </asp:RadAjaxPanel>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>
-                            <div class="edit">
-                                <hr />
-                                <asp:RadButton ID="lnkUpdate" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'
-                                    Text='<%# (Container is GridEditFormInsertItem) ? "Thêm" : "Cập nhật" %>'>
-                                    <Icon PrimaryIconUrl="~/ad/assets/images/ok.png" />
-                                </asp:RadButton>
-                                &nbsp;&nbsp;
-                                <asp:RadButton ID="RadButton1" runat="server" CommandName='Cancel' Text='Hủy'>
-                                    <Icon PrimaryIconUrl="~/ad/assets/images/cancel.png" />
-                                </asp:RadButton>
-                            </div>
                         </asp:Panel>
                         <asp:RadInputManager ID="RadInputManager2" runat="server">
                             <asp:NumericTextBoxSetting AllowRounding="False" Culture="vi-VN" EmptyMessage="Thứ tự ..."
