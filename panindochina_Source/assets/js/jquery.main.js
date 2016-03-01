@@ -214,7 +214,7 @@ function myListTb() {
         e.preventDefault();
         var pagev = $(this).attr("data-page") + " #videoDetails";
         var link = "assets/js/jwplayer.flash.swf";
-        if ($("#wrapper").hasClass("lan")) {
+        if ($("#wrapper").hasClass("lan") || $("#wrapper").hasClass("lanvn")) {
             link = "../assets/js/jwplayer.flash.swf";
         }
         $("#myModal .modal-body").load(pagev, function (responseTxt, statusTxt, xhr) {

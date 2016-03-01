@@ -6,7 +6,7 @@
     <meta name="description" content="Catalogue / Brochure" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Catalogue
+    <a href="customer-catalogue.aspx">Hỗ trợ khách hàng<span class="icon-caret-right"></span></a><span>Catalogue
         / Brochure</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

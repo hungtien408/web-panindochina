@@ -10,9 +10,9 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
-        Being Registration Rorm</h1>
+        Registration Form</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">Registration Rorm<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Registration Form<span class="iconar icon-chevron-down"></span></a></h2>
     <h4 class="text-uppercase titbg">
         part 1: GENERAL INFORMATION</h4>
     <div class="register-form">

@@ -5,22 +5,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="customer-catalogue.aspx">Customer Support<span class="icon-caret-right"></span></a><span>Being Panindochina’s
-        Retailer</span>
+    <a href="customer-catalogue.aspx">Hỗ trợ khách hàng<span class="icon-caret-right"></span></a><span>Trở thành đối tác bán lẻ của Xuyên Đông Dương</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
-        Being Registration Rorm</h1>
+        Form Đăng Ký</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">Registration Rorm<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Form Đăng Ký<span class="iconar icon-chevron-down"></span></a></h2>
     <h4 class="text-uppercase titbg">
-        part 1: GENERAL INFORMATION</h4>
+        part 1: THÔNG TIN CHUNG</h4>
     <div class="register-form">
         <div class="form-input">
             <div class="row">
                 <div class="col-lg-7 form-first">
                     <label class="form-lb">
-                        Full Name</label>
+                        Họ tên</label>
                     <div class="input-text">
                         <asp:TextBox ID="txtFullName" CssClass="text-box corner" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFullName"
@@ -30,7 +29,7 @@
                 <div class="col-lg-5">
                     <div class="input-in">
                         <label class="form-lb">
-                            Gender</label>
+                            Giới tính</label>
                         <div class="input-text">
                             <asp:RadioButtonList ID="radioGender" runat="server" CssClass="sex-radio" RepeatDirection="Horizontal"
                                 ValidationGroup="RegisterForm">
@@ -46,7 +45,7 @@
             <div class="row">
                 <div class="col-lg-12 form-first">
                     <label class="form-lb">
-                        Company Name</label>
+                        Tên công ty</label>
                     <div class="input-in">
                         <asp:TextBox ID="txtCompanyName" CssClass="text-box corner" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCompanyName"
@@ -59,7 +58,7 @@
             <div class="row">
                 <div class="col-lg-12 form-first">
                     <label class="form-lb">
-                        Company Address</label>
+                        Địa chỉ công ty</label>
                     <div class="input-in">
                         <asp:TextBox ID="txtCompanyAddress" CssClass="text-box corner" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCompanyAddress"
@@ -75,7 +74,7 @@
                         <div class="col-lg-7">
                             <div class="form-btn">
                                 <label class="form-lb">
-                                    City/ Province</label>
+                                    Thành phố/ Tỉnh</label>
                                 <div class="input-text">
                                     <asp:DropDownList ID="listProvince" runat="server" CssClass="selectb" DataSourceID="odsProvince" DataTextField="ProvinceName"
                                         DataValueField="ProvinceID" ValidationGroup="RegisterForm" AutoPostBack="True">
@@ -98,7 +97,7 @@
                         <div class="col-lg-5">
                             <div class="input-in">
                                 <label class="form-lb">
-                                    Country</label>
+                                    Quận</label>
                                 <div class="input-text">
                                     <asp:DropDownList ID="listDistrict" runat="server" CssClass="selectb" DataSourceID="odsDistrict" DataTextField="DistrictName"
                                         DataValueField="DistrictID" ValidationGroup="RegisterForm">
@@ -125,7 +124,7 @@
             <div class="row">
                 <div class="col-lg-7 form-first">
                     <label class="form-lb">
-                        Company Telephone</label>
+                        Số điện thoại công ty</label>
                     <div class="input-text">
                         <asp:TextBox ID="txtCompanyPhone" CssClass="text-box corner" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtCompanyPhone"
@@ -135,7 +134,7 @@
                 <div class="col-lg-5">
                     <div class="input-in">
                         <label class="form-lb">
-                            Cell phone</label>
+                            Di động</label>
                         <div class="input-text">
                             <asp:TextBox ID="txtCellPhone" CssClass="text-box corner" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtCellPhone"
@@ -151,7 +150,7 @@
                     <div class="row">
                         <div class="col-lg-7 form-first">
                             <label class="form-lb">
-                                Email Address</label>
+                                Email </label>
                             <div class="input-text">
                                 <asp:TextBox ID="txtEmail" CssClass="text-box corner" runat="server" OnTextChanged="txtEmail_TextChanged"
                                     AutoPostBack="True"></asp:TextBox>
@@ -191,14 +190,14 @@
         </div>
     </div>
     <h4 class="text-uppercase titbg">
-        part 2: USER REFERENCE
+        part 2: THAM CHIẾU NGƯỜI DÙNG
     </h4>
     <div class="register-form">
         <div class="form-input">
             <div class="row">
                 <div class="col-lg-7 form-first">
                     <label class="form-lb w200">
-                        YOUR COMPANY DESCRIBES</label>
+                        MÔ TẢ CÔNG TY CỦA BẠN</label>
                 </div>
             </div>
         </div>
@@ -382,7 +381,7 @@
             <div class="row">
                 <div class="col-lg-6 form-first">
                     <label class="form-lb w200">
-                        YOUR COMPANY INDUSTRY</label>
+                        CÔNG TY CỦA BẠN</label>
                     <div class="input-text">
                         <asp:DropDownList ID="listCompanyIndustry" runat="server" CssClass="selectb" DataSourceID="odsCompanyIndustry"
                             DataTextField="ArticleTitle" DataValueField="ArticleID" ValidationGroup="RegisterForm">

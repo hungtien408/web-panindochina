@@ -6,20 +6,15 @@
     <meta name="description" content="Technical Education" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng<span class="icon-caret-right"></span></a><span>Technical
-        Education</span>
+    <a href="customer-catalogue.aspx">Hỗ Trợ Khách Hàng<span class="icon-caret-right"></span></a><span>Tài Liệu Kĩ Thuật</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
-        Technical Education</h1>
+        Tài Liệu Kĩ Thuật</h1>
     <h2 class="title-menu mobile-992">
         <a class="panel-right" href="#mobileRight">Tài Liệu Kĩ Thuật<span class="iconar icon-chevron-down"></span></a></h2>
     <div class="customer-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur.
+        Vui làm nhập tên đăng nhập và mặt khẩu để truy cập tài liệu.
         <asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogin">
             <div class="form-alogin">
                 <div class="row">

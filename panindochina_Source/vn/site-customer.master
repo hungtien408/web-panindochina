@@ -44,7 +44,7 @@
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </li>
-                <li><a href="customer-sheet.aspx">Thông Số Kĩ Thuật</a></li>
+                <%--<li><a href="customer-sheet.aspx">Thông Số Kĩ Thuật</a></li>--%>
                 <li><a href="customer-education.aspx">Tài Liệu Kĩ Thuật</a> </li>
                 <li><a href="customer-being.aspx">Trở Thành Đối Tác Bán Lẻ Của Xuyên Đông Dương</a></li>
             </ul>

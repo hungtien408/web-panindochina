@@ -15,11 +15,7 @@
     <h2 class="title-menu mobile-992">
         <a class="panel-right" href="#mobileRight">Technical Education<span class="iconar icon-chevron-down"></span></a></h2>
     <div class="customer-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur.
+        Please enter your user name and password to access the document.
         <asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogin">
             <div class="form-alogin">
                 <div class="row">
