@@ -400,3 +400,31 @@ body{
 	bottom:30px;
 	width:100%;
 }
+.download-magazine {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    z-index: 1000;
+    background-color: #2a57a5;
+	        border-radius: 5px 0 0 0; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+	        -moz-border-radius: 5px 0 0 0; /* Firefox */
+            -webkit-border-radius: 5px 0 0 0; /* Safari and Chrome */
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 28px;
+    vertical-align: middle;
+}
+.download-magazine:hover {
+        background-color: #ee333b;
+        color: #fff;
+        text-decoration: none;
+    }
+    .download-magazine span {
+        background: url(../images/icon-download.png) no-repeat right center;
+        display: inline-block;
+        padding-right: 25px;
+    }

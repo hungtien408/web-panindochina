@@ -25,6 +25,20 @@
         <div id="canvas">
             <div class="zoom-icon zoom-icon-in">
             </div>
+            <asp:ListView ID="lstDownload" runat="server" DataSourceID="odsDownload" EnableModelValidation="True">
+                <ItemTemplate>
+                    <%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-magazine corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Download</span></a>" : ""%>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <span runat="server" id="itemPlaceholder" />
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="DownloadSelectOne"
+                TypeName="TLLib.Download">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="DownloadID" QueryStringField="mg" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
             <div class="magazine-viewport">
                 <div class="container">
                     <div class="magazine">
@@ -54,8 +68,7 @@
                         <asp:ObjectDataSource ID="odsDownloadImage" runat="server" SelectMethod="DownloadImageSelectAll"
                             TypeName="TLLib.DownloadImage">
                             <SelectParameters>
-                                <asp:QueryStringParameter QueryStringField="mg" Name="DownloadID" 
-                                    Type="String" />
+                                <asp:QueryStringParameter QueryStringField="mg" Name="DownloadID" Type="String" />
                                 <asp:Parameter Name="IsAvailable" Type="String" DefaultValue="True" />
                                 <asp:Parameter Name="Priority" Type="String" />
                                 <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />

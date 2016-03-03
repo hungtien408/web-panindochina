@@ -147,12 +147,12 @@
                     </li>
                 </ul>--%>
         <h4 class="title">
-            Services</h4>
+            Dịch Vụ</h4>
         <div class="wrap-link">
             <div class="row">
                 <div class="col-lg-3">
                     <h4 class="title-bg">
-                        Central &amp; Northern Vietnam</h4>
+                        Miền Bắc &amp; Miền Trung Việt Nam</h4>
                     <asp:ListView ID="lstContact1" runat="server" DataSourceID="odsContact1" EnableModelValidation="True">
                         <ItemTemplate>
                             <li>
@@ -195,7 +195,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h4 class="title-bg">
-                        Southern Vietnam</h4>
+                        Miền Nam Việt Nam</h4>
                     <asp:ListView ID="lstContact2" runat="server" DataSourceID="odsContact2" EnableModelValidation="True">
                         <ItemTemplate>
                             <li>
@@ -238,7 +238,7 @@
                 </div>
                 <div class="col-lg-3">
                     <h4 class="title-bg">
-                        Export Business</h4>
+                        Kinh Doanh Xuất Khẩu</h4>
                     <asp:ListView ID="lstContact3" runat="server" DataSourceID="odsContact3" EnableModelValidation="True">
                         <ItemTemplate>
                             <li>
@@ -282,7 +282,7 @@
             </div>
         </div>
         <h4 class="title">
-            Technical Service</h4>
+            Dịch Vụ Kỹ Thuật</h4>
         <asp:ListView ID="lstContact4" runat="server" DataSourceID="odsContact4" EnableModelValidation="True">
             <ItemTemplate>
                 <li>

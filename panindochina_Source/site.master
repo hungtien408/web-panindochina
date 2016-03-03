@@ -272,9 +272,9 @@
                             <li class="add-4"><a href="mailto:info@panindochina.com.vn">info@panindochina.com.vn</a></li>
                         </ul>
                         <ul class="footer-link">
-                            <li><a href="#">Central & Northern Vietnam</a></li>
-                            <li><a href="#">Southern Vietnam</a></li>
-                            <li><a href="#">Oversea Export</a></li>
+                            <li><a href="contact.aspx">Central & Northern Vietnam</a></li>
+                            <li><a href="contact.aspx">Southern Vietnam</a></li>
+                            <li><a href="contact.aspx">Oversea Export</a></li>
                         </ul>
                     </div>
                 </div>

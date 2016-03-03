@@ -272,7 +272,7 @@ function validateRadUpload(source, e) {
                                                         <span class="required">(Kích thước 270px x 360px)</span>
                                                     </td>
                                                 </tr>
-                                                <tr class="invisible">
+                                                <tr>
                                                     <td class="left" valign="top">
                                                         File download
                                                     </td>

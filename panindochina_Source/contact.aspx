@@ -46,7 +46,7 @@
                         <ItemTemplate>
                             <li>
                                 <h6>
-                                    <%# Eval("ArticleTitle") %></h6>
+                                    <%# Eval("ArticleTitleEn") %></h6>
                                 <p>
                                     <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
                                         <%# Eval("MetaTittle") %></a></p>
@@ -89,7 +89,7 @@
                         <ItemTemplate>
                             <li>
                                 <h6>
-                                    <%# Eval("ArticleTitle") %></h6>
+                                    <%# Eval("ArticleTitleEn") %></h6>
                                 <p>
                                     <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
                                         <%# Eval("MetaTittle") %></a></p>
@@ -132,7 +132,7 @@
                         <ItemTemplate>
                             <li>
                                 <h6>
-                                    <%# Eval("ArticleTitle") %></h6>
+                                    <%# Eval("ArticleTitleEn") %></h6>
                                 <p>
                                     <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
                                         <%# Eval("MetaTittle") %></a></p>
@@ -176,7 +176,7 @@
             <ItemTemplate>
                 <li>
                     <h6>
-                        <%# Eval("ArticleTitle") %></h6>
+                        <%# Eval("ArticleTitleEn") %></h6>
                     <p>
                         <span class="glyphicon glyphicon-envelope"></span><a href='<%# "mailto:" + Eval("MetaTittle") %>'>
                             <%# Eval("MetaTittle") %></a></p>

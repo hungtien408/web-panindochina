@@ -458,6 +458,15 @@
                                             Width="500px"></asp:TextBox>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td class="left">
+                                        Chức vụ (En)
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtArticleTitleEn" runat="server" Text='<%# Bind("ArticleTitleEn") %>'
+                                            Width="500px"></asp:TextBox>
+                                    </td>
+                                </tr>
                                 <tr class="invisible">
                                     <td class="left" valign="top">
                                         Mô tả
@@ -538,7 +547,7 @@
                                         Tiêu đề
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtArticleTitleEn" runat="server" Text='<%# Bind("ArticleTitleEn") %>'
+                                        <asp:TextBox ID="txtArticleTitleEn1" runat="server" Text='<%# Bind("ArticleTitleEn") %>'
                                             Width="500px"></asp:TextBox>
                                     </td>
                                 </tr>
