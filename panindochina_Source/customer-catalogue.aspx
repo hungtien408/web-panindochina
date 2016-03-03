@@ -19,12 +19,12 @@
         <ItemTemplate>
             <div class="col-sm-4 col-xs-6 element-item">
                 <div class="maga-box ">
-                    <a href='<%# progressTitle(Eval("DownloadNameEn")) + "-mg-" + Eval("DownloadID") + ".aspx" %>'
+                    <a target="_blank" href='<%# progressTitle(Eval("DownloadNameEn")) + "-mg-" + Eval("DownloadID") + ".aspx" %>'
                         class="maga-img">
                         <img class="corner" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/download/thumbs/" + Eval("ImageName") : "~/assets/images/magazeni-img-1.jpg" %>'
                             runat="server" /></a>
                     <h3 class="maga-name">
-                        <a href='<%# progressTitle(Eval("DownloadNameEn")) + "-mg-" + Eval("DownloadID") + ".aspx" %>'>
+                        <a target="_blank" href='<%# progressTitle(Eval("DownloadNameEn")) + "-mg-" + Eval("DownloadID") + ".aspx" %>'>
                             <%# Eval("DownloadNameEn")%></a></h3>
                 </div>
             </div>
