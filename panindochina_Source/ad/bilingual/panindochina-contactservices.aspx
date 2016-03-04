@@ -547,8 +547,8 @@
                                         Tiêu đề
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtArticleTitleEn1" runat="server" Text='<%# Bind("ArticleTitleEn") %>'
-                                            Width="500px"></asp:TextBox>
+                                        <%--<asp:TextBox ID="txtArticleTitleEn1" runat="server" Text='<%# Bind("ArticleTitleEn") %>'
+                                            Width="500px"></asp:TextBox>--%>
                                     </td>
                                 </tr>
                                 <tr class="invisible">

@@ -393,9 +393,9 @@ public partial class ad_single_download : System.Web.UI.Page
         //ResizeCropImage.ResizeByCondition(targetFolder + newName, 850, 800);
         //ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
 
-        string bgColor = "#ffffff";
-        ResizeCropImage.CreateThumbNailWithBackGroundColor("~/res/download/album/", "~/res/product/album/thumbs/", newName, 120, 120, bgColor);
-        ResizeCropImage.ResizeWithBackGroundColor(targetFolder + newName, 498, 646, bgColor);
+        //string bgColor = "#ffffff";
+        //ResizeCropImage.CreateThumbNailWithBackGroundColor("~/res/download/album/", "~/res/product/album/thumbs/", newName, 120, 120, bgColor);
+        //ResizeCropImage.ResizeWithBackGroundColor(targetFolder + newName, 498, 646, bgColor);
 
         if (string.IsNullOrEmpty(DownloadID))
         {

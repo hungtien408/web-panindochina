@@ -356,7 +356,7 @@
         </div>
         <div class="text-center wrapper-880">
             <h4 class="text-uppercase title-1">
-                Dịch Vụ Của Chúng Tôi</h4>
+                Dịch Vụ</h4>
             <div class="desription">
                 <asp:ListView ID="lstTitleService" runat="server" DataSourceID="odsTitleService"
                     EnableModelValidation="True">

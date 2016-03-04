@@ -537,6 +537,7 @@ hr {
     }
 .product-group .servece-box {
     background-color: #f5f5f5;
+    margin: 0 5px;
 }
 /*=====================================================*/
 .effect-hover {
@@ -624,6 +625,7 @@ hr {
         font-size: 14px;
         line-height: 20px;
         padding: 5px 12px;
+        text-align: center;
     }
     .producta:hover .product-name a, .producta .product-name a:hover {
         text-decoration: none;
@@ -836,8 +838,9 @@ hr {
     margin-bottom: 20px;
 }
     #footer .footer-menu li a {
-        background-color: #2a57a5;
-        color: #fff;
+        /*background-color: #2a57a5;
+        color: #fff;*/
+        color: #495365;
         display: block;
         float: left;
         font-size: 14px;
@@ -847,6 +850,7 @@ hr {
     }
         #footer .footer-menu li a:hover {
             background-color: #ee333b;
+            color: #fff;
             text-decoration: none;
         }
     .footer-menu .iconal {

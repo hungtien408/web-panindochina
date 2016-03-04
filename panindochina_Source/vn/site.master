@@ -258,7 +258,7 @@
                                 Hướng Dẫn Sử Dụng</a></li>
                             <li><a href="customer-faq.aspx"><span class="icon-angle-right iconal"></span>Câu Hỏi Thường Gặp </a>
                             </li>
-                            <li><a href="customer-sheet.aspx"><span class="icon-angle-right iconal"></span>Thông Số Kĩ Thuật</a></li>
+                            <%--<li><a href="customer-sheet.aspx"><span class="icon-angle-right iconal"></span>Thông Số Kĩ Thuật</a></li>--%>
                             <li><a href="customer-education.aspx"><span class="icon-angle-right iconal"></span>Tài Liệu Kĩ Thuật</a></li>
                             <li><a href="customer-being.aspx"><span class="icon-angle-right iconal"></span>Trở Thành Đối Tác Bán Lẻ Của Xuyên Đông Dương</a></li>
                         </ul>
