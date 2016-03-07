@@ -451,13 +451,25 @@
                         <div class="col-sm-6">
                             <div class="send-contact">
                                 <div class="info-input">
-                                    <label class="info-lb">
-                                        Người Liên Hệ<span class="error-lb">*</span></label>
                                     <div class="info-text">
-                                        <asp:TextBox ID="txtContactName" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
-                                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
-                                            Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtContactName"
-                                            ErrorMessage="Thông tin bắt buộc!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <div class="row-in">
+                                            <div class="infow">
+                                                <label class="info-lb">
+                                                    Tên<span class="error-lb">*</span></label>
+                                                <asp:TextBox ID="txtFirstName" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
+                                                    Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtFirstName"
+                                                    ErrorMessage="Thông tin bắt buộc!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="infow">
+                                                <label class="info-lb">
+                                                     Họ Và Tên Đệm<span class="error-lb">*</span></label>
+                                                <asp:TextBox ID="txtLastName" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator10" runat="server"
+                                                    Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtLastName"
+                                                    ErrorMessage="Thông tin bắt buộc!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="info-input">

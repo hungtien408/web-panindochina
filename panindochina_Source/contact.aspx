@@ -306,21 +306,21 @@
                                     <label class="info-lb">
                                         Province<span class="error-lb">*</span></label>
                                     <div class="info-text">
-                                        <asp:DropDownList ID="dropProvince" CssClass="selectb" runat="server" ValidationGroup="Register" DataSourceID="odsProvince"
-                                        DataTextField="ProvinceName" DataValueField="ProvinceID">
+                                        <asp:DropDownList ID="dropProvince" CssClass="selectb" runat="server" ValidationGroup="Register"
+                                            DataSourceID="odsProvince" DataTextField="ProvinceName" DataValueField="ProvinceID">
                                         </asp:DropDownList>
                                         <asp:ObjectDataSource ID="odsProvince" runat="server" SelectMethod="ProvinceSelectAll"
-                                        TypeName="TLLib.Province">
-                                        <SelectParameters>
-                                            <asp:Parameter Name="ProvinceID" Type="String" />
-                                            <asp:Parameter Name="ProvinceName" Type="String" />
-                                            <asp:Parameter Name="ShortName" Type="String" />
-                                            <asp:Parameter Name="CountryID" Type="String" />
-                                            <asp:Parameter Name="Priority" Type="String" />
-                                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                                        </SelectParameters>
-                                    </asp:ObjectDataSource>
+                                            TypeName="TLLib.Province">
+                                            <SelectParameters>
+                                                <asp:Parameter Name="ProvinceID" Type="String" />
+                                                <asp:Parameter Name="ProvinceName" Type="String" />
+                                                <asp:Parameter Name="ShortName" Type="String" />
+                                                <asp:Parameter Name="CountryID" Type="String" />
+                                                <asp:Parameter Name="Priority" Type="String" />
+                                                <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                                                <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
                                     </div>
                                 </div>
                                 <div class="info-input">
@@ -339,60 +339,72 @@
                         <div class="col-sm-6">
                             <div class="send-contact">
                                 <div class="info-input">
-                                    <label class="info-lb">
-                                        Contact Name<span class="error-lb">*</span></label>
                                     <div class="info-text">
-                                        <asp:TextBox ID="txtContactName" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
-                                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
-                                            Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtContactName"
-                                            ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="info-input">
-                                <label class="info-lb">
-                                    Email<span class="error-lb">*</span></label>
-                                <div class="info-text">
-                                    <asp:TextBox ID="txtEmail" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
-                                    <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
-                                        runat="server" ValidationGroup="Register" ControlToValidate="txtEmail" ErrorMessage="Email error!"
-                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
-                                        ForeColor="Red"></asp:RegularExpressionValidator>
-                                    <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator6" runat="server"
-                                        Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtEmail" ErrorMessage="Information required!"
-                                        ForeColor="Red"></asp:RequiredFieldValidator>
-                                </div>
-                            </div>
-                            <div class="info-input">
-                                <div class="info-text">
-                                    <div class="row-in">
-                                        <div class="infow">
-                                            <label class="info-lb">
-                                                Tel<span class="error-lb">*</span></label>
-                                            <asp:TextBox ID="txtTel" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
-                                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator7" runat="server"
-                                                Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtTel" ErrorMessage="Information required!"
-                                                ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                        <div class="infow">
-                                            <label class="info-lb">
-                                                Cellphone<span class="error-lb">*</span></label>
-                                            <asp:TextBox ID="txtCellPhone" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
-                                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator8" runat="server"
-                                                Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtCellPhone"
-                                                ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <div class="row-in">
+                                            <div class="infow">
+                                                <label class="info-lb">
+                                                    First Name<span class="error-lb">*</span></label>
+                                                <asp:TextBox ID="txtFirstName" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
+                                                    Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtFirstName"
+                                                    ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="infow">
+                                                <label class="info-lb">
+                                                    Last Name<span class="error-lb">*</span></label>
+                                                <asp:TextBox ID="txtLastName" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator10" runat="server"
+                                                    Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtLastName"
+                                                    ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="info-input">
-                                <label class="info-lb">
-                                    Fax<span class="error-lb">*</span></label>
-                                <div class="info-text">
-                                    <asp:TextBox ID="txtFax" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator9" runat="server"
-                                        Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtFax" ErrorMessage="Information required!"
-                                        ForeColor="Red"></asp:RequiredFieldValidator>
+                                <div class="info-input">
+                                    <label class="info-lb">
+                                        Email<span class="error-lb">*</span></label>
+                                    <div class="info-text">
+                                        <asp:TextBox ID="txtEmail" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                        <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
+                                            runat="server" ValidationGroup="Register" ControlToValidate="txtEmail" ErrorMessage="Email error!"
+                                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
+                                            ForeColor="Red"></asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator6" runat="server"
+                                            Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtEmail" ErrorMessage="Information required!"
+                                            ForeColor="Red"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                <div class="info-input">
+                                    <div class="info-text">
+                                        <div class="row-in">
+                                            <div class="infow">
+                                                <label class="info-lb">
+                                                    Tel<span class="error-lb">*</span></label>
+                                                <asp:TextBox ID="txtTel" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator7" runat="server"
+                                                    Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtTel" ErrorMessage="Information required!"
+                                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="infow">
+                                                <label class="info-lb">
+                                                    Cellphone<span class="error-lb">*</span></label>
+                                                <asp:TextBox ID="txtCellPhone" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator8" runat="server"
+                                                    Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtCellPhone"
+                                                    ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info-input">
+                                    <label class="info-lb">
+                                        Fax<span class="error-lb">*</span></label>
+                                    <div class="info-text">
+                                        <asp:TextBox ID="txtFax" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
+                                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator9" runat="server"
+                                            Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtFax" ErrorMessage="Information required!"
+                                            ForeColor="Red"></asp:RequiredFieldValidator>
+                                    </div>
                                 </div>
                             </div>
                         </div>

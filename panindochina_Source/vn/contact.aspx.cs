@@ -21,7 +21,8 @@ public partial class contact : System.Web.UI.Page
         msg += "<b>Địa Chỉ: </b>" + txtAddress.Text.Trim().ToString() + "<br />";
         msg += "<b>Tỉnh/Thành Phố: </b>" + dropProvince.SelectedItem.Text + "<br />";
         msg += "<b>Loại Hình Doanh Nghiệp: </b>" + dropBusiness.SelectedItem.Text + "<br />";
-        msg += "<b>Người Liên Hệ: </b>" + txtContactName.Text.Trim().ToString() + "<br />";
+        msg += "<b>Tên: </b>" + txtFirstName.Text.Trim().ToString() + "<br />";
+        msg += "<b>Họ Và Tên Đệm: </b>" + txtLastName.Text.Trim().ToString() + "<br />";
         msg += "<b>Email: </b>" + txtEmail.Text.Trim().ToString() + "<br />";
         msg += "<b>Điện Thoại: </b>" + txtTel.Text.Trim().ToString() + "<br />";
         msg += "<b>Di Động: </b>" + txtCellPhone.Text.Trim().ToString() + "<br />";
@@ -47,7 +48,8 @@ public partial class contact : System.Web.UI.Page
             txtRequirements.Text = "";
             txtCompany.Text = "";
             txtAddress.Text = "";
-            txtContactName.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
             txtEmail.Text = "";
             txtTel.Text = "";
             txtCellPhone.Text = "";
