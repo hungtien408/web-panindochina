@@ -35,7 +35,7 @@ public partial class events : System.Web.UI.Page
             }
             else
             {
-                strTitle = strMetaTitle = "News";
+                strTitle = strMetaTitle = "Tin Tức";
                 strDescription = "";
                 strMetaDescription = "";
             }

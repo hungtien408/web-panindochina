@@ -330,7 +330,7 @@
                                         <asp:DropDownList ID="dropBusiness" CssClass="selectb" runat="server" ValidationGroup="Register">
                                             <asp:ListItem>Manufactory</asp:ListItem>
                                             <asp:ListItem>Trading company</asp:ListItem>
-                                            <asp:ListItem>Ohters</asp:ListItem>
+                                            <asp:ListItem>Others</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                                 </div>

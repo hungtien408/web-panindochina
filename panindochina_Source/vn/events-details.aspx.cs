@@ -36,7 +36,7 @@ public partial class events_details : System.Web.UI.Page
             }
             else
             {
-                strTitle = strTitle1 = strMetaTitle = "Events";
+                strTitle = strTitle1 = strMetaTitle = "Sự Kiện";
                 strDescription = "";
                 strMetaDescription = "";
             }
