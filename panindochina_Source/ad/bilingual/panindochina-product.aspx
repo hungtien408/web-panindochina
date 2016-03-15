@@ -446,6 +446,15 @@
                             </asp:RadNumericTextBox>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn DataField="PriorityByProduct" HeaderStyle-Width="1%" HeaderText="Thứ tự SP"
+                        SortExpression="PriorityByProduct">
+                        <ItemTemplate>
+                            <asp:RadNumericTextBox ID="txtPriorityByProduct" runat="server" Width="70px" Text='<%# Bind("PriorityByProduct") %>'
+                                ShowSpinButtons="true" MinValue="0" EmptyMessage="Thứ tự SP..." Type="Number">
+                                <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
+                            </asp:RadNumericTextBox>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
                     <asp:GridTemplateColumn DataField="IsNew" HeaderStyle-Width="1%" HeaderText="Mới"
                         SortExpression="IsNew">
                         <ItemTemplate>
@@ -1478,6 +1487,7 @@
             <asp:Parameter Name="IsMarineService" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="PriorityByProduct" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
         </InsertParameters>
         <SelectParameters>
@@ -1527,9 +1537,11 @@
                 Type="String" />
             <asp:ControlParameter ControlID="ddlSearchPriority" Name="Priority" PropertyName="SelectedValue"
                 Type="String" />
+            <asp:Parameter Name="PriorityByProduct" Type="String" />
             <asp:ControlParameter ControlID="ddlSearchIsAvailable" Name="IsAvailable" PropertyName="SelectedValue"
                 Type="String" />
             <asp:Parameter Name="SortByPriority" Type="String" />
+            <asp:Parameter Name="SortByPriorityProduct" Type="String" />
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="ProductID" Type="String" />
@@ -1575,6 +1587,7 @@
             <asp:Parameter Name="IsMarineService" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="PriorityByProduct" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>

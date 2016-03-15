@@ -134,7 +134,7 @@ public partial class ad_single_product : System.Web.UI.Page
         }
         else if (e.CommandName == "QuickUpdate")
         {
-            string ProductID, Priority, InStock, IsHot, IsNew, IsBestSeller, IsSaleOff, IsAutomotive, IsSteelMills, IsMining, IsConstruction,
+            string ProductID, Priority, PriorityByProduct, InStock, IsHot, IsNew, IsBestSeller, IsSaleOff, IsAutomotive, IsSteelMills, IsMining, IsConstruction,
                     IsPetroleum, IsShipBuilding, IsPharmaceutical, IsPaints, IsCement, IsMarineService, IsShowOnHomePage, IsAvailable;
             var oProduct = new Product();
 
@@ -142,6 +142,7 @@ public partial class ad_single_product : System.Web.UI.Page
             {
                 ProductID = item.GetDataKeyValue("ProductID").ToString();
                 Priority = ((RadNumericTextBox)item.FindControl("txtPriority")).Text.Trim();
+                PriorityByProduct = ((RadNumericTextBox)item.FindControl("txtPriorityByProduct")).Text.Trim();
                 InStock = ((CheckBox)item.FindControl("chkInStock")).Checked.ToString();
                 IsHot = ((CheckBox)item.FindControl("chkIsHot")).Checked.ToString();
                 IsNew = ((CheckBox)item.FindControl("chkIsNew")).Checked.ToString();
@@ -180,6 +181,7 @@ public partial class ad_single_product : System.Web.UI.Page
                     IsMarineService,
                     IsShowOnHomePage,
                     Priority,
+                    PriorityByProduct,
                     IsAvailable
                 );
             }
@@ -237,6 +239,7 @@ public partial class ad_single_product : System.Web.UI.Page
             string OldImageName = ((HiddenField)row.FindControl("hdnOldImageName")).Value;
             string ImageName = FileImageName.UploadedFiles.Count > 0 ? FileImageName.UploadedFiles[0].GetName() : "";
             string Priority = ((RadNumericTextBox)row.FindControl("txtPriority")).Text.Trim();
+            string PriorityByProduct = ((RadNumericTextBox)row.FindControl("txtPriorityByProduct")).Text.Trim();
             string MetaTittle = ((RadTextBox)row.FindControl("txtMetaTittle")).Text.Trim();
             string MetaDescription = ((RadTextBox)row.FindControl("txtMetaDescription")).Text.Trim();
             string ProductName = ((RadTextBox)row.FindControl("txtProductName")).Text.Trim();
@@ -326,6 +329,7 @@ public partial class ad_single_product : System.Web.UI.Page
                     IsMarineService,
                     IsShowOnHomePage,
                     Priority,
+                    PriorityByProduct,
                     IsAvailable
                 );
 

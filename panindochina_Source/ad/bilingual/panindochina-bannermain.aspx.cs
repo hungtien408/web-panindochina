@@ -219,8 +219,9 @@ public partial class ad_single_advertisement : System.Web.UI.Page
                     if (IsImageFormat(strFileName))
                     {
                         //ResizeCropImage.ResizeByCondition(strFullPath, 800, 800);
-                        string bgColor = "#ffffff";
-                        ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 1260, 505, bgColor);
+                        
+                        //string bgColor = "#ffffff";
+                        //ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 1260, 505, bgColor);
                     }
                 }
                 RadGrid1.Rebind();
@@ -251,8 +252,9 @@ public partial class ad_single_advertisement : System.Web.UI.Page
                     if (IsImageFormat(strFileName))
                     {
                         //ResizeCropImage.ResizeByCondition(strFullPath, 654, 654);
-                        string bgColor = "#ffffff";
-                        ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 1260, 505, bgColor);
+                        
+                        //string bgColor = "#ffffff";
+                        //ResizeCropImage.ResizeWithBackGroundColor(strFullPath, 1260, 505, bgColor);
                     }
                 }
             }

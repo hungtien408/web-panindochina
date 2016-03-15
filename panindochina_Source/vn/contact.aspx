@@ -491,7 +491,7 @@
                                         <div class="row-in">
                                             <div class="infow">
                                                 <label class="info-lb">
-                                                    Điện Thoại<span class="error-lb">*</span></label>
+                                                    Điện Thoại</label>
                                                 <asp:TextBox ID="txtTel" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
                                                 <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator7" runat="server"
                                                     Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtTel" ErrorMessage="Thông tin bắt buộc!"
@@ -499,7 +499,7 @@
                                             </div>
                                             <div class="infow">
                                                 <label class="info-lb">
-                                                    Di Động<span class="error-lb">*</span></label>
+                                                    Di Động</label>
                                                 <asp:TextBox ID="txtCellPhone" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
                                                 <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator8" runat="server"
                                                     Display="Dynamic" ValidationGroup="Register" ControlToValidate="txtCellPhone"
@@ -510,7 +510,7 @@
                                 </div>
                                 <div class="info-input">
                                     <label class="info-lb">
-                                        Fax<span class="error-lb">*</span></label>
+                                        Fax</label>
                                     <div class="info-text">
                                         <asp:TextBox ID="txtFax" CssClass="info-textbox" runat="server" ValidationGroup="Register"></asp:TextBox>
                                         <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator9" runat="server"

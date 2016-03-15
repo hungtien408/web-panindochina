@@ -317,17 +317,17 @@
                                     <asp:Image runat="server" ImageUrl="~/ad/assets/images/sap-het-han.gif" Visible='<%# string.IsNullOrEmpty(Eval("BeginDeadLine").ToString()) ? false : (Convert.ToBoolean(Eval("IsDeadLine")) ? false : Eval("BeginDeadLine")) %>' />
                                 </div>--%>
                                 <div runat="server" visible='<%# string.IsNullOrEmpty(Eval("FileName").ToString()) ? false : (!Eval("FileName").ToString().ToLower().EndsWith(".swf") ? true : false) %>'>
-                                    <img id="Img2" alt="" height="100" width='<%# string.IsNullOrEmpty(Eval("Ratio").ToString()) ? "100%" : (100*Convert.ToDouble( Eval("Ratio"))).ToString() %>'
+                                    <img id="Img2" alt="" height="100" width="200"
                                         src='<%# "../../res/advertisement/" + Eval("FileName") %>' />
                                 </div>
                                 <div runat="server" visible='<%# Eval("FileName").ToString() == "" ? false : (Eval("FileName").ToString().ToLower().EndsWith(".swf") ? true : false) %>'>
-                                    <object id="Object1" height="100" width='<%# string.IsNullOrEmpty(Eval("Ratio").ToString()) ? "100%" : (100*Convert.ToDouble( Eval("Ratio"))).ToString() %>'
+                                    <object id="Object1" height="100" width="200"
                                         style="z-index: 0;" name="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
                                         <param value='../../res/advertisement/<%# Eval("FileName") %>' name="movie">
                                         <param value="true" name="allowfullscreen">
                                         <param value="always" name="allowscriptaccess">
                                         <param value="opaque" name="wmode">
-                                        <embed id="player2" height="100" width='<%# string.IsNullOrEmpty(Eval("Ratio").ToString()) ? "100%" : (100*Convert.ToDouble( Eval("Ratio"))).ToString() %>'
+                                        <embed id="player2" height="100" width="200"
                                             style="z-index: 0;" wmode="opaque" allowfullscreen="false" allowscriptaccess="always"
                                             src="../../res/advertisement/<%# Eval("FileName") %>" name="player2" type="application/x-shockwave-flash">
                                     </object>
