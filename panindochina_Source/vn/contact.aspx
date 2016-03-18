@@ -19,7 +19,7 @@
                     <h1 class="title">
                         Liên Hệ Công Ty</h1>
                     <p>
-                        <span class="glyphicon glyphicon-map-marker"></span>71 Đường D5, Phường 25, Quận
+                        <span class="glyphicon glyphicon-map-marker"></span>326/6A Đường Ung Văn Khiêm, Phường 25, Quận
                         Bình Thạnh, Tp.Hồ Chí Minh</p>
                     <p>
                         <span class="glyphicon glyphicon-earphone"></span>08.35127509</p>

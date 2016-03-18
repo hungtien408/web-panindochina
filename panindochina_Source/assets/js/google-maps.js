@@ -6,9 +6,9 @@ var rendererOptions = {
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 //Thay dia chi web
-var endAddress = "10.8065609,106.7125877";
+var endAddress = "10.802380, 106.723606";
 //Thay toa do
-var lat = 10.8065609, long = 106.7125877; 
+var lat = 10.802380, long = 106.723606; 
 window.onload = function () {
     //init direction
     directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
@@ -41,7 +41,7 @@ window.onload = function () {
         // Creating the content  
         var content = '<div class="box">' +
             '<h1 class="title-2">Panindochina</h1>' +
-            '<p><span class="glyphicon glyphicon-map-marker iconl"></span>71 D5 Street, Ward 25, Binh Thanh District, Ho Chi Minh City</p>' +
+            '<p><span class="glyphicon glyphicon-map-marker iconl"></span>326/6A Ung Van Khiem Street, Ward 25, Binh Thanh District, Ho Chi Minh City</p>' +
             '<p><span class="glyphicon glyphicon-earphone iconl"></span>08.35127509 <span class="glyphicon glyphicon-print ml"></span>08.35127510</p>' +
             '<p><span class="glyphicon glyphicon-envelope iconl"></span>Email: <a href="mailto:info@panindochina.com.vn">info@panindochina.com.vn</a></p>' +
         '</div>';

@@ -16,7 +16,7 @@
             </div>--%>
             <asp:ListView ID="lstBanner" runat="server" DataSourceID="odsBanner" EnableModelValidation="True">
                 <ItemTemplate>
-                    <a href='<%# Eval("Website") %>'><img alt='<%# Eval("FileName") %>' src='<%# !string.IsNullOrEmpty(Eval("FileName").ToString()) ? "~/res/advertisement/" + Eval("FileName") : "~/assets/images/banner-img-1.jpg" %>'
+                    <a target="_blank" href='<%# Eval("Website") %>'><img alt='<%# Eval("FileName") %>' src='<%# !string.IsNullOrEmpty(Eval("FileName").ToString()) ? "~/res/advertisement/" + Eval("FileName") : "~/assets/images/banner-img-1.jpg" %>'
                         runat="server" /></a>
                 </ItemTemplate>
                 <LayoutTemplate>
@@ -133,7 +133,7 @@
                                         <li>
                                             <div class="product-box product-boxbg">
                                                 <div class="icon-new">
-                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
+                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new-vn.png" : "" %>'
                                                         alt="" />
                                                 </div>
                                                 <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
@@ -212,7 +212,7 @@
                                         <li>
                                             <div class="product-box product-boxbg">
                                                 <div class="icon-new">
-                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
+                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new-vn.png" : "" %>'
                                                         alt="" />
                                                 </div>
                                                 <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'
@@ -291,7 +291,7 @@
                                         <li>
                                             <div class="product-box product-boxbg">
                                                 <div class="icon-new">
-                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new.png" : "" %>'
+                                                    <img class="img-responsive" src='<%# bool.Parse(Eval("IsNew").ToString()) == true ? "../assets/images/icon-new-vn.png" : "" %>'
                                                         alt="" />
                                                 </div>
                                                 <a target="_blank" href='<%# progressTitle(Eval("ProductName")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'

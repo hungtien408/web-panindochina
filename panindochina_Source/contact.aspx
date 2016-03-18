@@ -19,7 +19,7 @@
                     <h1 class="title">
                         Company contact</h1>
                     <p>
-                        <span class="glyphicon glyphicon-map-marker"></span>71 D5 Street, Ward 25, Binh
+                        <span class="glyphicon glyphicon-map-marker"></span>326/6A Ung Van Khiem Street, Ward 25, Binh
                         Thanh District, Ho Chi Minh City</p>
                     <p>
                         <span class="glyphicon glyphicon-earphone"></span>08.35127509</p>

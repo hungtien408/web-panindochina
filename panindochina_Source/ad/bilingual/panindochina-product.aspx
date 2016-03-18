@@ -796,6 +796,17 @@
                                                             </asp:RadNumericTextBox>
                                                         </td>
                                                     </tr>
+                                                    <tr>
+                                                        <td class="left">
+                                                            Thứ tự SP
+                                                        </td>
+                                                        <td>
+                                                            <asp:RadNumericTextBox ID="txtPriorityByProduct" runat="server" Width="500px" Text='<%# Bind("PriorityByProduct") %>'
+                                                                EmptyMessage="Thứ tự SP..." Type="Number">
+                                                                <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
+                                                            </asp:RadNumericTextBox>
+                                                        </td>
+                                                    </tr>
                                                     <tr class="invisible">
                                                         <td class="left">
                                                             Giá cũ

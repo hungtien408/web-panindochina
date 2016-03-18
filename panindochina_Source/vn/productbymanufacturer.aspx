@@ -85,8 +85,10 @@
                     <asp:Parameter Name="FromDate" Type="String" />
                     <asp:Parameter Name="ToDate" Type="String" />
                     <asp:Parameter Name="Priority" Type="String" />
+                    <asp:Parameter Name="PriorityByProduct" Type="String" />
                     <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                    <asp:Parameter Name="SortByPriority" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="SortByPriorityProduct" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
             <div id="pagerp" class="pager">
