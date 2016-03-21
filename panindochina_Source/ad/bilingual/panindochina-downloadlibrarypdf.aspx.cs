@@ -153,7 +153,7 @@ public partial class ad_single_download : System.Web.UI.Page
             string DownloadName = ((TextBox)row.FindControl("txtDownloadName")).Text.Trim();
             string DownloadNameEn = ((TextBox)row.FindControl("txtDownloadNameEn")).Text.Trim();
             string ConvertedDownloadName = Common.ConvertTitle(DownloadName);
-            string DownloadCategoryID = "1"; //((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
+            string DownloadCategoryID = ((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
             string IsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
 
             if (e.CommandName == "PerformInsert")

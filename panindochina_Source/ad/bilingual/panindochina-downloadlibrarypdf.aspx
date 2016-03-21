@@ -196,7 +196,7 @@
                             <%# Eval("FilePath")%>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Danh mục" DataField="DownloadCategoryName" SortExpression="DownloadCategoryName" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Danh mục" DataField="DownloadCategoryName" SortExpression="DownloadCategoryName">
                         <ItemTemplate>
                             <%# Eval("DownloadCategoryName")%>
                         </ItemTemplate>
@@ -275,7 +275,7 @@
                                             Language="vi-VN" InputSize="69" />
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left">
                                         Danh mục
                                     </td>
@@ -419,6 +419,15 @@
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="DownloadCategorySelectAll"
         TypeName="TLLib.DownloadCategory">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="1" Name="parentID" Type="Int32" />
+            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+            <asp:Parameter Name="IsAvailable" Type="String" />
+            <asp:Parameter Name="Priority" Type="String" />
+            <asp:Parameter Name="SortByPriority" Type="String" />
+        </SelectParameters>
     </asp:ObjectDataSource>
     <asp:RadProgressManager ID="RadProgressManager1" runat="server" />
     <asp:RadProgressArea ID="ProgressArea1" runat="server" Culture="vi-VN" DisplayCancelButton="True"

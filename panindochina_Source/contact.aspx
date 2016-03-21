@@ -328,8 +328,14 @@
                                         Business Type<span class="error-lb">*</span></label>
                                     <div class="info-text">
                                         <asp:DropDownList ID="dropBusiness" CssClass="selectb" runat="server" ValidationGroup="Register">
-                                            <asp:ListItem>Manufactory</asp:ListItem>
-                                            <asp:ListItem>Trading company</asp:ListItem>
+                                            <asp:ListItem>Industrial Factory</asp:ListItem>
+                                            <asp:ListItem>Inspection</asp:ListItem>
+                                            <asp:ListItem>Government</asp:ListItem>
+                                            <asp:ListItem>Fire Fighting and Rescue</asp:ListItem>
+                                            <asp:ListItem>Petroleum – Oil &amp; Gas</asp:ListItem>
+                                            <asp:ListItem>Chemical</asp:ListItem>
+                                            <asp:ListItem>Petro Chemical</asp:ListItem>
+                                            <asp:ListItem>Trading Company</asp:ListItem>
                                             <asp:ListItem>Others</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>

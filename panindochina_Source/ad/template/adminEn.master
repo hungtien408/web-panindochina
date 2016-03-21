@@ -254,7 +254,15 @@
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Download"
                         Font-Bold="True">
                         <Items>
-                            <asp:RadMenuItem runat="server" Text="Thư Viện PDF" NavigateUrl="~/ad/bilingual/panindochina-downloadlibrarypdf.aspx">
+                            <asp:RadMenuItem runat="server" Text="Thư Viện PDF">
+                                <Items>
+                                    <asp:RadMenuItem runat="server" Text="File Download PDF" NavigateUrl="~/ad/bilingual/panindochina-downloadlibrarypdf.aspx">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" IsSeparator="True">
+                                    </asp:RadMenuItem>
+                                    <asp:RadMenuItem runat="server" Text="Danh Mục" NavigateUrl="~/ad/bilingual/panindochina-downloadlibrarypdfcategory.aspx">
+                                    </asp:RadMenuItem>
+                                </Items>
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" IsSeparator="True">
                             </asp:RadMenuItem>
