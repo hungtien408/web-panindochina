@@ -333,7 +333,7 @@
         </div>
     </div>
     <h5 class="title-order">
-        Sản phẩm cùng loại</h5>
+        Related Products</h5>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ListView ID="lstProductSameCategory" runat="server" DataSourceID="odsProductSameCategory"
