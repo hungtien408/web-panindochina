@@ -440,7 +440,13 @@
                                         Loại Hình Doanh Nghiệp<span class="error-lb">*</span></label>
                                     <div class="info-text">
                                         <asp:DropDownList ID="dropBusiness" CssClass="selectb" runat="server" ValidationGroup="Register">
-                                            <asp:ListItem>Nhà Máy Sản Xuất</asp:ListItem>
+                                            <asp:ListItem>Nhà Máy Công Nghiệp</asp:ListItem>
+                                            <asp:ListItem>Kiểm Định</asp:ListItem>
+                                            <asp:ListItem>Chính Phủ</asp:ListItem>
+                                            <asp:ListItem>PCCC và Cứu Nạn Cứu Hộ</asp:ListItem>
+                                            <asp:ListItem>Xăng Dầu – Dầu Khí</asp:ListItem>
+                                            <asp:ListItem>Hóa Chất</asp:ListItem>
+                                            <asp:ListItem>Hóa Dầu</asp:ListItem>
                                             <asp:ListItem>Công Ty Thương Mại</asp:ListItem>
                                             <asp:ListItem>Khác</asp:ListItem>
                                         </asp:DropDownList>
