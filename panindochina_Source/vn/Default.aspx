@@ -83,14 +83,14 @@
             <ItemTemplate>
                 <div class="colno-5 element-item">
                     <div class="producta wrap-effecth">
-                        <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'
+                        <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-psci-" + Eval("ProductCategoryID") + ".aspx" %>'
                             class="product-img effect-hover"><span class="hover-img fullbox-img">
                                 <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/productcategory/" + Eval("ImageName") : "~/assets/images/product-a-1.jpg" %>'
                                     runat="server" /></span> <span class="hover-img fullbox-img">
                                         <img class="hideo" alt='<%# Eval("ImageNameHover") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameHover").ToString()) ? "~/res/productcategory/imagehover/" + Eval("ImageNameHover") : "~/assets/images/product-a-2.jpg" %>'
                                             runat="server" /></span> </a>
                         <h5 class="product-name">
-                            <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                            <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-psci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                                 <%# Eval("ProductCategoryName") %></a></h5>
                     </div>
                 </div>
@@ -186,9 +186,11 @@
                                         <asp:Parameter Name="ToDate" Type="String" />
                                         <asp:Parameter Name="Priority" Type="String" />
                                         <asp:Parameter Name="PriorityByProduct" Type="String" />
+                                        <asp:Parameter Name="PriorityByProductCat" Type="String" />
                                         <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                                         <asp:Parameter Name="SortByPriority" Type="String" />
                                         <asp:Parameter DefaultValue="True" Name="SortByPriorityProduct" Type="String" />
+                                        <asp:Parameter Name="SortByPriorityProductCat" Type="String" />
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
                             </div>
@@ -265,9 +267,11 @@
                                         <asp:Parameter Name="ToDate" Type="String" />
                                         <asp:Parameter Name="Priority" Type="String" />
                                         <asp:Parameter Name="PriorityByProduct" Type="String" />
+                                        <asp:Parameter Name="PriorityByProductCat" Type="String" />
                                         <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                                         <asp:Parameter Name="SortByPriority" Type="String" />
                                         <asp:Parameter DefaultValue="True" Name="SortByPriorityProduct" Type="String" />
+                                        <asp:Parameter Name="SortByPriorityProductCat" Type="String" />
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
                             </div>
@@ -344,9 +348,11 @@
                                         <asp:Parameter Name="ToDate" Type="String" />
                                         <asp:Parameter Name="Priority" Type="String" />
                                         <asp:Parameter Name="PriorityByProduct" Type="String" />
+                                        <asp:Parameter Name="PriorityByProductCat" Type="String" />
                                         <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                                         <asp:Parameter Name="SortByPriority" Type="String" />
                                         <asp:Parameter DefaultValue="True" Name="SortByPriorityProduct" Type="String" />
+                                        <asp:Parameter Name="SortByPriorityProductCat" Type="String" />
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
                             </div>

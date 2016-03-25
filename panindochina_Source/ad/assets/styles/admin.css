@@ -24,6 +24,7 @@ a, a:link, a:visited
     background-repeat: no-repeat;
     background-position: center 44px;
     min-height: 420px;
+    width: 1350px;
     position: relative;
 }
 .logo

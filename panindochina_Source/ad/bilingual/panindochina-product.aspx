@@ -181,7 +181,7 @@
                     <td>
                         <asp:RadComboBox Filter="Contains" ID="ddlSearchCategory" runat="server" DataSourceID="ObjectDataSource2"
                             DataTextField="ProductCategoryName" DataValueField="ProductCategoryID" OnDataBound="DropDownList_DataBound"
-                            Width="134px" EmptyMessage="- Tất cả -">
+                            Width="250px" EmptyMessage="- Tất cả -">
                         </asp:RadComboBox>
                     </td>
                     <td class="left invisible">
@@ -451,6 +451,15 @@
                         <ItemTemplate>
                             <asp:RadNumericTextBox ID="txtPriorityByProduct" runat="server" Width="70px" Text='<%# Bind("PriorityByProduct") %>'
                                 ShowSpinButtons="true" MinValue="0" EmptyMessage="Thứ tự SP..." Type="Number">
+                                <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
+                            </asp:RadNumericTextBox>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn DataField="PriorityByProductCat" HeaderStyle-Width="1%" HeaderText="Thứ tự loại SP"
+                        SortExpression="PriorityByProductCat">
+                        <ItemTemplate>
+                            <asp:RadNumericTextBox ID="txtPriorityByProductCat" runat="server" Width="70px" Text='<%# Bind("PriorityByProductCat") %>'
+                                ShowSpinButtons="true" MinValue="0" EmptyMessage="Thứ tự loại SP..." Type="Number">
                                 <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
                             </asp:RadNumericTextBox>
                         </ItemTemplate>
@@ -803,6 +812,17 @@
                                                         <td>
                                                             <asp:RadNumericTextBox ID="txtPriorityByProduct" runat="server" Width="500px" Text='<%# Bind("PriorityByProduct") %>'
                                                                 EmptyMessage="Thứ tự SP..." Type="Number">
+                                                                <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
+                                                            </asp:RadNumericTextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="left">
+                                                            Thứ tự loại SP
+                                                        </td>
+                                                        <td>
+                                                            <asp:RadNumericTextBox ID="txtPriorityByProductCat" runat="server" Width="500px" Text='<%# Bind("PriorityByProductCat") %>'
+                                                                EmptyMessage="Thứ tự loại SP..." Type="Number">
                                                                 <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
                                                             </asp:RadNumericTextBox>
                                                         </td>
@@ -1499,6 +1519,7 @@
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="PriorityByProduct" Type="String" />
+            <asp:Parameter Name="PriorityByProductCat" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
         </InsertParameters>
         <SelectParameters>
@@ -1549,10 +1570,12 @@
             <asp:ControlParameter ControlID="ddlSearchPriority" Name="Priority" PropertyName="SelectedValue"
                 Type="String" />
             <asp:Parameter Name="PriorityByProduct" Type="String" />
+            <asp:Parameter Name="PriorityByProductCat" Type="String" />
             <asp:ControlParameter ControlID="ddlSearchIsAvailable" Name="IsAvailable" PropertyName="SelectedValue"
                 Type="String" />
             <asp:Parameter Name="SortByPriority" Type="String" />
             <asp:Parameter Name="SortByPriorityProduct" Type="String" />
+            <asp:Parameter Name="SortByPriorityProductCat" Type="String" />
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="ProductID" Type="String" />
@@ -1599,6 +1622,7 @@
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="Priority" Type="String" />
             <asp:Parameter Name="PriorityByProduct" Type="String" />
+            <asp:Parameter Name="PriorityByProductCat" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>

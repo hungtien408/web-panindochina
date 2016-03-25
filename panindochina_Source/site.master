@@ -169,7 +169,7 @@
                         <asp:ListView ID="lstProductCategory" runat="server" DataSourceID="odsProductCategory"
                             EnableModelValidation="True">
                             <ItemTemplate>
-                                <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-psci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                                     <span class="iconal">+</span><%# Eval("ProductCategoryNameEn") %></a></li>
                             </ItemTemplate>
                             <LayoutTemplate>

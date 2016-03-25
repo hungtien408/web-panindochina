@@ -61,6 +61,7 @@ namespace TLLib
             string IsShowOnHomePage,
             string Priority,
             string PriorityByProduct,
+            string PriorityByProductCat,
             string IsAvailable
         )
         {
@@ -112,6 +113,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@PriorityByProduct", string.IsNullOrEmpty(PriorityByProduct) ? dbNULL : (object)PriorityByProduct);
+                cmd.Parameters.AddWithValue("@PriorityByProductCat", string.IsNullOrEmpty(PriorityByProductCat) ? dbNULL : (object)PriorityByProductCat);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
 
                 SqlParameter imageNameParam = new SqlParameter("@OutImageName", null);
@@ -185,6 +187,7 @@ namespace TLLib
             string IsShowOnHomePage,
             string Priority,
             string PriorityByProduct,
+            string PriorityByProductCat,
             string IsAvailable
         )
         {
@@ -237,6 +240,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@PriorityByProduct", string.IsNullOrEmpty(PriorityByProduct) ? dbNULL : (object)PriorityByProduct);
+                cmd.Parameters.AddWithValue("@PriorityByProductCat", string.IsNullOrEmpty(PriorityByProductCat) ? dbNULL : (object)PriorityByProductCat);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
@@ -277,6 +281,7 @@ namespace TLLib
             string IsShowOnHomePage,
             string Priority,
             string PriorityByProduct,
+            string PriorityByProductCat,
             string IsAvailable
         )
         {
@@ -304,6 +309,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@PriorityByProduct", string.IsNullOrEmpty(PriorityByProduct) ? dbNULL : (object)PriorityByProduct);
+                cmd.Parameters.AddWithValue("@PriorityByProductCat", string.IsNullOrEmpty(PriorityByProductCat) ? dbNULL : (object)PriorityByProductCat);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
@@ -389,9 +395,11 @@ namespace TLLib
             string ToDate,
             string Priority,
             string PriorityByProduct,
+            string PriorityByProductCat,
             string IsAvailable,
             string SortByPriority,
-            string SortByPriorityProduct
+            string SortByPriorityProduct,
+            string SortByPriorityProductCat
         )
         {
             try
@@ -432,9 +440,11 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@ToDate", string.IsNullOrEmpty(ToDate) ? dbNULL : (object)ToDate);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@PriorityByProduct", string.IsNullOrEmpty(PriorityByProduct) ? dbNULL : (object)PriorityByProduct);
+                cmd.Parameters.AddWithValue("@PriorityByProductCat", string.IsNullOrEmpty(PriorityByProductCat) ? dbNULL : (object)PriorityByProductCat);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@SortByPriority", string.IsNullOrEmpty(SortByPriority) ? dbNULL : (object)SortByPriority);
                 cmd.Parameters.AddWithValue("@SortByPriorityProduct", string.IsNullOrEmpty(SortByPriorityProduct) ? dbNULL : (object)SortByPriorityProduct);
+                cmd.Parameters.AddWithValue("@SortByPriorityProductCat", string.IsNullOrEmpty(SortByPriorityProductCat) ? dbNULL : (object)SortByPriorityProductCat);
 
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
