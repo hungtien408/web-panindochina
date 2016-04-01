@@ -6,13 +6,13 @@
     <meta name="description" content="Gallery" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphSite" runat="Server">
-    <a href="gallery.aspx">Library<span class="icon-caret-right"></span></a><span>Gallery</span>
+    <a href="gallery.aspx">Library<span class="icon-caret-right"></span></a><span>Pictures</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
-        Hình ảnh</h1>
+        Pictures</h1>
     <h2 class="title-menu mobile-992">
-        <a class="panel-right" href="#mobileRight">Gallery<span class="iconar icon-chevron-down"></span></a></h2>
+        <a class="panel-right" href="#mobileRight">Pictures<span class="iconar icon-chevron-down"></span></a></h2>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ListView ID="lstGalleryCategory" runat="server" DataSourceID="odsGalleryCategory" EnableModelValidation="True">
@@ -67,7 +67,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <h2 class="title-link mobile-992">
-        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Gallery</a></h2>
+        <a class="panel-right" href="#mobileRight"><span class="icon-chevron-left"></span>Pictures</a></h2>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" runat="Server">
 </asp:Content>

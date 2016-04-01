@@ -19,10 +19,9 @@
         </ItemTemplate>
         <LayoutTemplate>
             <div class="customer-text">
-                Quý khách vui lòng tải File này về <span runat="server" id="itemPlaceholder" />và
-                điền đầy đủ thông tin, sau đó gửi về cho chúng tôi tại: <a href="http://info@panindochina.com.vn">
-                    info@panindochina.com.vn</a> . Xin cám ơn sự quan tâm của quý khách đối với
-                dịch vụ của chúng tôi.
+                Please download this file <span runat="server" id="itemPlaceholder" />and fill the
+                information, after that send to us at: <a href="http://info@panindochina.com.vn">info@panindochina.com.vn</a>
+                . Thank you for your attention to our service.
             </div>
         </LayoutTemplate>
     </asp:ListView>

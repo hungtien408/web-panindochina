@@ -15,7 +15,7 @@
             <ul class="menu-list menu-iconr">
                 <li><a href="gallery-video.aspx"><span>Video</span></a></li>
                 <li><a href="gallery-pfd.aspx"><span>PDF</span></a></li>
-                <li><a href="gallery.aspx"><span>Hình ảnh</span></a></li>
+                <li><a href="gallery.aspx"><span>Pictures</span></a></li>
             </ul>
         </div>
     </div>
@@ -33,7 +33,7 @@
                 <ul class="menu-nav menu-right">
                     <li><a href="gallery-video.aspx">Video<span class="icon-chevron-sign-right iconr"></span></a></li>
                     <li><a href="gallery-pfd.aspx">PDF<span class="icon-chevron-sign-right iconr"></span></a></li>
-                    <li><a href="gallery.aspx">Hình ảnh<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="gallery.aspx">Pictures<span class="icon-chevron-sign-right iconr"></span></a></li>
                 </ul>
             </div>
         </div>

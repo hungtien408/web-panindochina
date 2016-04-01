@@ -37,7 +37,7 @@ public partial class product : System.Web.UI.Page
             }
             else
             {
-                strTitle = strMetaTitle = "Products";
+                strTitle = strMetaTitle = "Sản Phẩm";
                 strDescription = "";
                 strMetaDescription = "";
             }

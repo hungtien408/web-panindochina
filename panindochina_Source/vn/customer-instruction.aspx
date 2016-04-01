@@ -10,19 +10,19 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1 class="title desktop-992">
-        Instruction Manual</h1>
+        Hướng Dẫn Sử Dụng</h1>
     <h2 class="title-menu mobile-992">
         <a class="panel-right" href="#mobileRight">Hướng Dẫn Sử Dụng<span class="iconar icon-chevron-down"></span></a></h2>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="form-select">
                 <label class="lb-form">
-                    Select Brand</label>
+                    Chọn nhãn hiệu</label>
                 <div class="select-box">
                     <asp:DropDownList ID="dropListBrand" CssClass="selectb" runat="server" DataSourceID="odsListBrand"
                         DataTextField="DownloadCategoryName" DataValueField="DownloadCategoryID" AutoPostBack="True"
                         AppendDataBoundItems="true" OnSelectedIndexChanged="dropListBrand_SelectedIndexChanged">
-                        <asp:ListItem Value="">-- Select Brand</asp:ListItem>
+                        <asp:ListItem Value="">-- Chọn nhãn hiệu</asp:ListItem>
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="odsListBrand" runat="server" SelectMethod="DownloadCategorySelectAll"
                         TypeName="TLLib.DownloadCategory">
@@ -49,8 +49,8 @@
                                 <%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-link corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Download</span></a>" : ""%>
                                 <%# Eval("DownloadName")%></li>--%>
                             <li>
-                                <a class='download-link corner' target="_blank" href='<%# progressTitle(Eval("FilePath")) + "-vd-" + Eval("DownloadID") + ".aspx" %>'><span>View</span></a>
-                                <%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-link corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Download</span></a>" : ""%>
+                                <a class='download-link corner' target="_blank" href='<%# progressTitle(Eval("FilePath")) + "-vd-" + Eval("DownloadID") + ".aspx" %>'><span>Xem</span></a>
+                                <%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "<a class='download-link corner' download href='" + "res/download/" + Eval("FilePath") + "'><span>Tải về</span></a>" : ""%>
                                 <%# Eval("DownloadName")%></li>
                         </ItemTemplate>
                         <LayoutTemplate>

@@ -20,16 +20,16 @@
                 <ItemTemplate>
                     <div class="col-lg-3 col-xs-4 element-item">
                         <div class="box-pdf">
-                            <a target="_blank" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "res/download/" + Eval("FilePath") : "javascript:void(0);" %>'
+                            <%--<a target="_blank" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "res/download/" + Eval("FilePath") : "javascript:void(0);" %>'
                                 class="pdf-img"><span class="fullbox-img group-img">
                                     <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/download/thumbs/" + Eval("ImageName") : "~/assets/images/pdf-img-1.jpg" %>'
-                                        runat="server" /></span></a>
+                                        runat="server" /></span></a>--%>
                             <h4 class="pdf-name group-name">
                                 <a target="_blank" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "res/download/" + Eval("FilePath") : "javascript:void(0);" %>'>
                                     <%# Eval("DownloadName")%></a></h4>
                             <div class="download">
                                 <a href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "~/res/download/" + Eval("FilePath") : "javascript:void(0);" %>'
-                                    class="corner" download runat="server"><span>Download</span></a></div>
+                                    class="corner" download runat="server"><span>Tải về</span></a></div>
                         </div>
                     </div>
                 </ItemTemplate>

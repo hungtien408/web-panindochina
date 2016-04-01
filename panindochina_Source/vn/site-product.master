@@ -13,7 +13,7 @@
     <div id="colAside" class="aside-about desktop-992">
         <div class="box-aside corner">
             <h2 class="title-a">
-                Product</h2>
+                Sản Phẩm</h2>
             <asp:ListView ID="lstMenuProduct" runat="server" DataSourceID="odsMenuProduct" EnableModelValidation="True">
                 <ItemTemplate>
                     <asp:HiddenField ID="hdnSubMenuProduct" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
@@ -94,7 +94,7 @@
         <div class="menu-in">
             <div class="menu-mobile">
                 <h2 class="title">
-                    Product</h2>
+                    Sản Phẩm</h2>
                 <%--<ul class="menu-nav menu-right">
                     <li><a href="#">Personnel Protective Equipment</a></li>
                     <li><a href="#">Fall Protection Equipment</a></li>

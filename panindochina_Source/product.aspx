@@ -15,7 +15,7 @@
                 <h1 class="title">
                     <asp:Label ID="lblTitle" runat="server"></asp:Label></h1>
                 <label class="pager-lb">
-                    sản phẩm/trang</label>
+                    product/page</label>
                 <div class="select-box">
                     <asp:DropDownList ID="DropDownList1" CssClass="selectb" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"
                         AutoPostBack="True">
@@ -24,7 +24,7 @@
                     </asp:DropDownList>
                 </div>
                 <label class="pager-lb">
-                    Hiển thị</label>
+                    View</label>
             </div>
             <h2 class="title-menu mobile-992">
                 <a class="panel-right" href="#mobileRight">

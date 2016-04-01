@@ -11,7 +11,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="colAside" class="aside-about desktop-992">
         <div class="box-aside corner">
-            <h2 class="title-a">Library</h2>
+            <h2 class="title-a">Thư Viện</h2>
             <ul class="menu-list menu-iconr">
                 <li><a href="gallery-video.aspx"><span>Video</span></a></li>
                 <li><a href="gallery-pfd.aspx"><span>PDF</span></a></li>
@@ -29,7 +29,7 @@
         <div class="close-menu"><a href="#mobileRight" class="glyphicon glyphicon-remove-circle"></a></div>
         <div class="menu-in">
             <div class="menu-mobile">
-                <h2 class="title">Library</h2>
+                <h2 class="title">Thư Viện</h2>
                 <ul class="menu-nav menu-right">
                     <li><a href="gallery-video.aspx">Video<span class="icon-chevron-sign-right iconr"></span></a></li>
                     <li><a href="gallery-pfd.aspx">PDF<span class="icon-chevron-sign-right iconr"></span></a></li>

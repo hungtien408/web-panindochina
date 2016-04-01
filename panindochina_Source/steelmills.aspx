@@ -47,7 +47,7 @@
         <ContentTemplate>
             <div class="head desktop-992">
                 <label class="pager-lb">
-                    sản phẩm/trang</label>
+                    product/page</label>
                 <div class="select-box">
                     <asp:DropDownList ID="DropDownList1" CssClass="selectb" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"
                         AutoPostBack="True">
@@ -56,7 +56,7 @@
                     </asp:DropDownList>
                 </div>
                 <label class="pager-lb">
-                    Hiển thị</label>
+                    View</label>
             </div>
             <asp:ListView ID="lstProducts" runat="server" DataSourceID="odsProducts" EnableModelValidation="True">
                 <ItemTemplate>

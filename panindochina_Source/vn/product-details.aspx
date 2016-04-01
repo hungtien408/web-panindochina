@@ -123,7 +123,7 @@
                         <a href="#">
                             <img src="../assets/images/facebook2.jpg" alt="" /></a> <a href="#">
                                 <img src="../assets/images/facebook3.jpg" alt="" /></a> <a href="#" class="link-a mail">
-                                    Email</a> <a href="#" class="link-a print">Print</a>
+                                    Gửi thư</a> <a href="#" class="link-a print">In</a>
                     </div>
                     <div class="description list-des">
                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("Content")%>'></asp:Label>
@@ -179,11 +179,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation"><a class="corner" href="#tabs-1" aria-controls="tabs-1" role="tab"
-                data-toggle="tab">Specifications</a></li>
+                data-toggle="tab">Thông số kỹ thuật</a></li>
             <li role="presentation"><a class="corner" href="#tabs-2" aria-controls="tabs-2" role="tab"
-                data-toggle="tab">Accessories</a></li>
+                data-toggle="tab">Phụ kiện</a></li>
             <li role="presentation"><a class="corner" href="#tabs-3" aria-controls="tabs-3" role="tab"
-                data-toggle="tab">Document</a></li>
+                data-toggle="tab">Tài liệu</a></li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">

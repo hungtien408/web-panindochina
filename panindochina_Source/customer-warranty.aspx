@@ -20,19 +20,20 @@
     </div>--%>
     <asp:ListView ID="lstWarranty" runat="server" DataSourceID="odsWarranty" EnableModelValidation="True">
         <ItemTemplate>
-            <a class="download-link corner" runat="server" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "~/res/download/" + Eval("FilePath") : "javascript:void(0);" %>' download><span><%# Eval("DownloadNameEn")%></span></a> / 
+            <a class="download-link corner" runat="server" href='<%# !string.IsNullOrEmpty(Eval("FilePath").ToString()) ? "~/res/download/" + Eval("FilePath") : "javascript:void(0);" %>'
+                download><span>
+                    <%# Eval("DownloadNameEn")%></span></a> /
         </ItemTemplate>
         <LayoutTemplate>
             <div class="customer-text">
-                Quý khách vui lòng tải File này về <span runat="server" id="itemPlaceholder" />và
-                điền đầy đủ thông tin, sau đó gửi về cho chúng tôi tại: <a href="http://info@panindochina.com.vn">
-                    info@panindochina.com.vn</a> . Xin cám ơn sự quan tâm của quý khách đối với
-                dịch vụ của chúng tôi.
+                Please download this file <span runat="server" id="itemPlaceholder" />and fill the
+                information, after that send to us at: <a href="http://info@panindochina.com.vn">info@panindochina.com.vn</a>
+                . Thank you for your attention to our service.
             </div>
         </LayoutTemplate>
     </asp:ListView>
-    <asp:ObjectDataSource ID="odsWarranty" runat="server" 
-        SelectMethod="DownloadSelectAll" TypeName="TLLib.Download">
+    <asp:ObjectDataSource ID="odsWarranty" runat="server" SelectMethod="DownloadSelectAll"
+        TypeName="TLLib.Download">
         <SelectParameters>
             <asp:Parameter Name="Keyword" Type="String" />
             <asp:Parameter Name="DownloadName" Type="String" />
