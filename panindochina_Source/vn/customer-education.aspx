@@ -14,14 +14,14 @@
     <h2 class="title-menu mobile-992">
         <a class="panel-right" href="#mobileRight">Tài Liệu Kĩ Thuật<span class="iconar icon-chevron-down"></span></a></h2>
     <div class="customer-text">
-        Vui làm nhập tên đăng nhập và mặt khẩu để truy cập tài liệu.
+        Vui lòng nhập tên đăng nhập và mặt khẩu để truy cập tài liệu.
         <asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogin">
             <div class="form-alogin">
                 <div class="row">
                     <div class="col-sm-4 col-xs-6">
                         <div class="form-input">
                             <label class="form-lb">
-                                User Name:</label>
+                                Tên đăng nhập:</label>
                             <div class="input-text">
                                 <asp:TextBox ID="txtUserName" CssClass="text-box" runat="server"></asp:TextBox>
                             </div>
@@ -30,7 +30,7 @@
                     <div class="col-sm-4 col-xs-6">
                         <div class="form-input">
                             <label class="form-lb">
-                                Password:</label>
+                                Mật khẩu:</label>
                             <div class="input-text">
                                 <asp:TextBox ID="txtPassword" CssClass="text-box" runat="server" TextMode="Password"></asp:TextBox>
                             </div>
@@ -43,10 +43,10 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-input">
-                            <asp:Button ID="btnLogin" CssClass="text-uppercase btn-button" runat="server" Text="login"
+                            <asp:Button ID="btnLogin" CssClass="text-uppercase btn-button" runat="server" Text="đăng nhập"
                                 OnClick="btnLogin_Click" />
                             <%--<asp:CheckBox ID="chkRemember" CssClass="check-box" runat="server" Text="Remmember me" />--%>
-                            <a href="register-form.aspx" class="link-b">sign up ?</a>
+                            <a href="register-form.aspx" class="link-b">Đăng ký ?</a>
                         </div>
                     </div>
                 </div>
