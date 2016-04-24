@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="site-sub.master.cs" Inherits="site_sub" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="site">
+        <div class="container">
+            <a href="~/" runat="server">Home<span class="icon-caret-right"></span></a>
+            <asp:ContentPlaceHolder id="cphSite" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div class="container">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="clr"></div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphMenuMobile" Runat="Server">
+    <asp:ContentPlaceHolder id="cphMenuMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphPopup" Runat="Server">
+    <asp:ContentPlaceHolder id="cphPopup" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

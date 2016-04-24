@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site-sub.master" AutoEventWireup="true" CodeFile="site-customer.master.cs" Inherits="site_customer" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphSite" Runat="Server">
+            <asp:ContentPlaceHolder id="cphSite" runat="server">
+            </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="colAside" class="aside-customer desktop-992">
+        <div class="box-aside corner">
+            <h2 class="title-a">Customer Support</h2>
+            <ul id="customerm" class="menu-list">
+                <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
+                <li><a href="customer-warranty.aspx">Warranty/Technical &amp; Service Request</a></li>
+                <li><a href="customer-quatation.aspx">Quotation Request</a></li>
+                <li><a href="customer-instruction.aspx">Instruction Manual</a></li>
+                <li>
+                    <a href="customer-faq.aspx">FAQs</a>
+                    <ul>
+                        <li><a href="customer-faqs.aspx">General Question</a></li>
+                        <li><a href="#">PID Question</a></li>
+                        <li><a href="#">GasCheck Question</a></li>
+                        <li><a href="#">SF6 Question</a></li>
+                        <li><a href="#">Mini PID Question</a></li>
+                        <li><a href="#">Hydrosteel Question</a></li>
+                        <li><a href="#">MVI Question</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Technical Sheet</a></li>
+                <li>
+                    <a href="#">Technical Education</a>
+                </li>
+                <li><a href="customer-being.aspx">Being Panindochina’s Retailer</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="colMain" class="customer-content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" Runat="Server">
+    <div id="mobileRight" class="mobile-panel mobilep-right mobile-bg">
+        <div class="close-menu"><a href="#mobileRight" class="glyphicon glyphicon-remove-circle"></a></div>
+        <div class="menu-in">
+            <div class="menu-mobile">
+                <h2 class="title">Library</h2>
+                <ul class="menu-nav menu-cato">
+                    <li><a href="customer-catalogue.aspx">Catalogue/Brochure</a></li>
+                    <li><a href="customer-warranty.aspx">Warranty/Technical &amp; Service Request</a></li>
+                    <li><a href="customer-quatation.aspx">Quotation Request</a></li>
+                    <li><a href="customer-instruction.aspx">Instruction Manual</a></li>
+                    <li>
+                        <a href="#">FAQs</a>
+                        <ul>
+                            <li><a href="customer-faqs.aspx">General Question</a></li>
+                            <li><a href="#">PID Question</a></li>
+                            <li><a href="#">GasCheck Question</a></li>
+                            <li><a href="#">SF6 Question</a></li>
+                            <li><a href="#">Mini PID Question</a></li>
+                            <li><a href="#">Hydrosteel Question</a></li>
+                            <li><a href="#">MVI Question</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Technical Sheet</a></li>
+                    <li><a href="#">Technical Education</a></li>
+                    <li><a href="customer-being.aspx">Being Panindochina’s Retailer</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder id="cphMenuMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphPopup" Runat="Server">
+    <asp:ContentPlaceHolder id="cphPopup" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

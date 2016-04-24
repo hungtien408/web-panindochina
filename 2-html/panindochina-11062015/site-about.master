@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site-sub.master" AutoEventWireup="true" CodeFile="site-about.master.cs" Inherits="site_about" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphSite" Runat="Server">
+            <asp:ContentPlaceHolder id="cphSite" runat="server">
+            </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="colAside" class="aside-about desktop-992">
+        <div class="box-aside corner">
+            <h2 class="title-a">Panindochina</h2>
+            <ul class="menu-list menu-iconr">
+                <li><a href="gioi-thieu.aspx"><span>Introduction</span></a></li>
+                <li><a href="#"><span>Vision</span></a></li>
+                <li><a href="#"><span>Mission</span></a></li>
+                <li><a href="#"><span>History</span></a></li>
+                <li><a href="#"><span>Careers</span></a></li>
+                <li><a href="events.aspx"><span>Events</span></a></li>
+                <li><a href="#"><span>News</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="colMain" class="about-content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphMenuMobile" Runat="Server">
+    <div id="mobileRight" class="mobile-panel mobilep-right mobile-bg">
+        <div class="close-menu"><a href="#mobileRight" class="glyphicon glyphicon-remove-circle"></a></div>
+        <div class="menu-in">
+            <div class="menu-mobile">
+                <h2 class="title">Panindochina</h2>
+                <ul class="menu-nav menu-right">
+                    <li><a href="gioi-thieu.aspx">Introduction<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="#">Vision<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="#">Mission<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="#">History<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="#">Careers<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="events.aspx">Events<span class="icon-chevron-sign-right iconr"></span></a></li>
+                    <li><a href="#">News<span class="icon-chevron-sign-right iconr"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder id="cphMenuMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphPopup" Runat="Server">
+    <asp:ContentPlaceHolder id="cphPopup" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
